@@ -63,6 +63,6 @@ public abstract class FrontAttachment extends BaseAttachment<FrontAttachmentType
     }
 
     public static FrontAttachmentType<?> fromNbt(CompoundTag nbt) {
-        return FrontAttachmentType.REGISTRY.get(Identifier.tryParse(nbt.getString("type")));
+        return FrontAttachmentType.REGISTRY.get(Identifier.tryParse(nbt.getStringOr("type", "")));
     }
 }

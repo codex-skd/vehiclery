@@ -1,7 +1,8 @@
 package com.skd.vehiclery.entity;
 
 import com.skd.vehiclery.automobile.AutomobileFrame;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -17,13 +18,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3d;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class HitboxEntity extends Entity implements EntityWithContainer {
     public static final EntityDataAccessor<Integer> AUTOMOBILE = SynchedEntityData.defineId(HitboxEntity.class, EntityDataSerializers.INT);
-    public static final EntityDataAccessor<Vector3f> ORIGIN = SynchedEntityData.defineId(HitboxEntity.class, EntityDataSerializers.VECTOR3);
+    public static final EntityDataAccessor<Vector3fc> ORIGIN = SynchedEntityData.defineId(HitboxEntity.class, EntityDataSerializers.VECTOR3);
     public static final EntityDataAccessor<Float> WIDTH = SynchedEntityData.defineId(HitboxEntity.class, EntityDataSerializers.FLOAT);
     public static final EntityDataAccessor<Float> HEIGHT = SynchedEntityData.defineId(HitboxEntity.class, EntityDataSerializers.FLOAT);
 
@@ -102,9 +105,17 @@ public class HitboxEntity extends Entity implements EntityWithContainer {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand hand) {
+    public boolean hurtServer(net.minecraft.server.level.ServerLevel level, net.minecraft.world.damagesource.DamageSource source, float damage) {
         var automobile = automobile();
-        if (automobile == null) return super.interact(player, hand);
+        if (automobile == null) return false;
+
+        return automobile.hurtServer(level, source, damage);
+    }
+
+    @Override
+    public InteractionResult interact(Player player, InteractionHand hand, Vec3 location) {
+        var automobile = automobile();
+        if (automobile == null) return super.interact(player, hand, location);
 
         return automobile.handleInteraction(player, hand);
     }
@@ -133,7 +144,7 @@ public class HitboxEntity extends Entity implements EntityWithContainer {
     }
 
     @Override
-    public boolean canBeCollidedWith() {
+    public boolean canBeCollidedWith(@Nullable Entity other) {
         return this.level().isClientSide();
     }
 
@@ -142,7 +153,7 @@ public class HitboxEntity extends Entity implements EntityWithContainer {
         return !this.isRemoved();
     }
 
-    @Override
+    // TODO(port): Entity#lerpTo no longer exists, see AutomobileEntity.lerpTo TODO for details.
     public void lerpTo(double x, double y, double z, float yRot, float xRot, int steps) {
     }
 
@@ -169,11 +180,11 @@ public class HitboxEntity extends Entity implements EntityWithContainer {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag compound) {
+    protected void readAdditionalSaveData(ValueInput compound) {
     }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(ValueOutput compound) {
     }
 
     @Override
