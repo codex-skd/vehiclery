@@ -79,8 +79,8 @@ public class DashPanelBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, level, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, level, pos, block, orientation, notify);
 
         boolean levelPwr = level.hasNeighborSignal(pos);
         boolean selfPwr = state.getValue(POWERED);
@@ -100,8 +100,8 @@ public class DashPanelBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        super.entityInside(state, world, pos, entity);
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
+        super.entityInside(state, world, pos, entity, effectApplier, isPrecise);
         onCollideWithDashPanel(state, entity);
     }
 
@@ -117,9 +117,9 @@ public class DashPanelBlock extends HorizontalDirectionalBlock implements Simple
 
         if (entity instanceof AutomobileEntity auto) {
             auto.boost(0.45f, 50);
-        } else if (entity.getType().is(VehicleryEntities.DASH_PANEL_BOOSTABLES)) {
+        } else if (entity.getType().builtInRegistryHolder().is(VehicleryEntities.DASH_PANEL_BOOSTABLES)) {
             if (entity instanceof LivingEntity living) {
-                living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 6, true, false, false));
+                living.addEffect(new MobEffectInstance(MobEffects.SPEED, 40, 6, true, false, false));
             }
             double yaw = Math.toRadians(-entity.getYRot());
             var vel = new Vec3(Math.sin(yaw), 0, Math.cos(yaw));

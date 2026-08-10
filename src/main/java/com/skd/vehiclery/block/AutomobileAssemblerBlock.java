@@ -56,8 +56,8 @@ public class AutomobileAssemblerBlock extends HorizontalDirectionalBlock impleme
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, world, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, world, pos, block, orientation, notify);
 
         boolean power = world.hasNeighborSignal(pos);
         if (power != state.getValue(POWERED)) {
@@ -68,7 +68,7 @@ public class AutomobileAssemblerBlock extends HorizontalDirectionalBlock impleme
     @Override
     public void setPlacedBy(Level world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         if (!world.isClientSide() && placer instanceof Player player) {
-            player.displayClientMessage(USE_CROWBAR_DIALOG, true);
+            player.sendSystemMessage(USE_CROWBAR_DIALOG, true);
         }
 
         super.setPlacedBy(world, pos, state, placer, itemStack);
@@ -84,12 +84,12 @@ public class AutomobileAssemblerBlock extends HorizontalDirectionalBlock impleme
     }
 
     @Override
-    public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean moved) {
-        if (!newState.is(this) && world.getBlockEntity(pos) instanceof AutomobileAssemblerBlockEntity assembler) {
+    public void affectNeighborsAfterRemoval(BlockState state, net.minecraft.server.level.ServerLevel world, BlockPos pos, boolean moved) {
+        if (world.getBlockEntity(pos) instanceof AutomobileAssemblerBlockEntity assembler) {
             assembler.dropParts();
         }
 
-        super.onRemove(state, world, pos, newState, moved);
+        super.affectNeighborsAfterRemoval(state, world, pos, moved);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.skd.vehiclery.block;
 
+import org.jetbrains.annotations.Nullable;
 import com.skd.vehiclery.entity.AutomobileEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,8 +25,8 @@ public class LaunchGelBlock extends Block {
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        super.entityInside(state, world, pos, entity);
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
+        super.entityInside(state, world, pos, entity, effectApplier, isPrecise);
 
         if (entity instanceof AutomobileEntity automobile && automobile.automobileOnGround()) {
             automobile.boost(0.14f, 7);
@@ -38,8 +39,8 @@ public class LaunchGelBlock extends Block {
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, world, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, world, pos, block, orientation, notify);
 
         if (!canExistAt(world, pos)) {
             world.destroyBlock(pos, true);
