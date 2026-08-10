@@ -48,7 +48,7 @@ public class NeoForgeSlopeBakedModel extends SlopeBakedModel implements DynamicB
         }
 
         var builder = new QuadCollection.Builder();
-        var geo = new NeoForgeGeometryBuilder(this.settings.getRotation().getMatrix(), builder);
+        var geo = new NeoForgeGeometryBuilder(this.settings.transformation().getMatrix(), builder);
         this.buildSlopeGeometry(frameSprite, geo, frameColor, borderedLeft, borderedRight);
 
         parts.add(new SimpleModelWrapper(builder.build(), true, new Material.Baked(frameSprite, false)));

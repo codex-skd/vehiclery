@@ -96,7 +96,7 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public <T extends BlockEntity> BlockEntityType<T> blockEntity(BiFunction<BlockPos, BlockState, T> factory, Block... blocks) {
-        return BlockEntityType.Builder.of(factory::apply, blocks).build(null);
+        return new BlockEntityType<>(factory::apply, blocks);
     }
 
     @Override
