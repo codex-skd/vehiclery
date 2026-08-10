@@ -5,27 +5,29 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.util.StringRepresentable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import java.util.function.Function;
 
 public record ModelDefinition(ModelType type,
                               RenderMaterial material,
                               ModelLayerLocation modelLayer,
-                              Vector3f translation,
-                              Vector3f rotation,
-                              Vector3f scale
+                              Vector3fc translation,
+                              Vector3fc rotation,
+                              Vector3fc scale
 ) {
     public static final Codec<ModelLayerLocation> LAYER_CODEC = Identifier.CODEC.xmap(rl -> {
         int layerStart = rl.getPath().lastIndexOf("/");
         var modelPath = rl.getPath().substring(0, layerStart);
         var layerPath = rl.getPath().substring(layerStart + 1);
         return new ModelLayerLocation(Identifier.fromNamespaceAndPath(rl.getNamespace(), modelPath), layerPath);
-    }, ml -> Identifier.fromNamespaceAndPath(ml.getModel().getNamespace(), ml.getModel().getPath() + "/" + ml.getLayer()));
+    }, ml -> Identifier.fromNamespaceAndPath(ml.model().getNamespace(), ml.model().getPath() + "/" + ml.layer()));
 
     public static final Codec<ModelDefinition> CODEC = RecordCodecBuilder.create(inst -> inst.group(
             ModelType.CODEC.fieldOf("type").forGetter(ModelDefinition::type),
@@ -53,13 +55,17 @@ public record ModelDefinition(ModelType type,
     }
 
     public enum RenderMaterial implements StringRepresentable {
-        SOLID("solid", RenderType::entitySolid),
-        CUTOUT("cutout", RenderType::entityCutout),
-        CUTOUT_NO_CULL("cutout_backfaces", RenderType::entityCutoutNoCull),
-        TRANSLUCENT("translucent", RenderType::entityTranslucentCull),
-        TRANSLUCENT_NO_CULL("translucent_backfaces", RenderType::entityTranslucent),
-        ADDITIVE_TRANSLUCENT("additive_translucent", RenderType::eyes),
-        EMISSIVE("emissive", RenderType::breezeEyes);
+        // TODO(port): RenderType's entity* static factories moved to RenderTypes and were renamed;
+        // "Cull" now marks the single-sided variant (opposite of the old naming), and there is no
+        // separate translucent-cull variant anymore, so both TRANSLUCENT and TRANSLUCENT_NO_CULL
+        // currently map to the same entityTranslucent() call (minor visual approximation).
+        SOLID("solid", RenderTypes::entitySolid),
+        CUTOUT("cutout", RenderTypes::entityCutoutCull),
+        CUTOUT_NO_CULL("cutout_backfaces", RenderTypes::entityCutout),
+        TRANSLUCENT("translucent", RenderTypes::entityTranslucent),
+        TRANSLUCENT_NO_CULL("translucent_backfaces", RenderTypes::entityTranslucent),
+        ADDITIVE_TRANSLUCENT("additive_translucent", RenderTypes::eyes),
+        EMISSIVE("emissive", RenderTypes::breezeEyes);
 
         public static final Codec<RenderMaterial> CODEC = StringRepresentable.fromEnum(RenderMaterial::values);
 
