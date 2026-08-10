@@ -147,7 +147,7 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
             }
         }
         if (!this.level.isClientSide() && stack.is(VehicleryItems.FRONT_ATTACHMENT.require()) || stack.is(VehicleryItems.REAR_ATTACHMENT.require())) {
-            player.sendSystemMessage(AutomobileAssemblerBlock.INCOMPLETE_AUTOMOBILE_DIALOG, true);
+            player.sendSystemMessage(AutomobileAssemblerBlock.INCOMPLETE_AUTOMOBILE_DIALOG);
         }
 
         return InteractionResult.FAIL;
@@ -284,9 +284,9 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
-        var nbt = new CompoundTag();
-        this.saveAdditional(nbt, registries);
-        return nbt;
+        var output = net.minecraft.world.level.storage.TagValueOutput.createWithContext(net.minecraft.util.ProblemReporter.DISCARDING, registries);
+        this.saveAdditional(output);
+        return output.buildResult();
     }
 
     protected boolean powered() {

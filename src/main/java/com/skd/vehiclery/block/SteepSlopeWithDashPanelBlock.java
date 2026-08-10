@@ -40,7 +40,7 @@ public class SteepSlopeWithDashPanelBlock extends SteepSlopeBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
         return new ItemStack(VehicleryBlocks.DASH_PANEL.require());
     }
 

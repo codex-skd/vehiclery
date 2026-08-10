@@ -69,7 +69,7 @@ public class DashPanelBlock extends HorizontalDirectionalBlock implements Simple
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, LevelReader world, net.minecraft.world.level.ScheduledTickAccess ticks, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
         var lState = world.getBlockState(pos.relative(state.getValue(FACING).getCounterClockWise(Direction.Axis.Y)));
         var rState = world.getBlockState(pos.relative(state.getValue(FACING).getClockWise(Direction.Axis.Y)));
         boolean left = lState.is(this) && (lState.getValue(POWERED) == state.getValue(POWERED));

@@ -68,7 +68,7 @@ public class AutomobileAssemblerBlock extends HorizontalDirectionalBlock impleme
     @Override
     public void setPlacedBy(Level world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         if (!world.isClientSide() && placer instanceof Player player) {
-            player.sendSystemMessage(USE_CROWBAR_DIALOG, true);
+            player.sendSystemMessage(USE_CROWBAR_DIALOG);
         }
 
         super.setPlacedBy(world, pos, state, placer, itemStack);
