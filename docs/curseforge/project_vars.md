@@ -4,7 +4,7 @@
 
 | Variable | Valor |
 |----------|-------|
-| `curseforge_project_id` | *(pendiente — se rellena tras crear el proyecto en CurseForge)* |
+| `curseforge_project_id` | `1646967` |
 | `mod_id` | `vehiclery` |
 | `display_name` | `Vehiclery` |
 
@@ -12,16 +12,18 @@
 
 | API | Token | Uso |
 |-----|-------|-----|
-| Upload | *(mismo token de cuenta que otros mods — ver `equivalent_legacy/neoforge/26.2/docs/curseforge/project_vars.md` u otros)* | Subir archivos JAR |
-| Core (GET) | *(mismo token de cuenta, ver referencia anterior)* | Consultar datos del mod |
+| Upload | `ee776b0a-ee95-4850-b554-06be02a8657f` | Subir archivos JAR |
+| Core (GET) | `$2a$10$yGwryAfmRkS9ZJsJUDf5YOKZpOIsmHB8Fji2D8JVCKBSZEKYlwmaO` | Consultar datos del mod |
 
 Autenticación Upload: cabecera `X-Api-Token`
 Autenticación Core: cabecera `x-api-key`
 
+> Token de cuenta (mismo para todos los mods, ver `equivalent_legacy/neoforge/26.2/docs/curseforge/project_vars.md` u otros).
+
 ## Variables para script (lectura automática)
 
-project_id = *(pendiente)*
-api_token = *(pendiente — copiar el token de cuenta)*
+project_id = 1646967
+api_token = ee776b0a-ee95-4850-b554-06be02a8657f
 release_type = beta
 game_versions = 9638,9639,16498,10150
 relations = *(ninguna dependencia obligatoria conocida por ahora)*
@@ -46,4 +48,4 @@ Ejemplo: `26.2-neoforge-0.0.0-beta.1`
 El API de subida de CurseForge no expone el campo de lado (client/server). Tras **cada** subida de archivo hay que entrar en la web de CurseForge → pestaña "Files" → editar el archivo → marcar el entorno como **Client & Server** (vehículos, block entities y recetas se procesan en servidor). Sin este paso, el file queda etiquetado como solo cliente.
 
 **Historial:**
-- *(sin subidas todavía — proyecto pendiente de dar de alta)*
+- Proyecto creado en CurseForge (ID `1646967`). Primera subida de archivo aún pendiente (manual).
