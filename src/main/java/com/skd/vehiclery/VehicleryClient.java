@@ -94,13 +94,16 @@ public class VehicleryClient {
             var lvl = Minecraft.getInstance().level;
             if (lvl == null) return;
 
-            var frame = lvl.registryAccess().lookupOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
-            var wheel = lvl.registryAccess().lookupOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
-            var engine = lvl.registryAccess().lookupOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
+            var frameOpt = lvl.registryAccess().lookupOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
+            var wheelOpt = lvl.registryAccess().lookupOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
+            var engineOpt = lvl.registryAccess().lookupOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
 
-            if (frame == null || wheel == null || engine == null) {
+            if (frameOpt.isEmpty() || wheelOpt.isEmpty() || engineOpt.isEmpty()) {
                 return;
             }
+            var frame = frameOpt.get().value();
+            var wheel = wheelOpt.get().value();
+            var engine = engineOpt.get().value();
 
             float wheelDist = frame.model().lengthPx() / 16;
             float scale = 1;
@@ -138,7 +141,7 @@ public class VehicleryClient {
         screens.accept(Vehiclery.SINGLE_SLOT_SCREEN, SingleSlotScreen::new);
     }
 
-    public static <T extends AutomobileComponent<T>, V> void componentItemRenderer(AutomobileComponentItem<T, V> item, Function<T, Model> modelProvider, Function<T, Identifier> textureProvider, FloatFunc<T> scaleProvider) {
+    public static <T extends AutomobileComponent<T>, V> void componentItemRenderer(AutomobileComponentItem<T, V> item, Function<T, com.skd.vehiclery.automobile.render.RenderableModel> modelProvider, Function<T, Identifier> textureProvider, FloatFunc<T> scaleProvider) {
         Platform.get().builtinItemRenderer(item, (stack, mode, matrices, buffers, light, overlay) -> {
             var lvl = Minecraft.getInstance().level;
             if (lvl == null) return;
@@ -156,7 +159,7 @@ public class VehicleryClient {
                 matrices.scale(scale, -scale, -scale);
                 var renderType = model.renderType(textureProvider.apply(component));
                 buffers.submitCustomGeometry(matrices, renderType, (pose, vc) ->
-                        model.renderToBuffer(matrices, vc, light, overlay, 0xFFFFFFFF));
+                        model.renderModel(matrices, vc, light, overlay, 0xFFFFFFFF));
 
                 if (model instanceof BaseModel base) {
                     base.doOtherLayerRender(matrices, buffers, light, overlay);
@@ -217,7 +220,7 @@ public class VehicleryClient {
     public static void sendClientMessage(String message) {
         var mc = Minecraft.getInstance();
         var txt = Component.literal(message);
-        mc.gui.getChat().addMessage(txt);
-        mc.getNarrator().sayNow(txt);
+        mc.gui.hud.getChat().addClientSystemMessage(txt);
+        mc.getNarrator().saySystemNow(txt);
     }
 }

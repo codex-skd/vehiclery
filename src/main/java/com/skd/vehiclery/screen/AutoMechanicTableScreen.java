@@ -17,6 +17,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.client.input.MouseButtonEvent;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayDeque;
@@ -173,9 +174,9 @@ public class AutoMechanicTableScreen extends AbstractContainerScreen<AutoMechani
     }
 
     @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (button == GLFW.GLFW_MOUSE_BUTTON_1) {
-            int selectedCatButton = getHoveredCategoryButton((int) mouseX, (int) mouseY);
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        if (event.button() == GLFW.GLFW_MOUSE_BUTTON_1) {
+            int selectedCatButton = getHoveredCategoryButton((int) event.x(), (int) event.y());
             if (selectedCatButton != 0) {
                 this.changeCategory(selectedCatButton);
                 this.buttonClicked();
@@ -183,7 +184,7 @@ public class AutoMechanicTableScreen extends AbstractContainerScreen<AutoMechani
                 return true;
             }
 
-            int recipe = this.getHoveredRecipe((int) mouseX, (int) mouseY);
+            int recipe = this.getHoveredRecipe((int) event.x(), (int) event.y());
             if (recipe >= 0) {
                 this.selectRecipe(recipe);
                 this.buttonClicked();
@@ -191,7 +192,7 @@ public class AutoMechanicTableScreen extends AbstractContainerScreen<AutoMechani
                 return true;
             }
         }
-        return super.mouseClicked(mouseX, mouseY, button);
+        return super.mouseClicked(event, doubleClick);
     }
 
     private void selectRecipe(int id) {
@@ -218,13 +219,13 @@ public class AutoMechanicTableScreen extends AbstractContainerScreen<AutoMechani
     protected final void drawMissingIngredient(GuiGraphicsExtractor graphics, Ingredient ing, int x, int y, boolean hovered) {
         graphics.fill(x, y, x + 16, y + 16, 0x45FF0000);
 
-        var stacks = ing.getItems();
-        var stack = stacks[Mth.floor((float)this.time / 30) % stacks.length];
+        var stacks = ing.items().map(h -> h.value().getDefaultInstance()).toList();
+        var stack = stacks.get(Mth.floor((float)this.time / 30) % stacks.size());
         graphics.fakeItem(stack, x, y);
 
-        RenderSystem.depthMask(false);
+        // TODO(port): RenderSystem.depthMask(...) no longer exists; dropped the depth-test toggle
+        // around this overlay fill, may render with slightly different depth sorting than before.
         graphics.fill(x, y, x + 16, y + 16, 0x30FFFFFF);
-        RenderSystem.depthMask(true);
 
         if (hovered) {
             this.hoveredMissingIngredient = stack;
