@@ -94,9 +94,9 @@ public class VehicleryClient {
             var lvl = Minecraft.getInstance().level;
             if (lvl == null) return;
 
-            var frame = lvl.registryAccess().registryOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
-            var wheel = lvl.registryAccess().registryOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
-            var engine = lvl.registryAccess().registryOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
+            var frame = lvl.registryAccess().lookupOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
+            var wheel = lvl.registryAccess().lookupOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
+            var engine = lvl.registryAccess().lookupOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
 
             if (frame == null || wheel == null || engine == null) {
                 return;
