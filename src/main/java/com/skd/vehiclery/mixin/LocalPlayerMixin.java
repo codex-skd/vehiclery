@@ -49,6 +49,6 @@ public class LocalPlayerMixin {
 
     @Unique
     private boolean vehiclery$isSprinting() {
-        return InputConstants.isKeyDown(Minecraft.getInstance().getWindow().handle(), ((KeyMappingAccess) minecraft.options.keySprint).vehiclery$getKey().getValue());
+        return InputConstants.isKeyDown(Minecraft.getInstance().getWindow(), ((KeyMappingAccess) minecraft.options.keySprint).vehiclery$getKey().getValue());
     }
 }

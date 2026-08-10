@@ -72,7 +72,7 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
             this.recipes = serverLevel.getServer().getRecipeManager().recipeMap().byType(AutoMechanicTableRecipe.TYPE)
                     .stream().map(h -> {
                         var r = h.value();
-                        r.sortId = h.id();
+                        r.sortId = h.id().identifier();
                         return r;
                     }).collect(Collectors.toList());
         } else {
@@ -162,7 +162,7 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
 
             // Items transferred out of output slot
             if (fromSlotId == this.outputSlot.index) {
-                fromItem.onCraftedBy(fromStack, player.level(), player);
+                fromItem.onCraftedBy(fromStack, player);
                 if (!this.moveItemStackTo(fromStack, this.playerInvSlot, this.playerInvSlot + 36, true)) {
                     return ItemStack.EMPTY;
                 }
@@ -227,7 +227,7 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
             AutoMechanicTableScreenHandler.this.getSelectedRecipe()
                     .ifPresent(recipe -> {
                         recipe.assemble(new ContainerRecipeInput(AutoMechanicTableScreenHandler.this.inputInv));
-                        stack.getItem().onCraftedBy(stack, player.level(), player);
+                        stack.getItem().onCraftedBy(stack, player);
                         AutoMechanicTableScreenHandler.this.updateRecipeState();
                     });
         }
