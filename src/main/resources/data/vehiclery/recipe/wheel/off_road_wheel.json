@@ -1,0 +1,15 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:wheels",
+    "sortnum": 102,
+    "ingredients": [
+        {"item": "minecraft:black_wool"},
+        {"item": "minecraft:iron_block"},
+        {"item": "minecraft:black_wool"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_wheel",
+        "count": 2,
+        "component": "vehiclery:off_road"
+    }
+}

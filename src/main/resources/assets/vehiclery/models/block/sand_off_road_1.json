@@ -1,0 +1,7 @@
+{
+  "parent": "vehiclery:block/template_off_road_1",
+  "textures": {
+    "off_road": "vehiclery:block/sand_off_road"
+  },
+  "elements": []
+}

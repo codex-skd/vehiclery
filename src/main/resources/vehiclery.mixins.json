@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.skd.vehiclery.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "vehiclery-refmap.json",
+  "mixins": [
+    "AABBMixin",
+    "AbstractContainerMenuMixin",
+    "EntityMixin",
+    "ItemCombinerMenuMixin",
+    "PlayerEnderChestContainerMixin",
+    "ServerGamePacketListenerImplMixin",
+    "ShovelItemAccess"
+  ],
+  "client": [
+    "EntityRenderDispatcherMixin",
+    "EntityRenderersMixin",
+    "KeyMappingAccess",
+    "LocalPlayerMixin",
+    "MultiPlayerGameModeMixin",
+    "SoundChannelAccess",
+    "SoundEngineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

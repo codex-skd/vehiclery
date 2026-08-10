@@ -1,0 +1,18 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:attachments",
+    "sortnum": 2,
+    "ingredients": [
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:gold_ingot"},
+        {"item": "minecraft:copper_ingot"},
+        {"item": "minecraft:emerald"},
+        {"item": "minecraft:redstone"},
+        {"item": "minecraft:prismarine_crystals"},
+        {"item": "minecraft:iron_ingot"}
+    ],
+    "result": {
+        "item": "vehiclery:front_attachment",
+        "component": "vehiclery:autopilot"
+    }
+}

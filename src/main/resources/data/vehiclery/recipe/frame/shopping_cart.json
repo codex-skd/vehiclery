@@ -1,0 +1,18 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:frames",
+    "sortnum": 200,
+    "ingredients": [
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:iron_bars"},
+        {"item": "minecraft:iron_bars"},
+        {"item": "minecraft:iron_bars"},
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:copper_ingot"},
+        {"item": "minecraft:iron_ingot"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_frame",
+        "component": "vehiclery:shopping_cart"
+    }
+}

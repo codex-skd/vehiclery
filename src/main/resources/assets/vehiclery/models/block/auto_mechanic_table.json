@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "vehiclery:block/auto_mechanic_table",
+    "north": "vehiclery:block/auto_mechanic_table",
+    "south": "vehiclery:block/auto_mechanic_table",
+    "east": "vehiclery:block/auto_mechanic_table",
+    "west": "vehiclery:block/auto_mechanic_table",
+    "up": "minecraft:block/weathered_cut_copper",
+    "down": "vehiclery:block/auto_mechanic_table_bottom"
+  }
+}

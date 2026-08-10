@@ -1,0 +1,16 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:engines",
+    "sortnum": 1,
+    "ingredients": [
+        {"item": "minecraft:copper_ingot"},
+        {"item": "minecraft:furnace"},
+        {"item": "minecraft:coal"},
+        {"item": "minecraft:iron_nugget"},
+        {"item": "minecraft:copper_ingot"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_engine",
+        "component": "vehiclery:copper"
+    }
+}

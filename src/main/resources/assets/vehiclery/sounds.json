@@ -1,0 +1,86 @@
+{
+    "entity.automobile.collision": {
+        "subtitle": "subtitles.vehiclery.collision",
+        "sounds": [
+            "vehiclery:collision"
+        ]
+    },
+    "entity.automobile.landing": {
+        "subtitle": "subtitles.vehiclery.landing",
+        "sounds": [
+            "vehiclery:landing"
+        ]
+    },
+    "entity.automobile.skid": {
+        "subtitle": "subtitles.vehiclery.skid",
+        "sounds": [
+            "vehiclery:skid"
+        ]
+    },
+    "entity.automobile.stone_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:stone_engine"
+        ]
+    },
+    "entity.automobile.copper_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:copper_engine"
+        ]
+    },
+    "entity.automobile.iron_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:iron_engine"
+        ]
+    },
+    "entity.automobile.gold_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:gold_engine"
+        ]
+    },
+    "entity.automobile.diamond_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:diamond_engine"
+        ]
+    },
+    "entity.automobile.creative_engine": {
+        "subtitle": "subtitles.vehiclery.automobile_engine",
+        "sounds": [
+            "vehiclery:creative_engine"
+        ]
+    },
+    "entity.automobile.klaxon_horn": {
+        "subtitle": "subtitles.vehiclery.automobile_horn_blares",
+        "sounds": [
+            "vehiclery:klaxon_horn"
+        ]
+    },
+    "entity.automobile.disc_horn": {
+        "subtitle": "subtitles.vehiclery.automobile_horn_honks",
+        "sounds": [
+            "vehiclery:disc_horn"
+        ]
+    },
+    "entity.automobile.trumpet_horn": {
+        "subtitle": "subtitles.vehiclery.automobile_horn_honks",
+        "sounds": [
+            "vehiclery:trumpet_horn"
+        ]
+    },
+    "entity.automobile.brass_horn": {
+        "subtitle": "subtitles.vehiclery.automobile_horn_blares",
+        "sounds": [
+            "vehiclery:brass_horn"
+        ]
+    },
+    "entity.automobile.party_horn": {
+        "subtitle": "subtitles.vehiclery.automobile_horn_honks",
+        "sounds": [
+            "vehiclery:party_horn"
+        ]
+    }
+}

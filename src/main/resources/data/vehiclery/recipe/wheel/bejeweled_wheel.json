@@ -1,0 +1,14 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:wheels",
+    "sortnum": 4,
+    "ingredients": [
+        {"item": "minecraft:obsidian"},
+        {"item": "minecraft:diamond"},
+        {"item": "minecraft:obsidian"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_wheel",
+        "component": "vehiclery:bejeweled"
+    }
+}

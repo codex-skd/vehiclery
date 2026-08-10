@@ -1,0 +1,17 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:attachments",
+    "sortnum": 100,
+    "ingredients": [
+        {"tag": "minecraft:wool"},
+        {"tag": "minecraft:wool"},
+        {"tag": "minecraft:planks"},
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:stick"},
+        {"tag": "minecraft:logs"}
+    ],
+    "result": {
+        "item": "vehiclery:rear_attachment",
+        "component": "vehiclery:passenger_seat"
+    }
+}

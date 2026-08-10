@@ -1,0 +1,6 @@
+{
+  "parent": "vehiclery:block/template_autopilot_sign_floor",
+  "textures": {
+    "sign": "vehiclery:block/autopilot_sign_stop"
+  }
+}

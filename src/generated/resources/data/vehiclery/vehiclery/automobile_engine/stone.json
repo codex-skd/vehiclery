@@ -1,0 +1,22 @@
+{
+  "display": {
+    "exhausts": [
+      {
+        "pitch": 50.0,
+        "position": [
+          0.0,
+          7.0,
+          -8.3
+        ],
+        "yaw": 0.0
+      }
+    ],
+    "model": "vehiclery:engine/stone",
+    "texture": "vehiclery:textures/entity/automobile/engine/stone.png"
+  },
+  "sound": {
+    "sound_id": "vehiclery:entity.automobile.stone_engine"
+  },
+  "speed": 0.58,
+  "torque": 0.3
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "vehiclery:block/template_autopilot_sign_angled_left",
+  "textures": {
+    "sign": "vehiclery:block/autopilot_sign_arrow"
+  }
+}

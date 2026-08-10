@@ -1,0 +1,18 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:frames",
+    "sortnum": 401,
+    "ingredients": [
+        {"item": "minecraft:redstone"},
+        {"item": "minecraft:nether_bricks"},
+        {"item": "minecraft:gold_ingot"},
+        {"item": "minecraft:quartz_block"},
+        {"item": "minecraft:leather"},
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:quartz"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_frame",
+        "component": "vehiclery:quartz_rickshaw"
+    }
+}

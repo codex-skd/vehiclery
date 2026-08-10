@@ -1,0 +1,30 @@
+package com.skd.vehiclery.automobile.render;
+
+import com.skd.vehiclery.Vehiclery;
+import com.skd.vehiclery.automobile.model.ModelDefinition;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.resources.Identifier;
+import org.joml.Vector3f;
+
+public class ExhaustFumesModel extends BaseModel {
+    public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile_exhaust_fumes"), "main");
+
+    public static final Identifier[] SMOKE_TEXTURES = new Identifier[] {
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_smoke_0.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_smoke_1.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_smoke_2.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_smoke_3.png")
+    };
+    public static final Identifier[] FLAME_TEXTURES = new Identifier[] {
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_flames_0.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_flames_1.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_flames_2.png"),
+            Vehiclery.rl("textures/entity/automobile/exhaust/exhaust_flames_3.png")
+    };
+
+    public ExhaustFumesModel(EntityRendererProvider.Context ctx) {
+        super(ctx, ModelDefinition.RenderMaterial.CUTOUT, MODEL_LAYER,
+                new Vector3f(), new Vector3f(), new Vector3f(1));
+    }
+}

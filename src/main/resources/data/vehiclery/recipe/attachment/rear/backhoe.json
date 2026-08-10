@@ -1,0 +1,17 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:attachments",
+    "sortnum": 300,
+    "ingredients": [
+        {"item": "minecraft:copper_ingot"},
+        {"item": "minecraft:iron_hoe"},
+        {"tag": "minecraft:stone_crafting_materials"},
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:stick"},
+        {"tag": "minecraft:planks"}
+    ],
+    "result": {
+        "item": "vehiclery:rear_attachment",
+        "component": "vehiclery:backhoe"
+    }
+}

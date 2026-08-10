@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "layers=3": {
+      "model": "vehiclery:block/grass_off_road_2"
+    },
+    "layers=1": {
+      "model": "vehiclery:block/grass_off_road_0"
+    },
+    "layers=2": {
+      "model": "vehiclery:block/grass_off_road_1"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:attachments",
+    "sortnum": 201,
+    "ingredients": [
+        {"item": "minecraft:chest"},
+        {"tag": "minecraft:stone_crafting_materials"},
+        {"item": "minecraft:stick"},
+        {"tag": "minecraft:planks"}
+    ],
+    "result": {
+        "item": "vehiclery:rear_attachment",
+        "component": "vehiclery:chest"
+    }
+}

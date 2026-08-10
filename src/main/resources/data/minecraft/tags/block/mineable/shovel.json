@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vehiclery:grass_off_road",
+    "vehiclery:dirt_off_road",
+    "vehiclery:sand_off_road",
+    "vehiclery:snow_off_road"
+  ]
+}

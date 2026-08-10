@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "vehiclery:auto_mechanic_table",
+    "vehiclery:automobile_assembler",
+    "vehiclery:autopilot_sign",
+    "vehiclery:dash_panel",
+    "vehiclery:slope",
+    "vehiclery:steep_slope",
+    "vehiclery:slope_with_dash_panel",
+    "vehiclery:steep_slope_with_dash_panel"
+  ]
+}

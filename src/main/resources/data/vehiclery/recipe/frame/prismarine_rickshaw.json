@@ -1,0 +1,18 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:frames",
+    "sortnum": 402,
+    "ingredients": [
+        {"item": "minecraft:redstone"},
+        {"item": "minecraft:prismarine_bricks"},
+        {"item": "minecraft:nautilus_shell"},
+        {"item": "minecraft:cut_sandstone"},
+        {"item": "minecraft:leather"},
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:prismarine_shard"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_frame",
+        "component": "vehiclery:prismarine_rickshaw"
+    }
+}

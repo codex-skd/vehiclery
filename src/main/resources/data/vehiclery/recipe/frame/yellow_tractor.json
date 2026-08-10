@@ -1,0 +1,16 @@
+{
+    "type": "vehiclery:auto_mechanic_table",
+    "category": "vehiclery:frames",
+    "sortnum": 101,
+    "ingredients": [
+        {"item": "minecraft:iron_ingot"},
+        {"item": "minecraft:copper_block"},
+        {"tag": "minecraft:stone_crafting_materials"},
+        {"item": "minecraft:yellow_dye"},
+        {"item": "minecraft:iron_bars"}
+    ],
+    "result": {
+        "item": "vehiclery:automobile_frame",
+        "component": "vehiclery:yellow_tractor"
+    }
+}
