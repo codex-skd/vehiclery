@@ -1,102 +1,46 @@
 # Ruta de desarrollo — port a NeoForge 26.2.0.37-beta
 
-> Estado: NeoForge/Minecraft 26.2.0.37-beta reescribió el pipeline de renderizado cliente (GUI, renderers de entidad/bloque, BEWLR, modelos custom). No es un fix mecánico de nombres — cada fase es un sub-sistema distinto. Este documento trackea el avance para decidir, fase a fase, si se hace aquí (Claude) o se delega (OpenCode).
+> **Estado: ✅ COMPLETO.** `./gradlew.bat build` compila limpio y genera `vehiclery-26.2-neoforge-0.0.0-beta.1.jar` (verificado). Las 6 fases del port están cerradas. Quedan regresiones funcionales puntuales documentadas al final (TODOs en el código), no errores de compilación.
 
-## Cómo leer este documento
+## Resumen de las 6 fases
 
-- **Estado**: ✅ hecho · 🔲 pendiente · 🔶 en curso
-- **Errores**: recuento real de `./gradlew.bat compileJava --console=plain` en el momento de escribir esto (101 errores totales, 19 archivos)
-- **Ejecutar**: decisión pendiente por fase — "aquí" (Claude directo) o "OpenCode" (delegado)
+| Fase | Descripción | Estado |
+|---|---|---|
+| 1 | Platform / registro / coloreado | ✅ |
+| 2 | Entidad del automóvil / datos / attachments | ✅ |
+| 3 | Modelos de pendiente (slope) + geometry loader | ✅ |
+| 4 | Pantallas GUI (`GuiGraphicsExtractor`) | ✅ |
+| 5 | Renderers (`SubmitNodeCollector`, state-extraction) | ✅ |
+| 6 | BEWLR (renderizado 3D de items) | ✅ (stub, ver regresiones) |
 
-## Fase 1 — Platform / registro / coloreado ✅ HECHO
+Progreso real de errores de compilación durante el port: **101 → 88 → 69 → 65 → 57 → 45 → 16 → 0**.
 
-| Archivo | Errores antes |
+## Cambios de arquitectura más relevantes (para referencia futura)
+
+- **Coloreado**: `BlockColor`/`ItemColor` → `BlockTintSource`/`ItemTintSource` (basado en codecs).
+- **NBT**: `CompoundTag` con getters `Optional`-based (`getFloat` → `getFloatOr`); `Entity`/`BlockEntity` migraron de `CompoundTag` a `ValueInput`/`ValueOutput`.
+- **Registries**: `RegistryAccess.registryOrThrow` → `lookupOrThrow`; `Registry.getHolder` → `get` (ahora `Optional`); `ResourceKey.location()` → `identifier()`.
+- **Modelos de bloque**: `BakedModel`/`ItemOverrides`/`IGeometryLoader` desaparecieron. Nuevo sistema: `CustomUnbakedBlockStateModel` (codec-based, evento `RegisterBlockStateModels`) + `DynamicBlockStateModel#collectParts` + `QuadCollection`/`BakedQuad` + `QuadBakingVertexConsumer`.
+- **Renderizado de modelos custom (`Model<S>`)**: `renderToBuffer` ahora `final` (solo root). Se creó la interfaz propia `RenderableModel` para el hook de transform+extras que antes vivía en el override.
+- **Renderizado diferido**: `MultiBufferSource` (inmediato) → `SubmitNodeCollector` (comandos diferidos: `submitModelPart`, `submitCustomGeometry`, `submitText`...). Bridge usado: `submitCustomGeometry` capturando el `PoseStack` vivo (no el `Pose` congelado del callback).
+- **Entity/BlockEntity renderers**: ahora `EntityRenderer<T, S extends EntityRenderState>` / `BlockEntityRenderer<T, S extends BlockEntityRenderState>`, con `createRenderState()`/`extractRenderState()`/`submit()` en vez de un único `render()`.
+- **GUI**: `GuiGraphics` → `GuiGraphicsExtractor`; `render`→`extractRenderState`, `renderBg`→`extractBackground`, `renderLabels`→`extractLabels`, `renderTooltip`→`setTooltipForNextFrame`/`extractTooltip`, `drawString`→`text`, `drawCenteredString`→`centeredText`; `blit` necesita `RenderPipeline` + tamaño de atlas explícito; `imageWidth`/`imageHeight` ahora `final` (constructor).
+- **BEWLR**: `BlockEntityWithoutLevelRenderer` eliminado del todo. Reemplazo: `SpecialModelRenderer<T>` (codec-based, evento `RegisterSpecialModelRendererEvent`, declarado en el JSON del item) — **no implementado**, ver regresiones.
+- **Recipe**: `Recipe<T>` perdió `getResultItem(HolderLookup.Provider)`/`canCraftInDimensions`; ganó `showNotification()`/`group()`/`placementInfo()`/`recipeBookCategory()`. `Level#getRecipeManager()` desapareció (solo `MinecraftServer`).
+
+## Regresiones funcionales conocidas (TODOs en el código, no bloquean compilación)
+
+| Archivo | Qué falta |
 |---|---|
-| `platform/Platform.java` | — |
-| `neoforge/NeoForgePlatform.java` | — |
-| `VehicleryClient.java` | — |
-| `neoforge/VehicleryClientNeoForge.java` | — |
-| `neoforge/VehicleryNeoForge.java` | — |
-| `neoforge/mixin/BlockColorsAccess.java` | — |
+| `automobile/render/attachment/rear/BannerPostRearAttachmentModel.java` | El patrón de color del banner en el mástil trasero no se dibuja (el mástil sí); `BannerRenderer.submitPatterns` necesita `SpriteGetter` + `Model<S>` propio, sin investigar aún |
+| `mixin/EntityRenderDispatcherMixin.java` | Los pasajeros ya no se inclinan visualmente con el vehículo (el punto de inyección original ya no existe) |
+| `neoforge/mixin/BlockEntityWithoutLevelRendererMixin.java` + `neoforge/client/BEWLRs.java` | Los items de automóvil/componentes no tienen renderizado 3D custom en mano/inventario (icono 2D plano); requiere implementar `SpecialModelRenderer<T>` |
+| `screen/AutoMechanicTableScreenHandler.java` | La lista de recetas del Auto Mechanic Table solo se puebla en servidor; el cliente la ve vacía (`Level#getRecipeManager()` ya no sincroniza recetas completas al cliente, solo `RecipePropertySet`/`RecipeDisplay`) — necesita paquete de sync propio |
+| `screen/AutomobileHud.java` | El HUD del velocímetro no respeta F1 (ocultar interfaz) — `Options#hideGui` ya no existe públicamente |
 
-Cambios: `BlockColor`/`ItemColor` → `BlockTintSource`/`ItemTintSource` (basado en codecs), `RegisterClientReloadListenersEvent` → `AddClientReloadListenersEvent`, `ModelEvent.RegisterGeometryLoaders` → `RegisterLoaders`, ajustes de aridad genérica, `@EventBusSubscriber` sin bus explícito en `VehicleryNeoForge`.
-
-Commit: `c02baa7`. Compila limpio (confirmado).
-
-## Fase 2 — Entidad del automóvil (🔲 pendiente, 18 errores)
-
-| Archivo | Errores |
-|---|---|
-| `entity/AutomobileEntity.java` | 17 |
-| `neoforge/mixin/EntityRenderersMixin.java` | 1 |
-
-Estos errores no existían en el diagnóstico original — aparecieron al arreglar la Fase 1 (javac ocultaba errores downstream mientras Platform.java no compilaba). Hay que investigar de cero qué símbolos rompió el cambio de entidad/render-state.
-
-**Recomendación**: acotado (18 errores, 2 archivos) — buen candidato para hacer aquí directamente o una delegación corta y bien acotada.
-
-## Fase 3 — Sistema de modelos de pendiente (slope) y geometry loader (🔲 pendiente, 40 errores — la más grande)
-
-| Archivo | Errores |
-|---|---|
-| `neoforge/block/render/NeoForgeSlopeGeometryLoader.java` | 16 |
-| `neoforge/block/render/NeoForgeSlopeBakedModel.java` | 13 |
-| `block/model/SlopeBakedModel.java` | 4 |
-| `block/model/SlopeUnbakedModel.java` | 2 |
-| `neoforge/block/render/SlopeModelsProvider.java` | 4 |
-
-El paquete `net.neoforged.neoforge.client.model.geometry` desapareció por completo; `BakedModel`/`ItemOverrides` también cambiaron. Es el sub-sistema más novedoso/desconocido — genera los modelos de bloque de pendiente (slopes) procedimentalmente. Requiere entender el nuevo mecanismo de geometry loaders + datagen de NeoForge 26.2 (referencia ya extraída en su momento: `UnbakedModelLoader`, `ExtendedModelTemplateBuilder`, `ConditionalModelLoader` — habría que re-extraer si se retoma, `temp/` es efímero).
-
-**Recomendación**: la más compleja y con más riesgo de que se pierda comportamiento (visual) si se aproxima mal — candidata a delegar, pero con una sesión dedicada solo a esto, no mezclada con otras fases.
-
-## Fase 4 — Pantallas GUI (🔲 pendiente, 17 errores)
-
-| Archivo | Errores |
-|---|---|
-| `screen/AutoMechanicTableScreen.java` | 10 |
-| `screen/AutomobileHud.java` | 4 |
-| `screen/SingleSlotScreen.java` | 3 |
-
-`GuiGraphics` → `GuiGraphicsExtractor`. Métodos renombrados: `render`→`extractRenderState`, `renderBg`→`extractBackground`, `renderLabels`→`extractLabels`, `renderTooltip`→`setTooltipForNextFrame`, `drawString`→`text`, `drawCenteredString`→`centeredText`, `blit` necesita `RenderPipeline`. Ya hay ejemplos reales funcionando en `ascendant_equipment` (mismo repo, mismo `neo_version`) — patrón bien establecido.
-
-**Recomendación**: mecánico y con ejemplos reales disponibles — buen candidato para delegar en un lote corto, o hacerlo aquí con los ejemplos ya localizados.
-
-## Fase 5 — Renderers (🔲 pendiente, 16 errores)
-
-| Archivo | Errores |
-|---|---|
-| `automobile/render/attachment/front/AutopilotFrontAttachmentModel.java` | 3 |
-| `automobile/render/BaseModel.java` | 3 |
-| `block/entity/render/AutomobileAssemblerBlockEntityRenderer.java` | 3 |
-| `entity/render/AutomobileEntityRenderer.java` | 3 |
-| `mixin/EntityRenderDispatcherMixin.java` | 3 |
-| `automobile/render/attachment/rear/BannerPostRearAttachmentModel.java` | 2 |
-| `automobile/render/AutomobileRenderer.java` | (incluido en render pipeline general) |
-
-`MultiBufferSource` → `SubmitNodeCollector`; `render(...)` → `submit(...)` + `createRenderState`/`extractRenderState`. Depende de que la Fase 2 (AutomobileEntity) esté resuelta primero, ya que estos renderers consumen esa entidad.
-
-**Recomendación**: hacer después de Fase 2. Complejidad media.
-
-## Fase 6 — BEWLR (renderizado 3D de items) (🔲 pendiente, 8 errores)
-
-| Archivo | Errores |
-|---|---|
-| `neoforge/client/BEWLRs.java` | 4 |
-| `neoforge/mixin/BlockEntityWithoutLevelRendererMixin.java` | 4 |
-
-`BlockEntityWithoutLevelRenderer` (BEWLR) parece eliminado del todo, reemplazado por `SpecialModelRenderer`. Afecta al renderizado 3D de items de partes del vehículo en mano/inventario — no se debe perder ese comportamiento visual silenciosamente.
-
-**Recomendación**: última fase, requiere entender `SpecialModelRenderer` desde cero — candidata a delegar con contexto dedicado.
-
-## Orden recomendado
-
-1. Fase 2 (Entidad) — desbloquea Fase 5
-2. Fase 4 (GUI) — independiente, ejemplos ya disponibles
-3. Fase 5 (Renderers) — depende de Fase 2
-4. Fase 3 (Slope models) — la más grande, sesión dedicada
-5. Fase 6 (BEWLR) — la más incierta
-
-## Notas operativas para delegación (lecciones de hoy)
+## Notas operativas para delegación (lecciones de la sesión de port)
 
 - El sandbox de OpenCode bloquea lectura fuera del directorio del proyecto (`external_directory`, auto-rechazado). Cualquier referencia externa (jars de Gradle, mods hermanos) debe copiarse dentro de `temp/` antes de delegar.
-- Sesiones muy largas de investigación (`-c` resumido muchas veces) acumulan contexto hasta que la compactación falla contra algunos proveedores (visto con Nvidia). Mejor: sesiones nuevas y cortas por fase en vez de una sesión gigante recorriendo las 6 fases.
-- Catálogo de modelos de Nvidia vía OpenCode poco fiable hoy (varios EOL, uno colgado, uno con error interno). Verificar disponibilidad real antes de asumir el listado de `opencode models`.
+- Sesiones muy largas de investigación (`-c` resumido muchas veces) acumulan contexto hasta que la compactación falla contra algunos proveedores (visto con Nvidia). Mejor: sesiones nuevas y cortas por fase en vez de una sesión gigante recorriendo varias fases.
+- Catálogo de modelos de Nvidia vía OpenCode poco fiable (varios EOL, uno colgado, uno con error interno). Verificar disponibilidad real antes de asumir el listado de `opencode models`.
+- Las fases más "arquitectónicas" (3, 5, 6) se resolvieron mejor investigando directamente en los jars de fuentes (`neoforge-*-sources.jar`, `mergeWithSources_*_output.jar` en la caché de Gradle) y en mods hermanos ya migrados a NeoForge 26.2 (`ascendant_equipment`, `armor_cosmetic`) que delegando ciegamente.
