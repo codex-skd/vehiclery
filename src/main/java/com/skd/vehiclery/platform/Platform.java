@@ -4,13 +4,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.brigadier.CommandDispatcher;
 import com.skd.vehiclery.controller.AutomobileController;
 import com.skd.vehiclery.util.HexCons;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.color.block.BlockTintSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.item.ItemPropertyFunction;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.core.BlockPos;
@@ -58,17 +57,15 @@ public interface Platform {
 
     CreativeModeTab creativeTab(Identifier rl, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItemsGenerator);
 
-    void builtinItemRenderer(Item item, HexCons<ItemStack, ItemDisplayContext, PoseStack, MultiBufferSource, Integer, Integer> renderer);
-
-    void itemModelPredicate(Item item, Identifier id, ItemPropertyFunction predicate);
+    void builtinItemRenderer(Item item, HexCons<ItemStack, ItemDisplayContext, PoseStack, SubmitNodeCollector, Integer, Integer> renderer);
 
     <T extends AbstractContainerMenu> MenuType<T> menuType(BiFunction<Integer, Inventory, T> factory);
 
-    @Nullable BlockColor blockColor(BlockState state);
+    @Nullable BlockTintSource blockColor(BlockState state);
 
     <T extends BlockEntity> BlockEntityType<T> blockEntity(BiFunction<BlockPos, BlockState, T> factory, Block... blocks);
 
-    <T extends BlockEntity> void blockEntityRenderer(BlockEntityType<T> type, Function<BlockEntityRendererProvider.Context, BlockEntityRenderer<T>> provider);
+    <T extends BlockEntity> void blockEntityRenderer(BlockEntityType<T> type, Function<BlockEntityRendererProvider.Context, BlockEntityRenderer<T, ?>> provider);
 
     void serverSendPacket(ServerPlayer player, Identifier rl, FriendlyByteBuf buf);
 
@@ -76,7 +73,7 @@ public interface Platform {
 
     <T extends Entity> EntityType<T> entityType(MobCategory category, BiFunction<EntityType<?>, Level, T> factory, EntityDimensions size, int updateRate, int updateRange, boolean internal, String key);
 
-    <T extends Entity> void entityRenderer(EntityType<T> entity, Function<EntityRendererProvider.Context, EntityRenderer<T>> factory);
+    <T extends Entity> void entityRenderer(EntityType<T> entity, Function<EntityRendererProvider.Context, EntityRenderer<T, ?>> factory);
 
     void registerDataSerializer(Identifier id, EntityDataSerializer<?> serializer);
 

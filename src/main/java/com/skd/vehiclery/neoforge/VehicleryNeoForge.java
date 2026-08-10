@@ -25,7 +25,7 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 import java.util.Set;
 
 @Mod(InitlessConstants.VEHICLERY)
-@EventBusSubscriber(modid = InitlessConstants.VEHICLERY, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = InitlessConstants.VEHICLERY)
 public class VehicleryNeoForge {
     public VehicleryNeoForge() {
         NeoForgePlatform.init();
