@@ -3,6 +3,7 @@ package com.skd.vehiclery.automobile.model;
 import com.mojang.serialization.Codec;
 import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.automobile.render.BaseModel;
+import com.skd.vehiclery.automobile.render.RenderableModel;
 import com.skd.vehiclery.automobile.render.attachment.front.AutopilotFrontAttachmentModel;
 import com.skd.vehiclery.automobile.render.attachment.front.FrontAttachmentRenderModel;
 import com.skd.vehiclery.automobile.render.attachment.front.HarvesterFrontAttachmentModel;
@@ -44,7 +45,7 @@ public record ModelType(Identifier id,
     }
 
     public interface ModelInstanceProvider {
-        Model create(EntityRendererProvider.Context ctx,
+        RenderableModel create(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation modelLayer,
                      Vector3f translation, Vector3f rotation, Vector3f scale);

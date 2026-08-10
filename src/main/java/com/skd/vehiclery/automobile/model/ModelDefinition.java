@@ -2,7 +2,7 @@ package com.skd.vehiclery.automobile.model;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.client.model.Model;
+import com.skd.vehiclery.automobile.render.RenderableModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
@@ -50,7 +50,7 @@ public record ModelDefinition(ModelType type,
         return new ModelDefinition(type, material, modelLayer, new Vector3f(), new Vector3f(0, 0, 0), new Vector3f(scale));
     }
 
-    public Model createModel(EntityRendererProvider.Context ctx) {
+    public RenderableModel createModel(EntityRendererProvider.Context ctx) {
         return this.type().provider().create(ctx, material(), modelLayer(), translation(), rotation(), scale());
     }
 

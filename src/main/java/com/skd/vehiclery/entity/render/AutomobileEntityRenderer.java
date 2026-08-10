@@ -3,34 +3,46 @@ package com.skd.vehiclery.entity.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.skd.vehiclery.automobile.render.AutomobileRenderer;
 import com.skd.vehiclery.entity.AutomobileEntity;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.resources.Identifier;
 import org.joml.Quaternionf;
 
-public class AutomobileEntityRenderer extends EntityRenderer<AutomobileEntity> {
+// TODO(port): EntityRenderer<T> now requires a second generic param (a custom EntityRenderState)
+// and splits rendering into createRenderState()/extractRenderState()/submit() instead of a single
+// render() method with direct entity access. See AutomobileRenderState for details on the shortcut
+// taken here (kept a live entity reference instead of extracting individual fields).
+public class AutomobileEntityRenderer extends EntityRenderer<AutomobileEntity, AutomobileRenderState> {
     public AutomobileEntityRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
     }
 
     @Override
-    public Identifier getTextureLocation(AutomobileEntity entity) {
-        return null;
+    public AutomobileRenderState createRenderState() {
+        return new AutomobileRenderState();
     }
 
     @Override
-    public void render(AutomobileEntity entity, float yaw, float tickDelta, PoseStack pose, MultiBufferSource buffers, int light) {
+    public void extractRenderState(AutomobileEntity entity, AutomobileRenderState state, float partialTicks) {
+        super.extractRenderState(entity, state, partialTicks);
+        state.automobile = entity;
+        state.tickDelta = partialTicks;
+        state.lightCoords = this.getPackedLightCoords(entity, partialTicks);
+    }
+
+    @Override
+    public void submit(AutomobileRenderState state, PoseStack pose, SubmitNodeCollector collector, CameraRenderState camera) {
         pose.pushPose();
-        float offsetY = entity.getDisplacement().getVerticalOffset(tickDelta, entity);
+        float offsetY = state.automobile.getDisplacement().getVerticalOffset(state.tickDelta, state.automobile);
         var rotation = new Quaternionf();
-        entity.getDisplacement().getAngular(tickDelta, rotation);
+        state.automobile.getDisplacement().getAngular(state.tickDelta, rotation);
 
         pose.translate(0, offsetY, 0);
         pose.mulPose(rotation);
 
-        AutomobileRenderer.render(pose, buffers, light, OverlayTexture.NO_OVERLAY, tickDelta, entity);
+        AutomobileRenderer.render(pose, collector, state.lightCoords, OverlayTexture.NO_OVERLAY, state.tickDelta, state.automobile);
         pose.popPose();
     }
 }

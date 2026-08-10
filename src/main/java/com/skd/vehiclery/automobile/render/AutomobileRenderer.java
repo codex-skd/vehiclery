@@ -9,13 +9,22 @@ import com.skd.vehiclery.automobile.render.attachment.front.FrontAttachmentRende
 import com.skd.vehiclery.automobile.render.attachment.rear.RearAttachmentRenderModel;
 import com.skd.vehiclery.entity.AutomobileEntity;
 import com.skd.vehiclery.util.AUtils;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.resources.Identifier;
 
+// TODO(port): MultiBufferSource (immediate-mode: get a VertexConsumer for a RenderType, write to it
+// directly) no longer exists -- rendering now goes through SubmitNodeCollector's deferred submission
+// API. We bridge back to our existing VertexConsumer-based model rendering (BaseModel#renderModel
+// etc., unchanged) via SubmitNodeCollector#submitCustomGeometry, which hands back a VertexConsumer
+// for a given RenderType/pose. This assumes the callback runs synchronously against the *live*
+// PoseStack captured here (not the frozen PoseStack.Pose snapshot the callback also receives, which
+// we ignore) -- reasonable for a per-frame render callback, but unverified against actual gameplay
+// since this can't be tested without running the game.
 public enum AutomobileRenderer {;
     public static void render(
-            PoseStack pose, MultiBufferSource buffers, int light, int overlay,
+            PoseStack pose, SubmitNodeCollector buffers, int light, int overlay,
             float tickDelta, RenderableAutomobile automobile
     ) {
         var frame = automobile.getFrame();
@@ -48,7 +57,7 @@ public enum AutomobileRenderer {;
         var frameTexture = frame.model().texture();
         var engineTexture = engine.model().texture();
         if (!frame.isEmpty() && frameModel != null) {
-            frameModel.renderToBuffer(pose, buffers.getBuffer(frameModel.renderType(frameTexture)), light, overlay, 0xFFFFFFFF);
+            buffers.submitCustomGeometry(pose, frameModel.renderType(frameTexture), (framePose, buffer) -> frameModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (frameModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
             }
@@ -58,31 +67,31 @@ public enum AutomobileRenderer {;
         pose.translate(ePos.x(), -ePos.y(), -ePos.z());
         pose.mulPose(Axis.YP.rotationDegrees(180));
         if (!engine.isEmpty() && engineModel != null) {
-            engineModel.renderToBuffer(pose, buffers.getBuffer(engineModel.renderType(engineTexture)), light, overlay, 0xFFFFFFFF);
+            buffers.submitCustomGeometry(pose, engineModel.renderType(engineTexture), (framePose, buffer) -> engineModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (engineModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
             }
         }
 
-        VertexConsumer exhaustBuffer = null;
+        RenderType exhaustRenderType = null;
         Identifier[] exhaustTexes;
         if (automobile.getBoostTimer() > 0) {
             exhaustTexes = ExhaustFumesModel.FLAME_TEXTURES;
             int index = (int)(automobile.getTime() % exhaustTexes.length);
-            exhaustBuffer = buffers.getBuffer(RenderType.eyes(exhaustTexes[index]));
+            exhaustRenderType = RenderTypes.eyes(exhaustTexes[index]);
         } else if (automobile.engineRunning()) {
             exhaustTexes = ExhaustFumesModel.SMOKE_TEXTURES;
             int index = (int)Math.floor(((automobile.getTime() + tickDelta) / 1.5f) % exhaustTexes.length);
-            exhaustBuffer = buffers.getBuffer(RenderType.entityTranslucent(exhaustTexes[index]));
+            exhaustRenderType = RenderTypes.entityTranslucent(exhaustTexes[index]);
         }
-        if (exhaustBuffer != null) {
+        if (exhaustRenderType != null) {
             for (AutomobileEngine.ExhaustPos exhaust : engine.model().exhausts()) {
                 pose.pushPose();
 
                 pose.translate(exhaust.x() / 16, -exhaust.y() / 16, exhaust.z() / 16);
                 pose.mulPose(Axis.YP.rotationDegrees(exhaust.yaw()));
                 pose.mulPose(Axis.XP.rotationDegrees(exhaust.pitch()));
-                exhaustFumesModel.renderToBuffer(pose, exhaustBuffer, light, overlay, 0xFFFFFFFF);
+                buffers.submitCustomGeometry(pose, exhaustRenderType, (framePose, buffer) -> exhaustFumesModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
 
                 pose.popPose();
             }
@@ -93,7 +102,7 @@ public enum AutomobileRenderer {;
         var wPoses = frame.model().wheelBase().wheels();
 
         if (!wheels.isEmpty() && wheelModel != null) {
-            var wheelBuffer = buffers.getBuffer(wheelModel.renderType(wheels.model().texture()));
+            var wheelRenderType = wheelModel.renderType(wheels.model().texture());
             float wheelAngle = automobile.getWheelAngle(tickDelta);
             int wheelCount = automobile.getWheelCount();
 
@@ -115,7 +124,7 @@ public enum AutomobileRenderer {;
 
                 pose.mulPose(Axis.YP.rotationDegrees(180 + pos.yaw()));
 
-                wheelModel.renderToBuffer(pose, wheelBuffer, light, overlay, 0xFFFFFFFF);
+                buffers.submitCustomGeometry(pose, wheelRenderType, (framePose, buffer) -> wheelModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
                 if (wheelModel instanceof BaseModel base) {
                     base.doOtherLayerRender(pose, buffers, light, overlay);
                 }
@@ -137,7 +146,7 @@ public enum AutomobileRenderer {;
             if (rearAttachmentModel instanceof RearAttachmentRenderModel rm) {
                 rm.setRenderState(automobile.getRearAttachment(), (float) Math.toRadians(automobile.getWheelAngle(tickDelta)), tickDelta);
             }
-            rearAttachmentModel.renderToBuffer(pose, buffers.getBuffer(rearAttachmentModel.renderType(rearAtt.model().texture())), light, overlay, 0xFFFFFFFF);
+            buffers.submitCustomGeometry(pose, rearAttachmentModel.renderType(rearAtt.model().texture()), (framePose, buffer) -> rearAttachmentModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (rearAttachmentModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
             }
@@ -153,7 +162,7 @@ public enum AutomobileRenderer {;
             if (frontAttachmentModel instanceof FrontAttachmentRenderModel fm) {
                 fm.setRenderState(automobile.getFrontAttachment(), chassisRaise, tickDelta);
             }
-            frontAttachmentModel.renderToBuffer(pose, buffers.getBuffer(frontAttachmentModel.renderType(frontAtt.model().texture())), light, overlay, 0xFFFFFFFF);
+            buffers.submitCustomGeometry(pose, frontAttachmentModel.renderType(frontAtt.model().texture()), (framePose, buffer) -> frontAttachmentModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (frontAttachmentModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
             }
@@ -180,7 +189,7 @@ public enum AutomobileRenderer {;
                 bright = false;
             }
             int index = (int)Math.floor(((automobile.getTime() + tickDelta) / 1.5f) % skidTexes.length);
-            var skidEffectBuffer = buffers.getBuffer(bright ? RenderType.eyes(skidTexes[index]) : RenderType.entityCutout(skidTexes[index]));
+            var skidEffectRenderType = bright ? RenderTypes.eyes(skidTexes[index]) : RenderTypes.entityCutout(skidTexes[index]);
 
             for (var pos : wPoses) {
                 if (pos.end() == WheelBase.WheelEnd.BACK) {
@@ -202,7 +211,8 @@ public enum AutomobileRenderer {;
                         pose.pushPose();
                         pose.translate((pos.right() / 16) + (wheelWidth * s), heightOffset / 16, (-pos.forward() / 16) + back);
                         pose.scale(s, 1, -1);
-                        skidEffectModel.renderToBuffer(pose, skidEffectBuffer, light, overlay, AUtils.colorToInt(0.6f, r, g, b));
+                        var colorFinal = AUtils.colorToInt(0.6f, r, g, b);
+                        buffers.submitCustomGeometry(pose, skidEffectRenderType, (framePose, buffer) -> skidEffectModel.renderModel(pose, buffer, light, overlay, colorFinal));
                         pose.popPose();
                     }
                     pose.popPose();

@@ -18,7 +18,6 @@ import com.skd.vehiclery.automobile.render.attachment.rear.StonecutterRearAttach
 import com.skd.vehiclery.util.VehicleryClientResourceDumper;
 import com.skd.vehiclery.util.EntityRenderHelper;
 import net.minecraft.IdentifierException;
-import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.FileToIdConverter;
@@ -38,12 +37,12 @@ public class AutomobileModels implements ResourceManagerReloadListener {
     private static final Identifier EMPTY = Vehiclery.rl("empty");
     public static final Gson GSON = new Gson();
 
-    private static Model skidEffect = new EmptyModel();
-    private static Model exhaustFumes = new EmptyModel();
+    private static RenderableModel skidEffect = new EmptyModel();
+    private static RenderableModel exhaustFumes = new EmptyModel();
 
     private static final Map<Identifier, ModelDefinition> modelDefinitions = new HashMap<>();
     private static EntityRendererProvider.Context modelProvider = null;
-    private static final Map<Identifier, Model> models = new HashMap<>();
+    private static final Map<Identifier, RenderableModel> models = new HashMap<>();
 
     public static final ModelDefinition FRAME_STANDARD = ModelDefinition.ofYaw(
             ModelType.BASIC, ModelDefinition.RenderMaterial.CUTOUT,
@@ -169,11 +168,11 @@ public class AutomobileModels implements ResourceManagerReloadListener {
             HarvesterFrontAttachmentModel.MODEL_LAYER
     );
 
-    public static Model getSkidEffectModel() {
+    public static RenderableModel getSkidEffectModel() {
         return skidEffect;
     }
 
-    public static Model getExhaustFumesModel() {
+    public static RenderableModel getExhaustFumesModel() {
         return exhaustFumes;
     }
     
@@ -228,7 +227,7 @@ public class AutomobileModels implements ResourceManagerReloadListener {
         register(Vehiclery.rl("front_attachment/harvester"), FRONT_ATT_HARVESTER);
     }
 
-    public static Model getModelOrNull(Identifier location) {
+    public static RenderableModel getModelOrNull(Identifier location) {
         if (modelProvider == null) {
             return null;
         }
@@ -241,7 +240,7 @@ public class AutomobileModels implements ResourceManagerReloadListener {
         return models.computeIfAbsent(location, l -> def.createModel(modelProvider));
     }
 
-    public static Model getModel(Identifier location) {
+    public static RenderableModel getModel(Identifier location) {
         var result = getModelOrNull(location);
         if (result == null) {
             return getEmpty();
@@ -249,7 +248,7 @@ public class AutomobileModels implements ResourceManagerReloadListener {
         return result;
     }
 
-    public static Model getEmpty() {
+    public static RenderableModel getEmpty() {
         return getModelOrNull(EMPTY);
     }
 

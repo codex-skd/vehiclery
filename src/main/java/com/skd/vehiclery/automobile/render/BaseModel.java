@@ -8,7 +8,7 @@ import com.skd.vehiclery.automobile.model.ModelDefinition;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.Identifier;
 import org.joml.Vector3f;
@@ -17,8 +17,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-public class BaseModel extends Model {
-    protected final ModelPart root;
+// TODO(port): net.minecraft.client.model.Model<S>#renderToBuffer is now final (root-only render),
+// and its constructor requires the ModelPart root directly instead of computing it after calling
+// super(). The old renderToBuffer override -- which combined root render + renderExtra() in one
+// call -- had to be split: renderToBuffer is now just the inherited root render, and callers must
+// separately invoke renderExtra() afterwards (see AutomobileRenderer/VehicleryClient call sites).
+// Similarly, MultiBufferSource -> SubmitNodeCollector for the "other layer" pass.
+public class BaseModel extends Model implements RenderableModel {
     protected final Vector3f translation;
     protected final Vector3f rotation;
     protected final Vector3f scale;
@@ -30,17 +35,16 @@ public class BaseModel extends Model {
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation layer,
                      Vector3f translation, Vector3f rotation, Vector3f scale) {
-        super(material.renderType);
+        super(resolveRoot(ctx, layer), material.renderType);
         this.translation = translation;
         this.rotation = rotation;
         this.scale = scale;
+    }
 
+    private static ModelPart resolveRoot(EntityRendererProvider.Context ctx, ModelLayerLocation layer) {
         var head = ctx.bakeLayer(layer);
         var root = getChildSafe(head, "main");
-        if (root == PART_EMPTY) {
-            root = head;
-        }
-        this.root = root;
+        return root == PART_EMPTY ? head : root;
     }
 
     protected static ModelPart getChildSafe(ModelPart parent, String child) {
@@ -63,15 +67,15 @@ public class BaseModel extends Model {
     }
 
     @Override
-    public final void renderToBuffer(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+    public final void renderModel(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
         matrices.pushPose();
         this.prepare(matrices);
-        this.root.render(matrices, vertices, light, overlay, color);
+        this.root().render(matrices, vertices, light, overlay, color);
         renderExtra(matrices, vertices, light, overlay, color);
         matrices.popPose();
     }
 
-    public final void doOtherLayerRender(PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+    public final void doOtherLayerRender(PoseStack matrices, SubmitNodeCollector consumers, int light, int overlay) {
         matrices.pushPose();
         this.prepare(matrices);
         this.renderOtherLayer(matrices, consumers, light, overlay);
@@ -81,6 +85,6 @@ public class BaseModel extends Model {
     public void renderExtra(PoseStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
     }
 
-    public void renderOtherLayer(PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+    public void renderOtherLayer(PoseStack matrices, SubmitNodeCollector consumers, int light, int overlay) {
     }
 }
