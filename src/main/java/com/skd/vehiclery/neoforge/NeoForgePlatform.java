@@ -2,6 +2,7 @@ package com.skd.vehiclery.neoforge;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.brigadier.CommandDispatcher;
+import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.controller.AutomobileController;
 import com.skd.vehiclery.neoforge.client.BEWLRs;
 import com.skd.vehiclery.neoforge.mixin.BlockColorsAccess;
@@ -111,7 +112,7 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public void clientSendPacket(Identifier rl, FriendlyByteBuf buf) {
-        PacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
+        net.neoforged.neoforge.network.ClientPacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
     }
 
     @Override
@@ -120,7 +121,7 @@ public class NeoForgePlatform implements Platform {
         if (internal) {
             builder.noSave().noSummon();
         }
-        return builder.build(key);
+        return builder.build(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, Vehiclery.rl(key)));
     }
 
     @Override
@@ -151,6 +152,6 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public Path getGameDir() {
-        return FMLLoader.getGamePath();
+        return net.neoforged.fml.loading.FMLPaths.GAMEDIR.get();
     }
 }

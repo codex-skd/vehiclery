@@ -42,8 +42,8 @@ public class JsonEMCodecs {
 
     public static final Codec<PartPose> PART_POSE = RecordCodecBuilder.create((instance) ->
             instance.group(
-                    VECTOR3F.optionalFieldOf("origin", new Vector3f()).forGetter(obj -> new Vector3f(obj.x, obj.y, obj.z)),
-                    VECTOR3F.optionalFieldOf("rotation", new Vector3f()).forGetter(obj -> new Vector3f(obj.xRot, obj.yRot, obj.zRot))
+                    VECTOR3F.optionalFieldOf("origin", new Vector3f()).forGetter(obj -> new Vector3f(obj.x(), obj.y(), obj.z())),
+                    VECTOR3F.optionalFieldOf("rotation", new Vector3f()).forGetter(obj -> new Vector3f(obj.xRot(), obj.yRot(), obj.zRot()))
             ).apply(instance, (origin, rot) -> PartPose.offsetAndRotation(origin.x(), origin.y(), origin.z(), rot.x(), rot.y(), rot.z()))
     );
 

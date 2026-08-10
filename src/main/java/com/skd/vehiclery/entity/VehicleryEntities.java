@@ -34,7 +34,7 @@ public enum VehicleryEntities {;
     public static Optional<DamageSource> automobileDamageSource(Level level) {
         return level.registryAccess()
                 .lookupOrThrow(Registries.DAMAGE_TYPE)
-                .getHolder(AUTOMOBILE_DAMAGE_SOURCE)
+                .get(AUTOMOBILE_DAMAGE_SOURCE)
                 .map(DamageSource::new);
     }
 

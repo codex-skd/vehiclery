@@ -17,7 +17,7 @@ public class NeoForgeNetworking {
     public static void receiveServer(VehicleryPacketPayload payload, IPayloadContext ctx) {
         var player = ctx.player();
         if (player instanceof ServerPlayer sPlayer) {
-            CommonPackets.SERVERBOUND_HANDLERS.get(payload.id()).accept(player.getServer(), sPlayer, payload.buf());
+            CommonPackets.SERVERBOUND_HANDLERS.get(payload.id()).accept(sPlayer.getServer(), sPlayer, payload.buf());
         }
     }
 }

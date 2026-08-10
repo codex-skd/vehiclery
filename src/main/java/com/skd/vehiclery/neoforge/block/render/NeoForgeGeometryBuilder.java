@@ -9,6 +9,7 @@ import net.minecraft.core.Direction;
 import net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
+import org.joml.Matrix4fc;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
@@ -17,14 +18,14 @@ import org.joml.Vector4f;
 // (culled per rotated face, or unculled when face is null), since the new BlockStateModelPart
 // system wants all faces at once rather than being re-invoked once per Direction.
 public class NeoForgeGeometryBuilder implements GeometryBuilder {
-    private final Matrix4f transform;
+    private final Matrix4fc transform;
     private final QuadCollection.Builder collection;
     private final QuadBakingVertexConsumer quads;
 
     private int vidx = 0;
     private @Nullable Direction pendingFace;
 
-    public NeoForgeGeometryBuilder(Matrix4f transform, QuadCollection.Builder collection) {
+    public NeoForgeGeometryBuilder(Matrix4fc transform, QuadCollection.Builder collection) {
         this.transform = transform;
         this.collection = collection;
 

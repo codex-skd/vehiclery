@@ -1,5 +1,6 @@
 package com.skd.vehiclery.neoforge;
 
+import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.VehicleryClient;
 import com.skd.vehiclery.automobile.render.AutomobileModels;
 import com.skd.vehiclery.automobile.render.obj.ObjLoader;
@@ -61,7 +62,7 @@ public class VehicleryClientNeoForge {
         });
 
         NeoForge.EVENT_BUS.<ViewportEvent.ComputeFov>addListener(evt ->
-                evt.setFOV(VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), evt.getPartialTick())));
+                evt.setFOV((float) VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), evt.getPartialTick())));
     }
 
     @SubscribeEvent
@@ -104,10 +105,8 @@ public class VehicleryClientNeoForge {
 
     @SubscribeEvent
     public static void generateResources(GatherDataEvent evt) {
-        var generator = evt.getGenerator();
-        var output = generator.getPackOutput();
+        var output = evt.getGenerator().getPackOutput();
 
-        generator.addProvider(evt.includeClient(),
-                new SlopeModelsProvider(output));
+        evt.addProvider(new SlopeModelsProvider(output));
     }
 }
