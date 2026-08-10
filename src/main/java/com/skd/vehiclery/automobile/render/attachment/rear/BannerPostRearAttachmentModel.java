@@ -16,6 +16,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile/rear_attachment/banner_post"), "main");
@@ -35,7 +36,7 @@ public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
     public BannerPostRearAttachmentModel(EntityRendererProvider.Context ctx,
                                          ModelDefinition.RenderMaterial material,
                                          ModelLayerLocation layer,
-                                         Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                         Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
 
         this.fakePole = getChildSafe(this.root, "fake_pole");

@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class AutopilotFrontAttachmentModel extends FrontAttachmentRenderModel {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile/front_attachment/autopilot"), "main");
@@ -29,7 +30,7 @@ public class AutopilotFrontAttachmentModel extends FrontAttachmentRenderModel {
     public AutopilotFrontAttachmentModel(EntityRendererProvider.Context ctx,
                                          ModelDefinition.RenderMaterial material,
                                          ModelLayerLocation layer,
-                                         Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                         Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
         this.light = getChildSafe(this.root, "light");
         this.glow = getChildSafe(this.root, "glow");

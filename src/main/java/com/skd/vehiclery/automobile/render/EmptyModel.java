@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.rendertype.RenderTypes;
 import java.util.List;
 import java.util.Map;
 
-public class EmptyModel extends Model implements RenderableModel {
+public class EmptyModel extends Model<Object> implements RenderableModel {
     private static final ModelPart EMPTY_ROOT = new ModelPart(List.of(), Map.of());
 
     public EmptyModel() {

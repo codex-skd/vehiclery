@@ -20,6 +20,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.Identifier;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public record ModelType(Identifier id,
                         ModelInstanceProvider provider
@@ -48,6 +49,6 @@ public record ModelType(Identifier id,
         RenderableModel create(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation modelLayer,
-                     Vector3f translation, Vector3f rotation, Vector3f scale);
+                     Vector3fc translation, Vector3fc rotation, Vector3fc scale);
     }
 }

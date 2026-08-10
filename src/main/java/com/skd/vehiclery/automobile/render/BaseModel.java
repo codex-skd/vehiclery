@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.Identifier;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import java.util.List;
 import java.util.Map;
@@ -24,9 +25,9 @@ import java.util.NoSuchElementException;
 // separately invoke renderExtra() afterwards (see AutomobileRenderer/VehicleryClient call sites).
 // Similarly, MultiBufferSource -> SubmitNodeCollector for the "other layer" pass.
 public class BaseModel extends Model implements RenderableModel {
-    protected final Vector3f translation;
-    protected final Vector3f rotation;
-    protected final Vector3f scale;
+    protected final Vector3fc translation;
+    protected final Vector3fc rotation;
+    protected final Vector3fc scale;
 
     public static final ModelPart PART_EMPTY = new ModelPart(List.of(), Map.of());
     public static final Identifier TEXTURE_SOLID = Vehiclery.rl("textures/solid.png");
@@ -34,7 +35,7 @@ public class BaseModel extends Model implements RenderableModel {
     public BaseModel(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation layer,
-                     Vector3f translation, Vector3f rotation, Vector3f scale) {
+                     Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(resolveRoot(ctx, layer), material.renderType);
         this.translation = translation;
         this.rotation = rotation;

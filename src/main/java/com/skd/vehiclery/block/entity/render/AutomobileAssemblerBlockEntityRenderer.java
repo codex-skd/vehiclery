@@ -22,7 +22,7 @@ public class AutomobileAssemblerBlockEntityRenderer implements BlockEntityRender
     private final Font textRenderer;
 
     public AutomobileAssemblerBlockEntityRenderer(BlockEntityRendererProvider.Context blockEntityCtx) {
-        this.textRenderer = blockEntityCtx.getFont();
+        this.textRenderer = blockEntityCtx.font();
     }
 
     @Override

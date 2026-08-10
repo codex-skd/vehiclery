@@ -11,6 +11,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import java.util.List;
 import java.util.Map;
@@ -19,16 +20,16 @@ import java.util.function.Supplier;
 public class ObjModel extends Model implements RenderableModel {
     private static final ModelPart EMPTY_ROOT = new ModelPart(List.of(), Map.of());
 
-    private final Vector3f translation;
-    private final Vector3f rotation;
-    private final Vector3f scale;
+    private final Vector3fc translation;
+    private final Vector3fc rotation;
+    private final Vector3fc scale;
 
     private final Supplier<BakedObj> obj;
 
     public ObjModel(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation layer,
-                     Vector3f translation, Vector3f rotation, Vector3f scale) {
+                     Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(EMPTY_ROOT, material.renderType);
         this.translation = translation;
         this.rotation = rotation;
