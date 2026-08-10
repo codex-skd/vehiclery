@@ -126,7 +126,7 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
             return this.sortId.compareTo(o.sortId);
         }
 
-        return this.getResultItem().getItem().getRegisteredName()
-                .compareTo(o.getResultItem().getItem().getRegisteredName());
+        return net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(this.getResultItem().getItem())
+                .compareTo(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(o.getResultItem().getItem()));
     }
 }
