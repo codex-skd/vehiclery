@@ -48,10 +48,6 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
     }
 
     @Override
-    public ItemStack assemble(ContainerRecipeInput inv, HolderLookup.Provider var2) {
-        return assemble(inv);
-    }
-
     public ItemStack assemble(ContainerRecipeInput inv) {
         for (var ing : this.ingredients) {
             for (int i = 0; i < inv.size(); i++) {
@@ -66,28 +62,41 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
         return this.result.copy();
     }
 
-    @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(HolderLookup.Provider var1) {
-        return getResultItem();
-    }
-
     public ItemStack getResultItem() {
         return this.result;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<ContainerRecipeInput>> getSerializer() {
         return AutoMechanicTableRecipeSerializer.INSTANCE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<ContainerRecipeInput>> getType() {
         return TYPE;
+    }
+
+    @Override
+    public boolean showNotification() {
+        return false;
+    }
+
+    @Override
+    public String group() {
+        return "";
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.PlacementInfo placementInfo() {
+        // Not a grid-slot-based recipe (custom station UI), so there is no meaningful vanilla
+        // slot-placement hint to give.
+        return net.minecraft.world.item.crafting.PlacementInfo.NOT_PLACEABLE;
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.RecipeBookCategory recipeBookCategory() {
+        // Never shown in the vanilla recipe book (custom Auto Mechanic Table UI instead).
+        return net.minecraft.world.item.crafting.RecipeBookCategories.CRAFTING_MISC;
     }
 
     public void forMissingIngredients(ContainerRecipeInput inv, Consumer<Ingredient> action) {
@@ -117,7 +126,7 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
             return this.sortId.compareTo(o.sortId);
         }
 
-        return this.getResultItem().getItemHolder().getRegisteredName()
-                .compareTo(o.getResultItem().getItemHolder().getRegisteredName());
+        return this.getResultItem().getItem().getRegisteredName()
+                .compareTo(o.getResultItem().getItem().getRegisteredName());
     }
 }

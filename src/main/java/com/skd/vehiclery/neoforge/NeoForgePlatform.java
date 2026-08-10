@@ -112,7 +112,7 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public void clientSendPacket(Identifier rl, FriendlyByteBuf buf) {
-        net.neoforged.neoforge.network.ClientPacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
+        net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
     }
 
     @Override

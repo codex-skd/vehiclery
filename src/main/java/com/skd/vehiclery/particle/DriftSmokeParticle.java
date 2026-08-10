@@ -15,7 +15,7 @@ public class DriftSmokeParticle extends SingleQuadParticle {
 
     protected DriftSmokeParticle(ClientLevel world, double x, double y, double z, TextureAtlasSprite sprite) {
         super(world, x, y, z, sprite);
-        this.quadSize = 0.6f - (world.random.nextFloat() * 0.1f);
+        this.quadSize = 0.6f - (world.getRandom().nextFloat() * 0.1f);
         this.alpha = this.quadSize;
         this.lifetime = MAX_AGE;
     }

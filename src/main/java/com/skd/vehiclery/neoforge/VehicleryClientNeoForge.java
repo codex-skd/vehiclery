@@ -62,7 +62,7 @@ public class VehicleryClientNeoForge {
         });
 
         NeoForge.EVENT_BUS.<ViewportEvent.ComputeFov>addListener(evt ->
-                evt.setFOV((float) VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), evt.getPartialTick())));
+                evt.setFOV((float) VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), (float) evt.getPartialTick())));
     }
 
     @SubscribeEvent
