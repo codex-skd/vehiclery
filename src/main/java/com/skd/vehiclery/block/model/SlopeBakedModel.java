@@ -2,26 +2,26 @@ package com.skd.vehiclery.block.model;
 
 import com.skd.vehiclery.platform.Platform;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.geometry.BakedQuad;
-import net.minecraft.client.renderer.block.model.ItemOverrides;
-import net.minecraft.client.resources.model.cuboid.ItemTransforms;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.renderer.block.dispatch.ModelState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.RandomSource;
 import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
-public class SlopeBakedModel implements BakedModel {
-    public static Factory impl = SlopeBakedModel::new;
+// TODO(port): this used to implement BakedModel directly, but that interface no longer exists in
+// this Minecraft version -- block model baking moved to a QuadCollection/BlockStateModelPart based
+// system. This class is now just a plain holder for the slope's sprites/geometry math; the actual
+// BlockStateModel wiring lives in NeoForgeSlopeBakedModel (see that class for how buildSlopeGeometry
+// below gets turned into real BakedQuads).
+public class SlopeBakedModel {
+    // Always assigned by VehicleryClientNeoForge before use (loader-specific implementation
+    // lives in the neoforge package, which this shared class must not depend on directly).
+    public static Factory impl;
 
     private final Map<BlockState, TextureAtlasSprite> frameTexOverrides;
 
@@ -49,7 +49,7 @@ public class SlopeBakedModel implements BakedModel {
                 return frameTexOverrides.get(blockBelow);
             }
             if (!blockBelow.isAir() && blockBelow.isCollisionShapeFullBlock(level, pos)) {
-                return Minecraft.getInstance().getBlockRenderer().getBlockModel(blockBelow).getParticleIcon();
+                return Minecraft.getInstance().getModelManager().getBlockStateModelSet().getParticleMaterial(blockBelow).sprite();
             }
         }
 
@@ -62,7 +62,7 @@ public class SlopeBakedModel implements BakedModel {
             var belowColor = Platform.get().blockColor(blockBelow);
 
             if (belowColor != null) {
-                return belowColor.getColor(blockBelow, level, pos.below(), 0) | 0xFF000000;
+                return belowColor.colorInWorld(blockBelow, level, pos.below()) | 0xFF000000;
             }
         }
 
@@ -200,48 +200,12 @@ public class SlopeBakedModel implements BakedModel {
         ;
     }
 
-    @Override
-    public List<BakedQuad> getQuads(@Nullable BlockState blockState, @Nullable Direction direction, RandomSource randomSource) {
-        return Collections.emptyList();
-    }
-
-    @Override
-    public boolean useAmbientOcclusion() {
-        return true;
-    }
-
-    @Override
-    public boolean isGui3d() {
-        return true;
-    }
-
-    @Override
-    public boolean usesBlockLight() {
-        return true;
-    }
-
-    @Override
-    public boolean isCustomRenderer() {
-        return false;
-    }
-
-    @Override
     public TextureAtlasSprite getParticleIcon() {
         return this.getFrameSprite(null, null);
     }
 
-    @Override
-    public ItemTransforms getTransforms() {
-        return ItemTransforms.NO_TRANSFORMS;
-    }
-
-    @Override
-    public ItemOverrides getOverrides() {
-        return ItemOverrides.EMPTY;
-    }
-
     public interface Factory {
-        SlopeBakedModel create(TextureAtlasSprite frame, Map<BlockState, TextureAtlasSprite> frameTexOverrides, @Nullable TextureAtlasSprite plateInner,
+        net.minecraft.client.renderer.block.dispatch.BlockStateModel create(TextureAtlasSprite frame, Map<BlockState, TextureAtlasSprite> frameTexOverrides, @Nullable TextureAtlasSprite plateInner,
                                @Nullable TextureAtlasSprite plateOuter, ModelState settings, SlopeUnbakedModel.Type type);
     }
 }

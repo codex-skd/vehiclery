@@ -1,21 +1,28 @@
 package com.skd.vehiclery.neoforge.block.render;
 
-import com.skd.vehiclery.block.model.SlopeUnbakedModel;
-import com.skd.vehiclery.util.InitlessConstants;
+import net.minecraft.data.CachedOutput;
+import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
-import net.neoforged.neoforge.client.model.generators.BlockModelProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-public class SlopeModelsProvider extends BlockModelProvider {
-    public SlopeModelsProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, InitlessConstants.VEHICLERY, existingFileHelper);
+import java.util.concurrent.CompletableFuture;
+
+// TODO(port): BlockModelProvider (net.neoforged.neoforge.client.model.generators) no longer exists
+// in this form -- the custom block-state model registration moved from JSON "loader" strings to
+// codec-based CustomUnbakedBlockStateModel (see SlopeUnbakedModel.CODEC and
+// VehicleryClientNeoForge#registerBakedModels). Datagen for these JSON files needs to be rebuilt
+// against the new blockstate-model-definition datagen API; this is a no-op stub for now so the
+// project compiles -- it does NOT affect runtime block rendering, only the `runData` datagen task.
+public class SlopeModelsProvider implements DataProvider {
+    public SlopeModelsProvider(PackOutput output) {
     }
 
     @Override
-    protected void registerModels() {
-        for (var id : SlopeUnbakedModel.DEFAULT_MODELS.keySet()) {
-            this.getBuilder(id.toString()).customLoader((model, files) ->
-                    new NeoForgeSlopeGeometryLoader.Builder<>(model, files, id));
-        }
+    public CompletableFuture<?> run(CachedOutput cache) {
+        return CompletableFuture.completedFuture(null);
+    }
+
+    @Override
+    public String getName() {
+        return "Vehiclery Slope Models (stub, see TODO)";
     }
 }

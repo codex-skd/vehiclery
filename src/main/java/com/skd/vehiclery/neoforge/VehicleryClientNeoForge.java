@@ -29,7 +29,9 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.AddClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.RegisterBlockStateModels;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import com.skd.vehiclery.block.model.SlopeUnbakedModel;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
@@ -96,8 +98,8 @@ public class VehicleryClientNeoForge {
     }
 
     @SubscribeEvent
-    public static void registerBakedModels(ModelEvent.RegisterLoaders evt) {
-        evt.register(NeoForgeSlopeGeometryLoader.ID, NeoForgeSlopeGeometryLoader.INSTANCE);
+    public static void registerBakedModels(RegisterBlockStateModels evt) {
+        evt.registerModel(NeoForgeSlopeGeometryLoader.ID, SlopeUnbakedModel.CODEC);
     }
 
     @SubscribeEvent
