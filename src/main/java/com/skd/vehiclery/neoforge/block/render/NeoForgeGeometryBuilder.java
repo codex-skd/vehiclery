@@ -5,7 +5,6 @@ import net.minecraft.client.resources.model.geometry.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 import net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer;
-import net.neoforged.neoforge.common.NeoForgeConfig;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
@@ -28,7 +27,7 @@ public class NeoForgeGeometryBuilder implements GeometryBuilder {
         this.quadPool = quadPool;
         this.quads = new QuadBakingVertexConsumer();
         this.quads.setShade(true);
-        this.quads.setHasAmbientOcclusion(NeoForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.get());
+        this.quads.setHasAmbientOcclusion(true);
     }
 
     @Override

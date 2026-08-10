@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.ChunkRenderTypeSet;
 import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.client.model.data.ModelProperty;
-import net.neoforged.neoforge.common.NeoForgeConfig;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -90,6 +89,6 @@ public class NeoForgeSlopeBakedModel extends SlopeBakedModel {
 
     @Override
     public boolean useAmbientOcclusion() {
-        return NeoForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.get();
+        return true;
     }
 }
