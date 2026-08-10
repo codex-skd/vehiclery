@@ -7,8 +7,8 @@ import com.skd.vehiclery.automobile.attachment.front.FrontAttachment;
 import com.skd.vehiclery.automobile.model.ModelDefinition;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
@@ -37,17 +37,19 @@ public class AutopilotFrontAttachmentModel extends FrontAttachmentRenderModel {
     }
 
     @Override
-    public void renderOtherLayer(PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+    public void renderOtherLayer(PoseStack matrices, SubmitNodeCollector consumers, int light, int overlay) {
         this.light.visible = true;
 
-        var buffer = consumers.getBuffer(this.on ? RenderType.eyes(TEXTURE_SOLID) : RenderType.entitySolid(TEXTURE_SOLID));
-        this.light.render(matrices, buffer, light, overlay, 0xff000000 | this.lightColor);
+        var lightRenderType = this.on ? RenderTypes.eyes(TEXTURE_SOLID) : RenderTypes.entitySolid(TEXTURE_SOLID);
+        consumers.submitCustomGeometry(matrices, lightRenderType, (framePose, buffer) ->
+                this.light.render(matrices, buffer, light, overlay, 0xff000000 | this.lightColor));
 
         if (this.on) {
             this.glow.visible = true;
-            buffer = consumers.getBuffer(RenderType.beaconBeam(TEXTURE_SOLID, true));
+            var glowRenderType = RenderTypes.beaconBeam(TEXTURE_SOLID, true);
 
-            this.glow.render(matrices, buffer, light, overlay, 0x8e000000 | this.glowColor);
+            consumers.submitCustomGeometry(matrices, glowRenderType, (framePose, buffer) ->
+                    this.glow.render(matrices, buffer, light, overlay, 0x8e000000 | this.glowColor));
         }
     }
 
