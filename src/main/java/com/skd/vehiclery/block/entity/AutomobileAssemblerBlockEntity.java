@@ -31,7 +31,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -89,7 +89,7 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
         this.level.gameEvent(GameEvent.BLOCK_CHANGE, this.getBlockPos(), new GameEvent.Context(null, this.getBlockState()));
     }
 
-    protected ItemInteractionResult handleItemInteract(Player player, ItemStack stack) {
+    protected InteractionResult handleItemInteract(Player player, ItemStack stack) {
         // Returns success on the server since the client is never 100% confident that the action was valid
         // Subsequent handling is performed with the action result
 
@@ -97,9 +97,9 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
             if (!level.isClientSide()) {
                 this.dropParts();
                 this.partChanged();
-                return ItemInteractionResult.SUCCESS;
+                return InteractionResult.SUCCESS_SERVER;
             }
-            return ItemInteractionResult.FAIL;
+            return InteractionResult.FAIL;
         }
         if (this.frame.value().isEmpty() && stack.getItem() instanceof AutomobileFrameItem frameItem) {
             if (!level.isClientSide()) {
@@ -108,9 +108,9 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
                     stack.shrink(1);
                 }
                 this.partChanged();
-                return ItemInteractionResult.SUCCESS;
+                return InteractionResult.SUCCESS_SERVER;
             }
-            return ItemInteractionResult.FAIL;
+            return InteractionResult.FAIL;
         }
         if (!this.frame.value().isEmpty()) {
             if (this.engine.value().isEmpty() && stack.getItem() instanceof AutomobileEngineItem engineItem) {
@@ -120,9 +120,9 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
                         stack.shrink(1);
                     }
                     this.partChanged();
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS_SERVER;
                 }
-                return ItemInteractionResult.FAIL;
+                return InteractionResult.FAIL;
             }
             if (stack.getItem() instanceof AutomobileWheelItem wheelItem) {
                 if (!level.isClientSide()) {
@@ -137,10 +137,10 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
                             stack.shrink(1);
                         }
                         this.partChanged();
-                        return ItemInteractionResult.SUCCESS;
+                        return InteractionResult.SUCCESS_SERVER;
                     }
                 } else {
-                    return ItemInteractionResult.FAIL;
+                    return InteractionResult.FAIL;
                 }
             }
         }
@@ -148,19 +148,19 @@ public class AutomobileAssemblerBlockEntity extends BlockEntity implements Rende
             player.displayClientMessage(AutomobileAssemblerBlock.INCOMPLETE_AUTOMOBILE_DIALOG, true);
         }
 
-        return ItemInteractionResult.FAIL;
+        return InteractionResult.FAIL;
     }
 
-    public ItemInteractionResult interact(Player player, ItemStack stack, InteractionHand hand) {
+    public InteractionResult interact(Player player, ItemStack stack, InteractionHand hand) {
         var result = this.handleItemInteract(player, stack);
 
-        if (!this.level.isClientSide() && result == ItemInteractionResult.SUCCESS) {
+        if (!this.level.isClientSide() && result == InteractionResult.SUCCESS_SERVER) {
             if (!isComplete()) {
                 level.playSound(null, this.worldPosition, SoundEvents.COPPER_PLACE, SoundSource.BLOCKS, 0.7f, 0.6f + (this.level.random.nextFloat() * 0.15f));
             }
 
             tryConstructAutomobile();
-            return ItemInteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS_SERVER;
         }
         return result;
     }

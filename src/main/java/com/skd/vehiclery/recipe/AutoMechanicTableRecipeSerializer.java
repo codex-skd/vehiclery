@@ -16,8 +16,8 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 
 import java.util.ArrayList;
 
-public class AutoMechanicTableRecipeSerializer implements RecipeSerializer<AutoMechanicTableRecipe> {
-    public static final AutoMechanicTableRecipeSerializer INSTANCE = new AutoMechanicTableRecipeSerializer();
+public class AutoMechanicTableRecipeSerializer {
+    public static final RecipeSerializer<AutoMechanicTableRecipe> INSTANCE = new RecipeSerializer<>(CODEC, STREAM_CODEC);
 
     public static final Codec<ItemStack> AUTO_COMPONENT_STACK = RecordCodecBuilder.create(inst -> inst.group(
             ItemStack.ITEM_NON_AIR_CODEC.fieldOf("item").forGetter(ItemStack::getItemHolder),
@@ -74,15 +74,5 @@ public class AutoMechanicTableRecipeSerializer implements RecipeSerializer<AutoM
         recipe.ingredients.forEach(ing -> Ingredient.CONTENTS_STREAM_CODEC.encode(buf, ing));
         ItemStack.STREAM_CODEC.encode(buf, recipe.result);
         buf.writeInt(recipe.sortNum);
-    }
-
-    @Override
-    public MapCodec<AutoMechanicTableRecipe> codec() {
-        return CODEC;
-    }
-
-    @Override
-    public StreamCodec<RegistryFriendlyByteBuf, AutoMechanicTableRecipe> streamCodec() {
-        return STREAM_CODEC;
     }
 }
