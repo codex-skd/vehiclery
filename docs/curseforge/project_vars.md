@@ -30,7 +30,7 @@ relations = *(ninguna dependencia obligatoria conocida por ahora)*
 
 ## Nota
 
-La **primera subida a CurseForge se hace manual** (proyecto recién creado, sin archivos previos que verificar por API). A partir de la segunda subida se puede usar el script `codex-docs/scripts/curseforge-upload.ps1`.
+El script `codex-docs/scripts/curseforge-upload.ps1` no depende de archivos previos existentes en el proyecto — la primera subida (v0.0.0-beta.1) se hizo directamente con el script, sin paso manual.
 
 ## Rama
 
@@ -43,9 +43,10 @@ minecraft/26.2/neoforge-26.2.0.37-beta/production
 Formato: `<mc-version>-<framework>-<version>`
 Ejemplo: `26.2-neoforge-0.0.0-beta.1`
 
-## Nota post-subida (manual, obligatorio)
+## Nota post-subida
 
-El API de subida de CurseForge no expone el campo de lado (client/server). Tras **cada** subida de archivo hay que entrar en la web de CurseForge → pestaña "Files" → editar el archivo → marcar el entorno como **Client & Server** (vehículos, block entities y recetas se procesan en servidor). Sin este paso, el file queda etiquetado como solo cliente.
+`game_versions` incluye tanto el ID Client (`9638`) como Server (`9639`) junto a MC (`16498`) y NeoForge (`10150`), por lo que la API infiere el entorno **Client & Server** automáticamente al subir — no hace falta editar el archivo en la web tras la subida (confirmado en la subida de v0.0.0-beta.1: `Environment 'Client & Server': NO manual step needed.`).
 
 **Historial:**
-- Proyecto creado en CurseForge (ID `1646967`). Primera subida de archivo aún pendiente (manual).
+- Proyecto creado en CurseForge (ID `1646967`).
+- v0.0.0-beta.1 subida vía `curseforge-upload.ps1` — File ID `8620309`, HTTP 200, entorno Client & Server inferido automáticamente.
