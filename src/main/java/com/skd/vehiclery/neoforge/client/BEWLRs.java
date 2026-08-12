@@ -3,10 +3,7 @@ package com.skd.vehiclery.neoforge.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.skd.vehiclery.util.HexCons;
 import net.minecraft.client.renderer.SubmitNodeCollector;
-// TODO(port): this registry is currently unused since BlockEntityWithoutLevelRenderer (its
-// integration point) no longer exists -- see BlockEntityWithoutLevelRendererMixin's TODO. Kept
-// intact (and updated to the new SubmitNodeCollector type) so it's ready to wire into the
-// SpecialModelRenderer<T> replacement once that's implemented.
+// This registry is now used by VehiclerySpecialModelRenderer to provide custom 3D item rendering via the SpecialModelRenderer system.
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;

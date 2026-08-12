@@ -1,6 +1,29 @@
 # Ruta de desarrollo — port a NeoForge 26.2.0.37-beta
 
-> **Estado: ✅ COMPLETO.** `./gradlew.bat build` compila limpio y genera `vehiclery-26.2-neoforge-0.0.0-beta.1.jar` (verificado). Las 6 fases del port están cerradas. Quedan regresiones funcionales puntuales documentadas al final (TODOs en el código), no errores de compilación.
+> **Estado: ✅ COMPILA y ✅ CARGA en cliente real.** `./gradlew.bat build` compila limpio. Verificado además en runtime (instancia de pruebas CurseForge): el mod arranca, llega al menú principal, texturas/sonido OK. Las 6 fases del port están cerradas. Quedan regresiones funcionales puntuales documentadas al final, ya no solo TODOs de compilación sino bugs de runtime encontrados probando en cliente real.
+
+## Sesión de pruebas en cliente real (2026-08-11/12)
+
+Primera vez que se probó el mod en un cliente real (antes solo se había verificado con `./gradlew.bat build`, nunca ejecutado). Aparecieron **7 crashes/bugs de runtime en cadena** que el build no detectaba, todos corregidos salvo el último:
+
+1. `VehicleryClientNeoForge#generateResources` suscrito a `GatherDataEvent` abstracto → debe ser `GatherDataEvent.Client`.
+2. `VehicleryNeoForge#generateData` mismo problema → `GatherDataEvent.Server`.
+3. Los 15 bloques de `VehicleryBlocks.java` construían `BlockBehaviour.Properties` sin `.setId(...)` → NPE "Block id not set" (`effectiveDrops()` lo requiere ahora). Igual para `Item.Properties` en `VehicleryItems.java` y los `BlockItem` de `VehicleryBlocks.java` → NPE "Item id not set".
+4. `PlayerEnderChestContainerMixin`: `startOpen`/`stopOpen` de `PlayerEnderChestContainer` cambiaron su parámetro de `Player` a `ContainerUser`.
+5. `SoundEngineMixin`: `tickNonPaused` renombrado a `tickInGameSound`; `play()` ahora devuelve `SoundEngine.PlayResult` → el `@Inject` necesita `CallbackInfoReturnable`, no `CallbackInfo`.
+6. `VehicleryNeoForge#registerNetworking` registraba el mismo `CustomPacketPayload.Type` vía `playToClient`+`playToServer` por separado → ahora hace falta `playBidirectional(...)`.
+7. Sistema `jsonem` (carga de los 32 modelos JSON de piezas del automóvil): `EntityModelSet` perdió su mecanismo de recarga (`ResourceManagerReloadListener`) — ahora `ModelManager.reload()` construye el `EntityModelSet` directamente vía `EntityModelSet.vanilla()` dentro de un `CompletableFuture`. Solución: nuevo mixin `ModelManagerMixin` con `@Redirect` sobre esa llamada (ordinal 0) + accessor `EntityModelSetAccess` para leer/fusionar el mapa `roots` privado. Además `CubeDefinitionAccess` apuntaba a campos `Vector3f` que ahora son `Vector3fc`.
+8. Los blockstates de las pendientes (`slope.json`, `steep_slope.json`, `slope_with_dash_panel.json`, `steep_slope_with_dash_panel.json`) seguían con el esquema antiguo (`"model": "vehiclery:block/slope_bottom"`) en vez del nuevo (`"type": "vehiclery:slope", "represents": "..."`) — y había 9 archivos de modelo generados obsoletos (`src/generated/resources/.../slope*.json`) con `"loader": "vehiclery:slope"` (sistema eliminado) que rompían la carga de resource packs.
+
+⚠️ **Lección importante**: en el paso 7, inicialmente se **eliminó por completo** el sistema `jsonem` asumiendo que no lo usaba nada (grep solo buscó referencias en código Java). Error: es un sistema *data-driven* — 32 archivos JSON bajo `models/entity/` que definen las piezas del automóvil (motor, chasis, ruedas, efecto de derrape) se cargan a través de él. Sin `jsonem`, ningún vehículo se puede renderizar. Se restauró y arregló correctamente. **Para verificar si un sistema data-driven está en uso, no basta con grep sobre el código Java — hay que comprobar si existen archivos de datos/recursos que dependen de él.**
+
+### Pendiente sin resolver: bug de recetas del Auto Mechanic Table
+
+Al crear/cargar un mundo, `RecipeManager.prepare()` falla con `NullPointerException: Components not bound yet` en `AutoMechanicTableRecipeSerializer.java:33`, al construir un `ItemStack` por defecto para el resultado de la receta (uno de los items de componente de Vehiclery: chasis/rueda/motor).
+
+Investigación hecha: **todo** constructor de `ItemStack` (incluida la propia ruta de decodificación de `ItemStack.CODEC` de vanilla) llama a `Holder<Item>.components()`, que lanza esa excepción si `bindComponents(...)` no se ha llamado aún sobre ese `Holder.Reference` concreto. No se encontró el punto exacto donde NeoForge llama a `bindComponents(...)` tras el registro (no aparece en las fuentes decompiladas de Minecraft ni de NeoForge — probablemente vía coremod/bytecode injection invisible en el código fuente). La hipótesis de trabajo es que el sistema de registro propio del mod (`Eventual`/`RegistryQueue`, no el `DeferredRegister` estándar de NeoForge) no dispara ese paso de "bind components" para los items de Vehiclery a tiempo, aunque sí lo hace para items vanilla — coherente con los otros bugs de esta sesión (`.setId()` en bloques/items también relacionados con el registro custom).
+
+**Próximos pasos sugeridos**: comparar el flujo de registro de `RegistryQueue`/`Eventual` contra `DeferredRegister.Items` de NeoForge para encontrar el paso de finalización que falta; o localizar dónde se llama `bindComponents` (posiblemente en un coremod ASM, buscar en `neoforge.coremods` o en el bytecode compilado en vez del código fuente decompilado).
 
 ## Resumen de las 6 fases
 

@@ -10,6 +10,7 @@ import com.skd.vehiclery.entity.AutomobileEntity;
 import com.skd.vehiclery.neoforge.block.render.NeoForgeSlopeBakedModel;
 import com.skd.vehiclery.neoforge.block.render.NeoForgeSlopeGeometryLoader;
 import com.skd.vehiclery.neoforge.block.render.SlopeModelsProvider;
+import com.skd.vehiclery.neoforge.client.VehiclerySpecialModelRenderer;
 import com.skd.vehiclery.particle.VehicleryParticles;
 import com.skd.vehiclery.particle.DriftSmokeParticle;
 import com.skd.vehiclery.screen.AutomobileHud;
@@ -35,6 +36,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import com.skd.vehiclery.block.model.SlopeUnbakedModel;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -104,7 +106,12 @@ public class VehicleryClientNeoForge {
     }
 
     @SubscribeEvent
-    public static void generateResources(GatherDataEvent evt) {
+    public static void registerSpecialModelRenderers(RegisterSpecialModelRendererEvent evt) {
+        evt.register(Vehiclery.rl("vehiclery_special"), VehiclerySpecialModelRenderer.CODEC);
+    }
+
+    @SubscribeEvent
+    public static void generateResources(GatherDataEvent.Client evt) {
         var output = evt.getGenerator().getPackOutput();
 
         evt.addProvider(new SlopeModelsProvider(output));

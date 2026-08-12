@@ -36,8 +36,7 @@ public class VehicleryNeoForge {
     @SubscribeEvent
     public static void registerNetworking(RegisterPayloadHandlersEvent evt) {
         var reg = evt.registrar(NeoForgeNetworking.PROTOCOL_VERSION);
-        reg.playToClient(VehicleryPacketPayload.TYPE, VehicleryPacketPayload.STREAM_CODEC, NeoForgeNetworking::receiveClient);
-        reg.playToServer(VehicleryPacketPayload.TYPE, VehicleryPacketPayload.STREAM_CODEC, NeoForgeNetworking::receiveServer);
+        reg.playBidirectional(VehicleryPacketPayload.TYPE, VehicleryPacketPayload.STREAM_CODEC, NeoForgeNetworking::receiveServer, NeoForgeNetworking::receiveClient);
     }
 
     @SubscribeEvent
@@ -51,7 +50,7 @@ public class VehicleryNeoForge {
     }
 
     @SubscribeEvent
-    public static void generateData(GatherDataEvent evt) {
+    public static void generateData(GatherDataEvent.Server evt) {
         var regset = new RegistrySetBuilder();
 
         Vehiclery.initDynamicRegistries(new Vehiclery.DynamicRegistryRegistrar() {

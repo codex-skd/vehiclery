@@ -69,8 +69,8 @@ public class JsonEMCodecs {
     public static final Codec<CubeDefinition> CUBE_DEFINITION = RecordCodecBuilder.create((instance) ->
             instance.group(
                     Codec.STRING.optionalFieldOf("name").forGetter(obj -> Optional.ofNullable(((CubeDefinitionAccess)(Object)obj).vehiclery$name())),
-                    VECTOR3F.fieldOf("offset").forGetter(obj -> ((CubeDefinitionAccess)(Object)obj).vehiclery$offset()),
-                    VECTOR3F.fieldOf("dimensions").forGetter(obj -> ((CubeDefinitionAccess)(Object)obj).vehiclery$dimensions()),
+                    VECTOR3F.fieldOf("offset").forGetter(obj -> new Vector3f(((CubeDefinitionAccess)(Object)obj).vehiclery$offset())),
+                    VECTOR3F.fieldOf("dimensions").forGetter(obj -> new Vector3f(((CubeDefinitionAccess)(Object)obj).vehiclery$dimensions())),
                     CUBE_DEFORMATION.optionalFieldOf("dilation", CubeDeformation.NONE).forGetter(obj -> ((CubeDefinitionAccess)(Object)obj).vehiclery$dilation()),
                     Codec.BOOL.optionalFieldOf("mirror", false).forGetter(obj -> ((CubeDefinitionAccess)(Object)obj).vehiclery$mirror()),
                     UV_PAIR.fieldOf("uv").forGetter(obj -> ((CubeDefinitionAccess)(Object)obj).vehiclery$uv()),

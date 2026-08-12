@@ -30,8 +30,7 @@ public class AutoMechanicTableRecipeSerializer {
                 return Vehiclery.rl("empty");
             })
     ).apply(inst, (i, c, p) -> {
-        var stack = i.value().getDefaultInstance();
-        stack.setCount(c);
+        var stack = new ItemStack(i, c);
         var item = stack.getItem();
         if (item instanceof AutomobileComponentItem.Dynamic<?> cItem) {
             cItem.setComponent(stack, (ResourceKey) ResourceKey.create(cItem.registryKey, p));

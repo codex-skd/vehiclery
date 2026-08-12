@@ -10,6 +10,7 @@ import com.skd.vehiclery.util.RegistryQueue;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
@@ -18,13 +19,13 @@ import net.minecraft.world.item.Item;
 import java.util.function.Supplier;
 
 public enum VehicleryItems {;
-    public static final Eventual<Item> CROWBAR = register("crowbar", () -> new TooltipItem(Component.translatable("tooltip.item.vehiclery.crowbar").withStyle(ChatFormatting.BLUE), new Item.Properties().stacksTo(1)), Vehiclery.TAB);
-    public static final Eventual<Item> AUTOMOBILE = register("automobile", () -> new AutomobileItem(new Item.Properties().stacksTo(1)), Vehiclery.PREFAB_TAB);
-    public static final Eventual<AutomobileFrameItem> AUTOMOBILE_FRAME = register("automobile_frame", () -> new AutomobileFrameItem(new Item.Properties().stacksTo(16)), Vehiclery.TAB);
-    public static final Eventual<AutomobileWheelItem> AUTOMOBILE_WHEEL = register("automobile_wheel", () -> new AutomobileWheelItem(new Item.Properties()), Vehiclery.TAB);
-    public static final Eventual<AutomobileEngineItem> AUTOMOBILE_ENGINE = register("automobile_engine", () -> new AutomobileEngineItem(new Item.Properties().stacksTo(16)), Vehiclery.TAB);
-    public static final Eventual<FrontAttachmentItem> FRONT_ATTACHMENT = register("front_attachment", () -> new FrontAttachmentItem(new Item.Properties().stacksTo(1)), Vehiclery.TAB);
-    public static final Eventual<RearAttachmentItem> REAR_ATTACHMENT = register("rear_attachment", () -> new RearAttachmentItem(new Item.Properties().stacksTo(1)), Vehiclery.TAB);
+    public static final Eventual<Item> CROWBAR = register("crowbar", () -> new TooltipItem(Component.translatable("tooltip.item.vehiclery.crowbar").withStyle(ChatFormatting.BLUE), new Item.Properties().stacksTo(1).setId(itemId("crowbar"))), Vehiclery.TAB);
+    public static final Eventual<Item> AUTOMOBILE = register("automobile", () -> new AutomobileItem(new Item.Properties().stacksTo(1).setId(itemId("automobile"))), Vehiclery.PREFAB_TAB);
+    public static final Eventual<AutomobileFrameItem> AUTOMOBILE_FRAME = register("automobile_frame", () -> new AutomobileFrameItem(new Item.Properties().stacksTo(16).setId(itemId("automobile_frame"))), Vehiclery.TAB);
+    public static final Eventual<AutomobileWheelItem> AUTOMOBILE_WHEEL = register("automobile_wheel", () -> new AutomobileWheelItem(new Item.Properties().setId(itemId("automobile_wheel"))), Vehiclery.TAB);
+    public static final Eventual<AutomobileEngineItem> AUTOMOBILE_ENGINE = register("automobile_engine", () -> new AutomobileEngineItem(new Item.Properties().stacksTo(16).setId(itemId("automobile_engine"))), Vehiclery.TAB);
+    public static final Eventual<FrontAttachmentItem> FRONT_ATTACHMENT = register("front_attachment", () -> new FrontAttachmentItem(new Item.Properties().stacksTo(1).setId(itemId("front_attachment"))), Vehiclery.TAB);
+    public static final Eventual<RearAttachmentItem> REAR_ATTACHMENT = register("rear_attachment", () -> new RearAttachmentItem(new Item.Properties().stacksTo(1).setId(itemId("rear_attachment"))), Vehiclery.TAB);
 
     public static final Eventual<DataComponentType<AutomobileData>> COMPONENT_AUTOMOBILE_DATA = RegistryQueue.register(
             BuiltInRegistries.DATA_COMPONENT_TYPE, Vehiclery.rl("automobile_data"),
@@ -79,6 +80,10 @@ public enum VehicleryItems {;
                 AutomobileData.prefab(Vehiclery.rl("c_arr"), AutomobileFrame.C_ARR, AutomobileWheel.OFF_ROAD, AutomobileEngine.DIAMOND),
                 AutomobileData.prefab(Vehiclery.rl("pineapple"), AutomobileFrame.PINEAPPLE, AutomobileWheel.TRACTOR, AutomobileEngine.GOLD)
         );
+    }
+
+    private static ResourceKey<Item> itemId(String name) {
+        return ResourceKey.create(Registries.ITEM, Vehiclery.rl(name));
     }
 
     public static <T extends Item> Eventual<T> register(String name, Supplier<T> item, CreativeTabQueue tab) {

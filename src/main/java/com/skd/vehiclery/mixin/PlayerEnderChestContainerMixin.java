@@ -2,6 +2,7 @@ package com.skd.vehiclery.mixin;
 
 import com.skd.vehiclery.automobile.attachment.rear.BaseChestRearAttachment;
 import com.skd.vehiclery.util.duck.EnderChestContainerDuck;
+import net.minecraft.world.entity.ContainerUser;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.PlayerEnderChestContainer;
 import org.jetbrains.annotations.Nullable;
@@ -28,15 +29,15 @@ public class PlayerEnderChestContainerMixin implements EnderChestContainerDuck {
     }
 
     @Inject(method = "startOpen", at = @At("TAIL"))
-    private void vehiclery$openActiveAttachment(Player player, CallbackInfo ci) {
-        if (this.vehiclery$activeAttachment != null) {
+    private void vehiclery$openActiveAttachment(ContainerUser containerUser, CallbackInfo ci) {
+        if (this.vehiclery$activeAttachment != null && containerUser instanceof Player player) {
             this.vehiclery$activeAttachment.open(player);
         }
     }
 
     @Inject(method = "stopOpen", at = @At("TAIL"))
-    private void vehiclery$closeActiveAttachment(Player player, CallbackInfo ci) {
-        if (this.vehiclery$activeAttachment != null) {
+    private void vehiclery$closeActiveAttachment(ContainerUser containerUser, CallbackInfo ci) {
+        if (this.vehiclery$activeAttachment != null && containerUser instanceof Player player) {
             this.vehiclery$activeAttachment.close(player);
         }
         this.vehiclery$activeAttachment = null;
