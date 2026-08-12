@@ -1,18 +1,18 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:frames",
-    "sortnum": 2,
-    "ingredients": [
-        {"item": "minecraft:redstone"},
-        {"item": "minecraft:smooth_stone"},
-        {"item": "minecraft:leather"},
-        {"item": "minecraft:iron_block"},
-        {"tag": "minecraft:stone_crafting_materials"},
-        {"item": "minecraft:iron_block"},
-        {"item": "minecraft:iron_ingot"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_frame",
-        "component": "vehiclery:steel_motorcar"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:frames",
+  "sortnum": 2,
+  "ingredients": [
+    "minecraft:redstone",
+    "minecraft:smooth_stone",
+    "minecraft:leather",
+    "minecraft:iron_block",
+    "#minecraft:stone_crafting_materials",
+    "minecraft:iron_block",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_frame",
+    "component": "vehiclery:steel_motorcar"
+  }
 }

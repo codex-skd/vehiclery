@@ -1,19 +1,19 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:frames",
-    "sortnum": 403,
-    "ingredients": [
-        {"item": "minecraft:redstone"},
-        {"item": "minecraft:sculk"},
-        {"item": "minecraft:cobbled_deepslate"},
-        {"item": "minecraft:bone"},
-        {"item": "minecraft:bone_block"},
-        {"tag": "minecraft:wool"},
-        {"item": "minecraft:iron_ingot"},
-        {"item": "minecraft:echo_shard"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_frame",
-        "component": "vehiclery:echo_rickshaw"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:frames",
+  "sortnum": 403,
+  "ingredients": [
+    "minecraft:redstone",
+    "minecraft:sculk",
+    "minecraft:cobbled_deepslate",
+    "minecraft:bone",
+    "minecraft:bone_block",
+    "#minecraft:wool",
+    "minecraft:iron_ingot",
+    "minecraft:echo_shard"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_frame",
+    "component": "vehiclery:echo_rickshaw"
+  }
 }

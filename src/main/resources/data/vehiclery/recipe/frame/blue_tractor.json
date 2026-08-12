@@ -1,16 +1,16 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:frames",
-    "sortnum": 103,
-    "ingredients": [
-        {"item": "minecraft:iron_ingot"},
-        {"item": "minecraft:copper_block"},
-        {"tag": "minecraft:stone_crafting_materials"},
-        {"item": "minecraft:blue_dye"},
-        {"item": "minecraft:iron_bars"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_frame",
-        "component": "vehiclery:blue_tractor"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:frames",
+  "sortnum": 103,
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:copper_block",
+    "#minecraft:stone_crafting_materials",
+    "minecraft:blue_dye",
+    "minecraft:iron_bars"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_frame",
+    "component": "vehiclery:blue_tractor"
+  }
 }

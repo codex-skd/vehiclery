@@ -1,15 +1,15 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:attachments",
-    "sortnum": 207,
-    "ingredients": [
-        {"item": "vehiclery:auto_mechanic_table"},
-        {"tag": "minecraft:stone_crafting_materials"},
-        {"item": "minecraft:stick"},
-        {"tag": "minecraft:planks"}
-    ],
-    "result": {
-        "item": "vehiclery:rear_attachment",
-        "component": "vehiclery:auto_mechanic_table"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:attachments",
+  "sortnum": 207,
+  "ingredients": [
+    "vehiclery:auto_mechanic_table",
+    "#minecraft:stone_crafting_materials",
+    "minecraft:stick",
+    "#minecraft:planks"
+  ],
+  "result": {
+    "item": "vehiclery:rear_attachment",
+    "component": "vehiclery:auto_mechanic_table"
+  }
 }

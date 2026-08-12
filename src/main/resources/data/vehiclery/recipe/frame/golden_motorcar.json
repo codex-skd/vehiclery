@@ -1,18 +1,18 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:frames",
-    "sortnum": 3,
-    "ingredients": [
-        {"item": "minecraft:redstone"},
-        {"tag": "minecraft:logs"},
-        {"item": "minecraft:leather"},
-        {"item": "minecraft:gold_block"},
-        {"item": "minecraft:nether_brick"},
-        {"item": "minecraft:gold_block"},
-        {"item": "minecraft:gold_ingot"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_frame",
-        "component": "vehiclery:golden_motorcar"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:frames",
+  "sortnum": 3,
+  "ingredients": [
+    "minecraft:redstone",
+    "#minecraft:logs",
+    "minecraft:leather",
+    "minecraft:gold_block",
+    "minecraft:nether_brick",
+    "minecraft:gold_block",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_frame",
+    "component": "vehiclery:golden_motorcar"
+  }
 }

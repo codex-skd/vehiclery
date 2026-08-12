@@ -42,7 +42,13 @@ Al cargar el mundo, el log mostraba `Missing item model for location vehiclery:<
 
 **Traducción al español**: creado `assets/vehiclery/lang/es_es.json` con las 178 claves de `en_us.json` traducidas (paridad de claves verificada).
 
-**Pendiente detectado, no corregido en este pase** (fuera del alcance pedido — solo iconos/traducciones): casi todos los archivos de receta bajo `data/vehiclery/recipe/` usan el formato antiguo de ingrediente `{"item": "minecraft:x"}`, que el `Ingredient.CODEC` de 26.2 ya no acepta (necesita string plano `"minecraft:x"`, lista, o `{"tag":...}`/tipo custom con `neoforge:ingredient_type`). El log muestra `Couldn't parse data file 'vehiclery:...'` para prácticamente todas las recetas de piezas y varias de bloques — el sistema de crafteo del mod está roto hasta que se actualicen esos JSON. Añadido al roadmap para la próxima sesión.
+### ✅ Resuelto: formato antiguo de ingredientes en las 75 recetas
+
+Casi todas las recetas bajo `data/vehiclery/recipe/` (incluidas las subcarpetas `frame/`, `engine/`, `wheel/`, `attachment/front/`, `attachment/rear/`) usaban el formato de ingrediente pre-26.2: `{"item": "minecraft:x"}` / `{"tag": "minecraft:x"}` dentro de `"ingredients"` (shapeless) y `"key"` (shaped). El `Ingredient.CODEC` de 26.2 ya no acepta esa forma — comparado contra las recetas vanilla del propio jar (`oak_planks.json`, `chest.json`, `stick.json`), el formato correcto es un **string plano**: `"minecraft:x"` para ítem, `"#minecraft:x"` (prefijo `#`) para tag. El `"result"` ya usaba el formato correcto (`{"id":..., "count":...}`), no se tocó.
+
+**Fix aplicado**: transformación determinista (script Python, sin intervención manual archivo a archivo) sobre los 75 JSON — cualquier objeto `{"item": X}` → `"X"`, cualquier `{"tag": X}` → `"#X"`, recursivo en `ingredients`/`key`. Verificado que no queda ningún objeto `item`/`tag` residual tras la conversión. No se usan ingredientes custom (`neoforge:ingredient_type`) en ninguna receta del mod, ni listas de alternativas OR — la conversión fue uniforme en los 75 archivos.
+
+v0.0.0-beta.4
 
 ## Resumen de las 6 fases
 

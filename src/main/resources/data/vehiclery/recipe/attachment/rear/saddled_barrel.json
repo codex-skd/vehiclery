@@ -1,16 +1,16 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:attachments",
-    "sortnum": 207,
-    "ingredients": [
-        {"item": "minecraft:saddle"},
-        {"item": "minecraft:barrel"},
-        {"item": "minecraft:smooth_stone"},
-        {"item": "minecraft:iron_ingot"},
-        {"tag": "minecraft:logs"}
-    ],
-    "result": {
-        "item": "vehiclery:rear_attachment",
-        "component": "vehiclery:saddled_barrel"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:attachments",
+  "sortnum": 207,
+  "ingredients": [
+    "minecraft:saddle",
+    "minecraft:barrel",
+    "minecraft:smooth_stone",
+    "minecraft:iron_ingot",
+    "#minecraft:logs"
+  ],
+  "result": {
+    "item": "vehiclery:rear_attachment",
+    "component": "vehiclery:saddled_barrel"
+  }
 }
