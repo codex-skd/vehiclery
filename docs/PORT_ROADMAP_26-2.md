@@ -50,6 +50,16 @@ Casi todas las recetas bajo `data/vehiclery/recipe/` (incluidas las subcarpetas 
 
 v0.0.0-beta.4
 
+### ✅ Resuelto: renderizado 3D en blanco de las 6 piezas del automóvil (`automobile`, `automobile_frame/wheel/engine`, `front/rear_attachment`)
+
+**Diagnóstico anterior incorrecto**: se creía que `BEWLRs.BEWLRS` (el mapa de renderers custom por ítem) nunca se rellenaba. Falso — `VehicleryClient.initItems()` (llamado desde `VehicleryClientNeoForge.initClient(FMLClientSetupEvent)`) ya registra los 6 ítems vía `Platform.get().builtinItemRenderer(...)`, y `NeoForgePlatform.builtinItemRenderer()` ya reenvía esas llamadas a `BEWLRs.add(...)`. Esa cadena de registro estaba completa y correcta desde el port original.
+
+**Causa raíz real**: `VehiclerySpecialModelRenderer.getExtents(Consumer<Vector3fc>)` tenía el cuerpo vacío. Comparado contra las implementaciones vanilla (`ShieldSpecialRenderer`, `ConduitSpecialRenderer`, decompiladas desde la caché de Gradle — `mergeWithSources_*_output.jar`), `getExtents()` debe emitir los puntos del bounding box del modelo; si no emite nada, el motor calcula el ítem con extensión cero y lo descarta por culling antes de llegar a `submit()` — de ahí que se viera "en blanco" pese a que el registro y el `submit()` en sí funcionaban bien.
+
+**Fix aplicado**: `VehiclerySpecialModelRenderer.getExtents()` ahora emite las 8 esquinas de un cubo genérico `[-1, 2]³` (centrado en `(0.5, 0.5, 0.5)`, con margen amplio). Al ser un único `SpecialModelRenderer` compartido por los 6 ítems (el tipo `vehiclery:vehiclery_special` no recibe el `ItemStack` en `getExtents()`, solo en `submit()`), no puede dar un bounding box preciso por ítem — un cubo genérico y holgado es suficiente porque solo se usa para culling, no para geometría real.
+
+v0.0.0-beta.5
+
 ## Resumen de las 6 fases
 
 | Fase | Descripción | Estado |
@@ -59,7 +69,7 @@ v0.0.0-beta.4
 | 3 | Modelos de pendiente (slope) + geometry loader | ✅ |
 | 4 | Pantallas GUI (`GuiGraphicsExtractor`) | ✅ |
 | 5 | Renderers (`SubmitNodeCollector`, state-extraction) | ✅ |
-| 6 | BEWLR (renderizado 3D de items) | ✅ (stub, ver regresiones) |
+| 6 | BEWLR (renderizado 3D de items) | ✅ |
 
 Progreso real de errores de compilación durante el port: **101 → 88 → 69 → 65 → 57 → 45 → 16 → 0**.
 
@@ -73,7 +83,7 @@ Progreso real de errores de compilación durante el port: **101 → 88 → 69 �
 - **Renderizado diferido**: `MultiBufferSource` (inmediato) → `SubmitNodeCollector` (comandos diferidos: `submitModelPart`, `submitCustomGeometry`, `submitText`...). Bridge usado: `submitCustomGeometry` capturando el `PoseStack` vivo (no el `Pose` congelado del callback).
 - **Entity/BlockEntity renderers**: ahora `EntityRenderer<T, S extends EntityRenderState>` / `BlockEntityRenderer<T, S extends BlockEntityRenderState>`, con `createRenderState()`/`extractRenderState()`/`submit()` en vez de un único `render()`.
 - **GUI**: `GuiGraphics` → `GuiGraphicsExtractor`; `render`→`extractRenderState`, `renderBg`→`extractBackground`, `renderLabels`→`extractLabels`, `renderTooltip`→`setTooltipForNextFrame`/`extractTooltip`, `drawString`→`text`, `drawCenteredString`→`centeredText`; `blit` necesita `RenderPipeline` + tamaño de atlas explícito; `imageWidth`/`imageHeight` ahora `final` (constructor).
-- **BEWLR**: `BlockEntityWithoutLevelRenderer` eliminado del todo. Reemplazo: `SpecialModelRenderer<T>` (codec-based, evento `RegisterSpecialModelRendererEvent`, declarado en el JSON del item) — **no implementado**, ver regresiones.
+- **BEWLR**: `BlockEntityWithoutLevelRenderer` eliminado del todo. Reemplazo: `SpecialModelRenderer<T>` (codec-based, evento `RegisterSpecialModelRendererEvent`, declarado en el JSON del item).
 - **Recipe**: `Recipe<T>` perdió `getResultItem(HolderLookup.Provider)`/`canCraftInDimensions`; ganó `showNotification()`/`group()`/`placementInfo()`/`recipeBookCategory()`. `Level#getRecipeManager()` desapareció (solo `MinecraftServer`).
 
 ## Regresiones funcionales conocidas (TODOs en el código, no bloquean compilación)
@@ -82,7 +92,6 @@ Progreso real de errores de compilación durante el port: **101 → 88 → 69 �
 |---|---|
 | `automobile/render/attachment/rear/BannerPostRearAttachmentModel.java` | El patrón de color del banner en el mástil trasero no se dibuja (el mástil sí); `BannerRenderer.submitPatterns` necesita `SpriteGetter` + `Model<S>` propio, sin investigar aún |
 | `mixin/EntityRenderDispatcherMixin.java` | Los pasajeros ya no se inclinan visualmente con el vehículo (el punto de inyección original ya no existe) |
-| `neoforge/mixin/BlockEntityWithoutLevelRendererMixin.java` + `neoforge/client/BEWLRs.java` | Los items de automóvil/componentes no tienen renderizado 3D custom en mano/inventario (icono 2D plano); requiere implementar `SpecialModelRenderer<T>` |
 | `screen/AutoMechanicTableScreenHandler.java` | La lista de recetas del Auto Mechanic Table solo se puebla en servidor; el cliente la ve vacía (`Level#getRecipeManager()` ya no sincroniza recetas completas al cliente, solo `RecipePropertySet`/`RecipeDisplay`) — necesita paquete de sync propio |
 | `screen/AutomobileHud.java` | El HUD del velocímetro no respeta F1 (ocultar interfaz) — `Options#hideGui` ya no existe públicamente |
 

@@ -24,6 +24,13 @@ public class VehiclerySpecialModelRenderer implements SpecialModelRenderer.Unbak
 
             @Override
             public void getExtents(Consumer<org.joml.Vector3fc> output) {
+                for (float x = -1f; x <= 2f; x += 3f) {
+                    for (float y = -1f; y <= 2f; y += 3f) {
+                        for (float z = -1f; z <= 2f; z += 3f) {
+                            output.accept(new org.joml.Vector3f(x, y, z));
+                        }
+                    }
+                }
             }
 
             @Override
