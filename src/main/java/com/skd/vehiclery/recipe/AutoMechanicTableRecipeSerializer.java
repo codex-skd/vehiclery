@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class AutoMechanicTableRecipeSerializer {
     public static final Codec<ItemStack> AUTO_COMPONENT_STACK = RecordCodecBuilder.create(inst -> inst.group(
-            net.minecraft.world.item.Item.CODEC.fieldOf("item").forGetter(ItemStack::typeHolder),
+            net.minecraft.world.item.Item.CODEC_WITH_BOUND_COMPONENTS.fieldOf("item").forGetter(ItemStack::typeHolder),
             Codec.INT.optionalFieldOf("count", 1).forGetter(ItemStack::getCount),
             Identifier.CODEC.fieldOf("component").forGetter(s -> {
                 var item = s.getItem();
