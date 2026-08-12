@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "vehiclery:item/automobile_wheel",
+    "model": {
+      "type": "vehiclery:vehiclery_special"
+    }
+  }
+}

@@ -27,6 +27,23 @@ Confirmado además que `Holder$Reference.bindComponents(...)` no aparece invocad
 
 **Fix aplicado**: en `AutoMechanicTableRecipeSerializer.java`, cambiar `Item.CODEC.fieldOf("item")` → `Item.CODEC_WITH_BOUND_COMPONENTS.fieldOf("item")`.
 
+### ✅ Resuelto: iconos/modelos de ítem faltantes ("Missing item model") + traducción al español
+
+Al cargar el mundo, el log mostraba `Missing item model for location vehiclery:<id>` para los **20 ítems** del mod (todos los bloques con `BlockItem` + `automobile`, `crowbar`, `automobile_frame/wheel/engine`, `front/rear_attachment`), mostrando el icono "missing texture" en el inventario.
+
+**Causa raíz**: 26.2 (como el 1.21.4+ real) separó el antiguo modelo de ítem único (`assets/<ns>/models/item/<id>.json` con `"parent"`/`"textures"`/`"display"`/`"overrides"` todo junto) en dos archivos: una **definición de ítem** nueva en `assets/<ns>/items/<id>.json` (qué tipo de modelo usar) + el modelo de geometría en `models/item/<id>.json` (sin cambios). El port de Vehiclery nunca creó el directorio `items/`, así que el juego no encontraba ninguna definición de ítem pese a que la geometría sí existía.
+
+**Fix aplicado** (20 archivos nuevos en `assets/vehiclery/items/`):
+- **14 ítems simples** (bloques + `crowbar`, `launch_gel`, `slope`, `steep_slope`, `autopilot_sign`): `{"model":{"type":"minecraft:model","model":"vehiclery:item/<id>"}}`.
+- **6 piezas con renderizado 3D custom** (`automobile`, `automobile_frame`, `automobile_wheel`, `automobile_engine`, `front_attachment`, `rear_attachment`): usaban el antiguo formato `"type": "vehiclery:vehiclery_special"` embebido directamente en `models/item/<id>.json` junto a `"display"`. Se separó siguiendo el mismo patrón que vanilla usa para `shield.json`/`trident.json` (tipo `minecraft:special`): la definición de ítem ahora es `{"model":{"type":"minecraft:special","base":"vehiclery:item/<id>","model":{"type":"vehiclery:vehiclery_special"}}}`, y `models/item/<id>.json` quedó solo con el bloque `"display"` (transforms de mano/GUI/suelo), que sigue funcionando igual como modelo "base".
+- `autopilot_sign.json` tenía además un `"overrides"` con un predicado custom `vehiclery:stop` — confirmado que nunca estuvo enlazado a ningún `ItemModelProperty` en el código Java (búsqueda sin resultados), es decir ya estaba muerto antes del port; se eliminó del modelo base y no se reimplementó (el cartel de piloto automático no cambia de icono según su estado — pendiente si se quiere esa función).
+
+⚠️ **Nota**: los 6 ítems de piezas seguirán mostrándose **en blanco/vacíos** en mano e inventario — su render 3D depende de `SpecialModelRenderer`, que sigue siendo un stub sin implementar (`BEWLRs.java`, mapa `BEWLRS` nunca se rellena; ver regresión ya documentada de la fase 6 más abajo). Este fix solo corrige que el juego encuentre una definición de ítem válida (elimina el warning y el icono "missing texture"); no implementa el renderizado 3D en sí.
+
+**Traducción al español**: creado `assets/vehiclery/lang/es_es.json` con las 178 claves de `en_us.json` traducidas (paridad de claves verificada).
+
+**Pendiente detectado, no corregido en este pase** (fuera del alcance pedido — solo iconos/traducciones): casi todos los archivos de receta bajo `data/vehiclery/recipe/` usan el formato antiguo de ingrediente `{"item": "minecraft:x"}`, que el `Ingredient.CODEC` de 26.2 ya no acepta (necesita string plano `"minecraft:x"`, lista, o `{"tag":...}`/tipo custom con `neoforge:ingredient_type`). El log muestra `Couldn't parse data file 'vehiclery:...'` para prácticamente todas las recetas de piezas y varias de bloques — el sistema de crafteo del mod está roto hasta que se actualicen esos JSON. Añadido al roadmap para la próxima sesión.
+
 ## Resumen de las 6 fases
 
 | Fase | Descripción | Estado |

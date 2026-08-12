@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "vehiclery:item/rear_attachment",
+    "model": {
+      "type": "vehiclery:vehiclery_special"
+    }
+  }
+}
