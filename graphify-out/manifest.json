@@ -1,0 +1,3027 @@
+{
+  "build.gradle": {
+    "mtime": 1786323678.3529916,
+    "ast_hash": "3b9b6452080047f8d073ee82eb554556",
+    "semantic_hash": ""
+  },
+  "gradlew": {
+    "mtime": 1786323662.2243125,
+    "ast_hash": "794669d78aef1dd5c7d889ef618b311a",
+    "semantic_hash": ""
+  },
+  "settings.gradle": {
+    "mtime": 1786323668.4374232,
+    "ast_hash": "58a5df05c6546d7d2671a516793e02e7",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/copper.json": {
+    "mtime": 1786323812.8158526,
+    "ast_hash": "d77ab399f66403b74d80477c46ae49e4",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/creative.json": {
+    "mtime": 1786323812.8476212,
+    "ast_hash": "aad7bf8d70c787437e2a43532b8989d7",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/diamond.json": {
+    "mtime": 1786323812.873732,
+    "ast_hash": "97eeb99847ed40629bac20684184a6a9",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/empty.json": {
+    "mtime": 1786323812.9002821,
+    "ast_hash": "dcddfe53e9212c7336e94bef61e6b1ae",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/gold.json": {
+    "mtime": 1786323812.9161377,
+    "ast_hash": "4d7de5d2c0dd9c3b456c8a86572884e4",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/iron.json": {
+    "mtime": 1786323812.9299383,
+    "ast_hash": "65a83f5b9c074a85bf79ca6849f58bfc",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_engine/stone.json": {
+    "mtime": 1786323812.94929,
+    "ast_hash": "da6a082587bbfa32fc4ebcbc92c42647",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/amethyst_rickshaw.json": {
+    "mtime": 1786323812.978933,
+    "ast_hash": "655864c32a941240e0912556233cc5f2",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/bejeweled_motorcar.json": {
+    "mtime": 1786323813.0132644,
+    "ast_hash": "fca76842c52a5de411589694a1453342",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/blue_tractor.json": {
+    "mtime": 1786323813.0785599,
+    "ast_hash": "1c646a11dc3eb149416af74a770ea905",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/c_arr.json": {
+    "mtime": 1786323813.2404437,
+    "ast_hash": "44c81d93247c5e0532ba04383ed22808",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/copper_motorcar.json": {
+    "mtime": 1786323813.2240813,
+    "ast_hash": "f52667ec5575954a438c6c342d8b66db",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/echo_rickshaw.json": {
+    "mtime": 1786323813.2582023,
+    "ast_hash": "c36514589b0e75f7cbcc7078b60c7289",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/empty.json": {
+    "mtime": 1786323813.276636,
+    "ast_hash": "ae6aee6a453a04e3a05207804dff0495",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/golden_motorcar.json": {
+    "mtime": 1786323813.3159022,
+    "ast_hash": "5abd6cbb691136e4a07f0691a17bf1f9",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/green_tractor.json": {
+    "mtime": 1786323813.3466003,
+    "ast_hash": "74cf8068b74921677f31b33080915053",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/pineapple.json": {
+    "mtime": 1786323813.391757,
+    "ast_hash": "66a51d8153817d4f33e259683e19028b",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/prismarine_rickshaw.json": {
+    "mtime": 1786323813.517047,
+    "ast_hash": "61b427c2739663995960437c8c3ca294",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/quartz_rickshaw.json": {
+    "mtime": 1786323813.5426643,
+    "ast_hash": "b0bd3a743e4161022aa0eb985c6d90dc",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/red_tractor.json": {
+    "mtime": 1786323813.560473,
+    "ast_hash": "a04514cd1ad0abd9ef4f2b1120e61094",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/shopping_cart.json": {
+    "mtime": 1786323813.5783458,
+    "ast_hash": "fa801f0cd0a6dd3df73a884d0fb32a66",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_black.json": {
+    "mtime": 1786323813.6079705,
+    "ast_hash": "0f0556acd7ddb00b5977e25e3cdb8f16",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_blue.json": {
+    "mtime": 1786323813.6314695,
+    "ast_hash": "06f2e80706ac824f67d970e460f06f64",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_brown.json": {
+    "mtime": 1786323813.65603,
+    "ast_hash": "371ba7ae5ef7742a2289f36b66ef947a",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_cyan.json": {
+    "mtime": 1786323813.6926682,
+    "ast_hash": "961006d7baed9ae472660460fd0fcf62",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_gray.json": {
+    "mtime": 1786323813.7099464,
+    "ast_hash": "e36ec069b4fce8341cb0d366fcdfa5a9",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_green.json": {
+    "mtime": 1786323813.7574706,
+    "ast_hash": "6059bc30c4bc785c454205b51ee234bd",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_light_blue.json": {
+    "mtime": 1786323813.7995002,
+    "ast_hash": "2b96b11929282afbeada716fae6d2670",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_light_gray.json": {
+    "mtime": 1786323813.816425,
+    "ast_hash": "c3adca6be5a74bc9dad68e02d844e111",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_lime.json": {
+    "mtime": 1786323813.8322573,
+    "ast_hash": "1df8e0fcd1ec2b452f9d4593315d0c87",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_magenta.json": {
+    "mtime": 1786323813.8505955,
+    "ast_hash": "f103a4f9d476ca05d60583f538ae642f",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_orange.json": {
+    "mtime": 1786323813.8669527,
+    "ast_hash": "3d656832970d59e1ea05ed2c8595a92a",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_pink.json": {
+    "mtime": 1786323813.8811648,
+    "ast_hash": "ec86d2694e60f1183b0180167bc45b1c",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_purple.json": {
+    "mtime": 1786323813.912248,
+    "ast_hash": "7720facc9d7a55f203dcd62f9d506a49",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_red.json": {
+    "mtime": 1786323813.9285452,
+    "ast_hash": "46d02de4860d7883258e17bf5424ab48",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_white.json": {
+    "mtime": 1786323813.9454417,
+    "ast_hash": "f878b6c9ddd6d0ad139419e95eed1f13",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/standard_yellow.json": {
+    "mtime": 1786323813.961053,
+    "ast_hash": "894a0b424f17e44615fb8a4e09c043a1",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/steel_motorcar.json": {
+    "mtime": 1786323813.9921947,
+    "ast_hash": "626297fb8556621143323d9d80b7c488",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/wooden_motorcar.json": {
+    "mtime": 1786323814.010046,
+    "ast_hash": "d55ddee92b7ac76cc1321407519b14ac",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_frame/yellow_tractor.json": {
+    "mtime": 1786323814.0294096,
+    "ast_hash": "0beed49c7f3fe9c2af785ec6ff583126",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/bejeweled.json": {
+    "mtime": 1786323814.0487568,
+    "ast_hash": "6b6f57b922a05fdb5293e26930a9b40d",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/carriage.json": {
+    "mtime": 1786323814.0666223,
+    "ast_hash": "6fd0514f64db4b48cf462d278743848b",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/empty.json": {
+    "mtime": 1786323814.08849,
+    "ast_hash": "1c2393f830cc5e1740631ad7ff8ac430",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/gilded.json": {
+    "mtime": 1786323814.1002584,
+    "ast_hash": "5d2b172595d0202249ae8a8bd52a1ac2",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/off_road.json": {
+    "mtime": 1786323814.114522,
+    "ast_hash": "373f1a863efd962a637e225a9f537874",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/plated.json": {
+    "mtime": 1786323814.1334271,
+    "ast_hash": "f150fd4388888ec3094172a7824b7485",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/standard.json": {
+    "mtime": 1786323814.1496203,
+    "ast_hash": "a01a2159842a493210a81c1cf0099a7a",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/steel.json": {
+    "mtime": 1786323814.1660132,
+    "ast_hash": "e6fdcdcab4592eb82f03c9f91841e748",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/street.json": {
+    "mtime": 1786323814.1834226,
+    "ast_hash": "6babe853853d9062a99caad219fde5ca",
+    "semantic_hash": ""
+  },
+  "src/generated/resources/data/vehiclery/vehiclery/automobile_wheel/tractor.json": {
+    "mtime": 1786323814.1997967,
+    "ast_hash": "861ea29ece34b62af4b4c3488204d173",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/Vehiclery.java": {
+    "mtime": 1786349054.5779345,
+    "ast_hash": "29f6f3283558ced1aa1531641f962edc",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/VehicleryClient.java": {
+    "mtime": 1786715495.9436617,
+    "ast_hash": "2028fef1e1c2a792b7a74836ea6c69b0",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileComponent.java": {
+    "mtime": 1786349054.1416595,
+    "ast_hash": "0770e151049d4a4a86fd56934f056c0b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileData.java": {
+    "mtime": 1786380339.5220273,
+    "ast_hash": "a06b22da69e6978008a6e90d5eb3d326",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileEngine.java": {
+    "mtime": 1786379818.0698464,
+    "ast_hash": "2081d1f34d7c5922cf69aab8935a8e9e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileFrame.java": {
+    "mtime": 1786379788.0158236,
+    "ast_hash": "82bc9cdb747a87f82e1c757042e87f7c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileStats.java": {
+    "mtime": 1786349054.1716533,
+    "ast_hash": "14dfc2e88500995eb32024fb9711f508",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/AutomobileWheel.java": {
+    "mtime": 1786349054.1736526,
+    "ast_hash": "b15d79645c61b8c321a342cbcaf1f897",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/DisplayStat.java": {
+    "mtime": 1786349054.1757069,
+    "ast_hash": "cceb074431804c819dcbe1b352118cb4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/HornSoundDefinition.java": {
+    "mtime": 1786349054.1779952,
+    "ast_hash": "2291a68bb8eaac8e1da17aa7257ccf1a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/StatContainer.java": {
+    "mtime": 1786349054.2379904,
+    "ast_hash": "85366ecb34321b35819d44e2b3afe043",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/WheelBase.java": {
+    "mtime": 1786349054.2411091,
+    "ast_hash": "e646d0194bd5b3d0e2af55dccfc9a77f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/BaseAttachment.java": {
+    "mtime": 1786349054.0678468,
+    "ast_hash": "ab57f1902d55e44fcd52f7a7730e067d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/FrontAttachmentType.java": {
+    "mtime": 1786349054.0998502,
+    "ast_hash": "7169711ed46a3c7370513611886d6e89",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/RearAttachmentType.java": {
+    "mtime": 1786349054.140573,
+    "ast_hash": "4e133037eb74e5abac165f7605a67b99",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/AutopilotFrontAttachment.java": {
+    "mtime": 1786379953.8485935,
+    "ast_hash": "52c9b40c2e98b7828b020295f28b7f87",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/BaseHarvesterFrontAttachment.java": {
+    "mtime": 1786349054.0865011,
+    "ast_hash": "77094c198a8778bc2ce913370288e1c4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/CropHarvesterFrontAttachment.java": {
+    "mtime": 1786349054.0886853,
+    "ast_hash": "e9829b88138345630e35161bd76ffe27",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/EmptyFrontAttachment.java": {
+    "mtime": 1786349054.0907462,
+    "ast_hash": "e28939a1c46dae3e596d25e12d4810d5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/FrontAttachment.java": {
+    "mtime": 1786379788.0173914,
+    "ast_hash": "45131ff4b105957ea5eb4b66e3e6e648",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/GrassCutterFrontAttachment.java": {
+    "mtime": 1786349054.0953312,
+    "ast_hash": "b40b5971a1e1e98b75c1292c18cedef0",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/front/MobControllerFrontAttachment.java": {
+    "mtime": 1786349054.097326,
+    "ast_hash": "010ebd1cb81fc2708a1c3a696c2137c1",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/BackhoeRearAttachment.java": {
+    "mtime": 1786349054.1020727,
+    "ast_hash": "28438ee68ece77260f489764c3e49888",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/BannerPostRearAttachment.java": {
+    "mtime": 1786380075.018504,
+    "ast_hash": "6139468c203e1915d672e02e8efe1fcf",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/BaseChestRearAttachment.java": {
+    "mtime": 1786380135.068529,
+    "ast_hash": "5aca1397ab51ff4a3b8ba0fc8647e4b3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/BasePlowRearAttachment.java": {
+    "mtime": 1786349054.11772,
+    "ast_hash": "5620971d342381072daeba09f37476df",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/BlockRearAttachment.java": {
+    "mtime": 1786349054.119713,
+    "ast_hash": "82496c90c576b3b8b2a157ebd8b8c384",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/ChestRearAttachment.java": {
+    "mtime": 1786380264.4967763,
+    "ast_hash": "c3b4a0234e3cd5b71868145ad7a1aced",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/DeployableRearAttachment.java": {
+    "mtime": 1786349054.1227036,
+    "ast_hash": "1ccfaca07e2662cf601ca814a72eb548",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/EmptyRearAttachment.java": {
+    "mtime": 1786349054.1311853,
+    "ast_hash": "f6e02ed8176e9c087617c430cf11a8ca",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/ExtendableRearAttachment.java": {
+    "mtime": 1786380084.4681578,
+    "ast_hash": "dbd601302f220fd9fb088d22142fc13f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/PassengerSeatRearAttachment.java": {
+    "mtime": 1786349054.1334462,
+    "ast_hash": "36a3fde1b20cd32a65ef7c48132730ff",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/PaverRearAttachment.java": {
+    "mtime": 1786349054.1359463,
+    "ast_hash": "cb33f24846df72d54e11059c81ca1e9f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/RearAttachment.java": {
+    "mtime": 1786379788.0163257,
+    "ast_hash": "d44f0e87897d03dbfb80e42e19e552fa",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/attachment/rear/SaddledBarrelRearAttachment.java": {
+    "mtime": 1786349054.1381695,
+    "ast_hash": "cbe5f6433492449ad7e8cea648ddfd62",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/model/ModelDefinition.java": {
+    "mtime": 1786401599.9081597,
+    "ast_hash": "362807c8ea6f2d3d116de2af91191639",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/model/ModelType.java": {
+    "mtime": 1786402366.0275621,
+    "ast_hash": "6e5ab98efaedab9625bf09c0171b99d0",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/AutomobileModels.java": {
+    "mtime": 1786401619.8949509,
+    "ast_hash": "4d578dfaf29a8cb05c060c9b6e84bd08",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/AutomobileRenderer.java": {
+    "mtime": 1786402098.344852,
+    "ast_hash": "4a510911fea39ec446c88b049400de92",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/BaseModel.java": {
+    "mtime": 1786402381.9568174,
+    "ast_hash": "e1c6ef5d8cb6792df4d3aeb3af04e47a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/EmptyModel.java": {
+    "mtime": 1786402340.362557,
+    "ast_hash": "6ede3440e299816f13c4d6e217a2af4b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/ExhaustFumesModel.java": {
+    "mtime": 1786349054.2261147,
+    "ast_hash": "6574489c60ede5f4902a04e501f3b6b3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/RenderableAutomobile.java": {
+    "mtime": 1786349054.234946,
+    "ast_hash": "4c27f58b739691efedd915fb4ad67bd9",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/RenderableModel.java": {
+    "mtime": 1786401528.0049455,
+    "ast_hash": "154d6f64deee7d5697298d71ae92c23d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/SkidEffectModel.java": {
+    "mtime": 1786349054.2359686,
+    "ast_hash": "849b4f08d2ca164873b63752cc5bf974",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/front/AutopilotFrontAttachmentModel.java": {
+    "mtime": 1786402448.8794334,
+    "ast_hash": "53cd389cf5ecff75d254630dc0fa39eb",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/front/FrontAttachmentRenderModel.java": {
+    "mtime": 1786402366.4972305,
+    "ast_hash": "24e7802355bef9bcc5b4b5876e7b7eda",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/front/HarvesterFrontAttachmentModel.java": {
+    "mtime": 1786402366.6259296,
+    "ast_hash": "5a72c44d19e3bce5826efb6b3acb462c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/BannerPostRearAttachmentModel.java": {
+    "mtime": 1786402502.434394,
+    "ast_hash": "183119d7f0ea7bbb67b605a7fbb0ea0b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/ChestRearAttachmentModel.java": {
+    "mtime": 1786402366.9401052,
+    "ast_hash": "d0432857225a38bea6fe7dfc27a955a8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/GrindstoneRearAttachmentModel.java": {
+    "mtime": 1786402367.076239,
+    "ast_hash": "96fb61595f8fa5eaeacfcc78e1558b6d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/PlowRearAttachmentModel.java": {
+    "mtime": 1786402367.2353823,
+    "ast_hash": "f42ef43eed4abddbe8a26d5ec4ac6768",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/RearAttachmentRenderModel.java": {
+    "mtime": 1786402367.3764155,
+    "ast_hash": "f83d47e6cf5f06cbabcc8dd2fb6bdfe3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/attachment/rear/StonecutterRearAttachmentModel.java": {
+    "mtime": 1786402367.4920359,
+    "ast_hash": "6ae087ae23a30368039de2e559ae8bd5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/item/SimpleRenderableAutomobile.java": {
+    "mtime": 1786349054.2282233,
+    "ast_hash": "2ec403ab69548c1cec151c9eeb6a15a5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/obj/BakedObj.java": {
+    "mtime": 1786349054.2304926,
+    "ast_hash": "d6b8f6e94c6a39c643986403d77ae530",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/obj/ObjLoader.java": {
+    "mtime": 1786349054.2314973,
+    "ast_hash": "5063703ffdf721b37994495b1c4d27c8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/automobile/render/obj/ObjModel.java": {
+    "mtime": 1786402381.8988583,
+    "ast_hash": "710eba725f4d8ceda492bee7adef30f0",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/AutoMechanicTableBlock.java": {
+    "mtime": 1786349054.2431028,
+    "ast_hash": "f6f050a9e5bde65184a60331f6e5fbd5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/AutomobileAssemblerBlock.java": {
+    "mtime": 1786400147.0956552,
+    "ast_hash": "7073e69d51dc46f05830c06db3f6ef8c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/AutomobilePressurePlateBlock.java": {
+    "mtime": 1786349054.2462933,
+    "ast_hash": "787006231ff4df6bd8dd3f5b408779f6",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/AutopilotSignBlock.java": {
+    "mtime": 1786379997.524325,
+    "ast_hash": "1061bdaf0c31603748e20c49528989ea",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/DashPanelBlock.java": {
+    "mtime": 1786400236.256958,
+    "ast_hash": "d94f54e52d905f82c609ee59f9fe343f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/LaunchGelBlock.java": {
+    "mtime": 1786400092.9429903,
+    "ast_hash": "206415dacae1bd75ca88a445ad1f0255",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/OffRoadBlock.java": {
+    "mtime": 1786400054.7510493,
+    "ast_hash": "d873e45e6e4811ab552b3c7151efec19",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/SlopeBlock.java": {
+    "mtime": 1786349054.3024454,
+    "ast_hash": "bd504edde1fc86090bd7a14eeacbe608",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/SlopeWithDashPanelBlock.java": {
+    "mtime": 1786400236.2559612,
+    "ast_hash": "d260e4c480890bf2a004afda49db9ef8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/SpecialAutomobileColliderBlock.java": {
+    "mtime": 1786349054.305714,
+    "ast_hash": "dbd64a646667e74e55cda78f031a11aa",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/SteepSlopeBlock.java": {
+    "mtime": 1786349054.3071365,
+    "ast_hash": "3867c524565e8355bb528a93fb370fb3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/SteepSlopeWithDashPanelBlock.java": {
+    "mtime": 1786400236.2559612,
+    "ast_hash": "7e3040476865357eddad1f7fb6f90898",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/VehicleryBlocks.java": {
+    "mtime": 1786473745.4084942,
+    "ast_hash": "fd3bd212b6435f46fa2c1313929ab99b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/entity/AutomobileAssemblerBlockEntity.java": {
+    "mtime": 1786400177.4262407,
+    "ast_hash": "a41b653bf0296c910d8bc31b4285d6b1",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/entity/AutopilotSignBlockEntity.java": {
+    "mtime": 1786349054.2818048,
+    "ast_hash": "e78dd6866a67e9059cd4ffe796e3eae6",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/entity/render/AutomobileAssemblerBlockEntityRenderer.java": {
+    "mtime": 1786402329.76311,
+    "ast_hash": "3cc1da43aca040cd9fb63f4e2934f92e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/entity/render/AutomobileAssemblerRenderState.java": {
+    "mtime": 1786402215.8658748,
+    "ast_hash": "19c4baeb95a82e33281aa47687342edd",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/model/GeometryBuilder.java": {
+    "mtime": 1786349054.2862794,
+    "ast_hash": "3a41cd8ee90c8cb4ebbe389896dd793a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/model/SlopeBakedModel.java": {
+    "mtime": 1786398754.3756652,
+    "ast_hash": "1aeea0f5b3e6286568e0ece73c9e1050",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/block/model/SlopeUnbakedModel.java": {
+    "mtime": 1786398373.933468,
+    "ast_hash": "5638dd9684389b839fe8dfc8f36dbe9f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/controller/AutomobileController.java": {
+    "mtime": 1786349054.312583,
+    "ast_hash": "83eb2cfa1963ad0de7012f9e28bde966",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/AutomobileEntity.java": {
+    "mtime": 1786379704.6328368,
+    "ast_hash": "a0d93589c958e8158a48a5da223310e3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/EntityWithContainer.java": {
+    "mtime": 1786349054.324942,
+    "ast_hash": "83966449b0452d37c53164850b7ab816",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/EntityWithInventory.java": {
+    "mtime": 1786349054.3272114,
+    "ast_hash": "eb365e2d83dea94c0d755ff33b702915",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/HitboxEntity.java": {
+    "mtime": 1786379921.1138036,
+    "ast_hash": "22432e2da934b509a2628ebb95dee732",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/VehicleryEntities.java": {
+    "mtime": 1786400515.3066263,
+    "ast_hash": "90d4781df31f073ff47bddf12f6b2efd",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java": {
+    "mtime": 1786402187.5537865,
+    "ast_hash": "1bc8e01252c20f3ada23582c14f57a8c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/entity/render/AutomobileRenderState.java": {
+    "mtime": 1786402178.5397115,
+    "ast_hash": "cdee08d812b21fa5133e06620e7c9a02",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileComponentItem.java": {
+    "mtime": 1786401245.1681538,
+    "ast_hash": "d1636a3970c8dbc472ae904ac4b4cb53",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileEngineItem.java": {
+    "mtime": 1786349054.3503165,
+    "ast_hash": "3896e3322b9cc31e49270f1f23dae32e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileFrameItem.java": {
+    "mtime": 1786349054.3575613,
+    "ast_hash": "7f2432b6542e1706f37b5325070db641",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileInteractable.java": {
+    "mtime": 1786349054.3598752,
+    "ast_hash": "8f94f175aa20b95624467de15f166ba2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileItem.java": {
+    "mtime": 1786715245.7810242,
+    "ast_hash": "8838551cc87e6b30083c9a8324cd81cc",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutomobileWheelItem.java": {
+    "mtime": 1786349054.3631687,
+    "ast_hash": "86522d5f9361fa0c90fbb93cf895b071",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/AutopilotSignBlockItem.java": {
+    "mtime": 1786352232.071558,
+    "ast_hash": "e07b50d335428bb8777e9a25ad0d1d77",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/CreativeTabQueue.java": {
+    "mtime": 1786349054.373533,
+    "ast_hash": "95c525ce3b25396da94c6e29d5842901",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/CustomCreativeOutput.java": {
+    "mtime": 1786349054.3756173,
+    "ast_hash": "e60ce6089be303f91cbf77a76e8057bc",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/DashPanelItem.java": {
+    "mtime": 1786349054.377666,
+    "ast_hash": "eead68aefa73e4a2e001404dc0f8f338",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/FrontAttachmentItem.java": {
+    "mtime": 1786349054.3797798,
+    "ast_hash": "0b10e47876c10f502e22763111bdfa0d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/RearAttachmentItem.java": {
+    "mtime": 1786349054.380834,
+    "ast_hash": "618d46e4dcc5bfba8fcad786d79efbef",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/SlopeBlockItem.java": {
+    "mtime": 1786349054.3818836,
+    "ast_hash": "0bd7211c610a5541064d728a7352d185",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/SlopePlacementContext.java": {
+    "mtime": 1786349054.3832228,
+    "ast_hash": "44c2e1ee6ee2843b1b769f2e7f041868",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/SteepSlopeBlockItem.java": {
+    "mtime": 1786349054.3857336,
+    "ast_hash": "9d37e260e1901ed0550a5af5049fb982",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/TooltipBlockItem.java": {
+    "mtime": 1786401228.9484017,
+    "ast_hash": "ca82604f3e2562d8074c3faa45b579a5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/TooltipItem.java": {
+    "mtime": 1786401216.0445976,
+    "ast_hash": "fc635342e305d4ee8686a36ad8227f8b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/item/VehicleryItems.java": {
+    "mtime": 1786473764.573936,
+    "ast_hash": "e6589549e4c3f9ca232a8949b9107e54",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/AABBMixin.java": {
+    "mtime": 1786349054.4082649,
+    "ast_hash": "d335abd073ea7fe939949ffd81936e9f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/AbstractContainerMenuMixin.java": {
+    "mtime": 1786349054.410355,
+    "ast_hash": "e29947d7a0541fe1037ac437c94caebe",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/EntityMixin.java": {
+    "mtime": 1786349054.4113517,
+    "ast_hash": "806368cd7f0dceded824b67ef9439667",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/EntityRenderDispatcherMixin.java": {
+    "mtime": 1786402679.675073,
+    "ast_hash": "4c08d90f0f9f2bfe44893f781c1ef796",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/EntityRenderersMixin.java": {
+    "mtime": 1786402329.76311,
+    "ast_hash": "eaf8d8237c10ad4a43e91486acf9b584",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/ItemCombinerMenuMixin.java": {
+    "mtime": 1786349054.4157038,
+    "ast_hash": "a3050b7cf9533d632dca2379ae1d8e86",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/KeyMappingAccess.java": {
+    "mtime": 1786349054.4170454,
+    "ast_hash": "0200622ac0ab7a08cdbc0e31280840c0",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/LocalPlayerMixin.java": {
+    "mtime": 1786401103.7145321,
+    "ast_hash": "99cfc06118b405caa3b2e3d184db1480",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/MultiPlayerGameModeMixin.java": {
+    "mtime": 1786349054.4291513,
+    "ast_hash": "c2cc1965d02bc2558c324261671b788d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/PlayerEnderChestContainerMixin.java": {
+    "mtime": 1786472297.355849,
+    "ast_hash": "43de9a2394699cf9c1366c7d681581de",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/ServerGamePacketListenerImplMixin.java": {
+    "mtime": 1786349054.4327834,
+    "ast_hash": "a6e30349a0b3126cfe314d02ea32670e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/ShovelItemAccess.java": {
+    "mtime": 1786349054.4341922,
+    "ast_hash": "15056054f06c0d5f707a9b967397ba6f",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/SoundChannelAccess.java": {
+    "mtime": 1786349054.435551,
+    "ast_hash": "f5ab55191dafe3952ab58f0062c63cb7",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/mixin/SoundEngineMixin.java": {
+    "mtime": 1786474625.0957744,
+    "ast_hash": "116eaf149f5f60c79bc51f85193acf6c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/NeoForgePlatform.java": {
+    "mtime": 1786400601.6100893,
+    "ast_hash": "e03cd3d0bb701b8cf90ebea34112f7cb",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/VehicleryClientNeoForge.java": {
+    "mtime": 1786451040.976688,
+    "ast_hash": "671045184701bacb1b4b4abb9c2d4095",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/VehicleryNeoForge.java": {
+    "mtime": 1786475582.5841005,
+    "ast_hash": "24ec871423595c6fb12ea93ea2b97ce5",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/block/render/NeoForgeGeometryBuilder.java": {
+    "mtime": 1786400539.9106927,
+    "ast_hash": "4539b0235d97489cc4de38777577518a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/block/render/NeoForgeSlopeBakedModel.java": {
+    "mtime": 1786400310.448988,
+    "ast_hash": "b466be7cf533a18e046d24653f687aa6",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/block/render/NeoForgeSlopeGeometryLoader.java": {
+    "mtime": 1786398395.510822,
+    "ast_hash": "6711c5b2d2cda66b13c1172888fd4ac2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/block/render/SlopeModelsProvider.java": {
+    "mtime": 1786398608.989972,
+    "ast_hash": "50671f61b8f06b8e75d5046bb36d8125",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/client/BEWLRs.java": {
+    "mtime": 1786446842.8509707,
+    "ast_hash": "f693840fcfa645cd55ef1e7f83d1f8ae",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/client/VehiclerySpecialModelRenderer.java": {
+    "mtime": 1786551248.2742043,
+    "ast_hash": "2c26fa9f3e49bc9de76af48867dff4d4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/BlockColorsAccess.java": {
+    "mtime": 1786366515.8714488,
+    "ast_hash": "8230133b5c3bb2d8de89003ca62a17f4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/CubeDefinitionAccess.java": {
+    "mtime": 1786484352.4958522,
+    "ast_hash": "c60946c346febaba93e07e2c54329a86",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/CubeDeformationAccess.java": {
+    "mtime": 1786483660.175359,
+    "ast_hash": "4c12a3ed17c287533345addb4fd76f5e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/EntityModelSetAccess.java": {
+    "mtime": 1786483731.4681382,
+    "ast_hash": "80025b45e8de49c9c7e47f3451555be3",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/LayerDefinitionAccess.java": {
+    "mtime": 1786483660.1763556,
+    "ast_hash": "a20a0a74b930773bbc374c333ab6e3d8",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/MaterialDefinitionAccess.java": {
+    "mtime": 1786483660.1763556,
+    "ast_hash": "82ee971f0020abeadc59721b17fe82f2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/ModelManagerMixin.java": {
+    "mtime": 1786483744.8629286,
+    "ast_hash": "4b09f5baf5f4df6a413e34fb7231184e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/mixin/jsonem/PartDefinitionAccess.java": {
+    "mtime": 1786483660.1778102,
+    "ast_hash": "ab8510d1e5ba5161d2cc0751bf9e08fb",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/network/NeoForgeNetworking.java": {
+    "mtime": 1786400601.6113362,
+    "ast_hash": "1a0d32d1b7d36e6a0a17b2a9b2b34eaa",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/vendored/jsonem/JsonEM.java": {
+    "mtime": 1786483660.1791248,
+    "ast_hash": "83dec7146534d9571c7555b9b0bbd1c6",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/vendored/jsonem/serialization/JsonEMCodecs.java": {
+    "mtime": 1786484357.618201,
+    "ast_hash": "e1a1c3ba4018d74d75f3487eb904a0f7",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/vendored/jsonem/serialization/LazyTypeUnboundedMapCodec.java": {
+    "mtime": 1786483660.180534,
+    "ast_hash": "d04d9f5683f89370aa5c944a5c4197e1",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/neoforge/vendored/jsonem/util/JsonEntityModelUtil.java": {
+    "mtime": 1786483660.1820374,
+    "ast_hash": "8d4c62944e427ee328c3b4941b7cdfac",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/particle/DriftSmokeParticle.java": {
+    "mtime": 1786400601.6123328,
+    "ast_hash": "ebe264912883c5df770ceb1b3f572e69",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/particle/VehicleryParticles.java": {
+    "mtime": 1786349054.4963374,
+    "ast_hash": "9129dfd8260d47ffaf06fbc75d51bf94",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/platform/GlobalPlatformInstance.java": {
+    "mtime": 1786349054.5029466,
+    "ast_hash": "061c022d1cc17e1725067a4a66ec597a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/platform/Platform.java": {
+    "mtime": 1786366451.3211935,
+    "ast_hash": "9406d04a398dd083ac414161e583618e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/recipe/AutoMechanicTableRecipe.java": {
+    "mtime": 1786716081.465873,
+    "ast_hash": "8ecdd5bcb1df250f97d99c0abe75054e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/recipe/AutoMechanicTableRecipeSerializer.java": {
+    "mtime": 1786716090.1918788,
+    "ast_hash": "8a710415a999d8379555d14144fdacdf",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/recipe/ContainerRecipeInput.java": {
+    "mtime": 1786349054.5108304,
+    "ast_hash": "43ed727641f318c43c628eb003487623",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/AutoMechanicTableScreen.java": {
+    "mtime": 1786403400.692731,
+    "ast_hash": "30592cdc9896ef56a2b171b1e09420b4",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/AutoMechanicTableScreenHandler.java": {
+    "mtime": 1786401103.7155368,
+    "ast_hash": "a242899c58f2f1e659c60001e5d668eb",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/AutomobileContainerLevelAccess.java": {
+    "mtime": 1786349054.5321434,
+    "ast_hash": "3b415e9746681047ee67fddc33626a5c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/AutomobileHud.java": {
+    "mtime": 1786403211.6857967,
+    "ast_hash": "541b8434775c2ad533cf27603154d5dc",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/MenuScreenRegistrar.java": {
+    "mtime": 1786349054.5371318,
+    "ast_hash": "14bafbd9498b2ef68f65967db2fda172",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/SingleSlotScreen.java": {
+    "mtime": 1786403103.7508435,
+    "ast_hash": "e356dbe3fbff529e946e02e0435cde80",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/screen/SingleSlotScreenHandler.java": {
+    "mtime": 1786349054.540288,
+    "ast_hash": "ab9dd50dc75a88e1483d3019e6125049",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/sound/AdvancedSoundInstance.java": {
+    "mtime": 1786349054.5424266,
+    "ast_hash": "932c3cdabe15ff71c1eedc91f330e46b",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/sound/AutomobileSoundInstance.java": {
+    "mtime": 1786401103.7155368,
+    "ast_hash": "2f545e47f2845fdcfbfcf040e7dfa2df",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/sound/SlicedLoopingAutomobileSoundInstance.java": {
+    "mtime": 1786349054.545729,
+    "ast_hash": "0c0f4ef1123400b6be52b487c2f8bc2a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/sound/VehiclerySounds.java": {
+    "mtime": 1786349054.547748,
+    "ast_hash": "a105d7dc88616e709e5fee34451c1dbe",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/AUtils.java": {
+    "mtime": 1786401147.7909944,
+    "ast_hash": "9ded734759943f73f947b7df7dad2083",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/DefaultRegistrar.java": {
+    "mtime": 1786349054.5508723,
+    "ast_hash": "76b88d7f3a5aa6538a2325c6d7d40710",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/EntityRenderHelper.java": {
+    "mtime": 1786349054.555767,
+    "ast_hash": "31bbe319ae6bb8a1934899420eb3065c",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/Eventual.java": {
+    "mtime": 1786349054.5577617,
+    "ast_hash": "79f9990555cec55b8e55a855a2238c6a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/FloatFunc.java": {
+    "mtime": 1786349054.5589888,
+    "ast_hash": "1298478ec5b3250b4b2c1d4f22715e26",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/HexCons.java": {
+    "mtime": 1786349054.5610003,
+    "ast_hash": "ca7d7fcc1cf232906cd933d44db76558",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/InitlessConstants.java": {
+    "mtime": 1786349054.5620043,
+    "ast_hash": "ee02baae52edf770dcb1dda97006af7d",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/RegistryQueue.java": {
+    "mtime": 1786349054.5684812,
+    "ast_hash": "fcf649fbfca634ae085aa56b93d0380e",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/SimpleMapContentRegistry.java": {
+    "mtime": 1786349054.570882,
+    "ast_hash": "520cc697f626a8c8ccf0a29918285079",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/TriCons.java": {
+    "mtime": 1786349054.5719473,
+    "ast_hash": "214cc8c0ac4b7d92802033ceae4cd407",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/TriFunc.java": {
+    "mtime": 1786349054.5739489,
+    "ast_hash": "b2eb32fa17854776c63e16b269fb44aa",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/VehicleryClientResourceDumper.java": {
+    "mtime": 1786401147.7909944,
+    "ast_hash": "143ab1ff2e590e309f771c1ca842e29a",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/duck/CollisionArea.java": {
+    "mtime": 1786349054.5518837,
+    "ast_hash": "250de1d0837a427b6d755d21c79795d1",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/duck/EnderChestContainerDuck.java": {
+    "mtime": 1786349054.5533822,
+    "ast_hash": "8328972aa6522f0b7682719dd8082fc2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/network/ClientPackets.java": {
+    "mtime": 1786349054.5641992,
+    "ast_hash": "2a099c7ae780c72d2b9d746d75535513",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/network/CommonPackets.java": {
+    "mtime": 1786349054.5653133,
+    "ast_hash": "ff299a19e183ac602ab5a78fa36250f2",
+    "semantic_hash": ""
+  },
+  "src/main/java/com/skd/vehiclery/util/network/VehicleryPacketPayload.java": {
+    "mtime": 1786349054.567369,
+    "ast_hash": "7c84a28e2dab370f4490bfe0e5b9ac2e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/allow.json": {
+    "mtime": 1786323808.7592082,
+    "ast_hash": "52b5eac1aca734c84c61c82f3818cc66",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/auto_mechanic_table.json": {
+    "mtime": 1786323808.8438373,
+    "ast_hash": "c5ed1456fdcb6e3c0a8d1625dfa58b6c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/automobile_assembler.json": {
+    "mtime": 1786323808.7917793,
+    "ast_hash": "a04de61cd71aff6682c01e13e734069b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/automobile_pressure_plate.json": {
+    "mtime": 1786323808.8065526,
+    "ast_hash": "5afb23983ae7548fba26a7ee90edd5cd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/autopilot_sign.json": {
+    "mtime": 1786323808.8259273,
+    "ast_hash": "d94de1e316aa97411f8e811173cb9537",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/dash_panel.json": {
+    "mtime": 1786323808.8569977,
+    "ast_hash": "07a777f6852df5c1b9f82b8960bbc465",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/dirt_off_road.json": {
+    "mtime": 1786323808.8719196,
+    "ast_hash": "4b171b286d27e3bd85e918a411942853",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/grass_off_road.json": {
+    "mtime": 1786323808.8835557,
+    "ast_hash": "a06d8e6abe18fa3111967fd8b54efaef",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/launch_gel.json": {
+    "mtime": 1786323808.898819,
+    "ast_hash": "a3c08c6c16f1c413534e93e6f4937fbe",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/sand_off_road.json": {
+    "mtime": 1786323808.9120939,
+    "ast_hash": "fb28ddc54a4c9721ac88ecec7df3385c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/slope.json": {
+    "mtime": 1786483983.507737,
+    "ast_hash": "f3e669f1c41850dbfcc5daaa1d34c610",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/slope_with_dash_panel.json": {
+    "mtime": 1786484003.5872838,
+    "ast_hash": "97abbcac36a7b49adf91bbc117ff46a4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/snow_off_road.json": {
+    "mtime": 1786323808.9594083,
+    "ast_hash": "4f52ad2d3fe4da0588f5ab87aa22a5f4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/steep_slope.json": {
+    "mtime": 1786483989.2457993,
+    "ast_hash": "7163c26a02a09aed4d6926027a92ee99",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/blockstates/steep_slope_with_dash_panel.json": {
+    "mtime": 1786484012.6571248,
+    "ast_hash": "2448c81c3d5b3d623d7b7319e1740824",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/allow.json": {
+    "mtime": 1786533568.9172258,
+    "ast_hash": "3f5fad0bc3bdcd30c0d51673bc7e92c1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/auto_mechanic_table.json": {
+    "mtime": 1786533568.9725108,
+    "ast_hash": "3034cc5957ccbd90022be3bf26bf9ad9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile.json": {
+    "mtime": 1786533562.5423477,
+    "ast_hash": "bc1e4cff2daeebc54b62790b20e05574",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile_assembler.json": {
+    "mtime": 1786533569.021026,
+    "ast_hash": "44e44a529e1338e72d38578957699e3f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile_engine.json": {
+    "mtime": 1786533562.5957642,
+    "ast_hash": "dcbf6473efc693684bb08041ded63056",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile_frame.json": {
+    "mtime": 1786533562.6403017,
+    "ast_hash": "47d83d63a8763b7976eade38b8e4f070",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile_pressure_plate.json": {
+    "mtime": 1786533569.0681372,
+    "ast_hash": "93c72ef23ee8c3a0f76c33032d449707",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/automobile_wheel.json": {
+    "mtime": 1786533562.6895077,
+    "ast_hash": "1ec13f4a534272f20bc5d3b1aff6ae1a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/autopilot_sign.json": {
+    "mtime": 1786533569.1157947,
+    "ast_hash": "d06d0633c609369ed8fa7dff8e4475d5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/crowbar.json": {
+    "mtime": 1786533569.1649964,
+    "ast_hash": "9dfe3a055c70d00012d4bc9d8f6ef2b8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/dash_panel.json": {
+    "mtime": 1786533569.212466,
+    "ast_hash": "81746d1b45aa2bcfbba6066f82562fdb",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/dirt_off_road.json": {
+    "mtime": 1786533569.2756062,
+    "ast_hash": "b204bf84f6a5f1bc2d3bb12840d51b44",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/front_attachment.json": {
+    "mtime": 1786533562.7727194,
+    "ast_hash": "5e3767145247c764c1c96832776213f1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/grass_off_road.json": {
+    "mtime": 1786533569.3796246,
+    "ast_hash": "3eb91a354822aecc7d6a168f857609bd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/launch_gel.json": {
+    "mtime": 1786533569.4260385,
+    "ast_hash": "73fe1cf4e7e340608a0ee644d3f03eee",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/rear_attachment.json": {
+    "mtime": 1786533562.831052,
+    "ast_hash": "9227409e04e2202936300b2dac9db256",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/sand_off_road.json": {
+    "mtime": 1786533569.4697008,
+    "ast_hash": "b566a4cacc495104269fcb03c660cbae",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/slope.json": {
+    "mtime": 1786533569.5186684,
+    "ast_hash": "b98bfed399b360b65b102c32ef88b743",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/snow_off_road.json": {
+    "mtime": 1786533569.5627422,
+    "ast_hash": "50dfea7901883459532d8c647d16d795",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/items/steep_slope.json": {
+    "mtime": 1786533569.6096115,
+    "ast_hash": "d44eae632b066ab4f88820c92aec0681",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/lang/en_us.json": {
+    "mtime": 1786323809.0006635,
+    "ast_hash": "4da7e4eac624e16f2e47be435862cf64",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/lang/es_es.json": {
+    "mtime": 1786533634.0462244,
+    "ast_hash": "0faa3d273c9a39931f5452babe4e9532",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/lang/zh_cn.json": {
+    "mtime": 1786323809.0230956,
+    "ast_hash": "eb2c6049748546688c12af0bbc7b48d4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/allow.json": {
+    "mtime": 1786323809.0439355,
+    "ast_hash": "e273b308786bd642cef8ef4672c1fc1a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/auto_mechanic_table.json": {
+    "mtime": 1786323809.2715776,
+    "ast_hash": "04fb4b55e01be202d44ad589ec55e363",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/automobile_assembler.json": {
+    "mtime": 1786323809.0577216,
+    "ast_hash": "3c298e464e36cbb6692bd7968ed337b8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/automobile_pressure_plate.json": {
+    "mtime": 1786323809.0709765,
+    "ast_hash": "f73432f6cb8292460abf9aa485b33a4f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/automobile_pressure_plate_down.json": {
+    "mtime": 1786323809.0826576,
+    "ast_hash": "517afefaa25ca050245391353c4da0f0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_angled_left.json": {
+    "mtime": 1786323809.097382,
+    "ast_hash": "75983628584033bd3c3e81d3b707362d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_angled_right.json": {
+    "mtime": 1786323809.1137037,
+    "ast_hash": "62e80cac29ad1a46007196592eaa6e00",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_angled_stop.json": {
+    "mtime": 1786323809.12845,
+    "ast_hash": "f330de00589c37e5f965cac1aec76357",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_floor.json": {
+    "mtime": 1786323809.1478553,
+    "ast_hash": "32f42e0296f143ccce7eb0a235de0862",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_floor_angled.json": {
+    "mtime": 1786323809.1673777,
+    "ast_hash": "aae558c6351a1a27e9bbf65c5b17ee50",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_floor_angled_stop.json": {
+    "mtime": 1786323809.1837523,
+    "ast_hash": "b80f21a8c582f67b3aef175eeaf02d53",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_floor_stop.json": {
+    "mtime": 1786323809.20663,
+    "ast_hash": "9db0e4ea4a801cf743de5e50dcc106e4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_left.json": {
+    "mtime": 1786323809.2193496,
+    "ast_hash": "464d1599ac123a3f4ca72a2dbd3e3e8c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_right.json": {
+    "mtime": 1786323809.240651,
+    "ast_hash": "836a24fd0300d6a26b8b8a0cea3c3614",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/autopilot_sign_stop.json": {
+    "mtime": 1786323809.2593546,
+    "ast_hash": "ed4a01d29bd6245d4abab25368c796a4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_center.json": {
+    "mtime": 1786323809.2893875,
+    "ast_hash": "1bef240e122c63f342aa853e7d1c1c30",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_center_off.json": {
+    "mtime": 1786323809.3116188,
+    "ast_hash": "60a66d1ef028503734e4e6f9e5504b30",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_left.json": {
+    "mtime": 1786323809.32782,
+    "ast_hash": "488c1cd6949b50fecfb927d55c42d4fc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_left_off.json": {
+    "mtime": 1786323809.3461063,
+    "ast_hash": "df59187758c40e2480f169c66a4cc765",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_right.json": {
+    "mtime": 1786323809.3721287,
+    "ast_hash": "031da5e0799e140012af39712754e5e7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_right_off.json": {
+    "mtime": 1786323809.3914754,
+    "ast_hash": "217a0a11573238b18932b221e6dc2db8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_single.json": {
+    "mtime": 1786323809.4108865,
+    "ast_hash": "e8f86dcf8561b5e5159fefe790753a5f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dash_panel_single_off.json": {
+    "mtime": 1786323809.4261315,
+    "ast_hash": "f8ddbddb26abe8f72b575089961523f0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dirt_off_road_0.json": {
+    "mtime": 1786323809.4807768,
+    "ast_hash": "e326b390862b4cae9c2b1aee716f9c0f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dirt_off_road_1.json": {
+    "mtime": 1786323809.4961195,
+    "ast_hash": "fc6db94ba452531821c9adde6b18ac66",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/dirt_off_road_2.json": {
+    "mtime": 1786323809.5104117,
+    "ast_hash": "986cdc0b4971b7c2d51ba4eb28d891c9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/grass_off_road_0.json": {
+    "mtime": 1786323809.5252342,
+    "ast_hash": "fc06a194711fc47827854490a96066b2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/grass_off_road_1.json": {
+    "mtime": 1786323809.5384424,
+    "ast_hash": "60b587d7baf1b3d6d846674d6476d357",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/grass_off_road_2.json": {
+    "mtime": 1786323809.5494466,
+    "ast_hash": "195d0b5241afb49d48b33148166b6de7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/launch_gel.json": {
+    "mtime": 1786323809.5637484,
+    "ast_hash": "a34f46291d7e958fcac40b8e1392d3e7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/sand_off_road_0.json": {
+    "mtime": 1786323809.576969,
+    "ast_hash": "1b5e7f8967e9563f58d2cfe96855774e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/sand_off_road_1.json": {
+    "mtime": 1786323809.597941,
+    "ast_hash": "bebe9812f3ce6ad4141be72b8669ca70",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/sand_off_road_2.json": {
+    "mtime": 1786323809.612812,
+    "ast_hash": "44eaaa7e7b02595b3e2daafb7d29c31e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/snow_off_road_0.json": {
+    "mtime": 1786323809.626654,
+    "ast_hash": "92c9c02e5a0be261569470d9dc4434c5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/snow_off_road_1.json": {
+    "mtime": 1786323809.6408505,
+    "ast_hash": "e430a8b45403a5ced71b0901ca25b70a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/snow_off_road_2.json": {
+    "mtime": 1786323809.6561992,
+    "ast_hash": "8166a1ae793fc6bcbd195020c00c408e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_angled_left.json": {
+    "mtime": 1786323809.6675737,
+    "ast_hash": "f31b915613f3a4f154dbaea11b32f78b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_angled_right.json": {
+    "mtime": 1786323809.6815388,
+    "ast_hash": "62ac909c65db7121061130b7a7eb4456",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_floor.json": {
+    "mtime": 1786323809.6954038,
+    "ast_hash": "24ac53aeef0838bc0114bf9fde9406be",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_floor_angled.json": {
+    "mtime": 1786323809.7004204,
+    "ast_hash": "74529d0cbde277282931c55e8a414cb2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_left.json": {
+    "mtime": 1786323809.7059996,
+    "ast_hash": "5ea9e4b3caf06316acbdfe355b646d34",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_autopilot_sign_right.json": {
+    "mtime": 1786323809.7183042,
+    "ast_hash": "6d89c21677a46fc83e4998867f34f027",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_off_road_0.json": {
+    "mtime": 1786323809.7244723,
+    "ast_hash": "c6f6d225e64e0e53ae13a14c2e812e89",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_off_road_1.json": {
+    "mtime": 1786323809.7377133,
+    "ast_hash": "491bf9f76dc615c00d78a58405762e1e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/block/template_off_road_2.json": {
+    "mtime": 1786323809.742347,
+    "ast_hash": "baea8b687d49515d41f79cdf24ff8f72",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/copper/main.json": {
+    "mtime": 1786323809.7570508,
+    "ast_hash": "6af0f35f89c010527a38ac1fa552fa01",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/creative/main.json": {
+    "mtime": 1786323809.7714634,
+    "ast_hash": "c859fa204d603aef936b56a2e70b8d78",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/diamond/main.json": {
+    "mtime": 1786323809.788271,
+    "ast_hash": "5dcbd1c19f70ac3c83934c48f5493cb0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/gold/main.json": {
+    "mtime": 1786323809.8034966,
+    "ast_hash": "177ebf6bc1544c4260a745b9a21ea107",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/iron/main.json": {
+    "mtime": 1786323809.8178675,
+    "ast_hash": "a0ae37648c4c5c9b9a80ecadc1f6a1c8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/engine/stone/main.json": {
+    "mtime": 1786323809.8332362,
+    "ast_hash": "0634dd5eed9073793681f17bb14b0d46",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/c_arr/main.json": {
+    "mtime": 1786323809.852691,
+    "ast_hash": "b27a5797dae3a5bdcfeee1da8b0f8fa3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/cruiser/main.json": {
+    "mtime": 1786323809.8480914,
+    "ast_hash": "fd8b313714275d0401ba462d3dc17818",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/motorcar/main.json": {
+    "mtime": 1786323809.8704555,
+    "ast_hash": "f6dc066490a5af2eae8e6912ba21970e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/pineapple/main.json": {
+    "mtime": 1786323809.8837862,
+    "ast_hash": "5e459a429731b96d68fa4ebb226c6ffc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/rickshaw/main.json": {
+    "mtime": 1786323809.8985622,
+    "ast_hash": "9a460e56402fe52c2ce6a5f714100baf",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/shopping_cart/main.json": {
+    "mtime": 1786323809.9149168,
+    "ast_hash": "d45b0f5a84aad43ce399f9b7198ab249",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/standard/main.json": {
+    "mtime": 1786323809.9311697,
+    "ast_hash": "3b01c4a1c84e77899c1717a69749ebd1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/frame/tractor/main.json": {
+    "mtime": 1786323809.9480786,
+    "ast_hash": "d4019aa2370caff49bf25146f6439be2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/front_attachment/autopilot/main.json": {
+    "mtime": 1786323809.962263,
+    "ast_hash": "e21e8ead5a134c51bc84756a9b4284d0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/front_attachment/harvester/main.json": {
+    "mtime": 1786323809.977133,
+    "ast_hash": "bcf851cbc7221a9c9489402bd5d4bcbe",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/front_attachment/mob_controller/main.json": {
+    "mtime": 1786323809.9940286,
+    "ast_hash": "68f9a6eda3eb19c54c9d813788c0b0f9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/banner_post/main.json": {
+    "mtime": 1786323810.0112927,
+    "ast_hash": "653447097bb18aa675b52431024a583b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/block/main.json": {
+    "mtime": 1786323810.0291724,
+    "ast_hash": "65e6ef8050689bf2c463f0fd77806ee5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/chest/main.json": {
+    "mtime": 1786323810.0485065,
+    "ast_hash": "e49d86df912f33a7dc56a8f7c0405e6e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/grindstone/main.json": {
+    "mtime": 1786323810.0668788,
+    "ast_hash": "6d05fc72a7df6a63e0ad6a805c57e506",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/passenger_seat/main.json": {
+    "mtime": 1786323810.0889127,
+    "ast_hash": "04c4139fb1eb0788e2b44190101c4195",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/plow/main.json": {
+    "mtime": 1786323810.1082747,
+    "ast_hash": "354f4d97fbbfa3a5ba83f5b096172872",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/rear_attachment/stonecutter/main.json": {
+    "mtime": 1786323810.1302123,
+    "ast_hash": "d693b2de106d98e8abc7d60e83213067",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/wheel/carriage/main.json": {
+    "mtime": 1786323810.1480658,
+    "ast_hash": "fb2307dbc2e959787bf66bb97c8c4771",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/wheel/off_road/main.json": {
+    "mtime": 1786323810.1644647,
+    "ast_hash": "8e502343dff4564f19faa145d9bb298f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/wheel/standard/main.json": {
+    "mtime": 1786323810.1792998,
+    "ast_hash": "d028d678ca7bd37faeef37e3167d4fe8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/wheel/steel/main.json": {
+    "mtime": 1786323810.1955466,
+    "ast_hash": "901aff5b433ff1dd6e350867ccd384f3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile/wheel/tractor/main.json": {
+    "mtime": 1786323810.2090728,
+    "ast_hash": "a95dfa98b8540745f9ed56376459b64d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile_exhaust_fumes/main.json": {
+    "mtime": 1786323810.2264388,
+    "ast_hash": "0b8eef80c59caf7206485e87a0cdf087",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile_skid_effect/main.json": {
+    "mtime": 1786323810.243269,
+    "ast_hash": "0f1a0e57f4621c8abab9e479811e4919",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/entity/automobile_skid_effect/old.json": {
+    "mtime": 1786323810.258086,
+    "ast_hash": "20d8a7504b39407ad4f21a89ca7c63ce",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/allow.json": {
+    "mtime": 1786323810.2728822,
+    "ast_hash": "a7cd00f2bbe611f457c245cce5ff4afc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/auto_mechanic_table.json": {
+    "mtime": 1786323810.3739722,
+    "ast_hash": "83bbd7ecd89a45fdeaac04b77861de5e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile.json": {
+    "mtime": 1786533552.9629269,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile_assembler.json": {
+    "mtime": 1786323810.2999597,
+    "ast_hash": "df9797f93a5cce6be4931f0aa1419ccd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile_engine.json": {
+    "mtime": 1786533553.1654086,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile_frame.json": {
+    "mtime": 1786533553.3430476,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile_pressure_plate.json": {
+    "mtime": 1786323810.3295715,
+    "ast_hash": "7cf82c06e014c5adeaa4f52dcd378743",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/automobile_wheel.json": {
+    "mtime": 1786533553.5307953,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/autopilot_sign.json": {
+    "mtime": 1786323810.3576007,
+    "ast_hash": "1a6f89b5403cd15fc2b039e7218dcead",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/crowbar.json": {
+    "mtime": 1786323810.3918726,
+    "ast_hash": "97eccf228528486b3e5a5204c99a6797",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/dash_panel.json": {
+    "mtime": 1786323810.4050558,
+    "ast_hash": "4d7b0d28ee13316e2155d701b7807368",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/dirt_off_road.json": {
+    "mtime": 1786323810.4164197,
+    "ast_hash": "c228bc2661ad30c9646c7ee03946c780",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/front_attachment.json": {
+    "mtime": 1786533553.7316427,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/grass_off_road.json": {
+    "mtime": 1786323810.4408805,
+    "ast_hash": "a2173067321c2c12da539408f83232e6",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/launch_gel.json": {
+    "mtime": 1786323810.4541473,
+    "ast_hash": "7e78cf581998685a8147811153824a0c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/rear_attachment.json": {
+    "mtime": 1786533553.9272213,
+    "ast_hash": "b1a43d08a654dfa2f4ba6e0b9d171c45",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/sand_off_road.json": {
+    "mtime": 1786323810.467353,
+    "ast_hash": "b8678a184c43ba24265ae0ee87e40184",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/slope.json": {
+    "mtime": 1786323810.4812279,
+    "ast_hash": "8567f6db0609f43034339f0abb4b85da",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/sloped_dash_panel.json": {
+    "mtime": 1786323810.4929044,
+    "ast_hash": "6716d53f0bd12ca0d4195eb39705784c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/snow_off_road.json": {
+    "mtime": 1786323810.5051138,
+    "ast_hash": "1d3bc80bf4e90931a150f2cda2f48def",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/steep_slope.json": {
+    "mtime": 1786323810.5208414,
+    "ast_hash": "5db719a0865bd4786d63d192c9ec56b3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/models/item/steep_sloped_dash_panel.json": {
+    "mtime": 1786323810.5361822,
+    "ast_hash": "1bc9dcd04d7dfce741c94233521c11d2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/particles/drift_smoke.json": {
+    "mtime": 1786323810.5493698,
+    "ast_hash": "8b9d8b0c903177e5f29de5952bc29de7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds.json": {
+    "mtime": 1786323810.5627458,
+    "ast_hash": "9d9197aa27e8dd16bd8f124586bcb068",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/minecraft/tags/block/mineable/pickaxe.json": {
+    "mtime": 1786323810.5775638,
+    "ast_hash": "b22b5a554e1054b8a4fcceff0e47cdce",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/minecraft/tags/block/mineable/shovel.json": {
+    "mtime": 1786323810.5908382,
+    "ast_hash": "a6546dd79f959998aa2f64ca2e51a76b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/damage_type/automobile.json": {
+    "mtime": 1786323810.6041837,
+    "ast_hash": "12b3c722dc021d5a71719b5663d75ea0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/auto_mechanic_table.json": {
+    "mtime": 1786323810.6399043,
+    "ast_hash": "381c958cf5dc2f230310d29dd1eccf2e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/automobile_assembler.json": {
+    "mtime": 1786323810.6149664,
+    "ast_hash": "439c2f3a1d83c882b963e40bad854d59",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/autopilot_sign.json": {
+    "mtime": 1786323810.6276786,
+    "ast_hash": "b419c4359a55fb37eb0169257b850d39",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/dash_panel.json": {
+    "mtime": 1786323810.6552675,
+    "ast_hash": "729212bffe703938eda2ab12b43d3ab8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/dirt_off_road.json": {
+    "mtime": 1786323810.6709847,
+    "ast_hash": "71e9e0da618e927cb1cf68caaf1250a8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/grass_off_road.json": {
+    "mtime": 1786323810.6827626,
+    "ast_hash": "493e869d50bc1a40e368316d72437f1a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/launch_gel.json": {
+    "mtime": 1786323810.6990986,
+    "ast_hash": "7943317599d9b97648107e771b4e99e0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/sand_off_road.json": {
+    "mtime": 1786323810.712838,
+    "ast_hash": "d6d5f83b0aedb90ae1dd850be89993e6",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/slope.json": {
+    "mtime": 1786323810.7286296,
+    "ast_hash": "06f2f45291ceadfabf52b5540a222565",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/slope_with_dash_panel.json": {
+    "mtime": 1786323810.7428193,
+    "ast_hash": "8ec05f89b4101e9867d19d0015c24ba0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/snow_off_road.json": {
+    "mtime": 1786323810.7576506,
+    "ast_hash": "06b35a2f0f16b68cec0fdea3ca7d4b04",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/steep_slope.json": {
+    "mtime": 1786323810.7784307,
+    "ast_hash": "b68e8db8f77e768a006603e83d6e33ef",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/loot_table/blocks/steep_slope_with_dash_panel.json": {
+    "mtime": 1786323810.7953956,
+    "ast_hash": "66fc39beea50f468e43784c355925cbe",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/front/autopilot.json": {
+    "mtime": 1786536978.9357607,
+    "ast_hash": "a1a77db6f6639844102ff71349bfc2a4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/front/crop_harvester.json": {
+    "mtime": 1786536978.9367619,
+    "ast_hash": "e525e82f1f9602906a0505d37b400eb1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/front/grass_cutter.json": {
+    "mtime": 1786536978.937342,
+    "ast_hash": "0187839df84e293a4d298fd42b9cc210",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/front/mob_controller.json": {
+    "mtime": 1786536978.937342,
+    "ast_hash": "72a020e9e83741315031a8890f4d701a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/auto_mechanic_table.json": {
+    "mtime": 1786536978.9378383,
+    "ast_hash": "4d982e5ff869349f5c10659716869c71",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/backhoe.json": {
+    "mtime": 1786536978.9378383,
+    "ast_hash": "a30497e4c6f743b07952f327c0373ca7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/banner_post.json": {
+    "mtime": 1786536978.938378,
+    "ast_hash": "ca0f0965c708781b24a1e3d32a799104",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/cartography_table.json": {
+    "mtime": 1786536978.9388745,
+    "ast_hash": "d12b7e92dd6e05460e9db61138387577",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/chest.json": {
+    "mtime": 1786536978.9388745,
+    "ast_hash": "2e7c6bd4429d6d69ab85aaab59c6134c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/crafting_table.json": {
+    "mtime": 1786536978.9393709,
+    "ast_hash": "df732860ef8f22da746a2c1227c97b73",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/ender_chest.json": {
+    "mtime": 1786536978.9393709,
+    "ast_hash": "b39d3772e98849894d7af2dc10772f9e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/grindstone.json": {
+    "mtime": 1786536978.9393709,
+    "ast_hash": "6fa2c21b9b1a92c762180290e798d8a5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/loom.json": {
+    "mtime": 1786536978.9393709,
+    "ast_hash": "eb1ad4b30af1335623b4ae4fe38cae9d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/passenger_seat.json": {
+    "mtime": 1786536978.9403722,
+    "ast_hash": "5ac583747c6073c1ed33415af3a03750",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/paver.json": {
+    "mtime": 1786536978.9403722,
+    "ast_hash": "d5cfee7bc01165a376949e333ca9bc89",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/saddled_barrel.json": {
+    "mtime": 1786536978.940935,
+    "ast_hash": "5aa92b75d9cbdbaa8345eca42bb57c33",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/smithing_table.json": {
+    "mtime": 1786536978.940935,
+    "ast_hash": "f0ee0be3201f835a53cc144ffdff4e28",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/attachment/rear/stonecutter.json": {
+    "mtime": 1786536978.9414313,
+    "ast_hash": "1fcbbab9866ca836877570edd2939f69",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/auto_mechanic_table.json": {
+    "mtime": 1786536950.740649,
+    "ast_hash": "b9a052a72cbc2a37dd78803c84ae12ff",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/automobile_assembler.json": {
+    "mtime": 1786536950.740649,
+    "ast_hash": "74743a9f536eef52163d7e610c74c3e5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/autopilot_sign.json": {
+    "mtime": 1786536950.7411644,
+    "ast_hash": "2906c5bb44b1876dd660864fa141a064",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/crowbar.json": {
+    "mtime": 1786536950.7416635,
+    "ast_hash": "a35a5efce67554359da37e82ff983477",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/dash_panel.json": {
+    "mtime": 1786536950.7416635,
+    "ast_hash": "ade9efb164fbf831d6b7aab3bd3c95f8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/dirt_off_road.json": {
+    "mtime": 1786536950.7416635,
+    "ast_hash": "9c743dae4d2770663fa4c7c747ee0101",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/engine/copper_engine.json": {
+    "mtime": 1786536978.9419286,
+    "ast_hash": "2af6bead7ea9de9c42e3632e51a393e8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/engine/diamond_engine.json": {
+    "mtime": 1786536978.9424253,
+    "ast_hash": "c876e05c8f7bc726892c60506e3e3ab0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/engine/gold_engine.json": {
+    "mtime": 1786536978.9430492,
+    "ast_hash": "cb48262c25b6152b772e6adf030aef9a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/engine/iron_engine.json": {
+    "mtime": 1786536978.9440427,
+    "ast_hash": "908ce2d79b814c40c7d941ee02d7e732",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/engine/stone_engine.json": {
+    "mtime": 1786536978.945046,
+    "ast_hash": "45eef77942548a401de979158f6358f4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/amethyst_rickshaw.json": {
+    "mtime": 1786536978.9456284,
+    "ast_hash": "8b0ad539d15f71f766e01d0cf67748f3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/bejeweled_motorcar.json": {
+    "mtime": 1786536978.9461246,
+    "ast_hash": "b10bea6cb51fdcc43c8b3f9ce1fa06d2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/blue_tractor.json": {
+    "mtime": 1786536978.9461246,
+    "ast_hash": "bd266704e02a63b014f99d57dccf89d1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/copper_motorcar.json": {
+    "mtime": 1786536978.9467108,
+    "ast_hash": "9f9e4a72ff18e041d7402de28ddc1ed5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/echo_rickshaw.json": {
+    "mtime": 1786536978.9472082,
+    "ast_hash": "14a17d72047c9f39a464c2de5d8313cf",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/golden_motorcar.json": {
+    "mtime": 1786536978.9477062,
+    "ast_hash": "2c89ead6a385dc545d2670cb2b5ac178",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/green_tractor.json": {
+    "mtime": 1786536978.9487083,
+    "ast_hash": "4f95763c14bd45321bfee441135077f9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/pineapple.json": {
+    "mtime": 1786536978.949239,
+    "ast_hash": "df7d2531a521366664307d47cdbe5bad",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/prismarine_rickshaw.json": {
+    "mtime": 1786536978.9498823,
+    "ast_hash": "a54c6f376140496f23fc1cf03871db35",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/quartz_rickshaw.json": {
+    "mtime": 1786536978.9504457,
+    "ast_hash": "5e924e786c0346b00b35dedb97a12639",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/red_tractor.json": {
+    "mtime": 1786536978.9509425,
+    "ast_hash": "d282adaf6d0e8221583fec2bb7cd010b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/shopping_cart.json": {
+    "mtime": 1786536978.9509425,
+    "ast_hash": "2990ace88ec0895b840e28b30bc5be78",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_black.json": {
+    "mtime": 1786536978.9509425,
+    "ast_hash": "3dec73979173de5c2261edafd59f9118",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_blue.json": {
+    "mtime": 1786536978.9519708,
+    "ast_hash": "ea0bc6a49f90249af6ad5fbbb2d79888",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_brown.json": {
+    "mtime": 1786536978.9519708,
+    "ast_hash": "55ca6388df589fa05cf47abd56c5182c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_cyan.json": {
+    "mtime": 1786536978.9526167,
+    "ast_hash": "676794742531acfdbee42c4221359a88",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_gray.json": {
+    "mtime": 1786536978.9531171,
+    "ast_hash": "76acd16c581c40de11f8a3d66661c92a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_green.json": {
+    "mtime": 1786536978.953689,
+    "ast_hash": "319f6077ea0e40405efd0e627c4b06ad",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_light_blue.json": {
+    "mtime": 1786536978.9541857,
+    "ast_hash": "d6a81967965522966e26e4aac9b17842",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_light_gray.json": {
+    "mtime": 1786536978.9541857,
+    "ast_hash": "b44105a073bd9cde60f7d3d46761b2cb",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_lime.json": {
+    "mtime": 1786536978.9549177,
+    "ast_hash": "de0323c1de3282913f9170aaa816c2b1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_magenta.json": {
+    "mtime": 1786536978.9549177,
+    "ast_hash": "da830c8f0ebe39c1d74bab5437f99652",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_orange.json": {
+    "mtime": 1786536978.955414,
+    "ast_hash": "b9d7448b3efd8f5d2ea731f8277645db",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_pink.json": {
+    "mtime": 1786536978.9559107,
+    "ast_hash": "341a9ce3a1f7c04439eddc3730c5c3c0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_purple.json": {
+    "mtime": 1786536978.9559107,
+    "ast_hash": "cbca2785523c99e93faede474591003e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_red.json": {
+    "mtime": 1786536978.9559107,
+    "ast_hash": "baa06de484506c4578af1a191cd590fa",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_white.json": {
+    "mtime": 1786536978.9559107,
+    "ast_hash": "898451dcb709270401e0d7d87cf56255",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/standard_yellow.json": {
+    "mtime": 1786536978.9569137,
+    "ast_hash": "341c34540d0c24e419a01c1d26fa404d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/steel_motorcar.json": {
+    "mtime": 1786536978.9574318,
+    "ast_hash": "c04b5f366f9ef9ca205218381eaf8e6b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/wooden_motorcar.json": {
+    "mtime": 1786536978.9574318,
+    "ast_hash": "19d54b9a1cfe60b601a34d4c63b8ed2c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/frame/yellow_tractor.json": {
+    "mtime": 1786536978.9579282,
+    "ast_hash": "108898c088de740324c30d43768883db",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/grass_off_road.json": {
+    "mtime": 1786536950.7428048,
+    "ast_hash": "0b11b3663614c5b7fa6419b41fcfa60b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/launch_gel.json": {
+    "mtime": 1786536950.7428048,
+    "ast_hash": "219a1ec85c32859ae07f29944e13469f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/sand_off_road.json": {
+    "mtime": 1786536950.74341,
+    "ast_hash": "0e2432540c01396b84700de476d05dc7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/slope.json": {
+    "mtime": 1786536950.7439072,
+    "ast_hash": "d6b5b4ad2c3c9d84ff6f0c6026762e6a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/snow_off_road.json": {
+    "mtime": 1786536950.744404,
+    "ast_hash": "15bf49cf246d6c74836b0b9dff8a320a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/steep_slope.json": {
+    "mtime": 1786536950.744404,
+    "ast_hash": "76a050a76b77c82c9e1426baca8911df",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/bejeweled_wheel.json": {
+    "mtime": 1786536978.958425,
+    "ast_hash": "9730e71332e29e87d6ef2f7feb8b02ea",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/carriage_wheel.json": {
+    "mtime": 1786536978.9589214,
+    "ast_hash": "e1cc7210ce72d2ad0e84561d0cb2b471",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/gilded_wheel.json": {
+    "mtime": 1786536978.9604225,
+    "ast_hash": "4fd4110fd3db8b23250c0db9ef409b2e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/off_road_wheel.json": {
+    "mtime": 1786536978.9609425,
+    "ast_hash": "39a0b93d5da213e6628a9d791c81c38b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/plated_wheel.json": {
+    "mtime": 1786536978.9619455,
+    "ast_hash": "2bec97b99c58bf545b951f45b39ae915",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/standard_wheel.json": {
+    "mtime": 1786536978.9624884,
+    "ast_hash": "93ad3faaba0186bf2a1223811c65ee0b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/steel_wheel.json": {
+    "mtime": 1786536978.9634798,
+    "ast_hash": "1e437ff21374533300a2dc51e4e56c03",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/street_wheel.json": {
+    "mtime": 1786536978.9639766,
+    "ast_hash": "7787d5ef6b42f437cdf85519103be0d6",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/recipe/wheel/tractor_wheel.json": {
+    "mtime": 1786536978.9639766,
+    "ast_hash": "6b57ce1dfd4f8e1b3a036030baf402ad",
+    "semantic_hash": ""
+  },
+  "src/main/resources/data/vehiclery/tags/entity_types/dash_panel_boostables.json": {
+    "mtime": 1786323812.200596,
+    "ast_hash": "7db50014bc9a0b9c82c864f13a56c6b7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/vehiclery.mixins.json": {
+    "mtime": 1786323812.3473055,
+    "ast_hash": "693088e0291cb1f1c338dc85fce0118e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/vehiclery_neoforge.mixins.json": {
+    "mtime": 1786483751.8268926,
+    "ast_hash": "f35921b4bc80b35dfa883209101f29e4",
+    "semantic_hash": ""
+  },
+  "CHANGELOG.md": {
+    "mtime": 1786734789.7224345,
+    "ast_hash": "d8d70d365d5feb9ce49e114eb7a9c4fe",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1786323690.7293048,
+    "ast_hash": "6b3e2d7e3fcab8c2e9e1f1fc2910b958",
+    "semantic_hash": ""
+  },
+  "docs/PORT_ROADMAP_26-2.md": {
+    "mtime": 1786551282.7245364,
+    "ast_hash": "d6d791a142817507b1c301017b69c903",
+    "semantic_hash": ""
+  },
+  "docs/WORKFLOW_VEHICLERY_26-2.md": {
+    "mtime": 1786323871.866474,
+    "ast_hash": "1b6307fdfe97cae29bdd54b917961633",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/project_description.md": {
+    "mtime": 1786357546.3868487,
+    "ast_hash": "2f5eb5c5f720d9220374477add37fa09",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/project_vars.md": {
+    "mtime": 1786734949.001413,
+    "ast_hash": "1293493b814e547fc62a7b1bb991fee0",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.1.md": {
+    "mtime": 1786403926.2347996,
+    "ast_hash": "4ad52333989302b6c0b79e0a9efe3480",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/versions/0.0.0-beta.6.md": {
+    "mtime": 1786734801.4124477,
+    "ast_hash": "a6d6ca940d1cddfb2b88c3c9007560c1",
+    "semantic_hash": ""
+  },
+  "docs/curseforge/assets/logo.png": {
+    "mtime": 1786360980.8278735,
+    "ast_hash": "3871fbf5be1a6f275bd57df3dc60a7bb",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/allow.png": {
+    "mtime": 1786323710.7324867,
+    "ast_hash": "67340f359d78a48966807f65e2ff8761",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/auto_mechanic_table.png": {
+    "mtime": 1786323710.734015,
+    "ast_hash": "36a63f155ff6e8895cda3ff40adfcbf2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/auto_mechanic_table_bottom.png": {
+    "mtime": 1786323710.734015,
+    "ast_hash": "510d01586d5e2e671ee53178ad3c187b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/automobile_assembler_bottom.png": {
+    "mtime": 1786323710.7370336,
+    "ast_hash": "ceb8f98099fd011b220764f87ba85fa5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/automobile_assembler_side.png": {
+    "mtime": 1786323710.7385583,
+    "ast_hash": "62ca853dad3738b37e8183cd5eda4a05",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/automobile_assembler_top.png": {
+    "mtime": 1786323710.7426014,
+    "ast_hash": "5f462a54e68e6168eaf049967aefb9b5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/automobile_pressure_plate.png": {
+    "mtime": 1786323710.747273,
+    "ast_hash": "d3d166d9b74799b1941ee74679cf76f8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/autopilot_sign_arrow.png": {
+    "mtime": 1786323710.7503266,
+    "ast_hash": "b0eff81bd0344fa2c0c8c8623354bbd9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/autopilot_sign_stop.png": {
+    "mtime": 1786323710.751862,
+    "ast_hash": "ffaa1f72f1676e6bdadc64a6ede4dc40",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/dash_panel.png": {
+    "mtime": 1786323710.760682,
+    "ast_hash": "1e7fbd5c4e14e5b1a96280fd0db31f79",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/dash_panel_frame.png": {
+    "mtime": 1786323710.7621925,
+    "ast_hash": "6d44ca427f5a4af72037f9521b8fe436",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/dash_panel_off.png": {
+    "mtime": 1786323710.7667727,
+    "ast_hash": "7c9a9d3185f4dafa47b4ed04788f37ca",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/dirt_off_road.png": {
+    "mtime": 1786323710.7723613,
+    "ast_hash": "118efe46c0cd0407aaaa10bfe4cfdfea",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/grass_off_road.png": {
+    "mtime": 1786323710.7713547,
+    "ast_hash": "cd795f111b2b1538df26f061552f5d01",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/launch_gel.png": {
+    "mtime": 1786323710.768299,
+    "ast_hash": "8031cfba44f85ddc51a8374d613ab960",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/sand_off_road.png": {
+    "mtime": 1786323710.7698224,
+    "ast_hash": "9c3d66c01e2f113076d0450a65ee2782",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/slope_frame.png": {
+    "mtime": 1786323710.768299,
+    "ast_hash": "1ed3054b0cf54859abd0cb5bdb4ec2a7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/block/snow_off_road.png": {
+    "mtime": 1786323710.7324867,
+    "ast_hash": "ae50660ea5d5daa84a7eb5aa153d0c21",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/copper.png": {
+    "mtime": 1786323711.1269348,
+    "ast_hash": "781e312b8ba17aafaae4538c645f0f7f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/creative.png": {
+    "mtime": 1786323711.1208572,
+    "ast_hash": "73f796581bac3ea2c9f885e9ffd9d7ff",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/diamond.png": {
+    "mtime": 1786323711.1223943,
+    "ast_hash": "d5fdc3c2376277eaa5326220d0bc2856",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/gold.png": {
+    "mtime": 1786323711.1341326,
+    "ast_hash": "2edd4195a1370697d3170c4a57cfed85",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/iron.png": {
+    "mtime": 1786323711.1177971,
+    "ast_hash": "a8651fe1bbaf9e50b93e8db239f30178",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/engine/stone.png": {
+    "mtime": 1786323711.1193204,
+    "ast_hash": "40dd8756c9f163e267062b28d67041f7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_flames_0.png": {
+    "mtime": 1786323711.138669,
+    "ast_hash": "267f40b200cbb896dd1959d74dd8a4c3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_flames_1.png": {
+    "mtime": 1786323711.138669,
+    "ast_hash": "deaf25a0d6478c41a121e8f6ae3c55c9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_flames_2.png": {
+    "mtime": 1786323711.1488316,
+    "ast_hash": "a1bb8480978ae34fe48eb48d947eaa40",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_flames_3.png": {
+    "mtime": 1786323711.147825,
+    "ast_hash": "9f22ec2d20011c55fb0a45122a67a312",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_smoke_0.png": {
+    "mtime": 1786323711.1493342,
+    "ast_hash": "4056a83f64c175e961e46e646723eae8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_smoke_1.png": {
+    "mtime": 1786323711.1402068,
+    "ast_hash": "3951c490ea25748efd6e0d3e4c0edc84",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_smoke_2.png": {
+    "mtime": 1786323711.1448107,
+    "ast_hash": "2a2dfed058cc32f8885c979a40448443",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/exhaust/exhaust_smoke_3.png": {
+    "mtime": 1786323711.1432674,
+    "ast_hash": "8e8c34ded47ad93c7e34f5fa700bc822",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/amethyst_rickshaw.png": {
+    "mtime": 1786323711.062991,
+    "ast_hash": "f5be72fd1eb35d5a1f20d005190a31fb",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/bejeweled_motorcar.png": {
+    "mtime": 1786323711.1031034,
+    "ast_hash": "ac66597407b6d2f942cd91c03b03e4b6",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/blue_tractor.png": {
+    "mtime": 1786323711.0263112,
+    "ast_hash": "cbf5ded24e99a9f25b4c8f35b98969fe",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/c_arr.png": {
+    "mtime": 1786323711.0971806,
+    "ast_hash": "9b15b884a01da75e4805908198717fff",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/copper_motorcar.png": {
+    "mtime": 1786323710.9842954,
+    "ast_hash": "134d50d1d56168eb5bd9ba062489d6ab",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/echo_rickshaw.png": {
+    "mtime": 1786323711.1091783,
+    "ast_hash": "1ffb5b43a166bd62b5310b7ffa2409a4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/golden_motorcar.png": {
+    "mtime": 1786323710.9915912,
+    "ast_hash": "a945d3bb6cd76aab0d260c349cb970a8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/green_tractor.png": {
+    "mtime": 1786323711.0823781,
+    "ast_hash": "328e2ca585f89c17f82bb002bb8b0651",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/pineapple.png": {
+    "mtime": 1786323711.000812,
+    "ast_hash": "ae1b8eade98c9553e88c30211cd96645",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/pineapple_src.png": {
+    "mtime": 1786323711.064529,
+    "ast_hash": "f284af7e4de4c16b77e1524e59581d39",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/prismarine_rickshaw.png": {
+    "mtime": 1786323710.9689124,
+    "ast_hash": "acb2dd188fad6ef13be53aec7e768db5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/quartz_rickshaw.png": {
+    "mtime": 1786323711.0354247,
+    "ast_hash": "8a1a8215fd95fb4d099e25cec2ec746f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/red_tractor.png": {
+    "mtime": 1786323711.062488,
+    "ast_hash": "1a00c61da4c828d6bf9b70b51eff9af8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/shopping_cart.png": {
+    "mtime": 1786323710.9704466,
+    "ast_hash": "8bbc14f13ebe832617e95ea99c69eccd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_black.png": {
+    "mtime": 1786323711.0064602,
+    "ast_hash": "53332a6838da427b5f255564b566ac28",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_blue.png": {
+    "mtime": 1786323711.042104,
+    "ast_hash": "23d093dd422dbd4153a69f8f0463a7a8",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_brown.png": {
+    "mtime": 1786323711.0716934,
+    "ast_hash": "d00607e77eb16fe872b348910a9c892d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_cyan.png": {
+    "mtime": 1786323711.0466645,
+    "ast_hash": "e0257fdcf544de45d220ec20a44c8d93",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_gray.png": {
+    "mtime": 1786323710.9796927,
+    "ast_hash": "d01ce624a885ddfeb93e8fc584d1ee90",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_green.png": {
+    "mtime": 1786323711.0584142,
+    "ast_hash": "342350318901deebcd74a7132652ec97",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_light_blue.png": {
+    "mtime": 1786323711.115291,
+    "ast_hash": "cfe909f41762c76dce4f4f6454735e50",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_light_gray.png": {
+    "mtime": 1786323711.0303771,
+    "ast_hash": "be4a405ce3dab6b1785fa6f71f977e5c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_lime.png": {
+    "mtime": 1786323711.1137836,
+    "ast_hash": "7e0074271c0496eec299e03cf50c240b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_magenta.png": {
+    "mtime": 1786323711.0777862,
+    "ast_hash": "83e33621627057fb651afe3af0d1bf11",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_orange.png": {
+    "mtime": 1786323711.0879855,
+    "ast_hash": "85dc02304405813cc0210270607017dc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_pink.png": {
+    "mtime": 1786323710.9592812,
+    "ast_hash": "4c9e39fa2554e3ad4029d0c358eb249f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_purple.png": {
+    "mtime": 1786323710.962326,
+    "ast_hash": "985ebe09423635a34e896bbf71b08420",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_red.png": {
+    "mtime": 1786323711.0670414,
+    "ast_hash": "a5e2fe281cd1fb9d2ceada3cbc8e390e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_white.png": {
+    "mtime": 1786323711.0110266,
+    "ast_hash": "6f104dbc4e4172efe700a7d65552592e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/standard_yellow.png": {
+    "mtime": 1786323710.996234,
+    "ast_hash": "cdbbcc512d6cc5a49af9cefa91ead6f9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/steel_motorcar.png": {
+    "mtime": 1786323711.0522394,
+    "ast_hash": "9c70a720a66060157c408d02eb221482",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/wooden_motorcar.png": {
+    "mtime": 1786323711.0125544,
+    "ast_hash": "9f7d2621125308524c25c48e59a0f8f5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/wooden_motorcar_old.png": {
+    "mtime": 1786323711.0196183,
+    "ast_hash": "2f77d5024a927f0600d58341964a636d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/frame/yellow_tractor.png": {
+    "mtime": 1786323710.9766257,
+    "ast_hash": "0017aa93a3cb56fae620424074bebb7a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/front_attachment/autopilot.png": {
+    "mtime": 1786323710.7875164,
+    "ast_hash": "2e8e68667d302562356d4d920a751a09",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/front_attachment/crop_harvester.png": {
+    "mtime": 1786323710.788525,
+    "ast_hash": "7a76363075dd00a782e3379f8e1d35f5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/front_attachment/grass_cutter.png": {
+    "mtime": 1786323710.7931013,
+    "ast_hash": "982e1bbed9928f77bfb08f0b360c412b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/front_attachment/mob_controller.png": {
+    "mtime": 1786323710.789028,
+    "ast_hash": "9464cf1728cda54564ece5e1306c58f0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/auto_mechanic_table.png": {
+    "mtime": 1786323710.8371015,
+    "ast_hash": "56cfd4c7cd208a694995426feee777d5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/backhoe.png": {
+    "mtime": 1786323710.9141202,
+    "ast_hash": "55b3a8da302de86b00e927feea91a660",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/banner_post.png": {
+    "mtime": 1786323710.896254,
+    "ast_hash": "c2a356aa01aecac156c15f77fbc6dcec",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/cartography_table.png": {
+    "mtime": 1786323710.868127,
+    "ast_hash": "d19679b2c81c4da363a7758cc0af54b5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/chest.png": {
+    "mtime": 1786323710.886031,
+    "ast_hash": "4d36a9ef7674c1f0566d3ae9b4ce2c5a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/crafting_table.png": {
+    "mtime": 1786323710.8721812,
+    "ast_hash": "cf2f0dbf3db35ca620fb3d7d01ab42e5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/ender_chest.png": {
+    "mtime": 1786323710.875226,
+    "ast_hash": "be98a051e93f2e607c45e10b364fdc67",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/grindstone.png": {
+    "mtime": 1786323710.893196,
+    "ast_hash": "99e9f074131ddd5fab3c1015fd1a5a7e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/loom.png": {
+    "mtime": 1786323710.9079008,
+    "ast_hash": "f3e37e43350308017aa7d31dd789b643",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/painter.png": {
+    "mtime": 1786323710.903877,
+    "ast_hash": "25c3bf4cc5d97a644b0aee11e65c8f72",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/passenger_seat.png": {
+    "mtime": 1786323710.8620315,
+    "ast_hash": "022e23ebd0737478994e9ad5e97e073d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/paver.png": {
+    "mtime": 1786323710.8411458,
+    "ast_hash": "997005ed42cd7322fded6f06df11b45f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/saddled_barrel.png": {
+    "mtime": 1786323710.8371015,
+    "ast_hash": "139fb6c4ad044576631612b0fb2a497c",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/smithing_table.png": {
+    "mtime": 1786323710.8798587,
+    "ast_hash": "8791a18beee5ede71e793fd8ef58be6a",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/rear_attachment/stonecutter.png": {
+    "mtime": 1786323710.8605263,
+    "ast_hash": "637010e19476e7471395a153f67eb1ed",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_smoke_0.png": {
+    "mtime": 1786323710.8182664,
+    "ast_hash": "74b27bf6cdd04d5e0734b85a2b7dc6d2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_smoke_1.png": {
+    "mtime": 1786323710.8197725,
+    "ast_hash": "0bcead85887effb397b169acd75fe824",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_smoke_2.png": {
+    "mtime": 1786323710.8207772,
+    "ast_hash": "1f24a8e89ba20e636aff4d80916515ca",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_sparks_0.png": {
+    "mtime": 1786323710.8279521,
+    "ast_hash": "b46acefcbe093a8816f2b4c4fd9da27f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_sparks_1.png": {
+    "mtime": 1786323710.8222928,
+    "ast_hash": "3dc3235a50666da180714fed0fe26dce",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/old/skid_sparks_2.png": {
+    "mtime": 1786323710.8232946,
+    "ast_hash": "e6ea96da87f34b9ad274f9d43ef195b3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_cool_sparks_0.png": {
+    "mtime": 1786323710.8294914,
+    "ast_hash": "bcc60891c4fa1fcbc69683a4785ab7c4",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_cool_sparks_1.png": {
+    "mtime": 1786323710.7993686,
+    "ast_hash": "f8c7cdffb7fddeaefa0792a1f4a0fd41",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_cool_sparks_2.png": {
+    "mtime": 1786323710.7993686,
+    "ast_hash": "baeab697141deaeabcb084ccc66c63c3",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_debris_0.png": {
+    "mtime": 1786323710.8325608,
+    "ast_hash": "049f011d6a5f21751e013f2e5e753b39",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_debris_1.png": {
+    "mtime": 1786323710.8325608,
+    "ast_hash": "bf2549b7dbb8a265d0215bfff7f2690e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_debris_2.png": {
+    "mtime": 1786323710.8310277,
+    "ast_hash": "4f6c6437696a3e7a22cc95dbafc124c7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_flames_0.png": {
+    "mtime": 1786323710.80091,
+    "ast_hash": "4eb8405ea8ef28c4b56165230aa37932",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_flames_1.png": {
+    "mtime": 1786323710.80091,
+    "ast_hash": "0a1c7f05757d5a91273133e1069e78ac",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_flames_2.png": {
+    "mtime": 1786323710.8024437,
+    "ast_hash": "44679d419afb190604054be443a99b5d",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_hot_sparks_0.png": {
+    "mtime": 1786323710.8024437,
+    "ast_hash": "6b7b609800b60e689e97f9f17912b290",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_hot_sparks_1.png": {
+    "mtime": 1786323710.8039756,
+    "ast_hash": "9f2d0468008370e2dc33f0b37a6ed4c6",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/skid_effect/skid_hot_sparks_2.png": {
+    "mtime": 1786323710.8055782,
+    "ast_hash": "a30541bc2b2f914924ad8b7197af73a2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/bejeweled.png": {
+    "mtime": 1786323710.9186645,
+    "ast_hash": "1fe0c65e832e2a9b37bf3d6ee6155b4e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/carriage.png": {
+    "mtime": 1786323710.9196792,
+    "ast_hash": "900dfa486acf30d796a301d8bd5f9fc5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/gilded.png": {
+    "mtime": 1786323710.9201827,
+    "ast_hash": "6773411d4eeda3f42c4686fb86508d29",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/off_road.png": {
+    "mtime": 1786323710.9227157,
+    "ast_hash": "07c192b01a706c69568fe5f48810aff2",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/plated.png": {
+    "mtime": 1786323710.9288616,
+    "ast_hash": "a7733dbff3acef25c5c85b022c8a314f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/standard.png": {
+    "mtime": 1786323710.9211857,
+    "ast_hash": "9338f06e72807010ca87bbdf1a1cb7cc",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/steel.png": {
+    "mtime": 1786323710.9211857,
+    "ast_hash": "1492d99fe0b209b4e5c0cf0f5bcf808b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/street.png": {
+    "mtime": 1786323710.9263554,
+    "ast_hash": "555488e56c03b7aa57807e9afedc5048",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/entity/automobile/wheel/tractor.png": {
+    "mtime": 1786323710.9278586,
+    "ast_hash": "6cf82ca7a3953a6a6ff950a1da65ef05",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/gui/container/auto_mechanic_table.png": {
+    "mtime": 1786323711.1610997,
+    "ast_hash": "8b8f68f54f61f50269e839db201c8937",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/gui/container/single_slot.png": {
+    "mtime": 1786323711.153394,
+    "ast_hash": "42eb29518182d61334330ace79f0feb7",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/item/crowbar.png": {
+    "mtime": 1786323710.713209,
+    "ast_hash": "e1278e2a5cdf29ee129d5e9d33f259a9",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/item/launch_gel.png": {
+    "mtime": 1786323710.7152576,
+    "ast_hash": "525652a5f8a45be498520d2ce40a2080",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/item/slope.png": {
+    "mtime": 1786323710.7162583,
+    "ast_hash": "2753cad9f43e7d90c4e3fec2021681c0",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/item/steep_slope.png": {
+    "mtime": 1786323710.7167614,
+    "ast_hash": "0256f3e50d373f8fb196535facceaf4e",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/particle/small_smoke_cloud.png": {
+    "mtime": 1786323710.717764,
+    "ast_hash": "9a7b0e8a6b8f25d2668eb482cd1f475b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/textures/solid.png": {
+    "mtime": 1786323710.719301,
+    "ast_hash": "05fa563b686c829959046d007f5cbec5",
+    "semantic_hash": ""
+  },
+  "src/main/resources/vehiclery.png": {
+    "mtime": 1786323710.2388034,
+    "ast_hash": "46735344557a633ce5369464f87a5164",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/brass_horn.ogg": {
+    "mtime": 1786323710.6311617,
+    "ast_hash": "a8c60bee14c21710c80d91e85f1e913b",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/collision.ogg": {
+    "mtime": 1786323710.6373453,
+    "ast_hash": "345000437af99d21a2ff986939b7c083",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/copper_engine.ogg": {
+    "mtime": 1786323710.6474998,
+    "ast_hash": "53874abeeca719a8fe53cbddce9e6016",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/creative_engine.ogg": {
+    "mtime": 1786323710.6521895,
+    "ast_hash": "e005f090584f9715f534b1b977347753",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/diamond_engine.ogg": {
+    "mtime": 1786323710.659306,
+    "ast_hash": "5d2b38c4f9fbcdb02df363e656513e51",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/disc_horn.ogg": {
+    "mtime": 1786323710.6685514,
+    "ast_hash": "99f1623f1e064cd324ea55ca88eb7bf1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/gold_engine.ogg": {
+    "mtime": 1786323710.6752815,
+    "ast_hash": "5347c5093fec1885e4445eaa492bad40",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/iron_engine.ogg": {
+    "mtime": 1786323710.67888,
+    "ast_hash": "e5dcedb4a4ab2a46cd69013a213d81be",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/klaxon_horn.ogg": {
+    "mtime": 1786323710.6835573,
+    "ast_hash": "22ebf0332fe9cb0d9ac44e0aad93b5fd",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/landing.ogg": {
+    "mtime": 1786323710.6921394,
+    "ast_hash": "f44c2e865665b70c9a3620423e07dcfa",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/party_horn.ogg": {
+    "mtime": 1786323710.6952002,
+    "ast_hash": "c1e21d80e16c1b6285ba3ce28ccc581f",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/skid.ogg": {
+    "mtime": 1786323710.6967058,
+    "ast_hash": "7e9e77603a9a1b9f1ad6c8fdd32eb4f1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/stone_engine.ogg": {
+    "mtime": 1786323710.7044253,
+    "ast_hash": "57d5282e0cecad8c69449dc6af8379f1",
+    "semantic_hash": ""
+  },
+  "src/main/resources/assets/vehiclery/sounds/trumpet_horn.ogg": {
+    "mtime": 1786323710.710019,
+    "ast_hash": "c7e6b5c065b2e695e67b90e5f1327d3d",
+    "semantic_hash": ""
+  }
+}
