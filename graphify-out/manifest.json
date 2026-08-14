@@ -270,8 +270,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/VehicleryClient.java": {
-    "mtime": 1786715495.9436617,
-    "ast_hash": "2028fef1e1c2a792b7a74836ea6c69b0",
+    "mtime": 1786747945.895157,
+    "ast_hash": "6ee2c31653339359f5db357b24e64fcd",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/automobile/AutomobileComponent.java": {
@@ -615,8 +615,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/block/VehicleryBlocks.java": {
-    "mtime": 1786473745.4084942,
-    "ast_hash": "fd3bd212b6435f46fa2c1313929ab99b",
+    "mtime": 1786747252.3114083,
+    "ast_hash": "dca3c95ca7e35106b4704a3386098373",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/block/entity/AutomobileAssemblerBlockEntity.java": {
@@ -685,8 +685,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java": {
-    "mtime": 1786402187.5537865,
-    "ast_hash": "1bc8e01252c20f3ada23582c14f57a8c",
+    "mtime": 1786747972.4231853,
+    "ast_hash": "815ced0bcf0cdf9a3fabc9cb5c09322b",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/entity/render/AutomobileRenderState.java": {
@@ -715,8 +715,8 @@
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/item/AutomobileItem.java": {
-    "mtime": 1786715245.7810242,
-    "ast_hash": "8838551cc87e6b30083c9a8324cd81cc",
+    "mtime": 1786747958.8022673,
+    "ast_hash": "4278064e43bd39fda21139e9a674eb3a",
     "semantic_hash": ""
   },
   "src/main/java/com/skd/vehiclery/item/AutomobileWheelItem.java": {
@@ -1315,13 +1315,13 @@
     "semantic_hash": ""
   },
   "src/main/resources/assets/vehiclery/lang/en_us.json": {
-    "mtime": 1786323809.0006635,
-    "ast_hash": "4da7e4eac624e16f2e47be435862cf64",
+    "mtime": 1786747728.0209234,
+    "ast_hash": "ef07cf39672695386926e7f49bf6932d",
     "semantic_hash": ""
   },
   "src/main/resources/assets/vehiclery/lang/es_es.json": {
-    "mtime": 1786533634.0462244,
-    "ast_hash": "0faa3d273c9a39931f5452babe4e9532",
+    "mtime": 1786747742.672537,
+    "ast_hash": "32173a6aedd2103c565a81c4696ba139",
     "semantic_hash": ""
   },
   "src/main/resources/assets/vehiclery/lang/zh_cn.json": {

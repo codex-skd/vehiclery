@@ -116,7 +116,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "tagkey",
-      "community": 34,
+      "community": 95,
       "norm_label": "tagkey"
     },
     {
@@ -146,7 +146,7 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehiclery_vehiclery_init",
-      "community": 35,
+      "community": 76,
       "norm_label": ".init()"
     },
     {
@@ -156,7 +156,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehiclery_vehiclery_initother",
-      "community": 35,
+      "community": 76,
       "norm_label": ".initother()"
     },
     {
@@ -176,7 +176,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehiclery_vehiclery_rl",
-      "community": 56,
+      "community": 38,
       "norm_label": ".rl()"
     },
     {
@@ -196,7 +196,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehiclery_vehiclery_dumpdynamicregistries",
-      "community": 67,
+      "community": 6,
       "norm_label": ".dumpdynamicregistries()"
     },
     {
@@ -206,7 +206,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehiclery_java_provider",
-      "community": 67,
+      "community": 6,
       "norm_label": "provider"
     },
     {
@@ -266,18 +266,28 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient",
-      "community": 74,
+      "community": 6,
       "norm_label": "vehicleryclient.java"
     },
     {
       "label": "VehicleryClient",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L44",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
-      "community": 74,
+      "community": 6,
       "norm_label": "vehicleryclient"
+    },
+    {
+      "label": "Identifier",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "src_main_java_com_skd_vehiclery_vehicleryclient_java_identifier",
+      "community": 6,
+      "norm_label": "identifier"
     },
     {
       "label": "BlockTintSource",
@@ -286,7 +296,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_java_blocktintsource",
-      "community": 74,
+      "community": 6,
       "norm_label": "blocktintsource"
     },
     {
@@ -296,44 +306,44 @@
       "source_location": "",
       "_origin": "ast",
       "id": "itemtintsource",
-      "community": 74,
+      "community": 6,
       "norm_label": "itemtintsource"
     },
     {
       "label": ".init()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L58",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
-      "community": 74,
+      "community": 6,
       "norm_label": ".init()"
     },
     {
       "label": ".initBlocks()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L85",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initblocks",
-      "community": 74,
+      "community": 6,
       "norm_label": ".initblocks()"
     },
     {
       "label": ".initItems()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L89",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
-      "community": 74,
+      "community": 6,
       "norm_label": ".inititems()"
     },
     {
       "label": ".initMenuScreens()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L140",
+      "source_location": "L147",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initmenuscreens",
       "community": 80,
@@ -343,40 +353,30 @@
       "label": ".componentItemRenderer()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
-      "community": 64,
+      "community": 28,
       "norm_label": ".componentitemrenderer()"
-    },
-    {
-      "label": "Identifier",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "src_main_java_com_skd_vehiclery_vehicleryclient_java_identifier",
-      "community": 74,
-      "norm_label": "identifier"
     },
     {
       "label": ".initEntities()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L172",
+      "source_location": "L179",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initentities",
-      "community": 74,
+      "community": 6,
       "norm_label": ".initentities()"
     },
     {
       "label": ".modifyBoostFov()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L199",
+      "source_location": "L206",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_modifyboostfov",
-      "community": 74,
+      "community": 6,
       "norm_label": ".modifyboostfov()"
     },
     {
@@ -386,17 +386,17 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_java_minecraft",
-      "community": 74,
+      "community": 6,
       "norm_label": "minecraft"
     },
     {
       "label": ".tryDumpBuiltinResources()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L209",
+      "source_location": "L216",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
-      "community": 67,
+      "community": 6,
       "norm_label": ".trydumpbuiltinresources()"
     },
     {
@@ -406,17 +406,17 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_java_provider",
-      "community": 67,
+      "community": 6,
       "norm_label": "provider"
     },
     {
       "label": ".sendClientMessage()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L221",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_sendclientmessage",
-      "community": 74,
+      "community": 6,
       "norm_label": ".sendclientmessage()"
     },
     {
@@ -426,7 +426,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobilecomponent",
-      "community": 37,
+      "community": 28,
       "norm_label": "automobilecomponent.java"
     },
     {
@@ -916,7 +916,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_java_codec",
-      "community": 56,
+      "community": 38,
       "norm_label": "codec"
     },
     {
@@ -926,7 +926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_java_streamcodec",
-      "community": 56,
+      "community": 38,
       "norm_label": "streamcodec"
     },
     {
@@ -966,7 +966,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_automobileframe_of",
-      "community": 56,
+      "community": 38,
       "norm_label": ".of()"
     },
     {
@@ -1016,7 +1016,7 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_automobileframe_standard",
-      "community": 56,
+      "community": 38,
       "norm_label": ".standard()"
     },
     {
@@ -1026,7 +1026,7 @@
       "source_location": "L218",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_automobileframe_motorcar",
-      "community": 56,
+      "community": 38,
       "norm_label": ".motorcar()"
     },
     {
@@ -1036,7 +1036,7 @@
       "source_location": "L241",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_automobileframe_tractor",
-      "community": 56,
+      "community": 38,
       "norm_label": ".tractor()"
     },
     {
@@ -1046,7 +1046,7 @@
       "source_location": "L268",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_automobileframe_rickshaw",
-      "community": 56,
+      "community": 38,
       "norm_label": ".rickshaw()"
     },
     {
@@ -1116,7 +1116,7 @@
       "source_location": "L322",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_hitbox",
-      "community": 56,
+      "community": 38,
       "norm_label": "hitbox"
     },
     {
@@ -1126,7 +1126,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_java_vec3",
-      "community": 56,
+      "community": 38,
       "norm_label": "vec3"
     },
     {
@@ -1146,7 +1146,7 @@
       "source_location": "L345",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_framemodel",
-      "community": 56,
+      "community": 38,
       "norm_label": "framemodel"
     },
     {
@@ -1156,7 +1156,7 @@
       "source_location": "L393",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobileframe_framemodel_legacy",
-      "community": 56,
+      "community": 38,
       "norm_label": ".legacy()"
     },
     {
@@ -1206,7 +1206,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_automobilestats_automobilestats_from",
-      "community": 23,
+      "community": 123,
       "norm_label": ".from()"
     },
     {
@@ -1516,7 +1516,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition",
-      "community": 76,
+      "community": 38,
       "norm_label": "hornsounddefinition.java"
     },
     {
@@ -1526,7 +1526,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition",
-      "community": 76,
+      "community": 38,
       "norm_label": "hornsounddefinition"
     },
     {
@@ -1536,7 +1536,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_java_soundevent",
-      "community": 76,
+      "community": 38,
       "norm_label": "soundevent"
     },
     {
@@ -1546,7 +1546,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_java_codec",
-      "community": 76,
+      "community": 38,
       "norm_label": "codec"
     },
     {
@@ -1556,7 +1556,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_java_streamcodec",
-      "community": 76,
+      "community": 38,
       "norm_label": "streamcodec"
     },
     {
@@ -1566,7 +1566,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_java_registryfriendlybytebuf",
-      "community": 76,
+      "community": 38,
       "norm_label": "registryfriendlybytebuf"
     },
     {
@@ -1576,7 +1576,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_create",
-      "community": 76,
+      "community": 38,
       "norm_label": ".create()"
     },
     {
@@ -1586,7 +1586,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_klaxon",
-      "community": 76,
+      "community": 38,
       "norm_label": ".klaxon()"
     },
     {
@@ -1596,7 +1596,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_disc",
-      "community": 76,
+      "community": 38,
       "norm_label": ".disc()"
     },
     {
@@ -1606,7 +1606,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_trumpet",
-      "community": 76,
+      "community": 38,
       "norm_label": ".trumpet()"
     },
     {
@@ -1616,7 +1616,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_brass",
-      "community": 76,
+      "community": 38,
       "norm_label": ".brass()"
     },
     {
@@ -1626,7 +1626,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_party",
-      "community": 76,
+      "community": 38,
       "norm_label": ".party()"
     },
     {
@@ -1636,7 +1636,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_hornsounddefinition_hornsounddefinition_pitchesof",
-      "community": 76,
+      "community": 38,
       "norm_label": ".pitchesof()"
     },
     {
@@ -1646,7 +1646,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer",
-      "community": 102,
+      "community": 75,
       "norm_label": "statcontainer.java"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_statcontainer",
-      "community": 102,
+      "community": 75,
       "norm_label": "statcontainer"
     },
     {
@@ -1666,7 +1666,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_statcontainer_containerid",
-      "community": 102,
+      "community": 75,
       "norm_label": ".containerid()"
     },
     {
@@ -1676,7 +1676,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_java_identifier",
-      "community": 102,
+      "community": 75,
       "norm_label": "identifier"
     },
     {
@@ -1686,7 +1686,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_statcontainer_getcontainertextkey",
-      "community": 102,
+      "community": 75,
       "norm_label": ".getcontainertextkey()"
     },
     {
@@ -1696,7 +1696,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_statcontainer_foreachstat",
-      "community": 102,
+      "community": 75,
       "norm_label": ".foreachstat()"
     },
     {
@@ -1706,7 +1706,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_statcontainer_appendtexts",
-      "community": 102,
+      "community": 75,
       "norm_label": ".appendtexts()"
     },
     {
@@ -1716,7 +1716,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_statcontainer_java_component",
-      "community": 102,
+      "community": 75,
       "norm_label": "component"
     },
     {
@@ -1726,7 +1726,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase",
-      "community": 65,
+      "community": 38,
       "norm_label": "wheelbase.java"
     },
     {
@@ -1736,7 +1736,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelbase",
-      "community": 56,
+      "community": 38,
       "norm_label": "wheelbase"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_java_codec",
-      "community": 65,
+      "community": 38,
       "norm_label": "codec"
     },
     {
@@ -1756,7 +1756,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_java_streamcodec",
-      "community": 65,
+      "community": 38,
       "norm_label": "streamcodec"
     },
     {
@@ -1766,7 +1766,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_java_registryfriendlybytebuf",
-      "community": 65,
+      "community": 38,
       "norm_label": "registryfriendlybytebuf"
     },
     {
@@ -1776,7 +1776,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelbase_wheelcount",
-      "community": 56,
+      "community": 38,
       "norm_label": ".wheelcount()"
     },
     {
@@ -1786,7 +1786,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelbase_longlength",
-      "community": 56,
+      "community": 38,
       "norm_label": ".longlength()"
     },
     {
@@ -1796,7 +1796,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelside",
-      "community": 65,
+      "community": 38,
       "norm_label": "wheelside"
     },
     {
@@ -1806,7 +1806,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "stringrepresentable",
-      "community": 65,
+      "community": 38,
       "norm_label": "stringrepresentable"
     },
     {
@@ -1816,7 +1816,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelside_left",
-      "community": 65,
+      "community": 38,
       "norm_label": "left"
     },
     {
@@ -1826,7 +1826,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelside_center",
-      "community": 65,
+      "community": 38,
       "norm_label": "center"
     },
     {
@@ -1836,7 +1836,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelside_right",
-      "community": 65,
+      "community": 38,
       "norm_label": "right"
     },
     {
@@ -1846,7 +1846,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_getserializedname",
-      "community": 65,
+      "community": 38,
       "norm_label": "getserializedname()"
     },
     {
@@ -1856,7 +1856,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_java_override",
-      "community": 65,
+      "community": 38,
       "norm_label": "override"
     },
     {
@@ -1866,7 +1866,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelend",
-      "community": 65,
+      "community": 38,
       "norm_label": "wheelend"
     },
     {
@@ -1876,7 +1876,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelend_front",
-      "community": 65,
+      "community": 38,
       "norm_label": "front"
     },
     {
@@ -1886,7 +1886,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelend_back",
-      "community": 65,
+      "community": 38,
       "norm_label": "back"
     },
     {
@@ -1896,7 +1896,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelend_none",
-      "community": 65,
+      "community": 38,
       "norm_label": "none"
     },
     {
@@ -1906,7 +1906,7 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelpos",
-      "community": 65,
+      "community": 38,
       "norm_label": "wheelpos"
     },
     {
@@ -1916,7 +1916,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_wheelbase_wheelbase_basic",
-      "community": 56,
+      "community": 38,
       "norm_label": ".basic()"
     },
     {
@@ -2246,7 +2246,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_frontattachmenttype_frontattachmenttype_register",
-      "community": 37,
+      "community": 28,
       "norm_label": ".register()"
     },
     {
@@ -2376,7 +2376,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rearattachmenttype_rearattachmenttype_register",
-      "community": 37,
+      "community": 28,
       "norm_label": ".register()"
     },
     {
@@ -3076,7 +3076,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_grasscutterfrontattachment_grasscutterfrontattachment",
-      "community": 32,
+      "community": 104,
       "norm_label": "grasscutterfrontattachment"
     },
     {
@@ -3086,7 +3086,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_grasscutterfrontattachment_grasscutterfrontattachment_grasscutterfrontattachment",
-      "community": 32,
+      "community": 104,
       "norm_label": ".grasscutterfrontattachment()"
     },
     {
@@ -3156,7 +3156,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment",
-      "community": 32,
+      "community": 100,
       "norm_label": "mobcontrollerfrontattachment.java"
     },
     {
@@ -3166,7 +3166,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_mobcontrollerfrontattachment",
-      "community": 32,
+      "community": 100,
       "norm_label": "mobcontrollerfrontattachment"
     },
     {
@@ -3176,7 +3176,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_mobcontrollerfrontattachment_mobcontrollerfrontattachment",
-      "community": 32,
+      "community": 100,
       "norm_label": ".mobcontrollerfrontattachment()"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_mobcontrollerfrontattachment_candrive",
-      "community": 32,
+      "community": 100,
       "norm_label": ".candrive()"
     },
     {
@@ -3196,7 +3196,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_java_entity",
-      "community": 32,
+      "community": 100,
       "norm_label": "entity"
     },
     {
@@ -3206,7 +3206,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_java_override",
-      "community": 32,
+      "community": 100,
       "norm_label": "override"
     },
     {
@@ -3216,7 +3216,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_front_mobcontrollerfrontattachment_mobcontrollerfrontattachment_isprovidingalternativeinputs",
-      "community": 32,
+      "community": 100,
       "norm_label": ".isprovidingalternativeinputs()"
     },
     {
@@ -3346,7 +3346,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment",
-      "community": 6,
+      "community": 37,
       "norm_label": "bannerpostrearattachment.java"
     },
     {
@@ -3356,7 +3356,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment",
-      "community": 6,
+      "community": 37,
       "norm_label": "bannerpostrearattachment"
     },
     {
@@ -3366,7 +3366,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_component",
-      "community": 6,
+      "community": 37,
       "norm_label": "component"
     },
     {
@@ -3376,7 +3376,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_dyecolor",
-      "community": 6,
+      "community": 37,
       "norm_label": "dyecolor"
     },
     {
@@ -3386,7 +3386,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_bannerpatternlayers",
-      "community": 6,
+      "community": 37,
       "norm_label": "bannerpatternlayers"
     },
     {
@@ -3396,7 +3396,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_simplecontainer",
-      "community": 6,
+      "community": 37,
       "norm_label": "simplecontainer"
     },
     {
@@ -3416,7 +3416,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_sendpacket",
-      "community": 6,
+      "community": 37,
       "norm_label": ".sendpacket()"
     },
     {
@@ -3426,7 +3426,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_updatepacketrequested",
-      "community": 6,
+      "community": 37,
       "norm_label": ".updatepacketrequested()"
     },
     {
@@ -3436,7 +3436,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_serverplayer",
-      "community": 6,
+      "community": 37,
       "norm_label": "serverplayer"
     },
     {
@@ -3446,7 +3446,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_override",
-      "community": 6,
+      "community": 37,
       "norm_label": "override"
     },
     {
@@ -3456,7 +3456,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_setbanner",
-      "community": 6,
+      "community": 37,
       "norm_label": ".setbanner()"
     },
     {
@@ -3466,7 +3466,7 @@
       "source_location": "L67",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_setfromitem",
-      "community": 6,
+      "community": 37,
       "norm_label": ".setfromitem()"
     },
     {
@@ -3476,7 +3476,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_itemstack",
-      "community": 6,
+      "community": 37,
       "norm_label": "itemstack"
     },
     {
@@ -3486,7 +3486,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_erase",
-      "community": 6,
+      "community": 37,
       "norm_label": ".erase()"
     },
     {
@@ -3496,7 +3496,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_getbasecolor",
-      "community": 6,
+      "community": 37,
       "norm_label": ".getbasecolor()"
     },
     {
@@ -3506,7 +3506,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_nullable",
-      "community": 6,
+      "community": 37,
       "norm_label": "nullable"
     },
     {
@@ -3516,7 +3516,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_getpatterns",
-      "community": 6,
+      "community": 37,
       "norm_label": ".getpatterns()"
     },
     {
@@ -3526,7 +3526,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_onremoved",
-      "community": 6,
+      "community": 37,
       "norm_label": ".onremoved()"
     },
     {
@@ -3536,7 +3536,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_writenbt",
-      "community": 6,
+      "community": 37,
       "norm_label": ".writenbt()"
     },
     {
@@ -3546,7 +3546,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_compoundtag",
-      "community": 6,
+      "community": 37,
       "norm_label": "compoundtag"
     },
     {
@@ -3556,7 +3556,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_provider",
-      "community": 6,
+      "community": 37,
       "norm_label": "provider"
     },
     {
@@ -3566,7 +3566,7 @@
       "source_location": "L115",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_readnbt",
-      "community": 6,
+      "community": 37,
       "norm_label": ".readnbt()"
     },
     {
@@ -3576,7 +3576,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_hasmenu",
-      "community": 6,
+      "community": 37,
       "norm_label": ".hasmenu()"
     },
     {
@@ -3586,7 +3586,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_player",
-      "community": 6,
+      "community": 37,
       "norm_label": "player"
     },
     {
@@ -3596,7 +3596,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_bannerpostrearattachment_createmenu",
-      "community": 6,
+      "community": 37,
       "norm_label": ".createmenu()"
     },
     {
@@ -3606,7 +3606,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_containerlevelaccess",
-      "community": 6,
+      "community": 37,
       "norm_label": "containerlevelaccess"
     },
     {
@@ -3616,7 +3616,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_bannerpostrearattachment_java_menuprovider",
-      "community": 6,
+      "community": 37,
       "norm_label": "menuprovider"
     },
     {
@@ -4596,7 +4596,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_deployablerearattachment",
-      "community": 7,
+      "community": 53,
       "norm_label": "deployablerearattachment.java"
     },
     {
@@ -4606,7 +4606,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_deployablerearattachment_deployablerearattachment",
-      "community": 7,
+      "community": 53,
       "norm_label": "deployablerearattachment"
     },
     {
@@ -4616,7 +4616,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_deployablerearattachment_deployablerearattachment_deployablerearattachment",
-      "community": 7,
+      "community": 53,
       "norm_label": ".deployablerearattachment()"
     },
     {
@@ -4626,7 +4626,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_deployablerearattachment_deployablerearattachment_deploy",
-      "community": 7,
+      "community": 53,
       "norm_label": ".deploy()"
     },
     {
@@ -4916,7 +4916,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment",
-      "community": 7,
+      "community": 106,
       "norm_label": "paverrearattachment.java"
     },
     {
@@ -4946,7 +4946,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_paverrearattachment_plowsound",
-      "community": 7,
+      "community": 106,
       "norm_label": ".plowsound()"
     },
     {
@@ -4956,7 +4956,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_java_soundevent",
-      "community": 7,
+      "community": 106,
       "norm_label": "soundevent"
     },
     {
@@ -4966,7 +4966,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_java_override",
-      "community": 7,
+      "community": 106,
       "norm_label": "override"
     },
     {
@@ -4976,7 +4976,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_paverrearattachment_searchheight",
-      "community": 7,
+      "community": 106,
       "norm_label": ".searchheight()"
     },
     {
@@ -4986,7 +4986,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_paverrearattachment_plowresult",
-      "community": 7,
+      "community": 106,
       "norm_label": ".plowresult()"
     },
     {
@@ -4996,7 +4996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_java_blockpos",
-      "community": 7,
+      "community": 106,
       "norm_label": "blockpos"
     },
     {
@@ -5006,7 +5006,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_paverrearattachment_java_blockstate",
-      "community": 7,
+      "community": 106,
       "norm_label": "blockstate"
     },
     {
@@ -5146,7 +5146,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_rearattachment_rearattachment_ontrackedyawupdated",
-      "community": 15,
+      "community": 10,
       "norm_label": ".ontrackedyawupdated()"
     },
     {
@@ -5196,7 +5196,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_rearattachment_rearattachment_isrideable",
-      "community": 40,
+      "community": 22,
       "norm_label": ".isrideable()"
     },
     {
@@ -5206,7 +5206,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_attachment_rear_rearattachment_rearattachment_getpassengerheightoffset",
-      "community": 15,
+      "community": 10,
       "norm_label": ".getpassengerheightoffset()"
     },
     {
@@ -5976,7 +5976,7 @@
       "source_location": "L279",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_render_automobilemodels_automobilemodels_dump",
-      "community": 67,
+      "community": 6,
       "norm_label": ".dump()"
     },
     {
@@ -6386,7 +6386,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_render_renderableautomobile",
-      "community": 33,
+      "community": 55,
       "norm_label": "renderableautomobile.java"
     },
     {
@@ -7826,7 +7826,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_automobile_render_item_simplerenderableautomobile_simplerenderableautomobile_simplerenderableautomobile",
-      "community": 38,
+      "community": 25,
       "norm_label": ".simplerenderableautomobile()"
     },
     {
@@ -8486,7 +8486,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "horizontaldirectionalblock",
-      "community": 30,
+      "community": 27,
       "norm_label": "horizontaldirectionalblock"
     },
     {
@@ -8956,7 +8956,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "simplewaterloggedblock",
-      "community": 30,
+      "community": 27,
       "norm_label": "simplewaterloggedblock"
     },
     {
@@ -11506,7 +11506,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_nullable",
-      "community": 23,
+      "community": 31,
       "norm_label": "nullable"
     },
     {
@@ -11596,7 +11596,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_centerpos",
-      "community": 31,
+      "community": 105,
       "norm_label": ".centerpos()"
     },
     {
@@ -11606,7 +11606,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_vec3",
-      "community": 31,
+      "community": 105,
       "norm_label": "vec3"
     },
     {
@@ -11616,7 +11616,7 @@
       "source_location": "L174",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_iscomplete",
-      "community": 31,
+      "community": 105,
       "norm_label": ".iscomplete()"
     },
     {
@@ -11626,7 +11626,7 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_tryconstructautomobile",
-      "community": 31,
+      "community": 105,
       "norm_label": ".tryconstructautomobile()"
     },
     {
@@ -11636,7 +11636,7 @@
       "source_location": "L199",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_dropparts",
-      "community": 31,
+      "community": 105,
       "norm_label": ".dropparts()"
     },
     {
@@ -11646,7 +11646,7 @@
       "source_location": "L216",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_clear",
-      "community": 31,
+      "community": 105,
       "norm_label": ".clear()"
     },
     {
@@ -11656,7 +11656,7 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_hasallparts",
-      "community": 23,
+      "community": 123,
       "norm_label": ".hasallparts()"
     },
     {
@@ -11666,7 +11666,7 @@
       "source_location": "L227",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_oncomponentsupdated",
-      "community": 23,
+      "community": 123,
       "norm_label": ".oncomponentsupdated()"
     },
     {
@@ -11686,7 +11686,7 @@
       "source_location": "L243",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_loadadditional",
-      "community": 23,
+      "community": 123,
       "norm_label": ".loadadditional()"
     },
     {
@@ -11696,7 +11696,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_valueinput",
-      "community": 31,
+      "community": 123,
       "norm_label": "valueinput"
     },
     {
@@ -11706,7 +11706,7 @@
       "source_location": "L267",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_saveadditional",
-      "community": 23,
+      "community": 124,
       "norm_label": ".saveadditional()"
     },
     {
@@ -11716,7 +11716,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_valueoutput",
-      "community": 31,
+      "community": 124,
       "norm_label": "valueoutput"
     },
     {
@@ -11756,7 +11756,7 @@
       "source_location": "L285",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_automobileassemblerblockentity_getupdatetag",
-      "community": 23,
+      "community": 124,
       "norm_label": ".getupdatetag()"
     },
     {
@@ -11766,7 +11766,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_provider",
-      "community": 23,
+      "community": 124,
       "norm_label": "provider"
     },
     {
@@ -11776,7 +11776,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_block_entity_automobileassemblerblockentity_java_compoundtag",
-      "community": 31,
+      "community": 124,
       "norm_label": "compoundtag"
     },
     {
@@ -12856,7 +12856,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity",
-      "community": 10,
+      "community": 53,
       "norm_label": "automobileentity.java"
     },
     {
@@ -12866,7 +12866,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity",
-      "community": 3,
+      "community": 10,
       "norm_label": "automobileentity"
     },
     {
@@ -12886,7 +12886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_entitydataaccessor",
-      "community": 15,
+      "community": 10,
       "norm_label": "entitydataaccessor"
     },
     {
@@ -12896,7 +12896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_holder",
-      "community": 15,
+      "community": 10,
       "norm_label": "holder"
     },
     {
@@ -12906,7 +12906,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_entitydimensions",
-      "community": 10,
+      "community": 53,
       "norm_label": "entitydimensions"
     },
     {
@@ -12976,7 +12976,7 @@
       "source_location": "L247",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_hurtserver",
-      "community": 10,
+      "community": 53,
       "norm_label": ".hurtserver()"
     },
     {
@@ -12986,7 +12986,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_serverlevel",
-      "community": 10,
+      "community": 53,
       "norm_label": "serverlevel"
     },
     {
@@ -12996,7 +12996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_damagesource",
-      "community": 10,
+      "community": 53,
       "norm_label": "damagesource"
     },
     {
@@ -13056,7 +13056,7 @@
       "source_location": "L336",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_automobileentity",
-      "community": 40,
+      "community": 22,
       "norm_label": ".automobileentity()"
     },
     {
@@ -13066,7 +13066,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_entitytype",
-      "community": 40,
+      "community": 22,
       "norm_label": "entitytype"
     },
     {
@@ -13076,7 +13076,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_level",
-      "community": 40,
+      "community": 22,
       "norm_label": "level"
     },
     {
@@ -13086,7 +13086,7 @@
       "source_location": "L349",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_recreatefrompacket",
-      "community": 10,
+      "community": 53,
       "norm_label": ".recreatefrompacket()"
     },
     {
@@ -13096,7 +13096,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "clientboundaddentitypacket",
-      "community": 10,
+      "community": 53,
       "norm_label": "clientboundaddentitypacket"
     },
     {
@@ -13126,7 +13126,7 @@
       "source_location": "L370",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getwheels",
-      "community": 15,
+      "community": 10,
       "norm_label": ".getwheels()"
     },
     {
@@ -13136,7 +13136,7 @@
       "source_location": "L375",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getengine",
-      "community": 20,
+      "community": 10,
       "norm_label": ".getengine()"
     },
     {
@@ -13146,7 +13146,7 @@
       "source_location": "L380",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getrearattachment",
-      "community": 10,
+      "community": 40,
       "norm_label": ".getrearattachment()"
     },
     {
@@ -13196,7 +13196,7 @@
       "source_location": "L404",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getboostspeed",
-      "community": 3,
+      "community": 10,
       "norm_label": ".getboostspeed()"
     },
     {
@@ -13216,7 +13216,7 @@
       "source_location": "L417",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_enginerunning",
-      "community": 20,
+      "community": 10,
       "norm_label": ".enginerunning()"
     },
     {
@@ -13226,7 +13226,7 @@
       "source_location": "L431",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getturbocharge",
-      "community": 3,
+      "community": 20,
       "norm_label": ".getturbocharge()"
     },
     {
@@ -13276,7 +13276,7 @@
       "source_location": "L454",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_calculateeffectivespeed",
-      "community": 3,
+      "community": 10,
       "norm_label": ".calculateeffectivespeed()"
     },
     {
@@ -13286,7 +13286,7 @@
       "source_location": "L462",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_geteffectivespeed",
-      "community": 20,
+      "community": 10,
       "norm_label": ".geteffectivespeed()"
     },
     {
@@ -13336,7 +13336,7 @@
       "source_location": "L489",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_honking",
-      "community": 3,
+      "community": 10,
       "norm_label": ".honking()"
     },
     {
@@ -13366,7 +13366,7 @@
       "source_location": "L515",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_sethonking",
-      "community": 3,
+      "community": 10,
       "norm_label": ".sethonking()"
     },
     {
@@ -13396,7 +13396,7 @@
       "source_location": "L531",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_isdecorative",
-      "community": 3,
+      "community": 10,
       "norm_label": ".isdecorative()"
     },
     {
@@ -13406,7 +13406,7 @@
       "source_location": "L535",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_setrearattachment",
-      "community": 40,
+      "community": 22,
       "norm_label": ".setrearattachment()"
     },
     {
@@ -13416,7 +13416,7 @@
       "source_location": "L555",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_setfrontattachment",
-      "community": 40,
+      "community": 22,
       "norm_label": ".setfrontattachment()"
     },
     {
@@ -13426,7 +13426,7 @@
       "source_location": "L569",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_setcomponents",
-      "community": 15,
+      "community": 10,
       "norm_label": ".setcomponents()"
     },
     {
@@ -13456,7 +13456,7 @@
       "source_location": "L609",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_forplayerstrackingme",
-      "community": 3,
+      "community": 10,
       "norm_label": ".forplayerstrackingme()"
     },
     {
@@ -13466,7 +13466,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_serverplayer",
-      "community": 3,
+      "community": 10,
       "norm_label": "serverplayer"
     },
     {
@@ -13486,7 +13486,7 @@
       "source_location": "L628",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getheadpos",
-      "community": 57,
+      "community": 15,
       "norm_label": ".getheadpos()"
     },
     {
@@ -13496,7 +13496,7 @@
       "source_location": "L635",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_updatecullingbox",
-      "community": 3,
+      "community": 10,
       "norm_label": ".updatecullingbox()"
     },
     {
@@ -13516,7 +13516,7 @@
       "source_location": "L646",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_hasspaceforpassengers",
-      "community": 40,
+      "community": 22,
       "norm_label": ".hasspaceforpassengers()"
     },
     {
@@ -13526,7 +13526,7 @@
       "source_location": "L655",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_isdriving",
-      "community": 3,
+      "community": 10,
       "norm_label": ".isdriving()"
     },
     {
@@ -13546,7 +13546,7 @@
       "source_location": "L673",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_clientonabouttodismount",
-      "community": 3,
+      "community": 10,
       "norm_label": ".clientonabouttodismount()"
     },
     {
@@ -13556,7 +13556,7 @@
       "source_location": "L677",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_lerpautomobiledata",
-      "community": 3,
+      "community": 10,
       "norm_label": ".lerpautomobiledata()"
     },
     {
@@ -13566,7 +13566,7 @@
       "source_location": "L689",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_tick",
-      "community": 3,
+      "community": 10,
       "norm_label": ".tick()"
     },
     {
@@ -13576,7 +13576,7 @@
       "source_location": "L800",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_positiontrackingtick",
-      "community": 3,
+      "community": 10,
       "norm_label": ".positiontrackingtick()"
     },
     {
@@ -13596,7 +13596,7 @@
       "source_location": "L820",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_syncdata",
-      "community": 3,
+      "community": 10,
       "norm_label": ".syncdata()"
     },
     {
@@ -13606,7 +13606,7 @@
       "source_location": "L824",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_syncattachments",
-      "community": 40,
+      "community": 22,
       "norm_label": ".syncattachments()"
     },
     {
@@ -13616,7 +13616,7 @@
       "source_location": "L828",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_asprefabitem",
-      "community": 10,
+      "community": 53,
       "norm_label": ".asprefabitem()"
     },
     {
@@ -13626,7 +13626,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_itemstack",
-      "community": 10,
+      "community": 53,
       "norm_label": "itemstack"
     },
     {
@@ -13706,7 +13706,7 @@
       "source_location": "L1175",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_whenrotated",
-      "community": 3,
+      "community": 10,
       "norm_label": ".whenrotated()"
     },
     {
@@ -13726,7 +13726,7 @@
       "source_location": "L1198",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_move",
-      "community": 10,
+      "community": 53,
       "norm_label": ".move()"
     },
     {
@@ -13736,7 +13736,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "movertype",
-      "community": 10,
+      "community": 53,
       "norm_label": "movertype"
     },
     {
@@ -13746,7 +13746,7 @@
       "source_location": "L1208",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_causefalldamage",
-      "community": 10,
+      "community": 53,
       "norm_label": ".causefalldamage()"
     },
     {
@@ -13756,7 +13756,7 @@
       "source_location": "L1213",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_isoneofmyhitboxes",
-      "community": 3,
+      "community": 10,
       "norm_label": ".isoneofmyhitboxes()"
     },
     {
@@ -13766,7 +13766,7 @@
       "source_location": "L1217",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_accumulatecollisionareas",
-      "community": 3,
+      "community": 10,
       "norm_label": ".accumulatecollisionareas()"
     },
     {
@@ -13806,7 +13806,7 @@
       "source_location": "L1296",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_lerpto",
-      "community": 3,
+      "community": 10,
       "norm_label": ".lerpto()"
     },
     {
@@ -13856,7 +13856,7 @@
       "source_location": "L1332",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_steeringtick",
-      "community": 3,
+      "community": 10,
       "norm_label": ".steeringtick()"
     },
     {
@@ -13956,7 +13956,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_livingentity",
-      "community": 10,
+      "community": 15,
       "norm_label": "livingentity"
     },
     {
@@ -13986,7 +13986,7 @@
       "source_location": "L1495",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_hasinventory",
-      "community": 10,
+      "community": 40,
       "norm_label": ".hasinventory()"
     },
     {
@@ -13996,7 +13996,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_player",
-      "community": 10,
+      "community": 40,
       "norm_label": "player"
     },
     {
@@ -14006,7 +14006,7 @@
       "source_location": "L1500",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_openinventory",
-      "community": 10,
+      "community": 40,
       "norm_label": ".openinventory()"
     },
     {
@@ -14016,7 +14016,7 @@
       "source_location": "L1508",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getstandstilltime",
-      "community": 3,
+      "community": 10,
       "norm_label": ".getstandstilltime()"
     },
     {
@@ -14026,7 +14026,7 @@
       "source_location": "L1512",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_playhitsound",
-      "community": 15,
+      "community": 40,
       "norm_label": ".playhitsound()"
     },
     {
@@ -14036,7 +14036,7 @@
       "source_location": "L1517",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_dropparts",
-      "community": 40,
+      "community": 15,
       "norm_label": ".dropparts()"
     },
     {
@@ -14046,7 +14046,7 @@
       "source_location": "L1530",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_destroyrearattachment",
-      "community": 40,
+      "community": 22,
       "norm_label": ".destroyrearattachment()"
     },
     {
@@ -14056,7 +14056,7 @@
       "source_location": "L1539",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_destroyfrontattachment",
-      "community": 40,
+      "community": 22,
       "norm_label": ".destroyfrontattachment()"
     },
     {
@@ -14066,7 +14066,7 @@
       "source_location": "L1548",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_destroyautomobile",
-      "community": 40,
+      "community": 15,
       "norm_label": ".destroyautomobile()"
     },
     {
@@ -14076,7 +14076,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "removalreason",
-      "community": 40,
+      "community": 15,
       "norm_label": "removalreason"
     },
     {
@@ -14096,7 +14096,7 @@
       "source_location": "L1580",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_handleinteraction",
-      "community": 10,
+      "community": 40,
       "norm_label": ".handleinteraction()"
     },
     {
@@ -14106,7 +14106,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_interactionhand",
-      "community": 10,
+      "community": 40,
       "norm_label": "interactionhand"
     },
     {
@@ -14116,7 +14116,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_interactionresult",
-      "community": 10,
+      "community": 40,
       "norm_label": "interactionresult"
     },
     {
@@ -14126,7 +14126,7 @@
       "source_location": "L1652",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_fixpassengerridingoffset",
-      "community": 15,
+      "community": 10,
       "norm_label": ".fixpassengerridingoffset()"
     },
     {
@@ -14136,7 +14136,7 @@
       "source_location": "L1656",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_positionrider",
-      "community": 15,
+      "community": 10,
       "norm_label": ".positionrider()"
     },
     {
@@ -14146,7 +14146,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "movefunction",
-      "community": 15,
+      "community": 10,
       "norm_label": "movefunction"
     },
     {
@@ -14196,7 +14196,7 @@
       "source_location": "L1759",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_onsynceddataupdated",
-      "community": 15,
+      "community": 10,
       "norm_label": ".onsynceddataupdated()"
     },
     {
@@ -14206,7 +14206,7 @@
       "source_location": "L1781",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getaddentitypacket",
-      "community": 10,
+      "community": 53,
       "norm_label": ".getaddentitypacket()"
     },
     {
@@ -14216,7 +14216,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "serverentity",
-      "community": 10,
+      "community": 53,
       "norm_label": "serverentity"
     },
     {
@@ -14226,7 +14226,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_packet",
-      "community": 10,
+      "community": 53,
       "norm_label": "packet"
     },
     {
@@ -14236,7 +14236,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_clientgamepacketlistener",
-      "community": 10,
+      "community": 53,
       "norm_label": "clientgamepacketlistener"
     },
     {
@@ -14246,7 +14246,7 @@
       "source_location": "L1786",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_settrackedrearattachmentyaw",
-      "community": 3,
+      "community": 10,
       "norm_label": ".settrackedrearattachmentyaw()"
     },
     {
@@ -14256,7 +14256,7 @@
       "source_location": "L1790",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_gettrackedrearattachmentyaw",
-      "community": 15,
+      "community": 10,
       "norm_label": ".gettrackedrearattachmentyaw()"
     },
     {
@@ -14266,7 +14266,7 @@
       "source_location": "L1794",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_settrackedrearattachmentanimation",
-      "community": 3,
+      "community": 10,
       "norm_label": ".settrackedrearattachmentanimation()"
     },
     {
@@ -14276,7 +14276,7 @@
       "source_location": "L1798",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_gettrackedrearattachmentanimation",
-      "community": 15,
+      "community": 10,
       "norm_label": ".gettrackedrearattachmentanimation()"
     },
     {
@@ -14286,7 +14286,7 @@
       "source_location": "L1802",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_settrackedfrontattachmentanimation",
-      "community": 3,
+      "community": 10,
       "norm_label": ".settrackedfrontattachmentanimation()"
     },
     {
@@ -14296,7 +14296,7 @@
       "source_location": "L1806",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_gettrackedfrontattachmentanimation",
-      "community": 15,
+      "community": 10,
       "norm_label": ".gettrackedfrontattachmentanimation()"
     },
     {
@@ -14306,7 +14306,7 @@
       "source_location": "L1810",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_bounce",
-      "community": 15,
+      "community": 3,
       "norm_label": ".bounce()"
     },
     {
@@ -14366,7 +14366,7 @@
       "source_location": "L1870",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_getdimensions",
-      "community": 10,
+      "community": 53,
       "norm_label": ".getdimensions()"
     },
     {
@@ -14376,7 +14376,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_pose",
-      "community": 10,
+      "community": 53,
       "norm_label": "pose"
     },
     {
@@ -14386,7 +14386,7 @@
       "source_location": "L1875",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_automobileentity_underlyingcontainer",
-      "community": 10,
+      "community": 40,
       "norm_label": ".underlyingcontainer()"
     },
     {
@@ -14396,7 +14396,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_java_container",
-      "community": 10,
+      "community": 40,
       "norm_label": "container"
     },
     {
@@ -14456,7 +14456,7 @@
       "source_location": "L2106",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_automobileentity_displacement_applywheelbase",
-      "community": 15,
+      "community": 10,
       "norm_label": ".applywheelbase()"
     },
     {
@@ -15226,7 +15226,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities",
-      "community": 34,
+      "community": 95,
       "norm_label": "vehicleryentities.java"
     },
     {
@@ -15236,7 +15236,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities_vehicleryentities",
-      "community": 34,
+      "community": 95,
       "norm_label": "vehicleryentities"
     },
     {
@@ -15246,7 +15246,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities_automobiledamagesource",
-      "community": 34,
+      "community": 95,
       "norm_label": "automobiledamagesource()"
     },
     {
@@ -15256,7 +15256,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities_java_level",
-      "community": 34,
+      "community": 95,
       "norm_label": "level"
     },
     {
@@ -15266,7 +15266,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities_java_damagesource",
-      "community": 34,
+      "community": 95,
       "norm_label": "damagesource"
     },
     {
@@ -15276,7 +15276,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_vehicleryentities_init",
-      "community": 34,
+      "community": 95,
       "norm_label": "init()"
     },
     {
@@ -15313,7 +15313,7 @@
       "label": ".AutomobileEntityRenderer()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L18",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_automobileentityrenderer",
       "community": 66,
@@ -15333,7 +15333,7 @@
       "label": ".createRenderState()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L22",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_createrenderstate",
       "community": 66,
@@ -15353,7 +15353,7 @@
       "label": ".extractRenderState()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L27",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_extractrenderstate",
       "community": 66,
@@ -15363,7 +15363,7 @@
       "label": ".submit()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
       "community": 66,
@@ -15446,7 +15446,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem",
-      "community": 64,
+      "community": 28,
       "norm_label": "automobilecomponentitem"
     },
     {
@@ -15466,7 +15466,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_automobilecomponentitem",
-      "community": 64,
+      "community": 28,
       "norm_label": ".automobilecomponentitem()"
     },
     {
@@ -15476,7 +15476,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_createstack",
-      "community": 64,
+      "community": 28,
       "norm_label": ".createstack()"
     },
     {
@@ -15496,7 +15496,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_setcomponent",
-      "community": 64,
+      "community": 28,
       "norm_label": ".setcomponent()"
     },
     {
@@ -15506,7 +15506,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_getcomponent",
-      "community": 64,
+      "community": 28,
       "norm_label": ".getcomponent()"
     },
     {
@@ -15546,7 +15546,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_appendhovertext",
-      "community": 64,
+      "community": 28,
       "norm_label": ".appendhovertext()"
     },
     {
@@ -15556,7 +15556,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_java_tooltipcontext",
-      "community": 64,
+      "community": 28,
       "norm_label": "tooltipcontext"
     },
     {
@@ -15566,7 +15566,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_java_tooltipdisplay",
-      "community": 64,
+      "community": 28,
       "norm_label": "tooltipdisplay"
     },
     {
@@ -15576,7 +15576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_java_component",
-      "community": 64,
+      "community": 28,
       "norm_label": "component"
     },
     {
@@ -15586,7 +15586,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_java_tooltipflag",
-      "community": 64,
+      "community": 28,
       "norm_label": "tooltipflag"
     },
     {
@@ -15606,7 +15606,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_isvisible",
-      "community": 64,
+      "community": 28,
       "norm_label": ".isvisible()"
     },
     {
@@ -15756,7 +15756,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_builtin_builtin",
-      "community": 37,
+      "community": 28,
       "norm_label": ".builtin()"
     },
     {
@@ -15866,7 +15866,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable",
-      "community": 105,
+      "community": 99,
       "norm_label": "automobileinteractable.java"
     },
     {
@@ -15876,7 +15876,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_automobileinteractable",
-      "community": 105,
+      "community": 99,
       "norm_label": "automobileinteractable"
     },
     {
@@ -15886,7 +15886,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_automobileinteractable_interactautomobile",
-      "community": 105,
+      "community": 99,
       "norm_label": ".interactautomobile()"
     },
     {
@@ -15896,7 +15896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_java_itemstack",
-      "community": 105,
+      "community": 99,
       "norm_label": "itemstack"
     },
     {
@@ -15906,7 +15906,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_java_player",
-      "community": 105,
+      "community": 99,
       "norm_label": "player"
     },
     {
@@ -15916,7 +15916,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_java_interactionhand",
-      "community": 105,
+      "community": 99,
       "norm_label": "interactionhand"
     },
     {
@@ -15926,7 +15926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileinteractable_java_interactionresult",
-      "community": 105,
+      "community": 99,
       "norm_label": "interactionresult"
     },
     {
@@ -16003,17 +16003,17 @@
       "label": ".addPrefabs()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L68",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_addprefabs",
-      "community": 39,
+      "community": 18,
       "norm_label": ".addprefabs()"
     },
     {
       "label": ".appendHoverText()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
       "community": 18,
@@ -16073,7 +16073,7 @@
       "label": ".provideCreativeOutput()",
       "file_type": "code",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L83",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_providecreativeoutput",
       "community": 18,
@@ -16406,7 +16406,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_customcreativeoutput",
-      "community": 18,
+      "community": 28,
       "norm_label": "customcreativeoutput.java"
     },
     {
@@ -16416,7 +16416,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_customcreativeoutput_customcreativeoutput",
-      "community": 18,
+      "community": 28,
       "norm_label": "customcreativeoutput"
     },
     {
@@ -16426,7 +16426,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_customcreativeoutput_customcreativeoutput_providecreativeoutput",
-      "community": 18,
+      "community": 28,
       "norm_label": ".providecreativeoutput()"
     },
     {
@@ -16436,7 +16436,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_customcreativeoutput_java_output",
-      "community": 18,
+      "community": 28,
       "norm_label": "output"
     },
     {
@@ -16446,7 +16446,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_customcreativeoutput_java_provider",
-      "community": 18,
+      "community": 28,
       "norm_label": "provider"
     },
     {
@@ -17136,7 +17136,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem",
-      "community": 18,
+      "community": 74,
       "norm_label": "tooltipitem.java"
     },
     {
@@ -17146,7 +17146,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_tooltipitem",
-      "community": 18,
+      "community": 74,
       "norm_label": "tooltipitem"
     },
     {
@@ -17156,7 +17156,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_component",
-      "community": 18,
+      "community": 74,
       "norm_label": "component"
     },
     {
@@ -17166,7 +17166,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_tooltipitem_tooltipitem",
-      "community": 18,
+      "community": 74,
       "norm_label": ".tooltipitem()"
     },
     {
@@ -17176,7 +17176,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_tooltipitem_appendhovertext",
-      "community": 18,
+      "community": 74,
       "norm_label": ".appendhovertext()"
     },
     {
@@ -17186,7 +17186,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_itemstack",
-      "community": 18,
+      "community": 74,
       "norm_label": "itemstack"
     },
     {
@@ -17196,7 +17196,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_tooltipcontext",
-      "community": 18,
+      "community": 74,
       "norm_label": "tooltipcontext"
     },
     {
@@ -17206,7 +17206,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_tooltipdisplay",
-      "community": 18,
+      "community": 74,
       "norm_label": "tooltipdisplay"
     },
     {
@@ -17216,7 +17216,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_tooltipflag",
-      "community": 18,
+      "community": 74,
       "norm_label": "tooltipflag"
     },
     {
@@ -17226,7 +17226,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_tooltipitem_java_override",
-      "community": 18,
+      "community": 74,
       "norm_label": "override"
     },
     {
@@ -17236,7 +17236,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems",
-      "community": 39,
+      "community": 83,
       "norm_label": "vehicleryitems.java"
     },
     {
@@ -17246,7 +17246,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_vehicleryitems",
-      "community": 39,
+      "community": 83,
       "norm_label": "vehicleryitems"
     },
     {
@@ -17256,7 +17256,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_init",
-      "community": 39,
+      "community": 18,
       "norm_label": "init()"
     },
     {
@@ -17266,7 +17266,7 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_itemid",
-      "community": 39,
+      "community": 83,
       "norm_label": "itemid()"
     },
     {
@@ -17276,7 +17276,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_java_resourcekey",
-      "community": 39,
+      "community": 83,
       "norm_label": "resourcekey"
     },
     {
@@ -17286,7 +17286,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_java_item",
-      "community": 39,
+      "community": 83,
       "norm_label": "item"
     },
     {
@@ -17296,7 +17296,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_item_vehicleryitems_register",
-      "community": 35,
+      "community": 83,
       "norm_label": "register()"
     },
     {
@@ -17766,7 +17766,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_mixin_keymappingaccess",
-      "community": 53,
+      "community": 48,
       "norm_label": "keymappingaccess.java"
     },
     {
@@ -17776,7 +17776,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_mixin_keymappingaccess_keymappingaccess",
-      "community": 53,
+      "community": 48,
       "norm_label": "keymappingaccess"
     },
     {
@@ -17786,7 +17786,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_mixin_keymappingaccess_java_mixin",
-      "community": 53,
+      "community": 48,
       "norm_label": "mixin"
     },
     {
@@ -17796,7 +17796,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_mixin_keymappingaccess_keymappingaccess_vehiclery_getkey",
-      "community": 53,
+      "community": 48,
       "norm_label": ".vehiclery$getkey()"
     },
     {
@@ -17806,7 +17806,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "key",
-      "community": 53,
+      "community": 48,
       "norm_label": "key"
     },
     {
@@ -17816,7 +17816,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_mixin_keymappingaccess_java_accessor",
-      "community": 53,
+      "community": 48,
       "norm_label": "accessor"
     },
     {
@@ -18496,7 +18496,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_neoforgeplatform_neoforgeplatform_init",
-      "community": 43,
+      "community": 76,
       "norm_label": ".init()"
     },
     {
@@ -19196,7 +19196,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vehicleryneoforge_vehicleryneoforge_vehicleryneoforge",
-      "community": 43,
+      "community": 76,
       "norm_label": ".vehicleryneoforge()"
     },
     {
@@ -19826,7 +19826,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer",
-      "community": 26,
+      "community": 67,
       "norm_label": "vehicleryspecialmodelrenderer.java"
     },
     {
@@ -19836,7 +19836,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_vehicleryspecialmodelrenderer",
-      "community": 26,
+      "community": 67,
       "norm_label": "vehicleryspecialmodelrenderer"
     },
     {
@@ -19846,7 +19846,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "unbaked",
-      "community": 26,
+      "community": 67,
       "norm_label": "unbaked"
     },
     {
@@ -19856,7 +19856,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_java_itemstack",
-      "community": 26,
+      "community": 67,
       "norm_label": "itemstack"
     },
     {
@@ -19866,7 +19866,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_java_mapcodec",
-      "community": 26,
+      "community": 67,
       "norm_label": "mapcodec"
     },
     {
@@ -19876,7 +19876,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_vehicleryspecialmodelrenderer_bake",
-      "community": 26,
+      "community": 67,
       "norm_label": ".bake()"
     },
     {
@@ -19886,7 +19886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "bakingcontext",
-      "community": 26,
+      "community": 67,
       "norm_label": "bakingcontext"
     },
     {
@@ -19896,7 +19896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "specialmodelrenderer",
-      "community": 26,
+      "community": 67,
       "norm_label": "specialmodelrenderer"
     },
     {
@@ -19906,7 +19906,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_java_override",
-      "community": 26,
+      "community": 67,
       "norm_label": "override"
     },
     {
@@ -19916,7 +19916,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_client_vehicleryspecialmodelrenderer_vehicleryspecialmodelrenderer_type",
-      "community": 26,
+      "community": 67,
       "norm_label": ".type()"
     },
     {
@@ -20176,7 +20176,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess",
-      "community": 2,
+      "community": 102,
       "norm_label": "cubedeformationaccess.java"
     },
     {
@@ -20186,7 +20186,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_cubedeformationaccess",
-      "community": 2,
+      "community": 102,
       "norm_label": "cubedeformationaccess"
     },
     {
@@ -20196,7 +20196,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_java_mixin",
-      "community": 2,
+      "community": 102,
       "norm_label": "mixin"
     },
     {
@@ -20206,7 +20206,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_cubedeformationaccess_vehiclery_radiusx",
-      "community": 2,
+      "community": 102,
       "norm_label": ".vehiclery$radiusx()"
     },
     {
@@ -20216,7 +20216,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_java_accessor",
-      "community": 2,
+      "community": 102,
       "norm_label": "accessor"
     },
     {
@@ -20226,7 +20226,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_cubedeformationaccess_vehiclery_radiusy",
-      "community": 2,
+      "community": 102,
       "norm_label": ".vehiclery$radiusy()"
     },
     {
@@ -20236,7 +20236,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_cubedeformationaccess_cubedeformationaccess_vehiclery_radiusz",
-      "community": 2,
+      "community": 102,
       "norm_label": ".vehiclery$radiusz()"
     },
     {
@@ -20316,7 +20316,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess",
-      "community": 2,
+      "community": 65,
       "norm_label": "layerdefinitionaccess.java"
     },
     {
@@ -20326,7 +20326,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_layerdefinitionaccess",
-      "community": 2,
+      "community": 65,
       "norm_label": "layerdefinitionaccess"
     },
     {
@@ -20336,7 +20336,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_java_mixin",
-      "community": 2,
+      "community": 65,
       "norm_label": "mixin"
     },
     {
@@ -20346,7 +20346,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_layerdefinitionaccess_vehiclery_root",
-      "community": 2,
+      "community": 65,
       "norm_label": ".vehiclery$root()"
     },
     {
@@ -20356,7 +20356,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "meshdefinition",
-      "community": 2,
+      "community": 65,
       "norm_label": "meshdefinition"
     },
     {
@@ -20366,7 +20366,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_java_accessor",
-      "community": 2,
+      "community": 65,
       "norm_label": "accessor"
     },
     {
@@ -20376,7 +20376,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_layerdefinitionaccess_vehiclery_texture",
-      "community": 2,
+      "community": 65,
       "norm_label": ".vehiclery$texture()"
     },
     {
@@ -20386,7 +20386,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_java_materialdefinition",
-      "community": 2,
+      "community": 65,
       "norm_label": "materialdefinition"
     },
     {
@@ -20396,7 +20396,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_layerdefinitionaccess_vehiclery_create",
-      "community": 2,
+      "community": 65,
       "norm_label": ".vehiclery$create()"
     },
     {
@@ -20406,7 +20406,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_java_layerdefinition",
-      "community": 2,
+      "community": 65,
       "norm_label": "layerdefinition"
     },
     {
@@ -20416,7 +20416,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_layerdefinitionaccess_java_invoker",
-      "community": 2,
+      "community": 65,
       "norm_label": "invoker"
     },
     {
@@ -20426,7 +20426,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess",
-      "community": 2,
+      "community": 122,
       "norm_label": "materialdefinitionaccess.java"
     },
     {
@@ -20436,7 +20436,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess_materialdefinitionaccess",
-      "community": 2,
+      "community": 122,
       "norm_label": "materialdefinitionaccess"
     },
     {
@@ -20446,7 +20446,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess_java_mixin",
-      "community": 2,
+      "community": 122,
       "norm_label": "mixin"
     },
     {
@@ -20456,7 +20456,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess_materialdefinitionaccess_vehiclery_width",
-      "community": 2,
+      "community": 122,
       "norm_label": ".vehiclery$width()"
     },
     {
@@ -20466,7 +20466,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess_java_accessor",
-      "community": 2,
+      "community": 122,
       "norm_label": "accessor"
     },
     {
@@ -20476,7 +20476,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_materialdefinitionaccess_materialdefinitionaccess_vehiclery_height",
-      "community": 2,
+      "community": 122,
       "norm_label": ".vehiclery$height()"
     },
     {
@@ -20556,7 +20556,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess",
-      "community": 2,
+      "community": 64,
       "norm_label": "partdefinitionaccess.java"
     },
     {
@@ -20566,7 +20566,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_partdefinitionaccess",
-      "community": 2,
+      "community": 64,
       "norm_label": "partdefinitionaccess"
     },
     {
@@ -20576,7 +20576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_mixin",
-      "community": 2,
+      "community": 64,
       "norm_label": "mixin"
     },
     {
@@ -20586,7 +20586,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_partdefinitionaccess_vehiclery_cuboids",
-      "community": 2,
+      "community": 64,
       "norm_label": ".vehiclery$cuboids()"
     },
     {
@@ -20596,7 +20596,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_cubedefinition",
-      "community": 2,
+      "community": 64,
       "norm_label": "cubedefinition"
     },
     {
@@ -20606,7 +20606,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_accessor",
-      "community": 2,
+      "community": 64,
       "norm_label": "accessor"
     },
     {
@@ -20616,7 +20616,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_partdefinitionaccess_vehiclery_transform",
-      "community": 2,
+      "community": 64,
       "norm_label": ".vehiclery$transform()"
     },
     {
@@ -20626,7 +20626,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_partpose",
-      "community": 2,
+      "community": 64,
       "norm_label": "partpose"
     },
     {
@@ -20636,7 +20636,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_partdefinitionaccess_vehiclery_children",
-      "community": 2,
+      "community": 64,
       "norm_label": ".vehiclery$children()"
     },
     {
@@ -20646,7 +20646,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_partdefinition",
-      "community": 2,
+      "community": 64,
       "norm_label": "partdefinition"
     },
     {
@@ -20656,7 +20656,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_partdefinitionaccess_vehiclery_create",
-      "community": 2,
+      "community": 64,
       "norm_label": ".vehiclery$create()"
     },
     {
@@ -20666,7 +20666,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_mixin_jsonem_partdefinitionaccess_java_invoker",
-      "community": 2,
+      "community": 64,
       "norm_label": "invoker"
     },
     {
@@ -20756,7 +20756,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs",
-      "community": 2,
+      "community": 56,
       "norm_label": "jsonemcodecs.java"
     },
     {
@@ -20766,7 +20766,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_jsonemcodecs",
-      "community": 2,
+      "community": 56,
       "norm_label": "jsonemcodecs"
     },
     {
@@ -20776,7 +20776,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_direction",
-      "community": 2,
+      "community": 56,
       "norm_label": "direction"
     },
     {
@@ -20786,7 +20786,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_codec",
-      "community": 2,
+      "community": 56,
       "norm_label": "codec"
     },
     {
@@ -20796,7 +20796,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_vector3f",
-      "community": 2,
+      "community": 56,
       "norm_label": "vector3f"
     },
     {
@@ -20806,7 +20806,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_materialdefinition",
-      "community": 2,
+      "community": 56,
       "norm_label": "materialdefinition"
     },
     {
@@ -20816,7 +20816,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_partpose",
-      "community": 2,
+      "community": 56,
       "norm_label": "partpose"
     },
     {
@@ -20826,7 +20826,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_cubedeformation",
-      "community": 2,
+      "community": 56,
       "norm_label": "cubedeformation"
     },
     {
@@ -20836,7 +20836,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_uvpair",
-      "community": 2,
+      "community": 56,
       "norm_label": "uvpair"
     },
     {
@@ -20846,7 +20846,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_jsonemcodecs_createcuboiddata",
-      "community": 2,
+      "community": 56,
       "norm_label": ".createcuboiddata()"
     },
     {
@@ -20856,7 +20856,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_cubedefinition",
-      "community": 2,
+      "community": 56,
       "norm_label": "cubedefinition"
     },
     {
@@ -20866,7 +20866,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_jsonemcodecs_createpartdefinitioncodec",
-      "community": 2,
+      "community": 56,
       "norm_label": ".createpartdefinitioncodec()"
     },
     {
@@ -20876,7 +20876,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_partdefinition",
-      "community": 2,
+      "community": 56,
       "norm_label": "partdefinition"
     },
     {
@@ -20886,7 +20886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_neoforge_vendored_jsonem_serialization_jsonemcodecs_java_layerdefinition",
-      "community": 2,
+      "community": 56,
       "norm_label": "layerdefinition"
     },
     {
@@ -21306,7 +21306,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_particle_vehicleryparticles",
-      "community": 35,
+      "community": 76,
       "norm_label": "vehicleryparticles.java"
     },
     {
@@ -21316,7 +21316,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_particle_vehicleryparticles_vehicleryparticles",
-      "community": 35,
+      "community": 76,
       "norm_label": "vehicleryparticles"
     },
     {
@@ -21326,7 +21326,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_particle_vehicleryparticles_java_simpleparticletype",
-      "community": 35,
+      "community": 76,
       "norm_label": "simpleparticletype"
     },
     {
@@ -21336,7 +21336,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_particle_vehicleryparticles_vehicleryparticles_init",
-      "community": 35,
+      "community": 76,
       "norm_label": ".init()"
     },
     {
@@ -21386,7 +21386,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_platform_platform_platform_init",
-      "community": 43,
+      "community": 76,
       "norm_label": ".init()"
     },
     {
@@ -21396,7 +21396,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_platform_platform_platform_get",
-      "community": 74,
+      "community": 6,
       "norm_label": ".get()"
     },
     {
@@ -21606,7 +21606,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_platform_platform_platform_blockentityrenderer",
-      "community": 94,
+      "community": 107,
       "norm_label": ".blockentityrenderer()"
     },
     {
@@ -21616,7 +21616,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_platform_platform_java_context",
-      "community": 94,
+      "community": 107,
       "norm_label": "context"
     },
     {
@@ -21626,7 +21626,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_platform_platform_java_blockentityrenderer",
-      "community": 94,
+      "community": 107,
       "norm_label": "blockentityrenderer"
     },
     {
@@ -23166,7 +23166,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud",
-      "community": 53,
+      "community": 48,
       "norm_label": "automobilehud.java"
     },
     {
@@ -23176,7 +23176,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_automobilehud",
-      "community": 53,
+      "community": 48,
       "norm_label": "automobilehud"
     },
     {
@@ -23186,7 +23186,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_render",
-      "community": 53,
+      "community": 48,
       "norm_label": "render()"
     },
     {
@@ -23196,7 +23196,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_java_guigraphicsextractor",
-      "community": 53,
+      "community": 48,
       "norm_label": "guigraphicsextractor"
     },
     {
@@ -23206,7 +23206,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_java_player",
-      "community": 53,
+      "community": 48,
       "norm_label": "player"
     },
     {
@@ -23216,7 +23216,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_renderspeedometer",
-      "community": 53,
+      "community": 48,
       "norm_label": "renderspeedometer()"
     },
     {
@@ -23226,7 +23226,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_rendercontrolhints",
-      "community": 53,
+      "community": 48,
       "norm_label": "rendercontrolhints()"
     },
     {
@@ -23236,7 +23236,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_controlhint",
-      "community": 53,
+      "community": 48,
       "norm_label": "controlhint"
     },
     {
@@ -23246,7 +23246,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "options",
-      "community": 53,
+      "community": 48,
       "norm_label": "options"
     },
     {
@@ -23256,7 +23256,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "keymapping",
-      "community": 53,
+      "community": 48,
       "norm_label": "keymapping"
     },
     {
@@ -23266,7 +23266,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_controlhint_gettext",
-      "community": 53,
+      "community": 48,
       "norm_label": ".gettext()"
     },
     {
@@ -23276,7 +23276,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_java_component",
-      "community": 53,
+      "community": 48,
       "norm_label": "component"
     },
     {
@@ -23286,7 +23286,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_screen_automobilehud_controlhint_getkeybindtext",
-      "community": 53,
+      "community": 48,
       "norm_label": ".getkeybindtext()"
     },
     {
@@ -23786,7 +23786,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_automobilesoundinstance_enginesound_enginesound",
-      "community": 20,
+      "community": 10,
       "norm_label": ".enginesound()"
     },
     {
@@ -23796,7 +23796,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_automobilesoundinstance_enginesound_canplay",
-      "community": 20,
+      "community": 10,
       "norm_label": ".canplay()"
     },
     {
@@ -23826,7 +23826,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_automobilesoundinstance_enginesound_getposition",
-      "community": 15,
+      "community": 20,
       "norm_label": ".getposition()"
     },
     {
@@ -23866,7 +23866,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_automobilesoundinstance_skiddingsound_getpitch",
-      "community": 3,
+      "community": 20,
       "norm_label": ".getpitch()"
     },
     {
@@ -24036,7 +24036,7 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_slicedloopingautomobilesoundinstance_hornsound_getposition",
-      "community": 57,
+      "community": 15,
       "norm_label": ".getposition()"
     },
     {
@@ -24046,7 +24046,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_slicedloopingautomobilesoundinstance_java_vec3",
-      "community": 57,
+      "community": 15,
       "norm_label": "vec3"
     },
     {
@@ -24106,7 +24106,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_sound_vehiclerysounds_vehiclerysounds_init",
-      "community": 35,
+      "community": 76,
       "norm_label": ".init()"
     },
     {
@@ -24326,7 +24326,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar",
-      "community": 95,
+      "community": 38,
       "norm_label": "defaultregistrar.java"
     },
     {
@@ -24336,7 +24336,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_defaultregistrar",
-      "community": 95,
+      "community": 38,
       "norm_label": "defaultregistrar"
     },
     {
@@ -24346,7 +24346,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_java_resourcekey",
-      "community": 95,
+      "community": 38,
       "norm_label": "resourcekey"
     },
     {
@@ -24356,7 +24356,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_java_registry",
-      "community": 95,
+      "community": 38,
       "norm_label": "registry"
     },
     {
@@ -24366,7 +24366,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_defaultregistrar_defaultregistrar",
-      "community": 95,
+      "community": 38,
       "norm_label": ".defaultregistrar()"
     },
     {
@@ -24376,7 +24376,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_defaultregistrar_register",
-      "community": 95,
+      "community": 38,
       "norm_label": ".register()"
     },
     {
@@ -24386,7 +24386,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_java_identifier",
-      "community": 95,
+      "community": 38,
       "norm_label": "identifier"
     },
     {
@@ -24396,7 +24396,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_defaultregistrar_bootstrap",
-      "community": 95,
+      "community": 38,
       "norm_label": ".bootstrap()"
     },
     {
@@ -24406,7 +24406,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_defaultregistrar_cand",
-      "community": 56,
+      "community": 38,
       "norm_label": ".cand()"
     },
     {
@@ -24416,7 +24416,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_candidate",
-      "community": 56,
+      "community": 38,
       "norm_label": "candidate"
     },
     {
@@ -24426,7 +24426,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_registrationcontext",
-      "community": 95,
+      "community": 38,
       "norm_label": "registrationcontext"
     },
     {
@@ -24436,7 +24436,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_defaultregistrar_registrationcontext_register",
-      "community": 95,
+      "community": 38,
       "norm_label": ".register()"
     },
     {
@@ -24496,7 +24496,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_eventual",
-      "community": 34,
+      "community": 95,
       "norm_label": "eventual.java"
     },
     {
@@ -24506,7 +24506,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_eventual_eventual",
-      "community": 35,
+      "community": 83,
       "norm_label": "eventual"
     },
     {
@@ -24516,7 +24516,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_eventual_eventual_eventual",
-      "community": 35,
+      "community": 83,
       "norm_label": ".eventual()"
     },
     {
@@ -24526,7 +24526,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_eventual_eventual_get",
-      "community": 35,
+      "community": 83,
       "norm_label": ".get()"
     },
     {
@@ -24546,7 +24546,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_eventual_eventual_create",
-      "community": 35,
+      "community": 83,
       "norm_label": ".create()"
     },
     {
@@ -24556,7 +24556,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_floatfunc",
-      "community": 64,
+      "community": 28,
       "norm_label": "floatfunc.java"
     },
     {
@@ -24566,7 +24566,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_floatfunc_floatfunc",
-      "community": 64,
+      "community": 28,
       "norm_label": "floatfunc"
     },
     {
@@ -24576,7 +24576,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "functionalinterface",
-      "community": 64,
+      "community": 28,
       "norm_label": "functionalinterface"
     },
     {
@@ -24586,7 +24586,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_floatfunc_floatfunc_apply",
-      "community": 64,
+      "community": 28,
       "norm_label": ".apply()"
     },
     {
@@ -24726,7 +24726,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry",
-      "community": 37,
+      "community": 28,
       "norm_label": "simplemapcontentregistry.java"
     },
     {
@@ -24736,7 +24736,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry",
-      "community": 37,
+      "community": 28,
       "norm_label": "simplemapcontentregistry"
     },
     {
@@ -24746,7 +24746,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_identifier",
-      "community": 37,
+      "community": 28,
       "norm_label": "identifier"
     },
     {
@@ -24756,7 +24756,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_simplemapcontentregistry",
-      "community": 37,
+      "community": 28,
       "norm_label": ".simplemapcontentregistry()"
     },
     {
@@ -24766,7 +24766,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_register",
-      "community": 37,
+      "community": 28,
       "norm_label": ".register()"
     },
     {
@@ -24776,7 +24776,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_get",
-      "community": 37,
+      "community": 28,
       "norm_label": ".get()"
     },
     {
@@ -24786,7 +24786,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_getoptional",
-      "community": 37,
+      "community": 28,
       "norm_label": ".getoptional()"
     },
     {
@@ -24796,7 +24796,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_getordefault",
-      "community": 37,
+      "community": 28,
       "norm_label": ".getordefault()"
     },
     {
@@ -24816,7 +24816,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_simplemapcontentregistry_codec",
-      "community": 37,
+      "community": 28,
       "norm_label": ".codec()"
     },
     {
@@ -24826,7 +24826,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_codec",
-      "community": 37,
+      "community": 28,
       "norm_label": "codec"
     },
     {
@@ -24836,7 +24836,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_identifiable",
-      "community": 37,
+      "community": 28,
       "norm_label": "identifiable"
     },
     {
@@ -24846,7 +24846,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_identifiable_getid",
-      "community": 37,
+      "community": 28,
       "norm_label": ".getid()"
     },
     {
@@ -24856,7 +24856,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_serializing",
-      "community": 37,
+      "community": 28,
       "norm_label": "serializing"
     },
     {
@@ -24866,7 +24866,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_serializing_decode",
-      "community": 37,
+      "community": 28,
       "norm_label": ".decode()"
     },
     {
@@ -24876,7 +24876,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_dynamicops",
-      "community": 37,
+      "community": 28,
       "norm_label": "dynamicops"
     },
     {
@@ -24886,7 +24886,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_dataresult",
-      "community": 37,
+      "community": 28,
       "norm_label": "dataresult"
     },
     {
@@ -24896,7 +24896,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_pair",
-      "community": 37,
+      "community": 28,
       "norm_label": "pair"
     },
     {
@@ -24906,7 +24906,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_java_override",
-      "community": 37,
+      "community": 28,
       "norm_label": "override"
     },
     {
@@ -24916,7 +24916,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_simplemapcontentregistry_serializing_encode",
-      "community": 37,
+      "community": 28,
       "norm_label": ".encode()"
     },
     {
@@ -24986,7 +24986,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper",
-      "community": 67,
+      "community": 6,
       "norm_label": "vehicleryclientresourcedumper.java"
     },
     {
@@ -24996,7 +24996,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_vehicleryclientresourcedumper",
-      "community": 67,
+      "community": 6,
       "norm_label": "vehicleryclientresourcedumper"
     },
     {
@@ -25006,7 +25006,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_gson",
-      "community": 67,
+      "community": 6,
       "norm_label": "gson"
     },
     {
@@ -25016,7 +25016,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_vehicleryclientresourcedumper_dumpdynamicregistry",
-      "community": 67,
+      "community": 6,
       "norm_label": ".dumpdynamicregistry()"
     },
     {
@@ -25026,7 +25026,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_provider",
-      "community": 67,
+      "community": 6,
       "norm_label": "provider"
     },
     {
@@ -25036,7 +25036,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_resourcekey",
-      "community": 67,
+      "community": 6,
       "norm_label": "resourcekey"
     },
     {
@@ -25046,7 +25046,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_registry",
-      "community": 67,
+      "community": 6,
       "norm_label": "registry"
     },
     {
@@ -25056,7 +25056,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_codec",
-      "community": 67,
+      "community": 6,
       "norm_label": "codec"
     },
     {
@@ -25066,7 +25066,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_vehicleryclientresourcedumper_dumpjsonresource",
-      "community": 67,
+      "community": 6,
       "norm_label": ".dumpjsonresource()"
     },
     {
@@ -25076,7 +25076,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_vehicleryclientresourcedumper_java_identifier",
-      "community": 67,
+      "community": 6,
       "norm_label": "identifier"
     },
     {
@@ -25276,7 +25276,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets",
-      "community": 100,
+      "community": 6,
       "norm_label": "clientpackets.java"
     },
     {
@@ -25286,7 +25286,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_clientpackets",
-      "community": 100,
+      "community": 6,
       "norm_label": "clientpackets"
     },
     {
@@ -25296,7 +25296,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_registerreceiver",
-      "community": 100,
+      "community": 6,
       "norm_label": "registerreceiver()"
     },
     {
@@ -25306,7 +25306,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_java_identifier",
-      "community": 100,
+      "community": 6,
       "norm_label": "identifier"
     },
     {
@@ -25316,7 +25316,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_java_minecraft",
-      "community": 100,
+      "community": 6,
       "norm_label": "minecraft"
     },
     {
@@ -25326,7 +25326,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_java_friendlybytebuf",
-      "community": 100,
+      "community": 6,
       "norm_label": "friendlybytebuf"
     },
     {
@@ -25336,7 +25336,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_sendserverboundautomobilesyncpacket",
-      "community": 100,
+      "community": 6,
       "norm_label": "sendserverboundautomobilesyncpacket()"
     },
     {
@@ -25346,7 +25346,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_requestsyncautomobilecomponentspacket",
-      "community": 100,
+      "community": 6,
       "norm_label": "requestsyncautomobilecomponentspacket()"
     },
     {
@@ -25356,7 +25356,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_main_java_com_skd_vehiclery_util_network_clientpackets_initclient",
-      "community": 100,
+      "community": 6,
       "norm_label": "initclient()"
     },
     {
@@ -27431,7 +27431,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L212",
+      "source_location": "L219",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
       "target": "src_main_java_com_skd_vehiclery_vehiclery_vehiclery_dumpdynamicregistries"
@@ -27802,7 +27802,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
@@ -27845,7 +27845,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L56",
+      "source_location": "L62",
       "weight": 1.0,
       "context": "field",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
@@ -27856,7 +27856,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L45",
+      "source_location": "L51",
       "weight": 1.0,
       "context": "field",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
@@ -27864,10 +27864,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
+      "target": "src_main_java_com_skd_vehiclery_vehicleryclient_java_identifier",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
+      "source_location": "L152",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
@@ -27877,7 +27888,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L58",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
@@ -27887,7 +27898,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L85",
+      "source_location": "L91",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initblocks",
@@ -27897,7 +27908,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L172",
+      "source_location": "L179",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initentities",
@@ -27907,7 +27918,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L89",
+      "source_location": "L95",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
@@ -27917,7 +27928,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L140",
+      "source_location": "L147",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initmenuscreens",
@@ -27927,7 +27938,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L199",
+      "source_location": "L206",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_modifyboostfov",
@@ -27937,7 +27948,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L221",
+      "source_location": "L228",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_sendclientmessage",
@@ -27947,10 +27958,21 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L209",
+      "source_location": "L216",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
+      "source_location": "L152",
+      "weight": 1.0,
+      "context": "generic_arg",
+      "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
+      "target": "src_main_java_com_skd_vehiclery_vehicleryclient_java_identifier",
       "confidence_score": 1.0
     },
     {
@@ -27970,7 +27992,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L59",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_automobile_render_automobilemodels_automobilemodels_init"
@@ -27981,7 +28003,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L66",
+      "source_location": "L72",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_platform_platform_platform_get"
@@ -27991,7 +28013,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initblocks",
@@ -28002,7 +28024,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L63",
+      "source_location": "L69",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initentities",
@@ -28013,7 +28035,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L62",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
@@ -28024,7 +28046,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L73",
+      "source_location": "L79",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_sendclientmessage",
@@ -28035,7 +28057,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L72",
+      "source_location": "L78",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_init",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
@@ -28047,7 +28069,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L86",
+      "source_location": "L92",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initblocks",
       "target": "src_main_java_com_skd_vehiclery_platform_platform_platform_get"
@@ -28058,7 +28080,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L116",
+      "source_location": "L123",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
       "target": "src_main_java_com_skd_vehiclery_automobile_render_automobilemodels_automobilemodels_getmodel"
@@ -28069,7 +28091,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L90",
+      "source_location": "L96",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
       "target": "src_main_java_com_skd_vehiclery_platform_platform_platform_get"
@@ -28079,7 +28101,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L115",
+      "source_location": "L122",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_inititems",
       "target": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
@@ -28100,7 +28122,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L140",
+      "source_location": "L147",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initmenuscreens",
@@ -28113,7 +28135,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L141",
+      "source_location": "L148",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initmenuscreens",
       "target": "src_main_java_com_skd_vehiclery_screen_menuscreenregistrar_menuscreenregistrar_accept"
@@ -28122,7 +28144,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
+      "source_location": "L152",
       "weight": 1.0,
       "context": "generic_arg",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
@@ -28133,7 +28155,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
+      "source_location": "L152",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
@@ -28146,7 +28168,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L150",
+      "source_location": "L157",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
       "target": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_getcomponent"
@@ -28157,7 +28179,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L151",
+      "source_location": "L158",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
       "target": "src_main_java_com_skd_vehiclery_item_automobilecomponentitem_automobilecomponentitem_isvisible"
@@ -28168,7 +28190,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L146",
+      "source_location": "L153",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
       "target": "src_main_java_com_skd_vehiclery_platform_platform_platform_get"
@@ -28177,7 +28199,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
+      "source_location": "L152",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
@@ -28190,21 +28212,10 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L158",
+      "source_location": "L165",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
       "target": "src_main_java_com_skd_vehiclery_util_floatfunc_floatfunc_apply"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L145",
-      "weight": 1.0,
-      "context": "generic_arg",
-      "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_componentitemrenderer",
-      "target": "src_main_java_com_skd_vehiclery_vehicleryclient_java_identifier",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -28212,7 +28223,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L173",
+      "source_location": "L180",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_initentities",
       "target": "src_main_java_com_skd_vehiclery_platform_platform_platform_get"
@@ -28232,7 +28243,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L199",
+      "source_location": "L206",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_modifyboostfov",
@@ -28245,7 +28256,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L211",
+      "source_location": "L218",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
       "target": "src_main_java_com_skd_vehiclery_automobile_render_automobilemodels_automobilemodels_dump"
@@ -28254,7 +28265,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/VehicleryClient.java",
-      "source_location": "L209",
+      "source_location": "L216",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_vehicleryclient_vehicleryclient_trydumpbuiltinresources",
@@ -61946,7 +61957,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_extractrenderstate",
@@ -66010,7 +66021,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L39",
+      "source_location": "L43",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
       "target": "quaternionf"
@@ -67719,7 +67730,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer",
       "target": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_automobileentityrenderer",
@@ -67729,7 +67740,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer",
       "target": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_createrenderstate",
@@ -67739,7 +67750,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer",
       "target": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_extractrenderstate",
@@ -67749,7 +67760,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer",
       "target": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -67770,7 +67781,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_automobileentityrenderer",
@@ -67781,7 +67792,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0,
       "context": "attribute",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_createrenderstate",
@@ -67793,7 +67804,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_createrenderstate",
       "target": "src_main_java_com_skd_vehiclery_entity_render_automobilerenderstate_automobilerenderstate",
@@ -67803,7 +67814,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "attribute",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_extractrenderstate",
@@ -67814,7 +67825,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "attribute",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -67825,7 +67836,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_extractrenderstate",
@@ -67836,7 +67847,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -67847,7 +67858,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -67858,7 +67869,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -67869,7 +67880,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/entity/render/AutomobileEntityRenderer.java",
-      "source_location": "L35",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_entity_render_automobileentityrenderer_automobileentityrenderer_submit",
@@ -69277,7 +69288,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L68",
+      "source_location": "L76",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem",
       "target": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_addprefabs",
@@ -69287,7 +69298,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem",
       "target": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69307,7 +69318,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L83",
+      "source_location": "L91",
       "weight": 1.0,
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem",
       "target": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_providecreativeoutput",
@@ -69370,7 +69381,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "attribute",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69381,7 +69392,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L83",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "attribute",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_providecreativeoutput",
@@ -69403,7 +69414,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "generic_arg",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69414,7 +69425,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69425,7 +69436,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69436,7 +69447,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69447,7 +69458,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_appendhovertext",
@@ -69458,7 +69469,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L83",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_providecreativeoutput",
@@ -69469,7 +69480,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "src/main/java/com/skd/vehiclery/item/AutomobileItem.java",
-      "source_location": "L83",
+      "source_location": "L91",
       "weight": 1.0,
       "context": "parameter_type",
       "source": "src_main_java_com_skd_vehiclery_item_automobileitem_automobileitem_providecreativeoutput",
@@ -88619,5 +88630,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6487f239a9df98f3629d6a00f41d2f088a275974"
+  "built_at_commit": "6b661c5910f0e34badb5ac04acacf5adf71a71e1"
 }

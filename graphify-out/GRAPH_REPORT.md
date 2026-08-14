@@ -1,16 +1,16 @@
-# Graph Report - 26.2  (2026-08-14)
+# Graph Report - 26.2  (2026-08-15)
 
 ## Corpus Check
-- 469 files · ~165,881 words
+- 469 files · ~166,095 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2605 nodes · 5815 edges · 122 communities (120 shown, 2 thin omitted)
+- 2605 nodes · 5816 edges · 125 communities (118 shown, 7 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 133 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6487f239`
+- Built from commit: `6b661c59`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -132,6 +132,9 @@
 - Changelog
 - gradlew
 - EntityRenderDispatcherMixin.java
+- MaterialDefinitionAccess.java
+- .from
+- .getUpdateTag
 
 ## God Nodes (most connected - your core abstractions)
 1. `AutomobileEntity` - 258 edges
@@ -160,7 +163,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (122 total, 2 thin omitted)
+## Communities (125 total, 7 thin omitted)
 
 ### Community 0 - "NeoForgePlatform.java"
 Cohesion: 0.05
@@ -171,12 +174,8 @@ Cohesion: 0.05
 Nodes (48): Baked, BlockStateModelPart, CustomUnbakedBlockStateModel, DynamicBlockStateModel, MaterialBaker, MaterialFlags, Matrix4fc, ModelBaker (+40 more)
 
 ### Community 2 - "JsonEMCodecs.java"
-Cohesion: 0.06
-Nodes (40): MeshDefinition, CubeDefinitionAccess, Accessor, CubeDefinition, CubeDeformation, Direction, Invoker, Mixin (+32 more)
-
-### Community 3 - "AutomobileEntity"
-Cohesion: 0.07
-Nodes (4): AutomobileEntity, Input, FriendlyByteBuf, ServerPlayer
+Cohesion: 0.22
+Nodes (9): CubeDefinitionAccess, Accessor, CubeDefinition, CubeDeformation, Direction, Invoker, Mixin, UVPair (+1 more)
 
 ### Community 4 - "AutopilotSignBlock.java"
 Cohesion: 0.07
@@ -187,12 +186,12 @@ Cohesion: 0.05
 Nodes (41): ClientInput, ContainerLevelAccess, ServerboundPlayerCommandPacket, Shadow, EntityWithInventory, Player, AbstractContainerMenuMixin, Block (+33 more)
 
 ### Community 6 - "BannerPostRearAttachment"
-Cohesion: 0.07
-Nodes (33): MinecraftServer, BannerPostRearAttachment, BannerPatternLayers, Component, CompoundTag, ContainerLevelAccess, DyeColor, ItemStack (+25 more)
+Cohesion: 0.06
+Nodes (41): ItemTintSource, MinecraftServer, ExtendableRearAttachment, CompoundTag, Override, Provider, ServerPlayer, ClientPackets (+33 more)
 
 ### Community 7 - "RearAttachmentType"
-Cohesion: 0.07
-Nodes (23): BlockRearAttachment, BlockState, Component, ContainerLevelAccess, MenuProvider, Nullable, Override, Player (+15 more)
+Cohesion: 0.09
+Nodes (18): BlockRearAttachment, BlockState, Component, ContainerLevelAccess, MenuProvider, Nullable, Override, Player (+10 more)
 
 ### Community 8 - "AutoMechanicTableBlock.java"
 Cohesion: 0.08
@@ -204,7 +203,7 @@ Nodes (39): BlockItem, ItemUseAnimation, AutopilotSignBlockItem, Block, Interact
 
 ### Community 10 - "AutomobileEntity.java"
 Cohesion: 0.06
-Nodes (23): ClientboundAddEntityPacket, Entity, MoverType, ServerEntity, AABB, Builder, ClientGamePacketListener, Container (+15 more)
+Nodes (13): Entity, MoveFunction, AutomobileEntity, AABB, Builder, EntityDataAccessor, Holder, Nullable (+5 more)
 
 ### Community 11 - "ChestRearAttachment"
 Cohesion: 0.09
@@ -223,8 +222,8 @@ Cohesion: 0.10
 Nodes (22): ChestLidController, ContainerOpenersCounter, PlayerEnderChestContainer, BaseChestRearAttachment, BlockPos, BlockState, Component, ContainerLevelAccess (+14 more)
 
 ### Community 15 - "Vec3"
-Cohesion: 0.09
-Nodes (8): MoveFunction, Quaternionf, Displacement, IncomingCollision, EntityDataAccessor, Holder, Vec3, Vector3d
+Cohesion: 0.12
+Nodes (8): Quaternionf, RemovalReason, Displacement, IncomingCollision, LivingEntity, Vec3, Vector3d, Vec3
 
 ### Community 16 - "AutomobileAssemblerBlock.java"
 Cohesion: 0.13
@@ -235,15 +234,15 @@ Cohesion: 0.14
 Nodes (22): ScheduledTickAccess, DashPanelBlock, Block, BlockGetter, BlockPlaceContext, BlockPos, BlockState, BooleanProperty (+14 more)
 
 ### Community 18 - "AutomobileItem.java"
-Cohesion: 0.09
-Nodes (22): Item, AutomobileItem, Component, InteractionResult, ItemStack, Output, Override, Provider (+14 more)
+Cohesion: 0.15
+Nodes (13): Item, AutomobileItem, Component, InteractionResult, ItemStack, Output, Override, Provider (+5 more)
 
 ### Community 19 - "AutomobileModels"
 Cohesion: 0.12
 Nodes (16): Context, AutomobileModels, Context, Gson, Identifier, Override, ResourceManager, AutomobileRenderer (+8 more)
 
 ### Community 20 - "AutomobileSoundInstance"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (9): AbstractTickableSoundInstance, AutomobileSoundInstance, EngineSound, IntConsumer, Minecraft, Override, SoundEvent, Vec3 (+1 more)
 
 ### Community 21 - "AutoMechanicTableScreenHandler"
@@ -251,80 +250,76 @@ Cohesion: 0.15
 Nodes (14): DataSlot, Slot, AutoMechanicTableScreenHandler, InputSlot, Container, ContainerLevelAccess, Ingredient, Inventory (+6 more)
 
 ### Community 22 - "RearAttachment"
-Cohesion: 0.13
-Nodes (10): CompoundTag, ContainerLevelAccess, MenuProvider, Nullable, Override, Player, Provider, Vec3 (+2 more)
-
-### Community 23 - "AutomobileAssemblerBlockEntity"
-Cohesion: 0.13
-Nodes (4): AutomobileAssemblerBlockEntity, Nullable, Override, Provider
+Cohesion: 0.09
+Nodes (12): CompoundTag, ContainerLevelAccess, MenuProvider, Nullable, Override, Player, Provider, Vec3 (+4 more)
 
 ### Community 24 - "ModelDefinition"
 Cohesion: 0.11
 Nodes (24): getSerializedName(), Codec, Identifier, ModelLayerLocation, Override, RenderType, Vector3fc, ModelDefinition (+16 more)
 
 ### Community 25 - "AutomobileEngine"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (16): AutomobileEngine, EngineModel, ExhaustPos, Codec, EntityDataSerializer, Holder, Identifier, Override (+8 more)
 
 ### Community 26 - "DriftSmokeParticle.java"
-Cohesion: 0.13
-Nodes (19): BakingContext, ClientLevel, Layer, Particle, ParticleProvider, SingleQuadParticle, SpecialModelRenderer, SpriteSet (+11 more)
+Cohesion: 0.20
+Nodes (12): ClientLevel, Layer, Particle, ParticleProvider, SingleQuadParticle, SpriteSet, DriftSmokeParticle, Factory (+4 more)
 
 ### Community 27 - "SlopeBlock.java"
 Cohesion: 0.15
-Nodes (18): Block, BlockGetter, BlockPlaceContext, BlockPos, BlockState, BooleanProperty, Builder, CollisionContext (+10 more)
+Nodes (20): HorizontalDirectionalBlock, SimpleWaterloggedBlock, Block, BlockGetter, BlockPlaceContext, BlockPos, BlockState, BooleanProperty (+12 more)
 
 ### Community 28 - "AutomobileComponentItem.java"
-Cohesion: 0.18
-Nodes (11): DataComponentType, Builtin, Dynamic, Holder, Identifier, ItemStack, Output, Override (+3 more)
+Cohesion: 0.06
+Nodes (30): DataComponentType, FunctionalInterface, AutomobileComponentItem, Builtin, Dynamic, Component, Holder, Identifier (+22 more)
 
 ### Community 29 - "JsonEntityModelUtil.java"
 Cohesion: 0.13
 Nodes (17): EntityModelSet, Redirect, EntityModelSetAccess, Accessor, LayerDefinition, Mixin, ModelLayerLocation, Mixin (+9 more)
 
 ### Community 30 - "SteepSlopeBlock.java"
-Cohesion: 0.17
-Nodes (17): HorizontalDirectionalBlock, SimpleWaterloggedBlock, Block, BlockGetter, BlockPlaceContext, BlockPos, BlockState, BooleanProperty (+9 more)
+Cohesion: 0.18
+Nodes (15): Block, BlockGetter, BlockPlaceContext, BlockPos, BlockState, BooleanProperty, Builder, CollisionContext (+7 more)
 
 ### Community 31 - "AutomobileAssemblerBlockEntity.java"
-Cohesion: 0.12
-Nodes (15): BlockPos, BlockState, ClientGamePacketListener, Component, CompoundTag, Holder, InteractionHand, InteractionResult (+7 more)
+Cohesion: 0.18
+Nodes (12): BlockPos, BlockState, ClientGamePacketListener, Component, Holder, InteractionHand, InteractionResult, ItemStack (+4 more)
 
 ### Community 32 - "FrontAttachmentType"
-Cohesion: 0.16
-Nodes (11): EmptyFrontAttachment, GrassCutterFrontAttachment, Entity, Override, MobControllerFrontAttachment, FrontAttachmentModel, FrontAttachmentType, Codec (+3 more)
+Cohesion: 0.26
+Nodes (7): EmptyFrontAttachment, FrontAttachmentModel, FrontAttachmentType, Codec, Identifier, Override, AutomobileComponent
 
 ### Community 33 - "RenderableAutomobile"
-Cohesion: 0.11
+Cohesion: 0.10
 Nodes (3): Nullable, Vector3f, RenderableAutomobile
 
 ### Community 34 - "Vehiclery.java"
-Cohesion: 0.12
-Nodes (16): automobileDamageSource(), DamageSource, Level, VehicleryEntities, Identifier, NeoForgeSlopeGeometryLoader, InitlessConstants, Block (+8 more)
+Cohesion: 0.17
+Nodes (11): Identifier, NeoForgeSlopeGeometryLoader, InitlessConstants, Block, Codec, Identifier, Logger, MenuType (+3 more)
 
 ### Community 35 - "Eventual"
-Cohesion: 0.16
-Nodes (11): register(), SimpleParticleType, VehicleryParticles, SoundEvent, VehiclerySounds, Eventual, Entry, Identifier (+3 more)
+Cohesion: 0.33
+Nodes (7): SoundEvent, VehiclerySounds, Entry, Identifier, Registry, SuppressWarnings, RegistryQueue
 
 ### Community 36 - "AutopilotFrontAttachment"
 Cohesion: 0.14
 Nodes (11): AutopilotFrontAttachment, CompoundTag, Entity, EntityType, Override, Provider, Vec3, State (+3 more)
 
 ### Community 37 - "SimpleMapContentRegistry"
-Cohesion: 0.14
-Nodes (9): Identifiable, Codec, DataResult, DynamicOps, Identifier, Override, Pair, Serializing (+1 more)
+Cohesion: 0.15
+Nodes (14): BannerPostRearAttachment, BannerPatternLayers, Component, CompoundTag, ContainerLevelAccess, DyeColor, ItemStack, MenuProvider (+6 more)
 
 ### Community 38 - "AutomobileFrame"
-Cohesion: 0.15
-Nodes (12): AutomobileFrame, ByteBuf, EntityDataSerializer, EntityDimensions, Holder, Identifier, Override, Provider (+4 more)
+Cohesion: 0.06
+Nodes (44): AutomobileFrame, FrameModel, Hitbox, ByteBuf, Codec, EntityDataSerializer, EntityDimensions, Holder (+36 more)
 
 ### Community 39 - "VehicleryItems.java"
-Cohesion: 0.15
-Nodes (16): DataComponentGetter, AutomobileData, Codec, Component, Identifier, ItemStack, Override, ResourceKey (+8 more)
+Cohesion: 0.23
+Nodes (11): DataComponentGetter, AutomobileData, Codec, Component, Identifier, ItemStack, Override, ResourceKey (+3 more)
 
 ### Community 40 - ".interactAutomobile"
-Cohesion: 0.12
-Nodes (9): RemovalReason, EntityType, Level, InteractionHand, InteractionResult, ItemStack, Override, Player (+1 more)
+Cohesion: 0.15
+Nodes (10): Container, InteractionHand, InteractionResult, Player, InteractionHand, InteractionResult, ItemStack, Override (+2 more)
 
 ### Community 41 - "AutomobileWheel"
 Cohesion: 0.19
@@ -335,7 +330,7 @@ Cohesion: 0.17
 Nodes (4): Nullable, Override, Vector3f, SimpleRenderableAutomobile
 
 ### Community 43 - "VehicleryNeoForge.java"
-Cohesion: 0.16
+Cohesion: 0.20
 Nodes (11): Mod, NewRegistry, RegisterEvent, RegisterPayloadHandlersEvent, Server, EventBusSubscriber, Registry, SubscribeEvent (+3 more)
 
 ### Community 44 - "AutoMechanicTableRecipe"
@@ -355,8 +350,8 @@ Cohesion: 0.20
 Nodes (14): Block, BlockPos, BlockState, Builder, Entity, HorizontalDirectionalBlock, InsideBlockEffectApplier, ItemStack (+6 more)
 
 ### Community 48 - "AUtils.java"
-Cohesion: 0.16
-Nodes (17): arrayOf(), AUtils, canMerge(), colorFromInt(), createGroupIcon(), createPrefabsIcon(), ByteBuf, CompoundTag (+9 more)
+Cohesion: 0.08
+Nodes (31): Key, KeyMapping, Options, Accessor, Mixin, KeyMappingAccess, AutomobileHud, ControlHint (+23 more)
 
 ### Community 49 - "VehicleryClientNeoForge.java"
 Cohesion: 0.17
@@ -375,24 +370,24 @@ Cohesion: 0.16
 Nodes (9): BlockPos, BlockState, Level, SpecialAutomobileColliderBlock, CollisionArea, AABB, Entity, Override (+1 more)
 
 ### Community 53 - "AutomobileHud.java"
-Cohesion: 0.18
-Nodes (14): Key, KeyMapping, Options, Accessor, Mixin, KeyMappingAccess, AutomobileHud, ControlHint (+6 more)
+Cohesion: 0.11
+Nodes (11): ClientboundAddEntityPacket, MoverType, ServerEntity, DeployableRearAttachment, ClientGamePacketListener, DamageSource, EntityDimensions, ItemStack (+3 more)
 
 ### Community 54 - "AutomobileAssemblerBlockEntityRenderer.java"
 Cohesion: 0.19
 Nodes (12): BlockEntityRenderer, BlockEntityRenderState, Font, @Nullable CrumblingOverlay, AutomobileAssemblerBlockEntityRenderer, CameraRenderState, Context, Override (+4 more)
 
 ### Community 55 - "FrontAttachment"
-Cohesion: 0.20
+Cohesion: 0.18
 Nodes (7): FrontAttachment, CompoundTag, Entity, ItemStack, Override, Provider, Vec3
 
 ### Community 56 - ".rl"
-Cohesion: 0.31
-Nodes (7): FrameModel, Hitbox, Codec, StreamCodec, Vec3, WheelBase, Candidate
+Cohesion: 0.32
+Nodes (11): Codec, CubeDefinition, CubeDeformation, Direction, LayerDefinition, MaterialDefinition, PartDefinition, PartPose (+3 more)
 
 ### Community 57 - "SlicedLoopingAutomobileSoundInstance.java"
-Cohesion: 0.19
-Nodes (7): HornSound, IntConsumer, Minecraft, Override, SoundEvent, Vec3, SlicedLoopingAutomobileSoundInstance
+Cohesion: 0.23
+Nodes (6): HornSound, IntConsumer, Minecraft, Override, SoundEvent, SlicedLoopingAutomobileSoundInstance
 
 ### Community 58 - "SoundEngineMixin.java"
 Cohesion: 0.19
@@ -419,20 +414,20 @@ Cohesion: 0.21
 Nodes (11): AutoMechanicTableRecipeSerializer, Codec, Holder, Identifier, Item, ItemStack, MapCodec, RecipeSerializer (+3 more)
 
 ### Community 64 - "AutomobileComponentItem"
-Cohesion: 0.17
-Nodes (7): FunctionalInterface, AutomobileComponentItem, Component, TooltipContext, TooltipDisplay, TooltipFlag, FloatFunc
+Cohesion: 0.33
+Nodes (7): Accessor, CubeDefinition, Invoker, Mixin, PartDefinition, PartPose, PartDefinitionAccess
 
 ### Community 65 - "WheelBase.java"
-Cohesion: 0.18
-Nodes (15): getSerializedName(), Codec, Override, RegistryFriendlyByteBuf, StreamCodec, WheelEnd, BACK, FRONT (+7 more)
+Cohesion: 0.35
+Nodes (7): MeshDefinition, Accessor, Invoker, LayerDefinition, MaterialDefinition, Mixin, LayerDefinitionAccess
 
 ### Community 66 - "AutomobileEntityRenderer.java"
 Cohesion: 0.23
 Nodes (9): EntityRenderer, EntityRenderState, AutomobileEntityRenderer, CameraRenderState, Context, Override, PoseStack, SubmitNodeCollector (+1 more)
 
 ### Community 67 - "VehicleryClientResourceDumper.java"
-Cohesion: 0.21
-Nodes (9): Codec, Gson, Identifier, Provider, Registry, ResourceKey, VehicleryClientResourceDumper, Provider (+1 more)
+Cohesion: 0.38
+Nodes (7): BakingContext, SpecialModelRenderer, ItemStack, MapCodec, Override, VehiclerySpecialModelRenderer, Unbaked
 
 ### Community 68 - "LazyTypeUnboundedMapCodec"
 Cohesion: 0.31
@@ -459,16 +454,12 @@ Cohesion: 0.15
 Nodes (12): Buenas prácticas, Commits (Conventional Commits), Convenciones de nomenclatura, Específico del mod, Estructura del proyecto, Flujo de trabajo — Vehiclery (NeoForge), Flujo por tarea, Idioma (+4 more)
 
 ### Community 74 - "VehicleryClient.java"
-Cohesion: 0.28
-Nodes (5): ItemTintSource, BlockTintSource, Identifier, Minecraft, VehicleryClient
+Cohesion: 0.33
+Nodes (7): Component, ItemStack, Override, TooltipContext, TooltipDisplay, TooltipFlag, TooltipItem
 
 ### Community 75 - "AutomobileStats"
-Cohesion: 0.24
-Nodes (5): AutomobileStats, Identifier, Override, DisplayStat, Component
-
-### Community 76 - "HornSoundDefinition"
-Cohesion: 0.28
-Nodes (5): HornSoundDefinition, Codec, RegistryFriendlyByteBuf, SoundEvent, StreamCodec
+Cohesion: 0.15
+Nodes (8): AutomobileStats, Identifier, Override, DisplayStat, Component, Component, Identifier, StatContainer
 
 ### Community 77 - "AutopilotFrontAttachmentModel.java"
 Cohesion: 0.26
@@ -491,8 +482,8 @@ Cohesion: 0.31
 Nodes (7): AbstractContainerMenu, Container, Inventory, ItemStack, Override, Player, SingleSlotScreenHandler
 
 ### Community 83 - "CreativeTabQueue"
-Cohesion: 0.25
-Nodes (7): DisplayItemsGenerator, ItemDisplayParameters, CreativeTabQueue, Identifier, Item, Output, Override
+Cohesion: 0.14
+Nodes (13): DisplayItemsGenerator, ItemDisplayParameters, CreativeTabQueue, Identifier, Item, Output, Override, itemId() (+5 more)
 
 ### Community 84 - "Ruta de desarrollo — port a NeoForge 26.2.0.37-beta"
 Cohesion: 0.18
@@ -535,12 +526,12 @@ Cohesion: 0.36
 Nodes (8): id(), itemId(), Block, BlockItem, Item, ResourceKey, register(), VehicleryBlocks
 
 ### Community 94 - ".blockColor"
-Cohesion: 0.20
-Nodes (7): BlockEntityRenderer, BlockEntityType, BlockPos, BlockState, BlockTintSource, Context, Nullable
+Cohesion: 0.29
+Nodes (5): BlockEntityType, BlockPos, BlockState, BlockTintSource, Nullable
 
 ### Community 95 - "DefaultRegistrar"
-Cohesion: 0.42
-Nodes (5): DefaultRegistrar, Identifier, Registry, ResourceKey, RegistrationContext
+Cohesion: 0.32
+Nodes (5): automobileDamageSource(), DamageSource, Level, VehicleryEntities, TagKey
 
 ### Community 96 - "SlopePlacementContext.java"
 Cohesion: 0.44
@@ -555,40 +546,36 @@ Cohesion: 0.36
 Nodes (5): CropHarvesterFrontAttachment, BlockPos, BlockState, ItemStack, Override
 
 ### Community 99 - ".interactAutomobile"
-Cohesion: 0.33
-Nodes (6): FrontAttachmentItem, InteractionHand, InteractionResult, ItemStack, Override, Player
+Cohesion: 0.19
+Nodes (11): AutomobileInteractable, InteractionHand, InteractionResult, ItemStack, Player, FrontAttachmentItem, InteractionHand, InteractionResult (+3 more)
 
 ### Community 100 - "ClientPackets.java"
-Cohesion: 0.39
-Nodes (8): ClientPackets, initClient(), FriendlyByteBuf, Identifier, Minecraft, registerReceiver(), requestSyncAutomobileComponentsPacket(), sendServerboundAutomobileSyncPacket()
+Cohesion: 0.43
+Nodes (3): Entity, Override, MobControllerFrontAttachment
 
 ### Community 101 - "AutopilotSignBlockEntity.java"
 Cohesion: 0.46
 Nodes (5): BlockEntity, AutopilotSignBlockEntity, BlockPos, BlockState, Level
 
 ### Community 102 - "StatContainer"
-Cohesion: 0.39
-Nodes (3): Component, Identifier, StatContainer
+Cohesion: 0.48
+Nodes (3): CubeDeformationAccess, Accessor, Mixin
 
 ### Community 103 - "AABBMixin"
 Cohesion: 0.39
 Nodes (4): AABBMixin, AABB, Mixin, Override
 
 ### Community 104 - "GrassCutterFrontAttachment.java"
-Cohesion: 0.43
-Nodes (4): BlockPos, BlockState, ItemStack, Override
-
-### Community 105 - "AutomobileInteractable.java"
-Cohesion: 0.48
-Nodes (5): AutomobileInteractable, InteractionHand, InteractionResult, ItemStack, Player
+Cohesion: 0.36
+Nodes (5): GrassCutterFrontAttachment, BlockPos, BlockState, ItemStack, Override
 
 ### Community 106 - "ShovelItemAccess.java"
-Cohesion: 0.48
-Nodes (5): Accessor, Block, BlockState, Mixin, ShovelItemAccess
+Cohesion: 0.20
+Nodes (9): BlockPos, BlockState, Override, SoundEvent, Accessor, Block, BlockState, Mixin (+1 more)
 
 ### Community 107 - ".entityType"
-Cohesion: 0.29
-Nodes (5): EntityDimensions, EntityRenderer, EntityType, Level, MobCategory
+Cohesion: 0.20
+Nodes (7): BlockEntityRenderer, Context, EntityDimensions, EntityRenderer, EntityType, Level, MobCategory
 
 ### Community 108 - "Vehiclery"
 Cohesion: 0.33
@@ -622,19 +609,27 @@ Nodes (3): 0.0.0-beta.1, 0.0.0-beta.6, Changelog
 Cohesion: 0.83
 Nodes (3): gradlew script, die(), warn()
 
+### Community 122 - "MaterialDefinitionAccess.java"
+Cohesion: 0.53
+Nodes (3): Accessor, Mixin, MaterialDefinitionAccess
+
+### Community 124 - ".getUpdateTag"
+Cohesion: 0.40
+Nodes (3): CompoundTag, Provider, ValueOutput
+
 ## Knowledge Gaps
 - **68 isolated node(s):** `LEFT`, `CENTER`, `RIGHT`, `FRONT`, `BACK` (+63 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `AutomobileEntity` connect `AutomobileEntity` to `LocalPlayerMixin.java`, `BannerPostRearAttachment`, `RearAttachmentType`, `AutomobileEntity.java`, `ChestRearAttachment`, `HitboxEntity`, `BaseChestRearAttachment`, `Vec3`, `AutomobileSoundInstance`, `RearAttachment`, `AutomobileEngine`, `FrontAttachmentType`, `RenderableAutomobile`, `AutopilotFrontAttachment`, `AutomobileFrame`, `.interactAutomobile`, `AutomobileWheel`, `BaseAttachment`, `AutomobileHud.java`, `FrontAttachment`, `SlicedLoopingAutomobileSoundInstance.java`, `BasePlowRearAttachment`, `AutomobileEntityRenderer.java`, `BaseHarvesterFrontAttachment`, `SaddledBarrelRearAttachment.java`, `AutomobileStats`, `BackhoeRearAttachment`, `CropHarvesterFrontAttachment.java`, `.interactAutomobile`, `ClientPackets.java`, `GrassCutterFrontAttachment.java`, `AutomobileInteractable.java`?**
+- **Why does `AutomobileEntity` connect `AutomobileEntity.java` to `AutomobileEntity`, `LocalPlayerMixin.java`, `BannerPostRearAttachment`, `RearAttachmentType`, `ChestRearAttachment`, `HitboxEntity`, `BaseChestRearAttachment`, `Vec3`, `AutomobileSoundInstance`, `RearAttachment`, `AutomobileEngine`, `FrontAttachmentType`, `RenderableAutomobile`, `AutopilotFrontAttachment`, `SimpleMapContentRegistry`, `AutomobileFrame`, `.interactAutomobile`, `AutomobileWheel`, `BaseAttachment`, `AUtils.java`, `AutomobileHud.java`, `FrontAttachment`, `SlicedLoopingAutomobileSoundInstance.java`, `BasePlowRearAttachment`, `AutomobileEntityRenderer.java`, `BaseHarvesterFrontAttachment`, `SaddledBarrelRearAttachment.java`, `AutomobileStats`, `BackhoeRearAttachment`, `CropHarvesterFrontAttachment.java`, `.interactAutomobile`, `ClientPackets.java`, `GrassCutterFrontAttachment.java`, `ShovelItemAccess.java`?**
   _High betweenness centrality (0.261) - this node is a cross-community bridge._
-- **Why does `RearAttachmentType` connect `RearAttachmentType` to `FrontAttachmentType`, `RenderableAutomobile`, `AutomobileEntity`, `SimpleMapContentRegistry`, `BannerPostRearAttachment`, `SaddledBarrelRearAttachment.java`, `.interactAutomobile`, `AutomobileEntity.java`, `ChestRearAttachment`, `BaseChestRearAttachment`, `BackhoeRearAttachment`, `RearAttachment`, `BasePlowRearAttachment`?**
+- **Why does `RearAttachmentType` connect `RearAttachmentType` to `FrontAttachmentType`, `RenderableAutomobile`, `SimpleMapContentRegistry`, `BannerPostRearAttachment`, `SaddledBarrelRearAttachment.java`, `.interactAutomobile`, `ShovelItemAccess.java`, `ChestRearAttachment`, `AutomobileEntity.java`, `AutomobileComponentItem.java`, `BaseChestRearAttachment`, `BackhoeRearAttachment`, `AutomobileHud.java`, `RearAttachment`, `FrontAttachment`, `BasePlowRearAttachment`?**
   _High betweenness centrality (0.052) - this node is a cross-community bridge._
-- **Why does `FrontAttachment` connect `FrontAttachment` to `FrontAttachmentType`, `RenderableAutomobile`, `AutomobileEntity`, `AutopilotFrontAttachment`, `BaseHarvesterFrontAttachment`, `SimpleRenderableAutomobile`, `AutomobileEntity.java`, `AutopilotFrontAttachmentModel.java`, `BaseAttachment`, `FrontAttachmentRenderModel`, `AutomobileAssemblerBlockEntity`, `HarvesterFrontAttachmentModel.java`, `AutomobileAssemblerBlockEntity.java`?**
+- **Why does `FrontAttachment` connect `FrontAttachment` to `FrontAttachmentType`, `RenderableAutomobile`, `ClientPackets.java`, `AutopilotFrontAttachment`, `BaseHarvesterFrontAttachment`, `SimpleRenderableAutomobile`, `AutomobileEntity.java`, `BaseAttachment`, `AutopilotFrontAttachmentModel.java`, `FrontAttachmentRenderModel`, `AutomobileHud.java`, `AutomobileAssemblerBlockEntity`, `HarvesterFrontAttachmentModel.java`, `AutomobileAssemblerBlockEntity.java`?**
   _High betweenness centrality (0.046) - this node is a cross-community bridge._
 - **What connects `LEFT`, `CENTER`, `RIGHT` to the rest of the system?**
   _68 weakly-connected nodes found - possible documentation gaps or missing edges._
@@ -642,5 +637,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.05246913580246913 - nodes in this community are weakly interconnected._
 - **Should `SlopeBakedModel` be split into smaller, more focused modules?**
   _Cohesion score 0.05365686944634313 - nodes in this community are weakly interconnected._
-- **Should `JsonEMCodecs.java` be split into smaller, more focused modules?**
-  _Cohesion score 0.05706760316066725 - nodes in this community are weakly interconnected._
+- **Should `AutomobileEntity` be split into smaller, more focused modules?**
+  _Cohesion score 0.08205128205128205 - nodes in this community are weakly interconnected._
