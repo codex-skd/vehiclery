@@ -105,9 +105,10 @@ public class VehicleryClient {
             var wheel = wheelOpt.get().value();
             var engine = engineOpt.get().value();
 
-            float wheelDist = frame.model().lengthPx() / 16;
-            float scale = 1;
-            scale /= wheelDist * 0.77f;
+    float lengthPx = Math.max(frame.model().lengthPx(), 8.0f);
+    float wheelDist = lengthPx / 16;
+    float scale = 1;
+    scale /= wheelDist * 0.77f;
             pose.scale(scale, scale, scale);
             AutomobileRenderer.render(pose, buffers, light, overlay, 0f, new SimpleRenderableAutomobile(frame, engine, wheel));
         });

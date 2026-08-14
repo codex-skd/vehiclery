@@ -23,16 +23,33 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
 
     protected final Identifier category;
     protected final List<Ingredient> ingredients;
-    protected final ItemStack result;
+    protected final AutoMechanicTableRecipeSerializer.ResultSpec resultSpec;
     protected final int sortNum;
+
+    // Built lazily: constructing the ItemStack requires the result item's DataComponentMap to be
+    // bound, which is only guaranteed once the current datapack reload has fully completed (see
+    // AutoMechanicTableRecipeSerializer.AUTO_COMPONENT_STACK for details).
+    private @Nullable ItemStack cachedResult;
 
     public @Nullable Identifier sortId;
 
-    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, ItemStack result, int sortNum) {
+    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, AutoMechanicTableRecipeSerializer.ResultSpec resultSpec, int sortNum) {
         this.category = category;
         this.ingredients = ingredients;
-        this.result = result;
+        this.resultSpec = resultSpec;
         this.sortNum = sortNum;
+    }
+
+    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, ItemStack resolvedResult, int sortNum) {
+        this.category = category;
+        this.ingredients = ingredients;
+        this.resultSpec = AutoMechanicTableRecipeSerializer.toResultSpec(resolvedResult);
+        this.cachedResult = resolvedResult;
+        this.sortNum = sortNum;
+    }
+
+    public AutoMechanicTableRecipeSerializer.ResultSpec getResultSpec() {
+        return this.resultSpec;
     }
 
     public Identifier getCategory() {
@@ -59,11 +76,14 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
             }
         }
 
-        return this.result.copy();
+        return this.getResultItem().copy();
     }
 
     public ItemStack getResultItem() {
-        return this.result;
+        if (this.cachedResult == null) {
+            this.cachedResult = AutoMechanicTableRecipeSerializer.buildResultStack(this.resultSpec);
+        }
+        return this.cachedResult;
     }
 
     @Override

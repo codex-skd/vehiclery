@@ -32,6 +32,20 @@ public class AutomobileItem extends Item implements CustomCreativeOutput {
         if (!context.getLevel().isClientSide()) {
             var stack = context.getItemInHand();
             var data = stack.get(VehicleryItems.COMPONENT_AUTOMOBILE_DATA.require());
+            if (data == null) {
+                // No component data, fall back to empty components
+                var e = new AutomobileEntity(VehicleryEntities.AUTOMOBILE.require(), context.getLevel());
+                var pos = context.getClickLocation();
+                e.snapTo(pos.x, pos.y, pos.z, context.getHorizontalDirection().toYRot(), 0);
+                e.setComponents(
+                        Holder.direct(AutomobileFrame.EMPTY),
+                        Holder.direct(AutomobileWheel.EMPTY),
+                        Holder.direct(AutomobileEngine.EMPTY)
+                );
+                context.getLevel().addFreshEntity(e);
+                stack.shrink(1);
+                return InteractionResult.PASS;
+            }
             var e = new AutomobileEntity(VehicleryEntities.AUTOMOBILE.require(), context.getLevel());
             var pos = context.getClickLocation();
             e.snapTo(pos.x, pos.y, pos.z, context.getHorizontalDirection().toYRot(), 0);
