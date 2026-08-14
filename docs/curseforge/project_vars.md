@@ -50,3 +50,8 @@ Ejemplo: `26.2-neoforge-0.0.0-beta.1`
 **Historial:**
 - Proyecto creado en CurseForge (ID `1646967`).
 - v0.0.0-beta.1 subida vía `curseforge-upload.ps1` — File ID `8620309`, HTTP 200, entorno Client & Server inferido automáticamente.
+- v0.0.0-beta.6 subida vía `curseforge-upload.ps1` — File ID `8649386`, HTTP 200. Primera actualización real desde beta.1 (betas 2-5 fueron builds de desarrollo internas, nunca publicadas).
+
+## Nota: nombre de jar no coincide con el script de subida
+
+`build.gradle` define `archivesName = "${mod_id}-${minecraft_version}-neoforge"` (sin `neo_version`), así que el jar real es `vehiclery-26.2-neoforge-<mod_version>.jar`. El script genérico `codex-docs/scripts/curseforge-upload.ps1` construye el nombre esperado como `${modId}-${mcVersion}-${modFramework}-${loaderVersion}-${modVersion}.jar` (incluye `neo_version` como segmento), por lo que falla con "JAR not found" salvo que se copie/renombre el jar real a ese nombre antes de ejecutar el script. Workaround usado en la subida de beta.6: copiar `build/libs/vehiclery-26.2-neoforge-<version>.jar` a `build/libs/vehiclery-26.2-neoforge-26.2.0.37-beta-<version>.jar`, ejecutar el script, y borrar la copia después (no se versiona, `build/` está en `.gitignore`). No se ha tocado el script compartido para no afectar a otros mods que sí podrían depender de ese segmento.
