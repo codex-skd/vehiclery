@@ -39,9 +39,15 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.GrassColor;
 
 import java.io.IOException;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
 public class VehicleryClient {
+    // TODO(debug): temporary one-shot diagnostic logging for the oversized/black automobile item
+    // render bug reported on a real client -- remove once the root cause is confirmed and fixed.
+    private static final Set<net.minecraft.resources.Identifier> DEBUG_LOGGED_AUTOMOBILE_ITEM = ConcurrentHashMap.newKeySet();
+
     public static final BlockTintSource GRASS_COLOR = new BlockTintSource() {
         @Override
         public int color(net.minecraft.world.level.block.state.BlockState state) {
@@ -105,16 +111,17 @@ public class VehicleryClient {
             var wheel = wheelOpt.get().value();
             var engine = engineOpt.get().value();
 
-    float lengthPx = Math.max(frame.model().lengthPx(), 8.0f);
-    float wheelDist = lengthPx / 16;
-    float scale = 1;
-    scale /= wheelDist * 0.77f;
+            float lengthPx = Math.max(frame.model().lengthPx(), 8.0f);
+            float scale = 0.77f * (16f / lengthPx);
+            if (DEBUG_LOGGED_AUTOMOBILE_ITEM.add(data.frame().identifier())) {
+                Vehiclery.LOG.info("[DEBUG render] automobile item frame={} lengthPx={} scale={} poseScale=(pre-submit)", data.frame().identifier(), lengthPx, scale);
+            }
             pose.scale(scale, scale, scale);
             AutomobileRenderer.render(pose, buffers, light, overlay, 0f, new SimpleRenderableAutomobile(frame, engine, wheel));
         });
         componentItemRenderer(VehicleryItems.AUTOMOBILE_FRAME.require(),
                 t -> AutomobileModels.getModel(t.model().modelId()),
-                t -> t.model().texture(), t -> 1 / ((t.model().lengthPx() / 16) * 0.77f)
+                t -> t.model().texture(), t -> 0.77f * (16f / t.model().lengthPx())
         );
         componentItemRenderer(VehicleryItems.AUTOMOBILE_WHEEL.require(),
                 t -> AutomobileModels.getModel(t.model().modelId()),

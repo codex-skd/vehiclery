@@ -42,7 +42,10 @@ public class AutomobileItem extends Item implements CustomCreativeOutput {
                         Holder.direct(AutomobileWheel.EMPTY),
                         Holder.direct(AutomobileEngine.EMPTY)
                 );
-                context.getLevel().addFreshEntity(e);
+                boolean added = context.getLevel().addFreshEntity(e);
+                // TODO(debug): see matching note below -- remove once the root cause is confirmed and fixed.
+                com.skd.vehiclery.Vehiclery.LOG.info(
+                        "[DEBUG placement] addFreshEntity (empty-data fallback) returned {} at {}", added, pos);
                 stack.shrink(1);
                 return InteractionResult.PASS;
             }
@@ -58,7 +61,12 @@ public class AutomobileItem extends Item implements CustomCreativeOutput {
                     .map(r -> (Holder<AutomobileEngine>)r).orElseGet(() -> Holder.direct(AutomobileEngine.EMPTY));
             e.setComponents(frame, wheel, engine);
 
-            context.getLevel().addFreshEntity(e);
+            boolean added = context.getLevel().addFreshEntity(e);
+            // TODO(debug): temporary diagnostic logging for the "nothing appears when placing"
+            // bug reported on a real client -- remove once the root cause is confirmed and fixed.
+            com.skd.vehiclery.Vehiclery.LOG.info(
+                    "[DEBUG placement] addFreshEntity returned {} for automobile at {} frame={} wheel={} engine={}",
+                    added, pos, data.frame().identifier(), data.wheel().identifier(), data.engine().identifier());
             stack.shrink(1);
             return InteractionResult.PASS;
         }

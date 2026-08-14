@@ -15,6 +15,10 @@ import org.joml.Quaternionf;
 // render() method with direct entity access. See AutomobileRenderState for details on the shortcut
 // taken here (kept a live entity reference instead of extracting individual fields).
 public class AutomobileEntityRenderer extends EntityRenderer<AutomobileEntity, AutomobileRenderState> {
+    // TODO(debug): temporary one-shot diagnostic logging for the "nothing appears when placing"
+    // bug reported on a real client -- remove once the root cause is confirmed and fixed.
+    private static boolean debugLogged = false;
+
     public AutomobileEntityRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
     }
@@ -38,6 +42,16 @@ public class AutomobileEntityRenderer extends EntityRenderer<AutomobileEntity, A
         float offsetY = state.automobile.getDisplacement().getVerticalOffset(state.tickDelta, state.automobile);
         var rotation = new Quaternionf();
         state.automobile.getDisplacement().getAngular(state.tickDelta, rotation);
+
+        if (!debugLogged) {
+            debugLogged = true;
+            com.skd.vehiclery.Vehiclery.LOG.info(
+                    "[DEBUG render] AutomobileEntityRenderer.submit reached: entity={} pos={} offsetY={} frame={} wheel={} engine={}",
+                    state.automobile.getId(), state.automobile.position(), offsetY,
+                    state.automobile.getFrame().isEmpty() ? "EMPTY" : state.automobile.getFrame().getId(),
+                    state.automobile.getWheels().isEmpty() ? "EMPTY" : state.automobile.getWheels().getId(),
+                    state.automobile.getEngine().isEmpty() ? "EMPTY" : state.automobile.getEngine().getId());
+        }
 
         pose.translate(0, offsetY, 0);
         pose.mulPose(rotation);

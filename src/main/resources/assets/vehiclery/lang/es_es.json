@@ -37,6 +37,8 @@
   "block.vehiclery.sand_off_road": "Arena todoterreno",
   "block.vehiclery.snow_off_road": "Nieve todoterreno",
   "block.vehiclery.launch_gel": "Gel de lanzamiento",
+  "block.vehiclery.slope_with_dash_panel": "Pendiente con Panel de Rampa",
+  "block.vehiclery.steep_slope_with_dash_panel": "Pendiente pronunciada con Panel de Rampa",
   "block.vehiclery.dash_panel": "Panel de rampa",
   "block.vehiclery.sloped_dash_panel": "Panel de rampa inclinado",
   "block.vehiclery.steep_sloped_dash_panel": "Panel de rampa muy inclinado",
