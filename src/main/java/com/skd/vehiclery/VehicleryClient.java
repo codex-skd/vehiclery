@@ -25,10 +25,12 @@ import com.skd.vehiclery.sound.SlicedLoopingAutomobileSoundInstance;
 import com.skd.vehiclery.util.FloatFunc;
 import com.skd.vehiclery.util.network.ClientPackets;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.color.block.BlockTintSource;
+import net.minecraft.client.color.item.GrassColorSource;
+import net.minecraft.client.color.item.ItemTintSource;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.core.HolderLookup;
@@ -37,11 +39,27 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.GrassColor;
 
 import java.io.IOException;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
 public class VehicleryClient {
-    public static final BlockColor GRASS_COLOR = (state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
-    public static final ItemColor GRASS_ITEM_COLOR = (stack, tintIndex) -> GrassColor.get(0.5D, 1.0D);
+    // TODO(debug): temporary one-shot diagnostic logging for the oversized/black automobile item
+    // render bug reported on a real client -- remove once the root cause is confirmed and fixed.
+    private static final Set<net.minecraft.resources.Identifier> DEBUG_LOGGED_AUTOMOBILE_ITEM = ConcurrentHashMap.newKeySet();
+
+    public static final BlockTintSource GRASS_COLOR = new BlockTintSource() {
+        @Override
+        public int color(net.minecraft.world.level.block.state.BlockState state) {
+            return GrassColor.get(0.5D, 1.0D);
+        }
+
+        @Override
+        public int colorInWorld(net.minecraft.world.level.block.state.BlockState state, net.minecraft.client.renderer.block.BlockAndTintGetter level, net.minecraft.core.BlockPos pos) {
+            return level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D);
+        }
+    };
+    public static final ItemTintSource GRASS_ITEM_COLOR = new GrassColorSource(0.5F, 1.0F);
 
     public static void init() {
         AutomobileModels.init();
@@ -82,23 +100,28 @@ public class VehicleryClient {
             var lvl = Minecraft.getInstance().level;
             if (lvl == null) return;
 
-            var frame = lvl.registryAccess().registryOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
-            var wheel = lvl.registryAccess().registryOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
-            var engine = lvl.registryAccess().registryOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
+            var frameOpt = lvl.registryAccess().lookupOrThrow(AutomobileFrame.REGISTRY).get(data.frame());
+            var wheelOpt = lvl.registryAccess().lookupOrThrow(AutomobileWheel.REGISTRY).get(data.wheel());
+            var engineOpt = lvl.registryAccess().lookupOrThrow(AutomobileEngine.REGISTRY).get(data.engine());
 
-            if (frame == null || wheel == null || engine == null) {
+            if (frameOpt.isEmpty() || wheelOpt.isEmpty() || engineOpt.isEmpty()) {
                 return;
             }
+            var frame = frameOpt.get().value();
+            var wheel = wheelOpt.get().value();
+            var engine = engineOpt.get().value();
 
-            float wheelDist = frame.model().lengthPx() / 16;
-            float scale = 1;
-            scale /= wheelDist * 0.77f;
+            float lengthPx = Math.max(frame.model().lengthPx(), 8.0f);
+            float scale = 0.77f * (16f / lengthPx);
+            if (DEBUG_LOGGED_AUTOMOBILE_ITEM.add(data.frame().identifier())) {
+                Vehiclery.LOG.info("[DEBUG render] automobile item frame={} lengthPx={} scale={} poseScale=(pre-submit)", data.frame().identifier(), lengthPx, scale);
+            }
             pose.scale(scale, scale, scale);
             AutomobileRenderer.render(pose, buffers, light, overlay, 0f, new SimpleRenderableAutomobile(frame, engine, wheel));
         });
         componentItemRenderer(VehicleryItems.AUTOMOBILE_FRAME.require(),
                 t -> AutomobileModels.getModel(t.model().modelId()),
-                t -> t.model().texture(), t -> 1 / ((t.model().lengthPx() / 16) * 0.77f)
+                t -> t.model().texture(), t -> 0.77f * (16f / t.model().lengthPx())
         );
         componentItemRenderer(VehicleryItems.AUTOMOBILE_WHEEL.require(),
                 t -> AutomobileModels.getModel(t.model().modelId()),
@@ -116,9 +139,9 @@ public class VehicleryClient {
                 t -> AutomobileModels.getModel(t.model().modelId()),
                 t -> t.model().texture(), t -> t.model().scale()
         );
-
-        Platform.get().itemModelPredicate(VehicleryBlocks.AUTOPILOT_SIGN.require().asItem(), Vehiclery.rl("stop"),
-                (stack, lvl, user, i) -> user != null && user.isUsingItem() ? 1 : 0);
+        // Note: "stop" item model predicate for the autopilot sign was previously registered here.
+        // In 26.2 the ItemProperties.register API was removed; the predicate must now be declared
+        // in the item's model JSON via an IsUsingItem conditional property (out of scope for compile fix).
     }
 
     public static void initMenuScreens(MenuScreenRegistrar screens) {
@@ -126,8 +149,8 @@ public class VehicleryClient {
         screens.accept(Vehiclery.SINGLE_SLOT_SCREEN, SingleSlotScreen::new);
     }
 
-    public static <T extends AutomobileComponent<T>, V> void componentItemRenderer(AutomobileComponentItem<T, V> item, Function<T, Model> modelProvider, Function<T, Identifier> textureProvider, FloatFunc<T> scaleProvider) {
-        Platform.get().builtinItemRenderer(item, (stack, mode, matrices, vertexConsumers, light, overlay) -> {
+    public static <T extends AutomobileComponent<T>, V> void componentItemRenderer(AutomobileComponentItem<T, V> item, Function<T, com.skd.vehiclery.automobile.render.RenderableModel> modelProvider, Function<T, Identifier> textureProvider, FloatFunc<T> scaleProvider) {
+        Platform.get().builtinItemRenderer(item, (stack, mode, matrices, buffers, light, overlay) -> {
             var lvl = Minecraft.getInstance().level;
             if (lvl == null) return;
 
@@ -142,10 +165,12 @@ public class VehicleryClient {
                 float scale = scaleProvider.apply(component);
                 matrices.translate(0.5, 0, 0.5);
                 matrices.scale(scale, -scale, -scale);
-                model.renderToBuffer(matrices, vertexConsumers.getBuffer(model.renderType(textureProvider.apply(component))), light, overlay, 0xFFFFFFFF);
+                var renderType = model.renderType(textureProvider.apply(component));
+                buffers.submitCustomGeometry(matrices, renderType, (pose, vc) ->
+                        model.renderModel(matrices, vc, light, overlay, 0xFFFFFFFF));
 
                 if (model instanceof BaseModel base) {
-                    base.doOtherLayerRender(matrices, vertexConsumers, light, overlay);
+                    base.doOtherLayerRender(matrices, buffers, light, overlay);
                 }
             }
         });
@@ -203,7 +228,7 @@ public class VehicleryClient {
     public static void sendClientMessage(String message) {
         var mc = Minecraft.getInstance();
         var txt = Component.literal(message);
-        mc.gui.getChat().addMessage(txt);
-        mc.getNarrator().sayNow(txt);
+        mc.gui.hud.getChat().addClientSystemMessage(txt);
+        mc.getNarrator().saySystemNow(txt);
     }
 }

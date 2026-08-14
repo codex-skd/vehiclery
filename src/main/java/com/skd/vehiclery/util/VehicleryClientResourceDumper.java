@@ -23,12 +23,12 @@ public class VehicleryClientResourceDumper {
 
         if (registryMaybe.isPresent()) {
             var registry = registryMaybe.get();
-            var regId = key.location();
+            var regId = key.identifier();
             var dumpRoot = "data";
             var subFolder = regId.getNamespace() + "/" + regId.getPath();
 
             for (var e : registry.listElements().toList()) {
-                var location = e.key().location();
+                var location = e.key().identifier();
 
                 dumpJsonResource(dumpRoot, subFolder, location, e.value(), codec);
             }

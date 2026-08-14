@@ -227,7 +227,7 @@ public class AutopilotFrontAttachment extends FrontAttachment {
 
         var stopsFor = new ListTag();
         for (var type : this.stopsFor) {
-            var id = BuiltInRegistries.ENTITY_TYPE.getResourceKey(type).map(ResourceKey::location).orElse(null);
+            var id = BuiltInRegistries.ENTITY_TYPE.getResourceKey(type).map(ResourceKey::identifier).orElse(null);
 
             if (id != null) {
                 stopsFor.add(StringTag.valueOf(id.toString()));
@@ -241,20 +241,20 @@ public class AutopilotFrontAttachment extends FrontAttachment {
         super.readNbt(nbt, reg);
 
         if (nbt.contains("Command")) {
-            this.currentHeading = AutopilotSignBlock.Heading.fromNbt(nbt.getCompound("Command"));
+            this.currentHeading = AutopilotSignBlock.Heading.fromNbt(nbt.getCompoundOrEmpty("Command"));
         } else {
             this.currentHeading = null;
         }
 
-        this.headingTimeLimit = nbt.getInt("timeout");
-        this.honkTimer = nbt.getInt("honk_time");
-        this.impatience = nbt.getInt("impatience");
+        this.headingTimeLimit = nbt.getIntOr("timeout", 0);
+        this.honkTimer = nbt.getIntOr("honk_time", 0);
+        this.impatience = nbt.getIntOr("impatience", 0);
 
         this.stopsFor.clear();
-        var stopsFor = nbt.getList("StopsFor", StringTag.TAG_STRING);
+        var stopsFor = nbt.getListOrEmpty("StopsFor");
         for (var tag : stopsFor) {
             if (tag instanceof StringTag strTag) {
-                var id = Identifier.tryParse(strTag.getAsString());
+                var id = Identifier.tryParse(strTag.value());
 
                 if (id != null) {
                     BuiltInRegistries.ENTITY_TYPE.getOptional(id).ifPresent(this.stopsFor::add);

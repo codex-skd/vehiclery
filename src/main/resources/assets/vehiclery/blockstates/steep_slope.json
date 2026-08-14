@@ -1,19 +1,23 @@
 {
   "variants": {
     "facing=west": {
-      "model": "vehiclery:block/steep_slope",
+      "type": "vehiclery:slope",
+      "represents": "vehiclery:block/steep_slope",
       "y": 270
     },
     "facing=east": {
-      "model": "vehiclery:block/steep_slope",
+      "type": "vehiclery:slope",
+      "represents": "vehiclery:block/steep_slope",
       "y": 90
     },
     "facing=south": {
-      "model": "vehiclery:block/steep_slope",
+      "type": "vehiclery:slope",
+      "represents": "vehiclery:block/steep_slope",
       "y": 180
     },
     "facing=north": {
-      "model": "vehiclery:block/steep_slope",
+      "type": "vehiclery:slope",
+      "represents": "vehiclery:block/steep_slope",
       "y": 0
     }
   }

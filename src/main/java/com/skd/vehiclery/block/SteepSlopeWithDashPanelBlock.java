@@ -1,5 +1,6 @@
 package com.skd.vehiclery.block;
 
+import org.jetbrains.annotations.Nullable;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -27,8 +28,8 @@ public class SteepSlopeWithDashPanelBlock extends SteepSlopeBlock {
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, level, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, level, pos, block, orientation, notify);
 
         boolean levelPwr = level.hasNeighborSignal(pos);
         boolean selfPwr = state.getValue(DashPanelBlock.POWERED);
@@ -39,13 +40,13 @@ public class SteepSlopeWithDashPanelBlock extends SteepSlopeBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
         return new ItemStack(VehicleryBlocks.DASH_PANEL.require());
     }
 
     @Override
-    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
-        super.entityInside(state, world, pos, entity);
+    public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity, net.minecraft.world.entity.InsideBlockEffectApplier effectApplier, boolean isPrecise) {
+        super.entityInside(state, world, pos, entity, effectApplier, isPrecise);
         DashPanelBlock.onCollideWithDashPanel(state, entity);
     }
 

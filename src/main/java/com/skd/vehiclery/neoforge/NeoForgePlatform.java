@@ -2,6 +2,7 @@ package com.skd.vehiclery.neoforge;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.brigadier.CommandDispatcher;
+import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.controller.AutomobileController;
 import com.skd.vehiclery.neoforge.client.BEWLRs;
 import com.skd.vehiclery.neoforge.mixin.BlockColorsAccess;
@@ -10,16 +11,14 @@ import com.skd.vehiclery.util.AUtils;
 import com.skd.vehiclery.util.HexCons;
 import com.skd.vehiclery.util.network.VehicleryPacketPayload;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.color.block.BlockTintSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.client.renderer.item.ItemPropertyFunction;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.core.BlockPos;
@@ -81,13 +80,8 @@ public class NeoForgePlatform implements Platform {
     }
 
     @Override
-    public void builtinItemRenderer(Item item, HexCons<ItemStack, ItemDisplayContext, PoseStack, MultiBufferSource, Integer, Integer> renderer) {
+    public void builtinItemRenderer(Item item, HexCons<ItemStack, ItemDisplayContext, PoseStack, SubmitNodeCollector, Integer, Integer> renderer) {
         BEWLRs.add(item, renderer);
-    }
-
-    @Override
-    public void itemModelPredicate(Item item, Identifier id, ItemPropertyFunction predicate) {
-        ItemProperties.register(item, id, predicate);
     }
 
     @Override
@@ -96,17 +90,18 @@ public class NeoForgePlatform implements Platform {
     }
 
     @Override
-    public @Nullable BlockColor blockColor(BlockState state) {
-        return ((BlockColorsAccess)Minecraft.getInstance().getBlockColors()).vehiclery$getForgeColorMap().get(state.getBlock());
+    public @Nullable BlockTintSource blockColor(BlockState state) {
+        var sources = ((BlockColorsAccess)Minecraft.getInstance().getBlockColors()).vehiclery$getSourcesMap().get(state.getBlock());
+        return sources == null || sources.isEmpty() ? null : sources.get(0);
     }
 
     @Override
     public <T extends BlockEntity> BlockEntityType<T> blockEntity(BiFunction<BlockPos, BlockState, T> factory, Block... blocks) {
-        return BlockEntityType.Builder.of(factory::apply, blocks).build(null);
+        return new BlockEntityType<>(factory::apply, blocks);
     }
 
     @Override
-    public <T extends BlockEntity> void blockEntityRenderer(BlockEntityType<T> type, Function<BlockEntityRendererProvider.Context, BlockEntityRenderer<T>> provider) {
+    public <T extends BlockEntity> void blockEntityRenderer(BlockEntityType<T> type, Function<BlockEntityRendererProvider.Context, BlockEntityRenderer<T, ?>> provider) {
         BlockEntityRenderers.register(type, provider::apply);
     }
 
@@ -117,7 +112,7 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public void clientSendPacket(Identifier rl, FriendlyByteBuf buf) {
-        PacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
+        net.neoforged.neoforge.client.network.ClientPacketDistributor.sendToServer(new VehicleryPacketPayload(rl, AUtils.arrayOf(buf)));
     }
 
     @Override
@@ -126,11 +121,11 @@ public class NeoForgePlatform implements Platform {
         if (internal) {
             builder.noSave().noSummon();
         }
-        return builder.build(key);
+        return builder.build(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.ENTITY_TYPE, Vehiclery.rl(key)));
     }
 
     @Override
-    public <T extends Entity> void entityRenderer(EntityType<T> entity, Function<EntityRendererProvider.Context, EntityRenderer<T>> factory) {
+    public <T extends Entity> void entityRenderer(EntityType<T> entity, Function<EntityRendererProvider.Context, EntityRenderer<T, ?>> factory) {
         EntityRenderers.register(entity, factory::apply);
     }
 
@@ -157,6 +152,6 @@ public class NeoForgePlatform implements Platform {
 
     @Override
     public Path getGameDir() {
-        return FMLLoader.getGamePath();
+        return net.neoforged.fml.loading.FMLPaths.GAMEDIR.get();
     }
 }

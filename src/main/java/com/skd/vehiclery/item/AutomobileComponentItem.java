@@ -40,14 +40,14 @@ public abstract class AutomobileComponentItem<T extends AutomobileComponent<T>, 
     public abstract Identifier getComponentId(ItemStack stack, T component);
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag tooltipFlag) {
-        super.appendHoverText(stack, context, tooltip, tooltipFlag);
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, display, tooltip, tooltipFlag);
         var component = this.getComponent(stack, context.registries());
         var id = this.getComponentId(stack, component);
         var compKey = id.getNamespace()+"."+id.getPath();
-        tooltip.add(Component.translatable(this.translationKey+"."+compKey).withStyle(ChatFormatting.BLUE));
+        tooltip.accept(Component.translatable(this.translationKey+"."+compKey).withStyle(ChatFormatting.BLUE));
 
-        component.appendTexts(tooltip::add, component);
+        component.appendTexts(tooltip, component);
     }
 
     public boolean isVisible(T component) {
@@ -90,7 +90,7 @@ public abstract class AutomobileComponentItem<T extends AutomobileComponent<T>, 
             var key = stack.get(dataComponent.require());
             if (key == null) return Vehiclery.rl("empty");
 
-            return key.location();
+            return key.identifier();
         }
 
         public Holder<T> lookupComponent(ItemStack stack, HolderLookup.Provider registries) {

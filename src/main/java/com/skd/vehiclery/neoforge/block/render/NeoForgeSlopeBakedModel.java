@@ -2,94 +2,65 @@ package com.skd.vehiclery.neoforge.block.render;
 
 import com.skd.vehiclery.block.model.SlopeBakedModel;
 import com.skd.vehiclery.block.model.SlopeUnbakedModel;
-import net.minecraft.client.renderer.rendertype.RenderType;
-import net.minecraft.client.resources.model.geometry.BakedQuad;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.block.BlockAndTintGetter;
+import net.minecraft.client.renderer.block.dispatch.BlockStateModelPart;
 import net.minecraft.client.renderer.block.dispatch.ModelState;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.resources.model.SimpleModelWrapper;
+import net.minecraft.client.resources.model.geometry.BakedQuad;
+import net.minecraft.client.resources.model.geometry.QuadCollection;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
-import net.minecraft.client.renderer.block.BlockAndTintGetter;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.neoforged.neoforge.client.ChunkRenderTypeSet;
-import net.neoforged.neoforge.client.model.data.ModelData;
-import net.neoforged.neoforge.client.model.data.ModelProperty;
-import net.neoforged.neoforge.common.NeoForgeConfig;
+import net.neoforged.neoforge.client.model.DynamicBlockStateModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class NeoForgeSlopeBakedModel extends SlopeBakedModel {
-    private static final ChunkRenderTypeSet RENDER_TYPES = ChunkRenderTypeSet.of(RenderType.translucent());
-    private static final ModelProperty<TextureAtlasSprite> FRAME_SPRITE = new ModelProperty<>();
-    private static final ModelProperty<Boolean> BORDERED_LEFT = new ModelProperty<>();
-    private static final ModelProperty<Boolean> BORDERED_RIGHT = new ModelProperty<>();
-    private static final ModelProperty<Integer> FRAME_COLOR = new ModelProperty<>();
-
+// TODO(port): BakedModel/IDynamicBakedModel + NeoForge's old ModelData-based per-position dynamic
+// quads no longer exist. The replacement is DynamicBlockStateModel#collectParts, which is called
+// fresh per block position/state and can build the QuadCollection directly -- no separate
+// ModelData/ModelProperty round trip needed anymore, since we can just recompute the position-
+// dependent sprite/color/border data right here.
+public class NeoForgeSlopeBakedModel extends SlopeBakedModel implements DynamicBlockStateModel {
     public NeoForgeSlopeBakedModel(TextureAtlasSprite frame, Map<BlockState, TextureAtlasSprite> frameTexOverrides, @Nullable TextureAtlasSprite plateInner,
                                    @Nullable TextureAtlasSprite plateOuter, ModelState settings, SlopeUnbakedModel.Type type) {
         super(frame, frameTexOverrides, plateInner, plateOuter, settings, type);
     }
 
     @Override
-    public ChunkRenderTypeSet getRenderTypes(@NotNull BlockState state, @NotNull RandomSource rand, @NotNull ModelData data) {
-        return RENDER_TYPES;
-    }
+    public void collectParts(BlockAndTintGetter level, BlockPos pos, BlockState state, RandomSource random, List<BlockStateModelPart> parts) {
+        var frameSprite = this.getFrameSprite(level, pos);
+        var frameColor = this.getFrameColor(level, pos);
 
-    @Override
-    public @NotNull ModelData getModelData(@NotNull BlockAndTintGetter level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull ModelData modelData) {
-        var builder = modelData.derive().with(FRAME_SPRITE, this.getFrameSprite(level, pos))
-                .with(FRAME_COLOR, this.getFrameColor(level, pos));
-
+        boolean borderedLeft = false;
+        boolean borderedRight = false;
         if (state.getBlock() instanceof HorizontalDirectionalBlock) {
             var dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-            builder.with(BORDERED_LEFT, level.getBlockState(pos.relative(dir.getCounterClockWise(Direction.Axis.Y))) == state)
-                    .with(BORDERED_RIGHT, level.getBlockState(pos.relative(dir.getClockWise(Direction.Axis.Y))) == state);
-        } else {
-            builder.with(BORDERED_LEFT, false).with(BORDERED_RIGHT, false);
+            borderedLeft = level.getBlockState(pos.relative(dir.getCounterClockWise(Direction.Axis.Y))) == state;
+            borderedRight = level.getBlockState(pos.relative(dir.getClockWise(Direction.Axis.Y))) == state;
         }
 
-        return builder.build();
-    }
+        var builder = new QuadCollection.Builder();
+        var geo = new NeoForgeGeometryBuilder(this.settings.transformation().getMatrix(), builder);
+        this.buildSlopeGeometry(frameSprite, geo, frameColor, borderedLeft, borderedRight);
 
-    private boolean unwrap(Boolean box) {
-        if (box == null) {
-            return false;
-        }
-
-        return box;
-    }
-
-    private int unwrap(Integer box) {
-        if (box == null) {
-            return 0xFFFFFFFF;
-        }
-
-        return box;
+        parts.add(new SimpleModelWrapper(builder.build(), true, new Material.Baked(frameSprite, false)));
     }
 
     @Override
-    public @NotNull List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @NotNull RandomSource rand, @NotNull ModelData data, @Nullable RenderType renderType) {
-        if (renderType == null || this.getRenderTypes(state, rand, data).contains(renderType)) {
-            var quads = new ArrayList<BakedQuad>();
-            var geo = new NeoForgeGeometryBuilder(this.settings.getRotation().getMatrix(), side, quads);
-
-            this.buildSlopeGeometry(data.get(FRAME_SPRITE), geo, unwrap(data.get(FRAME_COLOR)), unwrap(data.get(BORDERED_LEFT)), unwrap(data.get(BORDERED_RIGHT)));
-
-            return quads;
-        }
-
-        return Collections.emptyList();
+    public Material.Baked particleMaterial() {
+        return new Material.Baked(this.getFrameSprite(null, null), false);
     }
 
     @Override
-    public boolean useAmbientOcclusion() {
-        return NeoForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.get();
+    public @BakedQuad.MaterialFlags int materialFlags() {
+        return 0;
     }
 }

@@ -8,6 +8,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.util.ProblemReporter;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.level.storage.TagValueInput;
+import net.minecraft.world.level.storage.TagValueOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
@@ -103,14 +107,17 @@ public class BannerPostRearAttachment extends RearAttachment {
     public void writeNbt(CompoundTag nbt, HolderLookup.Provider registry) {
         super.writeNbt(nbt, registry);
 
-        nbt.put("Banner", this.inventory.createTag(registry));
+        var output = TagValueOutput.createWithContext(ProblemReporter.DISCARDING, registry);
+        ContainerHelper.saveAllItems(output, this.inventory.getItems());
+        nbt.put("Banner", output.buildResult());
     }
 
     @Override
     public void readNbt(CompoundTag nbt, HolderLookup.Provider registry) {
         super.readNbt(nbt, registry);
 
-        this.inventory.fromTag(nbt.getList("Banner", Tag.TAG_COMPOUND), registry);
+        var input = TagValueInput.create(ProblemReporter.DISCARDING, registry, nbt.getCompoundOrEmpty("Banner"));
+        ContainerHelper.loadAllItems(input, this.inventory.getItems());
     }
 
     @Override

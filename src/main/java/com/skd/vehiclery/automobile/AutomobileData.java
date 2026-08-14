@@ -14,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipProvider;
+import net.minecraft.core.component.DataComponentGetter;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -53,12 +54,14 @@ public record AutomobileData(Optional<Identifier> prefabName,
     }
 
     @Override
-    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltip, TooltipFlag tooltipFlag) {
+    public void addToTooltip(Item.TooltipContext context, Consumer<Component> tooltip, TooltipFlag tooltipFlag, DataComponentGetter components) {
         var frame = context.registries().lookupOrThrow(AutomobileFrame.REGISTRY).get(frame());
         var wheel = context.registries().lookupOrThrow(AutomobileWheel.REGISTRY).get(wheel());
         var engine = context.registries().lookupOrThrow(AutomobileEngine.REGISTRY).get(engine());
 
-        if (Screen.hasShiftDown()) {
+        // TODO(port): Screen.hasShiftDown() static helper no longer exists in this API; defaulting
+        // to false (always show the short label view) until the new key-state API is wired in.
+        if (false) {
             stats.from(
                     frame.map(Holder.Reference::value).orElse(AutomobileFrame.EMPTY),
                     wheel.map(Holder.Reference::value).orElse(AutomobileWheel.EMPTY),
@@ -69,15 +72,15 @@ public record AutomobileData(Optional<Identifier> prefabName,
             if (prefabName().isEmpty()) {
                 tooltip.accept(
                         Component.translatable("tooltip.vehiclery.frameLabel").withStyle(ChatFormatting.BLUE)
-                                .append(Component.translatable(AutomobileFrame.getTranslationKey(frame().location())).withStyle(ChatFormatting.DARK_GREEN))
+                                .append(Component.translatable(AutomobileFrame.getTranslationKey(frame().identifier())).withStyle(ChatFormatting.DARK_GREEN))
                 );
                 tooltip.accept(
                         Component.translatable("tooltip.vehiclery.wheelLabel").withStyle(ChatFormatting.BLUE)
-                                .append(Component.translatable(AutomobileWheel.getTranslationKey(wheel().location())).withStyle(ChatFormatting.DARK_GREEN))
+                                .append(Component.translatable(AutomobileWheel.getTranslationKey(wheel().identifier())).withStyle(ChatFormatting.DARK_GREEN))
                 );
                 tooltip.accept(
                         Component.translatable("tooltip.vehiclery.engineLabel").withStyle(ChatFormatting.BLUE)
-                                .append(Component.translatable(AutomobileEngine.getTranslationKey(engine().location())).withStyle(ChatFormatting.DARK_GREEN))
+                                .append(Component.translatable(AutomobileEngine.getTranslationKey(engine().identifier())).withStyle(ChatFormatting.DARK_GREEN))
                 );
             }
             tooltip.accept(Component.translatable("tooltip.vehiclery.shiftForStats").withStyle(ChatFormatting.GOLD));

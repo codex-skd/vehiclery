@@ -7,11 +7,12 @@ import com.skd.vehiclery.automobile.attachment.front.FrontAttachment;
 import com.skd.vehiclery.automobile.model.ModelDefinition;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.rendertype.RenderType;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class AutopilotFrontAttachmentModel extends FrontAttachmentRenderModel {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile/front_attachment/autopilot"), "main");
@@ -29,24 +30,26 @@ public class AutopilotFrontAttachmentModel extends FrontAttachmentRenderModel {
     public AutopilotFrontAttachmentModel(EntityRendererProvider.Context ctx,
                                          ModelDefinition.RenderMaterial material,
                                          ModelLayerLocation layer,
-                                         Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                         Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
         this.light = getChildSafe(this.root, "light");
         this.glow = getChildSafe(this.root, "glow");
     }
 
     @Override
-    public void renderOtherLayer(PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+    public void renderOtherLayer(PoseStack matrices, SubmitNodeCollector consumers, int light, int overlay) {
         this.light.visible = true;
 
-        var buffer = consumers.getBuffer(this.on ? RenderType.eyes(TEXTURE_SOLID) : RenderType.entitySolid(TEXTURE_SOLID));
-        this.light.render(matrices, buffer, light, overlay, 0xff000000 | this.lightColor);
+        var lightRenderType = this.on ? RenderTypes.eyes(TEXTURE_SOLID) : RenderTypes.entitySolid(TEXTURE_SOLID);
+        consumers.submitCustomGeometry(matrices, lightRenderType, (framePose, buffer) ->
+                this.light.render(matrices, buffer, light, overlay, 0xff000000 | this.lightColor));
 
         if (this.on) {
             this.glow.visible = true;
-            buffer = consumers.getBuffer(RenderType.beaconBeam(TEXTURE_SOLID, true));
+            var glowRenderType = RenderTypes.beaconBeam(TEXTURE_SOLID, true);
 
-            this.glow.render(matrices, buffer, light, overlay, 0x8e000000 | this.glowColor);
+            consumers.submitCustomGeometry(matrices, glowRenderType, (framePose, buffer) ->
+                    this.glow.render(matrices, buffer, light, overlay, 0x8e000000 | this.glowColor));
         }
     }
 

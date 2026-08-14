@@ -10,6 +10,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class FrontAttachmentRenderModel extends BaseModel {
     protected final ModelPart ground;
@@ -18,7 +19,7 @@ public class FrontAttachmentRenderModel extends BaseModel {
     public FrontAttachmentRenderModel(EntityRendererProvider.Context ctx,
                                       ModelDefinition.RenderMaterial material,
                                       ModelLayerLocation layer,
-                                      Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                      Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
         this.ground = getChildSafe(ctx.bakeLayer(layer), "ground");
     }

@@ -8,12 +8,12 @@
   ],
   "client": [
     "BlockColorsAccess",
-    "BlockEntityWithoutLevelRendererMixin",
     "jsonem.CubeDefinitionAccess",
     "jsonem.CubeDeformationAccess",
-    "jsonem.EntityModelSetMixin",
+    "jsonem.EntityModelSetAccess",
     "jsonem.LayerDefinitionAccess",
     "jsonem.MaterialDefinitionAccess",
+    "jsonem.ModelManagerMixin",
     "jsonem.PartDefinitionAccess"
   ],
   "injectors": {

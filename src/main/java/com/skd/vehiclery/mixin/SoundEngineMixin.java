@@ -10,13 +10,14 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SoundEngine.class)
 public class SoundEngineMixin {
     @Inject(method = "play",
             at = @At(value = "INVOKE", shift = At.Shift.AFTER, ordinal = 0,
                     target = "Lnet/minecraft/client/sounds/ChannelAccess$ChannelHandle;execute(Ljava/util/function/Consumer;)V"))
-    private void vehiclery$exposeALForPlay(SoundInstance sound, CallbackInfo ci,
+    private void vehiclery$exposeALForPlay(SoundInstance sound, CallbackInfoReturnable<SoundEngine.PlayResult> cir,
                                               @Local(ordinal = 0) ChannelAccess.ChannelHandle channelHandle) {
         if (sound instanceof AdvancedSoundInstance adv) {
             var action = adv.setupALState();
@@ -27,7 +28,7 @@ public class SoundEngineMixin {
         }
     }
 
-    @Inject(method = "tickNonPaused",
+    @Inject(method = "tickInGameSound",
             at = @At(value = "INVOKE", shift = At.Shift.BEFORE, ordinal = 0,
                      target = "Lnet/minecraft/client/sounds/ChannelAccess$ChannelHandle;execute(Ljava/util/function/Consumer;)V"))
     private void vehiclery$exposeALForTick(CallbackInfo ci,

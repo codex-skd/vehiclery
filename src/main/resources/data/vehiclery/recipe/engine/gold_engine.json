@@ -1,16 +1,16 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:engines",
-    "sortnum": 3,
-    "ingredients": [
-        {"item": "minecraft:gold_ingot"},
-        {"item": "minecraft:furnace"},
-        {"item": "minecraft:redstone_block"},
-        {"item": "minecraft:gold_block"},
-        {"item": "minecraft:iron_ingot"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_engine",
-        "component": "vehiclery:gold"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:engines",
+  "sortnum": 3,
+  "ingredients": [
+    "minecraft:gold_ingot",
+    "minecraft:furnace",
+    "minecraft:redstone_block",
+    "minecraft:gold_block",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_engine",
+    "component": "vehiclery:gold"
+  }
 }

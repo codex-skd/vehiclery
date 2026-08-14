@@ -9,6 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class PlowRearAttachmentModel extends RearAttachmentRenderModel {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile/rear_attachment/plow"), "main");
@@ -19,7 +20,7 @@ public class PlowRearAttachmentModel extends RearAttachmentRenderModel {
     public PlowRearAttachmentModel(EntityRendererProvider.Context ctx,
                                    ModelDefinition.RenderMaterial material,
                                    ModelLayerLocation layer,
-                                   Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                   Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
 
         this.assembly = getChildSafe(this.root, "assembly");

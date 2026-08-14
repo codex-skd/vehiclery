@@ -6,16 +6,16 @@ import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.automobile.attachment.rear.BannerPostRearAttachment;
 import com.skd.vehiclery.automobile.attachment.rear.RearAttachment;
 import com.skd.vehiclery.automobile.model.ModelDefinition;
+import com.skd.vehiclery.automobile.render.BaseModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.blockentity.BannerRenderer;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
     public static final ModelLayerLocation MODEL_LAYER = new ModelLayerLocation(Vehiclery.rl("automobile/rear_attachment/banner_post"), "main");
@@ -35,7 +35,7 @@ public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
     public BannerPostRearAttachmentModel(EntityRendererProvider.Context ctx,
                                          ModelDefinition.RenderMaterial material,
                                          ModelLayerLocation layer,
-                                         Vector3f translation, Vector3f rotation, Vector3f scale) {
+                                         Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
         super(ctx, material, layer, translation, rotation, scale);
 
         this.fakePole = getChildSafe(this.root, "fake_pole");
@@ -96,8 +96,14 @@ public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
         this.fakePole.visible = true;
     }
 
+    // TODO(port): BannerRenderer.renderPatterns(PoseStack, MultiBufferSource, ...) is gone. The
+    // replacement, BannerRenderer.submitPatterns(SpriteGetter, PoseStack, SubmitNodeCollector,
+    // lightCoords, overlayCoords, Model<S>, S state, boolean, DyeColor, BannerPatternLayers,
+    // CrumblingOverlay), needs a SpriteGetter and a proper Model<S> wrapper around the flag pole
+    // part -- deeper API research needed. For now the flag pole itself still renders (via the plain
+    // ModelPart), but the colored banner pattern overlay is skipped rather than guessed at.
     @Override
-    public void renderOtherLayer(PoseStack matrices, MultiBufferSource consumers, int light, int overlay) {
+    public void renderOtherLayer(PoseStack matrices, SubmitNodeCollector consumers, int light, int overlay) {
         if (this.baseColor != null && this.patterns != null) {
             this.flagPole.visible = true;
             matrices.pushPose();
@@ -105,7 +111,9 @@ public class BannerPostRearAttachmentModel extends RearAttachmentRenderModel {
             matrices.translate(0, -1f, 0);
             matrices.scale(0.666f, 0.666f, 0.666f);
             matrices.translate(0, 1f, 0);
-            BannerRenderer.renderPatterns(matrices, consumers, light, overlay, this.flagPole, ModelBakery.BANNER_BASE, true, baseColor, this.patterns);
+            var renderType = net.minecraft.client.renderer.rendertype.RenderTypes.entitySolid(BaseModel.TEXTURE_SOLID);
+            consumers.submitCustomGeometry(matrices, renderType, (framePose, buffer) ->
+                    this.flagPole.render(matrices, buffer, light, overlay));
 
             matrices.popPose();
             this.flagPole.visible = false;

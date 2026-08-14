@@ -367,8 +367,8 @@ public record AutomobileFrame(
 
         public static final StreamCodec<RegistryFriendlyByteBuf, FrameModel> STREAM_CODEC = StreamCodec.of(
                 (buf, m) -> {
-                    buf.writeResourceLocation(m.texture());
-                    buf.writeResourceLocation(m.modelId());
+                    buf.writeIdentifier(m.texture());
+                    buf.writeIdentifier(m.modelId());
                     WheelBase.STREAM_CODEC.encode(buf, m.wheelBase());
                     buf.writeFloat(m.lengthPx());
                     AUtils.STREAM_CODEC_VEC3.encode(buf, m.driverSeatPos());
@@ -378,8 +378,8 @@ public record AutomobileFrame(
                     buf.writeFloat(m.frontAttachmentPos());
                 },
                 buf -> new FrameModel(
-                        buf.readResourceLocation(),
-                        buf.readResourceLocation(),
+                        buf.readIdentifier(),
+                        buf.readIdentifier(),
                         WheelBase.STREAM_CODEC.decode(buf),
                         buf.readFloat(),
                         AUtils.STREAM_CODEC_VEC3.decode(buf),

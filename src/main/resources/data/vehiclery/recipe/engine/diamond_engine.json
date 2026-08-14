@@ -1,16 +1,16 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:engines",
-    "sortnum": 4,
-    "ingredients": [
-        {"item": "minecraft:diamond"},
-        {"item": "minecraft:furnace"},
-        {"item": "minecraft:redstone_block"},
-        {"item": "minecraft:obsidian"},
-        {"item": "minecraft:diamond"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_engine",
-        "component": "vehiclery:diamond"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:engines",
+  "sortnum": 4,
+  "ingredients": [
+    "minecraft:diamond",
+    "minecraft:furnace",
+    "minecraft:redstone_block",
+    "minecraft:obsidian",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_engine",
+    "component": "vehiclery:diamond"
+  }
 }

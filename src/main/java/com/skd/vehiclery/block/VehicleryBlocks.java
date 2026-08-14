@@ -15,7 +15,9 @@ import com.skd.vehiclery.util.Eventual;
 import com.skd.vehiclery.util.RegistryQueue;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -28,32 +30,32 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public enum VehicleryBlocks {;
-    public static final Eventual<Block> AUTO_MECHANIC_TABLE = register("auto_mechanic_table", () -> new AutoMechanicTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK)), Vehiclery.TAB);
-    public static final Eventual<Block> AUTOMOBILE_ASSEMBLER = register("automobile_assembler", () -> new AutomobileAssemblerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANVIL)), Vehiclery.TAB);
+    public static final Eventual<Block> AUTO_MECHANIC_TABLE = register("auto_mechanic_table", () -> new AutoMechanicTableBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK.weathering().unaffected()).setId(id("auto_mechanic_table"))), Vehiclery.TAB);
+    public static final Eventual<Block> AUTOMOBILE_ASSEMBLER = register("automobile_assembler", () -> new AutomobileAssemblerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANVIL).setId(id("automobile_assembler"))), Vehiclery.TAB);
     public static final Eventual<Block> AUTOPILOT_SIGN = register("autopilot_sign", () -> new AutopilotSignBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)
-            .lightLevel(s -> 1).emissiveRendering((s,l,p) -> true).noCollission()),
-            b -> new AutopilotSignBlockItem(b, new Item.Properties()), Vehiclery.TAB);
-    public static final Eventual<Block> AUTOMOBILE_PRESSURE_PLATE = register("automobile_pressure_plate", () -> new AutomobilePressurePlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)), Vehiclery.TAB);
+            .lightLevel(s -> 1).emissiveRendering(s -> true).noCollision().setId(id("autopilot_sign"))),
+            b -> new AutopilotSignBlockItem(b, new Item.Properties().setId(itemId("autopilot_sign")).useBlockDescriptionPrefix()), Vehiclery.TAB);
+    public static final Eventual<Block> AUTOMOBILE_PRESSURE_PLATE = register("automobile_pressure_plate", () -> new AutomobilePressurePlateBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE).setId(id("automobile_pressure_plate"))), Vehiclery.TAB);
 
-    public static final Eventual<Block> SLOPE = register("slope", () -> new SlopeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)), b -> new SlopeBlockItem(b, new Item.Properties()), Vehiclery.TAB);
-    public static final Eventual<Block> STEEP_SLOPE = register("steep_slope", () -> new SteepSlopeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)), b -> new SteepSlopeBlockItem(b, new Item.Properties()), Vehiclery.TAB);
+    public static final Eventual<Block> SLOPE = register("slope", () -> new SlopeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).setId(id("slope"))), b -> new SlopeBlockItem(b, new Item.Properties().setId(itemId("slope")).useBlockDescriptionPrefix()), Vehiclery.TAB);
+    public static final Eventual<Block> STEEP_SLOPE = register("steep_slope", () -> new SteepSlopeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).setId(id("steep_slope"))), b -> new SteepSlopeBlockItem(b, new Item.Properties().setId(itemId("steep_slope")).useBlockDescriptionPrefix()), Vehiclery.TAB);
 
     public static final Eventual<Block> SLOPE_WITH_DASH_PANEL = register("slope_with_dash_panel", () -> new SlopeWithDashPanelBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
-            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering((s, l, p) -> !s.getValue(DashPanelBlock.POWERED))));
+            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering(s -> !s.getValue(DashPanelBlock.POWERED)).setId(id("slope_with_dash_panel"))));
     public static final Eventual<Block> STEEP_SLOPE_WITH_DASH_PANEL = register("steep_slope_with_dash_panel", () -> new SteepSlopeWithDashPanelBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
-            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering((s, l, p) -> !s.getValue(DashPanelBlock.POWERED))));
+            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering(s -> !s.getValue(DashPanelBlock.POWERED)).setId(id("steep_slope_with_dash_panel"))));
     public static final Eventual<Block> DASH_PANEL = register("dash_panel", () -> new DashPanelBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
-            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering((s, l, p) -> !s.getValue(DashPanelBlock.POWERED)).noCollission()), b -> new DashPanelItem(b, new Item.Properties()), Vehiclery.TAB);
+            .lightLevel(s -> s.getValue(DashPanelBlock.POWERED) ? 0 : 1).emissiveRendering(s -> !s.getValue(DashPanelBlock.POWERED)).noCollision().setId(id("dash_panel"))), b -> new DashPanelItem(b, new Item.Properties().setId(itemId("dash_panel")).useBlockDescriptionPrefix()), Vehiclery.TAB);
 
-    public static final Eventual<Block> GRASS_OFF_ROAD = register("grass_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).noCollission(), AUtils.colorFromInt(0x406918)), Vehiclery.TAB);
-    public static final Eventual<Block> DIRT_OFF_ROAD = register("dirt_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).noCollission(), AUtils.colorFromInt(0x594227)), Vehiclery.TAB);
-    public static final Eventual<Block> SAND_OFF_ROAD = register("sand_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).noCollission(), AUtils.colorFromInt(0xC2B185)), Vehiclery.TAB);
-    public static final Eventual<Block> SNOW_OFF_ROAD = register("snow_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noCollission(), AUtils.colorFromInt(0xD0E7ED)), Vehiclery.TAB);
+    public static final Eventual<Block> GRASS_OFF_ROAD = register("grass_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).noCollision().setId(id("grass_off_road")), AUtils.colorFromInt(0x406918)), Vehiclery.TAB);
+    public static final Eventual<Block> DIRT_OFF_ROAD = register("dirt_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).noCollision().setId(id("dirt_off_road")), AUtils.colorFromInt(0x594227)), Vehiclery.TAB);
+    public static final Eventual<Block> SAND_OFF_ROAD = register("sand_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).noCollision().setId(id("sand_off_road")), AUtils.colorFromInt(0xC2B185)), Vehiclery.TAB);
+    public static final Eventual<Block> SNOW_OFF_ROAD = register("snow_off_road", () -> new OffRoadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noCollision().setId(id("snow_off_road")), AUtils.colorFromInt(0xD0E7ED)), Vehiclery.TAB);
 
-    public static final Eventual<Block> LAUNCH_GEL = register("launch_gel", () -> new LaunchGelBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CLAY).strength(0.1f).sound(SoundType.HONEY_BLOCK).noCollission()), Vehiclery.TAB);
+    public static final Eventual<Block> LAUNCH_GEL = register("launch_gel", () -> new LaunchGelBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CLAY).strength(0.1f).sound(SoundType.HONEY_BLOCK).noCollision().setId(id("launch_gel"))), Vehiclery.TAB);
 
-    public static final Eventual<Block> ALLOW = register("allow", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).sound(SoundType.METAL)),
-            b -> new TooltipBlockItem(b, Component.translatable("tooltip.block.vehiclery.allow").withStyle(ChatFormatting.AQUA), new Item.Properties()));
+    public static final Eventual<Block> ALLOW = register("allow", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BEDROCK).sound(SoundType.METAL).setId(id("allow"))),
+            b -> new TooltipBlockItem(b, Component.translatable("tooltip.block.vehiclery.allow").withStyle(ChatFormatting.AQUA), new Item.Properties().setId(itemId("allow")).useBlockDescriptionPrefix()));
 
     public static final Eventual<BlockEntityType<AutomobileAssemblerBlockEntity>> AUTOMOBILE_ASSEMBLER_ENTITY = RegistryQueue.register(BuiltInRegistries.BLOCK_ENTITY_TYPE,
             Vehiclery.rl("automobile_assembler"), () -> Platform.get().blockEntity(AutomobileAssemblerBlockEntity::new, AUTOMOBILE_ASSEMBLER.require()));
@@ -63,12 +65,20 @@ public enum VehicleryBlocks {;
     public static void init() {
     }
 
+    private static ResourceKey<Block> id(String name) {
+        return ResourceKey.create(Registries.BLOCK, Vehiclery.rl(name));
+    }
+
+    private static ResourceKey<Item> itemId(String name) {
+        return ResourceKey.create(Registries.ITEM, Vehiclery.rl(name));
+    }
+
     public static Eventual<Block> register(String name, Supplier<Block> block) {
         return RegistryQueue.register(BuiltInRegistries.BLOCK, Vehiclery.rl(name), block);
     }
 
     public static Eventual<Block> register(String name, Supplier<Block> block, CreativeTabQueue group) {
-        return register(name, block, b -> new BlockItem(b, new Item.Properties()), group);
+        return register(name, block, b -> new BlockItem(b, new Item.Properties().setId(itemId(name)).useBlockDescriptionPrefix()), group);
     }
 
     public static Eventual<Block> register(String name, Supplier<Block> block, Function<Block, BlockItem> item, CreativeTabQueue tab) {

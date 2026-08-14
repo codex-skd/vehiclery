@@ -1,14 +1,14 @@
 {
-    "type": "vehiclery:auto_mechanic_table",
-    "category": "vehiclery:wheels",
-    "sortnum": 102,
-    "ingredients": [
-        {"item": "minecraft:gray_wool"},
-        {"item": "minecraft:iron_ingot"}
-    ],
-    "result": {
-        "item": "vehiclery:automobile_wheel",
-        "count": 2,
-        "component": "vehiclery:steel"
-    }
+  "type": "vehiclery:auto_mechanic_table",
+  "category": "vehiclery:wheels",
+  "sortnum": 102,
+  "ingredients": [
+    "minecraft:gray_wool",
+    "minecraft:iron_ingot"
+  ],
+  "result": {
+    "item": "vehiclery:automobile_wheel",
+    "count": 2,
+    "component": "vehiclery:steel"
+  }
 }

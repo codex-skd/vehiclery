@@ -1,5 +1,6 @@
 package com.skd.vehiclery.neoforge;
 
+import com.skd.vehiclery.Vehiclery;
 import com.skd.vehiclery.VehicleryClient;
 import com.skd.vehiclery.automobile.render.AutomobileModels;
 import com.skd.vehiclery.automobile.render.obj.ObjLoader;
@@ -9,6 +10,7 @@ import com.skd.vehiclery.entity.AutomobileEntity;
 import com.skd.vehiclery.neoforge.block.render.NeoForgeSlopeBakedModel;
 import com.skd.vehiclery.neoforge.block.render.NeoForgeSlopeGeometryLoader;
 import com.skd.vehiclery.neoforge.block.render.SlopeModelsProvider;
+import com.skd.vehiclery.neoforge.client.VehiclerySpecialModelRenderer;
 import com.skd.vehiclery.particle.VehicleryParticles;
 import com.skd.vehiclery.particle.DriftSmokeParticle;
 import com.skd.vehiclery.screen.AutomobileHud;
@@ -27,17 +29,22 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.AddClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
-import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.event.RegisterBlockStateModels;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import com.skd.vehiclery.block.model.SlopeUnbakedModel;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.RegisterSpecialModelRendererEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = InitlessConstants.VEHICLERY, bus = EventBusSubscriber.Bus.MOD)
+import java.util.List;
+
+@EventBusSubscriber(value = Dist.CLIENT, modid = InitlessConstants.VEHICLERY)
 public class VehicleryClientNeoForge {
     public static final AutomobileModels MODEL_DEF_LOADER = new AutomobileModels();
 
@@ -57,7 +64,7 @@ public class VehicleryClientNeoForge {
         });
 
         NeoForge.EVENT_BUS.<ViewportEvent.ComputeFov>addListener(evt ->
-                evt.setFOV(VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), (float) evt.getPartialTick())));
+                evt.setFOV((float) VehicleryClient.modifyBoostFov(Minecraft.getInstance(), evt.getFOV(), (float) evt.getPartialTick())));
     }
 
     @SubscribeEvent
@@ -66,13 +73,14 @@ public class VehicleryClientNeoForge {
     }
 
     @SubscribeEvent
-    public static void registerBlockColors(RegisterColorHandlersEvent.Block evt) {
-        evt.register(VehicleryClient.GRASS_COLOR, VehicleryBlocks.GRASS_OFF_ROAD.require());
+    public static void registerBlockColors(RegisterColorHandlersEvent.BlockTintSources evt) {
+        evt.register(List.of(VehicleryClient.GRASS_COLOR), VehicleryBlocks.GRASS_OFF_ROAD.require());
     }
 
     @SubscribeEvent
-    public static void registerItemColors(RegisterColorHandlersEvent.Item evt) {
-        evt.register(VehicleryClient.GRASS_ITEM_COLOR, VehicleryBlocks.GRASS_OFF_ROAD.require());
+    public static void registerItemColors(RegisterColorHandlersEvent.ItemTintSources evt) {
+        // The grass item tint is now provided by the vanilla grass ItemTintSource codec, registered
+        // automatically via item model JSON; no runtime item-color registration is required in 26.2.
     }
 
     @SubscribeEvent
@@ -87,23 +95,25 @@ public class VehicleryClientNeoForge {
     }
 
     @SubscribeEvent
-    public static void registerResourceLoaders(RegisterClientReloadListenersEvent evt) {
-        evt.registerReloadListener(MODEL_DEF_LOADER);
-        evt.registerReloadListener(ObjLoader.INSTANCE);
+    public static void registerResourceLoaders(AddClientReloadListenersEvent evt) {
+        evt.addListener(Vehiclery.rl("automobile_models"), MODEL_DEF_LOADER);
+        evt.addListener(Vehiclery.rl("obj_loader"), ObjLoader.INSTANCE);
     }
 
     @SubscribeEvent
-    public static void registerBakedModels(ModelEvent.RegisterGeometryLoaders evt) {
-        evt.register(NeoForgeSlopeGeometryLoader.ID, NeoForgeSlopeGeometryLoader.INSTANCE);
+    public static void registerBakedModels(RegisterBlockStateModels evt) {
+        evt.registerModel(NeoForgeSlopeGeometryLoader.ID, SlopeUnbakedModel.CODEC);
     }
 
     @SubscribeEvent
-    public static void generateResources(GatherDataEvent evt) {
-        var generator = evt.getGenerator();
-        var output = generator.getPackOutput();
-        var files = evt.getExistingFileHelper();
+    public static void registerSpecialModelRenderers(RegisterSpecialModelRendererEvent evt) {
+        evt.register(Vehiclery.rl("vehiclery_special"), VehiclerySpecialModelRenderer.CODEC);
+    }
 
-        generator.addProvider(evt.includeClient(),
-                new SlopeModelsProvider(output, files));
+    @SubscribeEvent
+    public static void generateResources(GatherDataEvent.Client evt) {
+        var output = evt.getGenerator().getPackOutput();
+
+        evt.addProvider(new SlopeModelsProvider(output));
     }
 }

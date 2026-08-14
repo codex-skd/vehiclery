@@ -25,7 +25,7 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 import java.util.Set;
 
 @Mod(InitlessConstants.VEHICLERY)
-@EventBusSubscriber(modid = InitlessConstants.VEHICLERY, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = InitlessConstants.VEHICLERY)
 public class VehicleryNeoForge {
     public VehicleryNeoForge() {
         NeoForgePlatform.init();
@@ -36,7 +36,7 @@ public class VehicleryNeoForge {
     @SubscribeEvent
     public static void registerNetworking(RegisterPayloadHandlersEvent evt) {
         var reg = evt.registrar(NeoForgeNetworking.PROTOCOL_VERSION);
-        reg.playBidirectional(VehicleryPacketPayload.TYPE, VehicleryPacketPayload.STREAM_CODEC, NeoForgeNetworking.HANDLER);
+        reg.playBidirectional(VehicleryPacketPayload.TYPE, VehicleryPacketPayload.STREAM_CODEC, NeoForgeNetworking::receiveServer, NeoForgeNetworking::receiveClient);
     }
 
     @SubscribeEvent
@@ -50,7 +50,7 @@ public class VehicleryNeoForge {
     }
 
     @SubscribeEvent
-    public static void generateData(GatherDataEvent evt) {
+    public static void generateData(GatherDataEvent.Server evt) {
         var regset = new RegistrySetBuilder();
 
         Vehiclery.initDynamicRegistries(new Vehiclery.DynamicRegistryRegistrar() {

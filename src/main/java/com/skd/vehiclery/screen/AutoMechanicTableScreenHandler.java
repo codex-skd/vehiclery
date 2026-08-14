@@ -63,12 +63,21 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
             this.addSlot(new Slot(playerInv, s, 8 + (s * 18), playerInvY + 58));
         }
 
-        this.recipes = world.getRecipeManager().getAllRecipesFor(AutoMechanicTableRecipe.TYPE)
-                .stream().map(h -> {
-                    var r = h.value();
-                    r.sortId = h.id();
-                    return r;
-                }).collect(Collectors.toList());
+        // TODO(port): Level#getRecipeManager() is gone -- full RecipeHolder data (with outputs) is
+        // no longer broadly synced to the client in this Minecraft version (only RecipePropertySet /
+        // RecipeDisplay data is, via Level#recipeAccess()), so the old "just ask the level" approach
+        // only works server-side now. This needs a proper custom sync packet sending our recipe list
+        // to the client; for now the recipe catalog is only populated server-side, client stays empty.
+        if (world instanceof net.minecraft.server.level.ServerLevel serverLevel) {
+            this.recipes = serverLevel.getServer().getRecipeManager().recipeMap().byType(AutoMechanicTableRecipe.TYPE)
+                    .stream().map(h -> {
+                        var r = h.value();
+                        r.sortId = h.id().identifier();
+                        return r;
+                    }).collect(Collectors.toList());
+        } else {
+            this.recipes = new ArrayList<>();
+        }
         Collections.sort(this.recipes);
 
         this.selectedRecipe.set(-1);
@@ -153,7 +162,7 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
 
             // Items transferred out of output slot
             if (fromSlotId == this.outputSlot.index) {
-                fromItem.onCraftedBy(fromStack, player.level(), player);
+                fromItem.onCraftedBy(fromStack, player);
                 if (!this.moveItemStackTo(fromStack, this.playerInvSlot, this.playerInvSlot + 36, true)) {
                     return ItemStack.EMPTY;
                 }
@@ -218,7 +227,7 @@ public class AutoMechanicTableScreenHandler extends AbstractContainerMenu {
             AutoMechanicTableScreenHandler.this.getSelectedRecipe()
                     .ifPresent(recipe -> {
                         recipe.assemble(new ContainerRecipeInput(AutoMechanicTableScreenHandler.this.inputInv));
-                        stack.getItem().onCraftedBy(stack, player.level(), player);
+                        stack.getItem().onCraftedBy(stack, player);
                         AutoMechanicTableScreenHandler.this.updateRecipeState();
                     });
         }

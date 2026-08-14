@@ -17,6 +17,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.ExtraCodecs;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -198,7 +199,7 @@ public record AutomobileEngine(
                 ExhaustPos::create
         );
 
-        public static ExhaustPos create(Vector3f pos, float pitch, float yaw) {
+        public static ExhaustPos create(Vector3fc pos, float pitch, float yaw) {
             return new ExhaustPos(pos.x(), pos.y(), pos.z(), pitch, yaw);
         }
 

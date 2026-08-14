@@ -47,8 +47,8 @@ public class OffRoadBlock extends Block {
     }
 
     @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
-        super.neighborChanged(state, world, pos, block, fromPos, notify);
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, @Nullable net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, world, pos, block, orientation, notify);
         if (!canSurvive(state, world, pos)) {
             world.destroyBlock(pos, true);
         }

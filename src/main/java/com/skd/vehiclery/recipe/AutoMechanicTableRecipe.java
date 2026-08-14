@@ -23,16 +23,33 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
 
     protected final Identifier category;
     protected final List<Ingredient> ingredients;
-    protected final ItemStack result;
+    protected final AutoMechanicTableRecipeSerializer.ResultSpec resultSpec;
     protected final int sortNum;
+
+    // Built lazily: constructing the ItemStack requires the result item's DataComponentMap to be
+    // bound, which is only guaranteed once the current datapack reload has fully completed (see
+    // AutoMechanicTableRecipeSerializer.AUTO_COMPONENT_STACK for details).
+    private @Nullable ItemStack cachedResult;
 
     public @Nullable Identifier sortId;
 
-    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, ItemStack result, int sortNum) {
+    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, AutoMechanicTableRecipeSerializer.ResultSpec resultSpec, int sortNum) {
         this.category = category;
         this.ingredients = ingredients;
-        this.result = result;
+        this.resultSpec = resultSpec;
         this.sortNum = sortNum;
+    }
+
+    public AutoMechanicTableRecipe(Identifier category, List<Ingredient> ingredients, ItemStack resolvedResult, int sortNum) {
+        this.category = category;
+        this.ingredients = ingredients;
+        this.resultSpec = AutoMechanicTableRecipeSerializer.toResultSpec(resolvedResult);
+        this.cachedResult = resolvedResult;
+        this.sortNum = sortNum;
+    }
+
+    public AutoMechanicTableRecipeSerializer.ResultSpec getResultSpec() {
+        return this.resultSpec;
     }
 
     public Identifier getCategory() {
@@ -48,10 +65,6 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
     }
 
     @Override
-    public ItemStack assemble(ContainerRecipeInput inv, HolderLookup.Provider var2) {
-        return assemble(inv);
-    }
-
     public ItemStack assemble(ContainerRecipeInput inv) {
         for (var ing : this.ingredients) {
             for (int i = 0; i < inv.size(); i++) {
@@ -63,31 +76,47 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
             }
         }
 
-        return this.result.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int width, int height) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(HolderLookup.Provider var1) {
-        return getResultItem();
+        return this.getResultItem().copy();
     }
 
     public ItemStack getResultItem() {
-        return this.result;
+        if (this.cachedResult == null) {
+            this.cachedResult = AutoMechanicTableRecipeSerializer.buildResultStack(this.resultSpec);
+        }
+        return this.cachedResult;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public RecipeSerializer<? extends Recipe<ContainerRecipeInput>> getSerializer() {
         return AutoMechanicTableRecipeSerializer.INSTANCE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public RecipeType<? extends Recipe<ContainerRecipeInput>> getType() {
         return TYPE;
+    }
+
+    @Override
+    public boolean showNotification() {
+        return false;
+    }
+
+    @Override
+    public String group() {
+        return "";
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.PlacementInfo placementInfo() {
+        // Not a grid-slot-based recipe (custom station UI), so there is no meaningful vanilla
+        // slot-placement hint to give.
+        return net.minecraft.world.item.crafting.PlacementInfo.NOT_PLACEABLE;
+    }
+
+    @Override
+    public net.minecraft.world.item.crafting.RecipeBookCategory recipeBookCategory() {
+        // Never shown in the vanilla recipe book (custom Auto Mechanic Table UI instead).
+        return net.minecraft.world.item.crafting.RecipeBookCategories.CRAFTING_MISC;
     }
 
     public void forMissingIngredients(ContainerRecipeInput inv, Consumer<Ingredient> action) {
@@ -117,7 +146,7 @@ public class AutoMechanicTableRecipe implements Recipe<ContainerRecipeInput>, Co
             return this.sortId.compareTo(o.sortId);
         }
 
-        return this.getResultItem().getItemHolder().getRegisteredName()
-                .compareTo(o.getResultItem().getItemHolder().getRegisteredName());
+        return net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(this.getResultItem().getItem())
+                .compareTo(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(o.getResultItem().getItem()));
     }
 }

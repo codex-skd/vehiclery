@@ -4,26 +4,33 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import com.skd.vehiclery.automobile.model.ModelDefinition;
+import com.skd.vehiclery.automobile.render.RenderableModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
+import org.joml.Vector3fc;
 
+import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
-public class ObjModel extends Model {
-    private final Vector3f translation;
-    private final Vector3f rotation;
-    private final Vector3f scale;
+public class ObjModel extends Model implements RenderableModel {
+    private static final ModelPart EMPTY_ROOT = new ModelPart(List.of(), Map.of());
+
+    private final Vector3fc translation;
+    private final Vector3fc rotation;
+    private final Vector3fc scale;
 
     private final Supplier<BakedObj> obj;
 
     public ObjModel(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation layer,
-                     Vector3f translation, Vector3f rotation, Vector3f scale) {
-        super(material.renderType);
+                     Vector3fc translation, Vector3fc rotation, Vector3fc scale) {
+        super(EMPTY_ROOT, material.renderType);
         this.translation = translation;
         this.rotation = rotation;
         this.scale = scale;
@@ -32,7 +39,7 @@ public class ObjModel extends Model {
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
+    public void renderModel(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, int color) {
         var obj = this.obj.get();
         if (obj == null) {
             return;

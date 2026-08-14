@@ -73,6 +73,8 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.entity.EntityTypeTest;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -243,60 +245,66 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag nbt) {
-        var reg = this.registryAccess();
-        setComponents(
-                reg.registryOrThrow(AutomobileFrame.REGISTRY).getHolder(Identifier.tryParse(nbt.getString("frame")))
-                        .map(r -> (Holder<AutomobileFrame>)r).orElseGet(() -> Holder.direct(AutomobileFrame.EMPTY)),
-                reg.registryOrThrow(AutomobileWheel.REGISTRY).getHolder(Identifier.tryParse(nbt.getString("wheels")))
-                        .map(r -> (Holder<AutomobileWheel>)r).orElseGet(() -> Holder.direct(AutomobileWheel.EMPTY)),
-                reg.registryOrThrow(AutomobileEngine.REGISTRY).getHolder(Identifier.tryParse(nbt.getString("engine")))
-                        .map(r -> (Holder<AutomobileEngine>)r).orElseGet(() -> Holder.direct(AutomobileEngine.EMPTY))
-        );
-
-        var rAtt = nbt.getCompound("rearAttachment");
-        setRearAttachment(RearAttachment.fromNbt(rAtt));
-        rearAttachment.readNbt(rAtt, this.level().registryAccess());
-
-        var fAtt = nbt.getCompound("frontAttachment");
-        setFrontAttachment(FrontAttachment.fromNbt(fAtt));
-        frontAttachment.readNbt(fAtt, this.level().registryAccess());
-
-        engineSpeed = nbt.getFloat("engineSpeed");
-        boostSpeed = nbt.getFloat("boostSpeed");
-        boostTimer = nbt.getInt("boostTimer");
-        boostPower = nbt.getFloat("boostPower");
-        speedDirection = nbt.getFloat("speedDirection");
-        vSpeed = nbt.getFloat("verticalSpeed");
-        hSpeed = nbt.getFloat("horizontalSpeed");
-        addedVelocity = AUtils.v3dFromNbt(nbt.getCompound("addedVelocity"));
-        lastVelocity = AUtils.v3dFromNbt(nbt.getCompound("lastVelocity"));
-        angularSpeed = nbt.getFloat("angularSpeed");
-        steering = nbt.getFloat("steering");
-        wheelAngle = nbt.getFloat("wheelAngle");
-        drifting = nbt.getBoolean("drifting");
-        driftDir = nbt.getInt("driftDir");
-        burningOut = nbt.getBoolean("burningOut");
-        honking = nbt.getBoolean("honking");
-        turboCharge = nbt.getInt("turboCharge");
-        input.accelerating = nbt.getBoolean("accelerating");
-        input.braking = nbt.getBoolean("braking");
-        input.steering = nbt.getFloat("steeringInput");
-        input.holdingDrift = nbt.getBoolean("holdingDrift");
-        input.holdingHorn = nbt.getBoolean("holdingHorn");
-        fallTicks = nbt.getInt("fallTicks");
-        despawnTime = nbt.getInt("despawnTime");
-        despawnCountdown = nbt.getInt("despawnCountdown");
-        decorative = nbt.getBoolean("decorative");
+    public boolean hurtServer(ServerLevel level, DamageSource source, float damage) {
+        // TODO(port): no health/damage model implemented for the automobile yet, matches pre-port behavior of ignoring damage
+        return false;
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag nbt) {
-        this.entityData.get(FRAME_TYPE).unwrapKey().ifPresent(k -> nbt.putString("frame", k.location().toString()));
-        this.entityData.get(WHEEL_TYPE).unwrapKey().ifPresent(k -> nbt.putString("wheels", k.location().toString()));
-        this.entityData.get(ENGINE_TYPE).unwrapKey().ifPresent(k -> nbt.putString("engine", k.location().toString()));
-        nbt.put("rearAttachment", rearAttachment.toNbt());
-        nbt.put("frontAttachment", frontAttachment.toNbt());
+    public void readAdditionalSaveData(ValueInput nbt) {
+        var reg = this.registryAccess();
+        setComponents(
+                reg.lookupOrThrow(AutomobileFrame.REGISTRY).get(Identifier.tryParse(nbt.getStringOr("frame", "")))
+                        .map(r -> (Holder<AutomobileFrame>)r).orElseGet(() -> Holder.direct(AutomobileFrame.EMPTY)),
+                reg.lookupOrThrow(AutomobileWheel.REGISTRY).get(Identifier.tryParse(nbt.getStringOr("wheels", "")))
+                        .map(r -> (Holder<AutomobileWheel>)r).orElseGet(() -> Holder.direct(AutomobileWheel.EMPTY)),
+                reg.lookupOrThrow(AutomobileEngine.REGISTRY).get(Identifier.tryParse(nbt.getStringOr("engine", "")))
+                        .map(r -> (Holder<AutomobileEngine>)r).orElseGet(() -> Holder.direct(AutomobileEngine.EMPTY))
+        );
+
+        var rAtt = nbt.read("rearAttachment", CompoundTag.CODEC).orElseGet(CompoundTag::new);
+        setRearAttachment(RearAttachment.fromNbt(rAtt));
+        rearAttachment.readNbt(rAtt, this.level().registryAccess());
+
+        var fAtt = nbt.read("frontAttachment", CompoundTag.CODEC).orElseGet(CompoundTag::new);
+        setFrontAttachment(FrontAttachment.fromNbt(fAtt));
+        frontAttachment.readNbt(fAtt, this.level().registryAccess());
+
+        engineSpeed = nbt.getFloatOr("engineSpeed", 0f);
+        boostSpeed = nbt.getFloatOr("boostSpeed", 0f);
+        boostTimer = nbt.getIntOr("boostTimer", 0);
+        boostPower = nbt.getFloatOr("boostPower", 0f);
+        speedDirection = nbt.getFloatOr("speedDirection", 0f);
+        vSpeed = nbt.getFloatOr("verticalSpeed", 0f);
+        hSpeed = nbt.getFloatOr("horizontalSpeed", 0f);
+        addedVelocity = AUtils.v3dFromNbt(nbt.read("addedVelocity", CompoundTag.CODEC).orElseGet(CompoundTag::new));
+        lastVelocity = AUtils.v3dFromNbt(nbt.read("lastVelocity", CompoundTag.CODEC).orElseGet(CompoundTag::new));
+        angularSpeed = nbt.getFloatOr("angularSpeed", 0f);
+        steering = nbt.getFloatOr("steering", 0f);
+        wheelAngle = nbt.getFloatOr("wheelAngle", 0f);
+        drifting = nbt.getBooleanOr("drifting", false);
+        driftDir = nbt.getIntOr("driftDir", 0);
+        burningOut = nbt.getBooleanOr("burningOut", false);
+        honking = nbt.getBooleanOr("honking", false);
+        turboCharge = nbt.getIntOr("turboCharge", 0);
+        input.accelerating = nbt.getBooleanOr("accelerating", false);
+        input.braking = nbt.getBooleanOr("braking", false);
+        input.steering = nbt.getFloatOr("steeringInput", 0f);
+        input.holdingDrift = nbt.getBooleanOr("holdingDrift", false);
+        input.holdingHorn = nbt.getBooleanOr("holdingHorn", false);
+        fallTicks = nbt.getIntOr("fallTicks", 0);
+        despawnTime = nbt.getIntOr("despawnTime", 0);
+        despawnCountdown = nbt.getIntOr("despawnCountdown", 0);
+        decorative = nbt.getBooleanOr("decorative", false);
+    }
+
+    @Override
+    public void addAdditionalSaveData(ValueOutput nbt) {
+        this.entityData.get(FRAME_TYPE).unwrapKey().ifPresent(k -> nbt.putString("frame", k.identifier().toString()));
+        this.entityData.get(WHEEL_TYPE).unwrapKey().ifPresent(k -> nbt.putString("wheels", k.identifier().toString()));
+        this.entityData.get(ENGINE_TYPE).unwrapKey().ifPresent(k -> nbt.putString("engine", k.identifier().toString()));
+        nbt.store("rearAttachment", CompoundTag.CODEC, rearAttachment.toNbt());
+        nbt.store("frontAttachment", CompoundTag.CODEC, frontAttachment.toNbt());
         nbt.putFloat("engineSpeed", engineSpeed);
         nbt.putFloat("boostSpeed", boostSpeed);
         nbt.putInt("boostTimer", boostTimer);
@@ -304,8 +312,8 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
         nbt.putFloat("speedDirection", speedDirection);
         nbt.putFloat("verticalSpeed", vSpeed);
         nbt.putFloat("horizontalSpeed", hSpeed);
-        nbt.put("addedVelocity", AUtils.v3dToNbt(addedVelocity));
-        nbt.put("lastVelocity", AUtils.v3dToNbt(lastVelocity));
+        nbt.store("addedVelocity", CompoundTag.CODEC, AUtils.v3dToNbt(addedVelocity));
+        nbt.store("lastVelocity", CompoundTag.CODEC, AUtils.v3dToNbt(lastVelocity));
         nbt.putFloat("angularSpeed", angularSpeed);
         nbt.putFloat("steering", steering);
         nbt.putFloat("wheelAngle", wheelAngle);
@@ -386,7 +394,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
 
     @Override
     public float getWheelAngle(float tickDelta) {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             return Mth.lerp(tickDelta, lastWheelAngle, wheelAngle);
         }
 
@@ -394,7 +402,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public float getBoostSpeed(float tickDelta) {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             return Mth.lerp(tickDelta, lastBoostSpeed, boostSpeed);
         }
 
@@ -452,7 +460,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public float getEffectiveSpeed() {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             return calculateEffectiveSpeed();
         }
 
@@ -600,7 +608,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
 
     public void forPlayersTrackingMe(boolean ignoreDriver, Consumer<ServerPlayer> action) {
         if (level() instanceof ServerLevel sl) {
-            var cPos = new ChunkPos(blockPosition());
+            var cPos = ChunkPos.containing(blockPosition());
             for (var p : sl.getPlayers(s -> s.getChunkTrackingView().contains(cPos))) {
                 if (ignoreDriver && isDriving(p)) {
                     continue;
@@ -625,13 +633,12 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public void updateCullingBox() {
-        this.cullingBox = super.getBoundingBoxForCulling();
+        this.cullingBox = super.getBoundingBox();
         for (var hitbox : this.hitboxes) {
             this.cullingBox = this.cullingBox.minmax(hitbox.getBoundingBox());
         }
     }
 
-    @Override
     public AABB getBoundingBoxForCulling() {
         return this.cullingBox;
     }
@@ -719,7 +726,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
 
         receiveVehicleCollisions();
         movementTick();
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.move(MoverType.SELF, this.getDeltaMovement());
         }
         postMovementTick();
@@ -791,7 +798,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public void positionTrackingTick() {
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.lerpTicks = 0;
             syncPacketPositionCodec(getX(), getY(), getZ());
         } else if (lerpTicks > 0) {
@@ -827,7 +834,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public void updateEngineSpeed(float speed) {
-         if (!this.isControlledByLocalInstance()) {
+         if (!this.isLocalInstanceAuthoritative()) {
              return;
          }
 
@@ -835,7 +842,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public void updateBoostSpeed(float speed) {
-        if (!this.isControlledByLocalInstance()) {
+        if (!this.isLocalInstanceAuthoritative()) {
             return;
         }
 
@@ -983,11 +990,10 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
         wheelAngle += 300 * (hSpeed / wheelCircumference) + (hSpeed > 0 ? ((1 - grip) * 15) : 0); // made it a bit slower intentionally, also make it spin more when on slippery surface
 
         // Set the automobile's velocity
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.setDeltaMovement(cumulative);
         }
         this.markHurt();
-        this.hasImpulse = true;
 
         lastVelocity = cumulative;
 
@@ -1053,7 +1059,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
                             .multiply(1, 0, 1));
 
             if (hadVehicleCollision <= 0) {
-                level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.COLLISION.require(), SoundSource.AMBIENT, 0.22f, 0.7f + (0.06f * (this.level().random.nextFloat() - 0.5f)), false);
+                level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.COLLISION.require(), SoundSource.AMBIENT, 0.22f, 0.7f + (0.06f * (this.level().getRandom().nextFloat() - 0.5f)), false);
                 this.engineSpeed *= 0.6f;
                 hadVehicleCollision = 12;
             }
@@ -1080,7 +1086,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
             double knockSpeed = ((-0.2 * hSpeed) - 0.5);
             addedVelocity = addedVelocity.add(Math.sin(angle) * knockSpeed, 0, Math.cos(angle) * knockSpeed);
 
-            level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.COLLISION.require(), SoundSource.AMBIENT, 0.76f, 0.65f + (0.06f * (this.level().random.nextFloat() - 0.5f)), true);
+            level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.COLLISION.require(), SoundSource.AMBIENT, 0.76f, 0.65f + (0.06f * (this.level().getRandom().nextFloat() - 0.5f)), true);
 
             if (isVehicle() && level().isClientSide()) {
                 if (getPassengers().stream().anyMatch(p -> p instanceof LocalPlayer)) {
@@ -1147,7 +1153,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
         }
 
         // Turns the automobile
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.setYRot(getYRot() + yawInc);
 
             var first = this.getFirstPassenger();
@@ -1200,7 +1206,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     @Override
-    public boolean causeFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
+    public boolean causeFallDamage(double fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false; // Riders shouldn't take fall damage
     }
 
@@ -1283,7 +1289,10 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
         this.automobileOnGround |= otherColliders.stream().anyMatch(col -> col.boxIntersects(groundBox));
     }
 
-    @Override
+    // TODO(port): Entity#lerpTo no longer exists and moveOrInterpolateTo() is final (delegates to
+    // InterpolationHandler), so this custom network-sync smoothing is currently not hooked up to
+    // vanilla and needs the new InterpolationHandler API wired in properly. Kept as a plain method
+    // for now so the skeleton compiles; movement over the network will be less smooth until fixed.
     public void lerpTo(double x, double y, double z, float yaw, float pitch, int interpolationSteps) {
         this.trackedX = x;
         this.trackedY = y;
@@ -1313,7 +1322,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
             boostTimer = time;
             boostPower = power;
         }
-        if (this.isControlledByLocalInstance()) {
+        if (this.isLocalInstanceAuthoritative()) {
             this.updateEngineSpeed(Math.max(this.engineSpeed, this.stats.getComfortableSpeed() * 0.5f));
         }
 
@@ -1502,7 +1511,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
 
     public void playHitSound(Vec3 pos) {
         level().gameEvent(this, GameEvent.ENTITY_DAMAGE, pos);
-        level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.COPPER_BREAK, SoundSource.AMBIENT, 1, 0.9f + (this.level().random.nextFloat() * 0.2f));
+        level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.COPPER_BREAK, SoundSource.AMBIENT, 1, 0.9f + (this.level().getRandom().nextFloat() * 0.2f));
     }
 
     private void dropParts(Vec3 pos) {
@@ -1627,14 +1636,14 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
                     if (!level().isClientSide()) {
                         this.getFirstPassenger().stopRiding();
                     }
-                    return InteractionResult.sidedSuccess(level().isClientSide);
+                    return level().isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
                 }
                 return InteractionResult.PASS;
             }
             if (!level().isClientSide()) {
                 player.startRiding(this);
             }
-            return InteractionResult.sidedSuccess(level().isClientSide());
+            return level().isClientSide() ? InteractionResult.SUCCESS : InteractionResult.SUCCESS_SERVER;
         }
 
         return InteractionResult.PASS;
@@ -1800,7 +1809,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
 
     public void bounce() {
         suspensionBounceTimer = 3;
-        level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.LANDING.require(), SoundSource.AMBIENT, 1, 1.5f + (0.15f * (this.level().random.nextFloat() - 0.5f)), true);
+        level().playLocalSound(this.getX(), this.getY(), this.getZ(), VehiclerySounds.LANDING.require(), SoundSource.AMBIENT, 1, 1.5f + (0.15f * (this.level().getRandom().nextFloat() - 0.5f)), true);
         controllerAction(AutomobileController::groundThudRumble);
     }
 
@@ -1835,7 +1844,10 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
     }
 
     public static Vec3 moveAndCollide(Entity entity, Vec3 mvmt, AABB myCollider, Level level, List<VoxelShape> nearbyEntities) {
-        var colliders = collectColliders(entity, level, nearbyEntities, myCollider.expandTowards(mvmt));
+        // TODO(port): Entity#collectCollidersIgnoringWorldBorder is now private; using the public
+        // collectAllColliders() instead, which re-queries entity collisions internally rather than
+        // reusing the pre-fetched nearbyEntities list. Functionally equivalent, slightly less optimized.
+        var colliders = Entity.collectAllColliders(entity, level, myCollider.expandTowards(mvmt));
         return collideWithShapes(mvmt, myCollider, colliders);
     }
 

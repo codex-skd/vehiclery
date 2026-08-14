@@ -118,10 +118,10 @@ public abstract class RearAttachment extends BaseAttachment<RearAttachmentType<?
     }
 
     public void readNbt(CompoundTag nbt, HolderLookup.Provider registry) {
-        this.setYaw(nbt.getFloat("yaw"));
+        this.setYaw(nbt.getFloatOr("yaw", 0f));
     }
 
     public static RearAttachmentType<?> fromNbt(CompoundTag nbt) {
-        return RearAttachmentType.REGISTRY.get(Identifier.tryParse(nbt.getString("type")));
+        return RearAttachmentType.REGISTRY.get(Identifier.tryParse(nbt.getStringOr("type", "")));
     }
 }
