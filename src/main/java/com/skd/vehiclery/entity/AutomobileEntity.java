@@ -1886,6 +1886,7 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
         private static final double INV_SCAN_STEPS = 1d / SCAN_STEPS_PER_BLOCK;
 
         private boolean wereAllOnGround = true;
+        private boolean verticalInitialized = false;
         private double lastVertical = 0;
         private double currVertical = 0;
         private double verticalTarget = 0;
@@ -2009,6 +2010,15 @@ public class AutomobileEntity extends Entity implements RenderableAutomobile, En
             wereAllOnGround = allOnGround;
 
             verticalTarget = centerPos.y;
+            if (!verticalInitialized) {
+                // First tick after spawn/load: currVertical/lastVertical default to 0, which is not
+                // this entity's actual world Y, so getVerticalOffset() (~= currVertical - entity Y)
+                // would return roughly -entity Y for at least one render frame -- pushing the render
+                // pose far below the entity's real position instead of a small suspension offset.
+                // Snap directly instead of lerping from 0 on this very first tick.
+                this.lastVertical = this.currVertical = verticalTarget;
+                this.verticalInitialized = true;
+            }
             if (!anyOnGround) {
                 return;
             }
