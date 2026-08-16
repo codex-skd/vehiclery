@@ -32,6 +32,10 @@ public class BaseModel extends Model implements RenderableModel {
     public static final ModelPart PART_EMPTY = new ModelPart(List.of(), Map.of());
     public static final Identifier TEXTURE_SOLID = Vehiclery.rl("textures/solid.png");
 
+    // TODO(debug): temporary one-shot diagnostic logging for the "renders as a flat/wrong shape"
+    // bug reported on a real client -- remove once the root cause is confirmed and fixed.
+    private static final java.util.Set<String> DEBUG_LOGGED_LAYERS = new java.util.HashSet<>();
+
     public BaseModel(EntityRendererProvider.Context ctx,
                      ModelDefinition.RenderMaterial material,
                      ModelLayerLocation layer,
@@ -40,6 +44,31 @@ public class BaseModel extends Model implements RenderableModel {
         this.translation = translation;
         this.rotation = rotation;
         this.scale = scale;
+        debugLogGeometry(layer);
+    }
+
+    private void debugLogGeometry(ModelLayerLocation layer) {
+        var key = layer.model() + "/" + layer.layer();
+        if (!DEBUG_LOGGED_LAYERS.add(key)) return;
+        try {
+            var root = this.root();
+            var cubesField = ModelPart.class.getDeclaredField("cubes");
+            cubesField.setAccessible(true);
+            var childrenField = ModelPart.class.getDeclaredField("children");
+            childrenField.setAccessible(true);
+            var cubes = (java.util.List<?>) cubesField.get(root);
+            var children = (java.util.Map<?, ?>) childrenField.get(root);
+            Vehiclery.LOG.info("[DEBUG geometry] layer={} rootCubes={} rootChildren={} childNames={}",
+                    key, cubes.size(), children.size(), children.keySet());
+            for (var e : children.entrySet()) {
+                var childCubes = (java.util.List<?>) cubesField.get(e.getValue());
+                var grandchildren = (java.util.Map<?, ?>) childrenField.get(e.getValue());
+                Vehiclery.LOG.info("[DEBUG geometry]   child '{}': cubes={} grandchildren={}",
+                        e.getKey(), childCubes.size(), grandchildren.size());
+            }
+        } catch (ReflectiveOperationException ex) {
+            Vehiclery.LOG.error("[DEBUG geometry] reflection failed for {}", key, ex);
+        }
     }
 
     private static ModelPart resolveRoot(EntityRendererProvider.Context ctx, ModelLayerLocation layer) {
