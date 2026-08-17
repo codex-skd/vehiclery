@@ -47,6 +47,7 @@ public class VehicleryClient {
     // TODO(debug): temporary one-shot diagnostic logging for the oversized/black automobile item
     // render bug reported on a real client -- remove once the root cause is confirmed and fixed.
     private static final Set<net.minecraft.resources.Identifier> DEBUG_LOGGED_AUTOMOBILE_ITEM = ConcurrentHashMap.newKeySet();
+    private static final Set<String> DEBUG_LOGGED_COMPONENT_TEXTURES = ConcurrentHashMap.newKeySet();
 
     public static final BlockTintSource GRASS_COLOR = new BlockTintSource() {
         @Override
@@ -165,7 +166,16 @@ public class VehicleryClient {
                 float scale = scaleProvider.apply(component);
                 matrices.translate(0.5, 0, 0.5);
                 matrices.scale(scale, -scale, -scale);
-                var renderType = model.renderType(textureProvider.apply(component));
+                var componentTexture = textureProvider.apply(component);
+                var renderType = model.renderType(componentTexture);
+                if (DEBUG_LOGGED_COMPONENT_TEXTURES.add(item.getClass().getSimpleName() + "/" + componentTexture)) {
+                    boolean exists = false;
+                    try {
+                        exists = Minecraft.getInstance().getResourceManager().getResource(componentTexture).isPresent();
+                    } catch (Exception ignored) {}
+                    Vehiclery.LOG.info("[DEBUG texture] componentItemRenderer item={} texture={} resourceExists={} modelClass={} scale={}",
+                            item.getClass().getSimpleName(), componentTexture, exists, model.getClass().getSimpleName(), scale);
+                }
                 buffers.submitCustomGeometry(matrices, renderType, (pose, vc) ->
                         model.renderModel(matrices, vc, light, overlay, 0xFFFFFFFF));
 

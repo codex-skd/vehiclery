@@ -13,6 +13,7 @@ import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.resources.Identifier;
+import net.minecraft.server.packs.resources.ResourceManager;
 
 // TODO(port): MultiBufferSource (immediate-mode: get a VertexConsumer for a RenderType, write to it
 // directly) no longer exists -- rendering now goes through SubmitNodeCollector's deferred submission
@@ -23,6 +24,21 @@ import net.minecraft.resources.Identifier;
 // we ignore) -- reasonable for a per-frame render callback, but unverified against actual gameplay
 // since this can't be tested without running the game.
 public enum AutomobileRenderer {;
+    // TODO(debug): temporary one-shot diagnostic logging for the "icons look wrong/identical/invisible"
+    // bug reported on a real client -- remove once the root cause is confirmed and fixed.
+    private static final java.util.Set<Identifier> DEBUG_LOGGED_TEXTURES = new java.util.HashSet<>();
+
+    private static void debugLogTexture(String label, Identifier texture, RenderableModel model, RenderType renderType) {
+        if (texture == null || !DEBUG_LOGGED_TEXTURES.add(texture)) return;
+        boolean exists = false;
+        try {
+            exists = net.minecraft.client.Minecraft.getInstance().getResourceManager().getResource(texture).isPresent();
+        } catch (Exception ignored) {}
+        com.skd.vehiclery.Vehiclery.LOG.info(
+                "[DEBUG texture] {} texture={} resourceExists={} modelClass={} renderType={}",
+                label, texture, exists, model == null ? "null" : model.getClass().getSimpleName(), renderType);
+    }
+
     public static void render(
             PoseStack pose, SubmitNodeCollector buffers, int light, int overlay,
             float tickDelta, RenderableAutomobile automobile
@@ -57,7 +73,9 @@ public enum AutomobileRenderer {;
         var frameTexture = frame.model().texture();
         var engineTexture = engine.model().texture();
         if (!frame.isEmpty() && frameModel != null) {
-            buffers.submitCustomGeometry(pose, frameModel.renderType(frameTexture), (framePose, buffer) -> frameModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
+            var frameRenderType = frameModel.renderType(frameTexture);
+            debugLogTexture("frame", frameTexture, frameModel, frameRenderType);
+            buffers.submitCustomGeometry(pose, frameRenderType, (framePose, buffer) -> frameModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (frameModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
             }
