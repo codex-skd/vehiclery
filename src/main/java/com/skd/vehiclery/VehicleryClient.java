@@ -173,8 +173,8 @@ public class VehicleryClient {
                     try {
                         exists = Minecraft.getInstance().getResourceManager().getResource(componentTexture).isPresent();
                     } catch (Exception ignored) {}
-                    Vehiclery.LOG.info("[DEBUG texture] componentItemRenderer item={} texture={} resourceExists={} modelClass={} scale={}",
-                            item.getClass().getSimpleName(), componentTexture, exists, model.getClass().getSimpleName(), scale);
+                    Vehiclery.LOG.info("[DEBUG texture] componentItemRenderer item={} texture={} resourceExists={} modelClass={} scale={} light={} overlay={} mode={}",
+                            item.getClass().getSimpleName(), componentTexture, exists, model.getClass().getSimpleName(), scale, light, overlay, mode);
                 }
                 buffers.submitCustomGeometry(matrices, renderType, (pose, vc) ->
                         model.renderModel(matrices, vc, light, overlay, 0xFFFFFFFF));

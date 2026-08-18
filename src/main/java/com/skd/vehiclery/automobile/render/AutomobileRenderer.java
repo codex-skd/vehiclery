@@ -28,8 +28,8 @@ public enum AutomobileRenderer {;
     // bug reported on a real client -- remove once the root cause is confirmed and fixed.
     private static final java.util.Set<Identifier> DEBUG_LOGGED_TEXTURES = new java.util.HashSet<>();
 
-    private static void debugLogTexture(String label, Identifier texture, RenderableModel model, RenderType renderType) {
-        if (texture == null || !DEBUG_LOGGED_TEXTURES.add(texture)) return;
+    private static boolean debugLogTexture(String label, Identifier texture, RenderableModel model, RenderType renderType) {
+        if (texture == null || !DEBUG_LOGGED_TEXTURES.add(texture)) return false;
         boolean exists = false;
         try {
             exists = net.minecraft.client.Minecraft.getInstance().getResourceManager().getResource(texture).isPresent();
@@ -37,6 +37,7 @@ public enum AutomobileRenderer {;
         com.skd.vehiclery.Vehiclery.LOG.info(
                 "[DEBUG texture] {} texture={} resourceExists={} modelClass={} renderType={}",
                 label, texture, exists, model == null ? "null" : model.getClass().getSimpleName(), renderType);
+        return true;
     }
 
     public static void render(
@@ -74,7 +75,9 @@ public enum AutomobileRenderer {;
         var engineTexture = engine.model().texture();
         if (!frame.isEmpty() && frameModel != null) {
             var frameRenderType = frameModel.renderType(frameTexture);
-            debugLogTexture("frame", frameTexture, frameModel, frameRenderType);
+            if (debugLogTexture("frame", frameTexture, frameModel, frameRenderType)) {
+                com.skd.vehiclery.Vehiclery.LOG.info("[DEBUG texture]   light={} overlay={}", light, overlay);
+            }
             buffers.submitCustomGeometry(pose, frameRenderType, (framePose, buffer) -> frameModel.renderModel(pose, buffer, light, overlay, 0xFFFFFFFF));
             if (frameModel instanceof BaseModel base) {
                 base.doOtherLayerRender(pose, buffers, light, overlay);
